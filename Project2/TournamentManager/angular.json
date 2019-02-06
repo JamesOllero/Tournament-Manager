@@ -13,8 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "../src/main/webapp",
-            "deleteOutputPath": false,
+            "outputPath": "dist/TournamentManager",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
