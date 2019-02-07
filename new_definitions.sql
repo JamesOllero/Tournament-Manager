@@ -10,7 +10,8 @@ create table project_2.organizers(
 
 create table project_2.players(
   id serial primary key not null,
-  name varchar(150) unique not null,
+  first_name varchar(100) unique not null,
+  last_name varchar(100) unique not null,
   career_wins integer default 0,
   career_losses integer default 0,
   career_draws integer default 0
