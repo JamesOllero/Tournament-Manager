@@ -2,72 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f3ac819-282f-4977-b2f3-3558bc4d64c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Project2/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project2/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project2/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project2/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project2/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project2/src/main/java/com/revature/project2/Project2Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project2/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project2/src/test/java/com/revature/project2/Project2ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project_2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/Project2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/e2e/tsconfig.e2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/src/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/TournamentManager/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/aopalliance-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/commons-logging-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-aop-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-aspects-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-beans-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-context-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-context-support-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-core-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-expression-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-instrument-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-instrument-tomcat-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-jdbc-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-jms-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-messaging-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-orm-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-oxm-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-test-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project2/lib/spring-tx-4.3.18.RELEASE.jar" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/project2/TournamentManager/node_modules/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -78,11 +13,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project2/src/main/java/com/revature/project2/Project2Application.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Project2/src/main/java/com/revature/project2/Project2Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="102">
               <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -92,10 +27,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project2/TournamentManager/angular.json">
+        <entry file="file://$PROJECT_DIR$/Project2/TournamentManager/angular.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="-51">
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -117,17 +52,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="project_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -136,6 +61,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549463494821" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Project2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -167,27 +94,23 @@
       <option name="presentableId" value="Default" />
       <updated>1549463255846</updated>
       <workItem from="1549463265472" duration="296000" />
+      <workItem from="1549501717794" duration="85000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296000" />
+    <option name="totallyTimeSpent" value="381000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25416037" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -198,7 +121,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32929516" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -215,13 +138,20 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project2/src/main/java/com/revature/project2/Project2Application.java">
+    <entry file="file://$PROJECT_DIR$/Project2/src/main/java/com/revature/project2/Project2Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="102">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project2/TournamentManager/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
