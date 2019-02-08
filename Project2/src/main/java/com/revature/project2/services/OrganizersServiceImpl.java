@@ -5,6 +5,9 @@ import com.revature.project2.models.Organizers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -40,5 +43,18 @@ public class OrganizersServiceImpl implements OrganizersService {
     @Transactional
     public void deleteOrganizer(int id) {
         organizersDao.deleteById(id);
+    }
+
+    @PersistenceContext
+    EntityManager entityManager;
+
+    @Override
+    public List<Organizers> getOrganizersByCredential(List<String> loginInput) {
+        Query query = entityManager.createNativeQuery("select * from project_2.organizers where email=? and \"password\"=?; ",Organizers.class );
+        query.setParameter(1, loginInput.get(0));
+        query.setParameter(2, loginInput.get(1));
+        Organizers organizers = (Organizers) query.getResultList().get(0);
+        organizers.setPassword("");
+        return query.getResultList();
     }
 }
