@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface EventService {
     public void CreateEvent(Events events);
-    public List<Events> FindAllEvent();
+    public List<Events> findAllEvent();
     public Events FindEvent(int id);
     public void deleteEvent(int id);
 
