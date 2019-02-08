@@ -15,6 +15,7 @@ public class EventServiceImpl implements EventService {
 
     @Autowired
     public EventServiceImpl(EventDao eventDao) {
+
         this.eventDao = eventDao;
     }
 
@@ -26,7 +27,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     @Transactional
-    public List<Events> FindAllEvent() {
+    public List<Events> findAllEvent() {
         return eventDao.findAll();
     }
 
