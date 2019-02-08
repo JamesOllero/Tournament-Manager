@@ -41,4 +41,8 @@ public class OrganizersServiceImpl implements OrganizersService {
     public void deleteOrganizer(int id) {
         organizersDao.deleteById(id);
     }
+
+    @Override
+    @Transactional
+    public Organizers findOrganizerByEmail(String email) { return null; }
 }
