@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -55,6 +57,18 @@ public class OrganizersController {
             throw new RuntimeException ("Organizers ID not found -" + id);
         }
         return "Deleted User ID -" + id;
+    }
+
+    @PutMapping(path= "/getid/{email}/{password}", consumes= MediaType.APPLICATION_JSON_VALUE,
+            produces=MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public List<Organizers> getOrganizers(@PathVariable("email") String email, @PathVariable("password") String password){
+        List <String> loginInput = new ArrayList<String>(Arrays.asList(email, password));
+        List<Organizers> organizers=organizerService.getOrganizersByCredential(loginInput);
+        if(organizers==null){
+            throw new RuntimeException ("Invalid login");
+        }
+        return organizers;
     }
 }
 
