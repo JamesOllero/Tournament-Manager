@@ -49,12 +49,15 @@ public class OrganizersServiceImpl implements OrganizersService {
     EntityManager entityManager;
 
     @Override
-    public List<Organizers> getOrganizersByCredential(List<String> loginInput) {
+    public List<Organizers> getOrganizersByCredential(Organizers organizer) {
+        String email =organizer.getEmail();
+        String password = organizer.getPassword();
         Query query = entityManager.createNativeQuery("select * from project_2.organizers where email=? and \"password\"=?; ",Organizers.class );
-        query.setParameter(1, loginInput.get(0));
-        query.setParameter(2, loginInput.get(1));
+        query.setParameter(1, email);
+        query.setParameter(2, password);
+        if(!query.getResultList().isEmpty()){
         Organizers organizers = (Organizers) query.getResultList().get(0);
-        organizers.setPassword("");
+        organizers.setPassword("");}
         return query.getResultList();
     }
 }
