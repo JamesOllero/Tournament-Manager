@@ -1,3 +1,16 @@
-<p>
-  participant-register works!
-</p>
+<div class="form-container" id="participant-registration">
+  <form (ngSubmit)="onSubmit()" #participantForm="ngForm">
+    <div>
+      <label for="firstName">First Name: </label>
+      <input type="text" id="firstName" [(ngModel)]="newParticipant.firstName" name="firstName" required>
+    </div>
+    <div>
+      <label for="lastName">Last Name: </label>
+      <input type="text" id="lastName" [(ngModel)]="newParticipant.lastName" required>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!participantForm.form.valid">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+</div>
