@@ -55,13 +55,13 @@ public class Organizers {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int ManagerId;
 
-    @Column (name ="USERNAME",nullable=false)
+    @Column (name ="USERNAME")
     String Username;
 
-    @Column (name ="PASSWORD",nullable=false)
+    @Column (name ="PASSWORD")
     String password;
 
-    @Column (name ="EMAIL",nullable=false)
+    @Column (name ="EMAIL")
     String email;
 
     @Override
@@ -73,4 +73,6 @@ public class Organizers {
                 ", email='" + email + '\'' +
                 '}';
     }
+
+
 }

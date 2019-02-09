@@ -8,6 +8,6 @@ public interface OrganizersService {
     public List<Organizers> FindAllOrganizer();
     public Organizers FindOrganizer(int id);
     public void deleteOrganizer(int id);
-    List<Organizers> getOrganizersByCredential(List <String> LoginInput);
+    List<Organizers> getOrganizersByCredential(Organizers organizer);
 
 }
