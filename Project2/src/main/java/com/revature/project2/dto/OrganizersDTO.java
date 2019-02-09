@@ -25,7 +25,6 @@ public class OrganizersDTO {
 
 
     public Organizers proxy(Organizers organizer) {
-        System.out.println("inside proxy");
         organizer.setPassword(null);
         organizer.setEmail(null);
         organizer.setUsername(null);
