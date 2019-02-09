@@ -54,9 +54,9 @@ public class OrganizersServiceImpl implements OrganizersService {
         String password = organizer.getPassword();
         Query query = entityManager.createNativeQuery("select * from project_2.organizers where email=? and \"password\"=?; ",Organizers.class );
         query.setParameter(1, email);
-        System.out.println("Set the email to " + email);
+//        System.out.println("Set the email to " + email);
         query.setParameter(2, password);
-        System.out.println("Set the password to " + password);
+//        System.out.println("Set the password to " + password);
         if(!query.getResultList().isEmpty()){
         Organizers organizers = (Organizers) query.getResultList().get(0);
         organizers.setPassword("");}
