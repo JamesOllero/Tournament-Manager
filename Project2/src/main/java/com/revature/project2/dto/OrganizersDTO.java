@@ -1,30 +1,43 @@
 package com.revature.project2.dto;
 
 import com.revature.project2.models.Organizers;
+import com.revature.project2.services.OrganizersService;
 
 public class OrganizersDTO {
-
+    OrganizersService organizersService = null;
     Organizers organizer = null;
-    OrganizersDTO organizersDTO = new OrganizersDTO();
+//    OrganizersDTO organizersDTO;
+    int ManagerId;
 
     public Organizers OrganizersTo (Organizers organizer){
         this.organizer=organizer;
-        organizersDTO.proxy(this.organizer);
-
+        OrganizersDTO organizersDTO = new OrganizersDTO();
+        this.organizer= organizersDTO.proxy(this.organizer);
         return this.organizer;
 
     }
 
-//    public Organizers OrganizersFrom (Organizers organizer){
-//        this.organizer=organizer;
-////        orga
-//    }
+    public Organizers OrganizersFrom (Organizers organizer){
+        this.organizer=organizer;
+            return organizersService.getOrganizersByCredential(organizer).get(0);
+    }
 
 
 
-    public void proxy(Organizers organizer) {
+    public Organizers proxy(Organizers organizer) {
+        System.out.println("inside proxy");
         organizer.setPassword(null);
         organizer.setEmail(null);
         organizer.setUsername(null);
+
+        return organizer;
+    }
+
+    public int getManagerId() {
+        return ManagerId;
+    }
+
+    public void setManagerId(int managerId) {
+        ManagerId = managerId;
     }
 }

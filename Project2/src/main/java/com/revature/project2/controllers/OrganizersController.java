@@ -2,6 +2,7 @@ package com.revature.project2.controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.project2.dto.OrganizersDTO;
 import com.revature.project2.models.Organizers;
 import com.revature.project2.services.OrganizersService;
 import com.sun.deploy.net.HttpResponse;
@@ -47,7 +48,9 @@ public class OrganizersController {
             produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Organizers addOrganizer(@RequestBody Organizers organizers){
+
         organizers.setManagerId(0);
+
         organizerService.CreateOrganizer(organizers);
 
         return organizers;
@@ -71,9 +74,10 @@ public class OrganizersController {
     public ResponseEntity getOrganizers(@RequestBody Organizers organizer) throws IOException {
         List<Organizers> organizers=organizerService.getOrganizersByCredential(organizer);
         System.out.println(organizers);
+        String errorMessage = "Unauthorized to login";
         if(organizers.isEmpty()){
-            String errorMessage = "Invalid Login Credentials";
-            return new ResponseEntity<>(errorMessage, HttpStatus.UNAUTHORIZED);
+
+            return new ResponseEntity<String>(errorMessage, HttpStatus.UNAUTHORIZED);
         }
         return new ResponseEntity<List>(organizers, HttpStatus.OK);
     }
