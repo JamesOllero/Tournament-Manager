@@ -72,8 +72,8 @@ public class OrganizersController {
         List<Organizers> organizers=organizerService.getOrganizersByCredential(organizer);
         System.out.println(organizers);
         if(organizers.isEmpty()){
-
-            return new ResponseEntity<List>((List<Organizers>)null, HttpStatus.UNAUTHORIZED);
+            String errorMessage = "Invalid Login Credentials";
+            return new ResponseEntity<>(errorMessage, HttpStatus.UNAUTHORIZED);
         }
         return new ResponseEntity<List>(organizers, HttpStatus.OK);
     }
