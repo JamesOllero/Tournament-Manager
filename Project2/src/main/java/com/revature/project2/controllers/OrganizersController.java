@@ -1,11 +1,17 @@
 package com.revature.project2.controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.project2.models.Organizers;
 import com.revature.project2.services.OrganizersService;
+import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -59,16 +65,17 @@ public class OrganizersController {
         return "Deleted User ID -" + id;
     }
 
-    @PutMapping(path= "/getid/{email}/{password}", consumes= MediaType.APPLICATION_JSON_VALUE,
+    @PostMapping(path= "/getid", consumes= MediaType.APPLICATION_JSON_VALUE,
             produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public List<Organizers> getOrganizers(@PathVariable("email") String email, @PathVariable("password") String password){
-        List <String> loginInput = new ArrayList<String>(Arrays.asList(email, password));
-        List<Organizers> organizers=organizerService.getOrganizersByCredential(loginInput);
-        if(organizers==null){
-            throw new RuntimeException ("Invalid login");
+    public ResponseEntity getOrganizers(@RequestBody Organizers organizer) throws IOException {
+        List<Organizers> organizers=organizerService.getOrganizersByCredential(organizer);
+        System.out.println(organizers);
+        if(organizers.isEmpty()){
+            String errorMessage = "Invalid Login Credentials";
+            return new ResponseEntity<>(errorMessage, HttpStatus.UNAUTHORIZED);
         }
-        return organizers;
+        return new ResponseEntity<List>(organizers, HttpStatus.OK);
     }
 }
 

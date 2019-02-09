@@ -19,14 +19,15 @@ public class LoginController {
 
     @PostMapping(consumes= MediaType.APPLICATION_JSON_VALUE)
     public Organizers authenticate(@RequestBody Organizers organizerAttempt) {
-        Organizers fromDB = this.organizerService.findOrganizerByEmail(organizerAttempt.getEmail());
-        if(fromDB!=null) {
-            if (fromDB.getPassword().equals(organizerAttempt.getPassword())) {
-                fromDB.setPassword("");
-            } else {
-                fromDB = null;
-            }
-        }
-        return fromDB;
+//        Organizers fromDB = this.organizerService.findOrganizerByEmail(organizerAttempt.getEmail());
+//        if(fromDB!=null) {
+//            if (fromDB.getPassword().equals(organizerAttempt.getPassword())) {
+//                fromDB.setPassword("");
+//            } else {
+//                fromDB = null;
+//            }
+//        }
+//        return fromDB;
+        return null;
     }
 }
