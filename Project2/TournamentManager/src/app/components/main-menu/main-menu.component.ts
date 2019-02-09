@@ -17,6 +17,7 @@ export class MainMenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log("in the ngoninit from main menu")
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'login';
   }
 

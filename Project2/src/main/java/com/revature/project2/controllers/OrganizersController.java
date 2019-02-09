@@ -71,10 +71,9 @@ public class OrganizersController {
     @PostMapping(path= "/getid", consumes= MediaType.APPLICATION_JSON_VALUE,
             produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity getOrganizers(@RequestBody Organizers organizer) throws IOException {
-        System.out.println(organizer.toString());
+    public ResponseEntity getOrganizers(@RequestBody Organizers organizer) {
+
         List<Organizers> organizers=organizerService.getOrganizersByCredential(organizer);
-        System.out.println(organizers);
         String errorMessage = "Unauthorized to login";
         if(organizers.isEmpty()){
 

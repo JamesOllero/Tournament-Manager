@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private authUrl = 'http://localhost:8080/organizer/getid';
+  // private authUrl = 'http://localhost:8080/organizer/getid';
+  OrganizersUrl = 'assets/Localorganizers.json';
   constructor(private http: HttpClient) { }
 
   isLoggedIn(): boolean {
@@ -13,7 +14,7 @@ export class AuthService {
   }
 
   authenticate(username: string, password: string, success, fail) {
-    return this.http.post<any>(this.authUrl,
+    return this.http.post<any>(this.OrganizersUrl,
       JSON.stringify({email: username, password: password}),
       {
         headers: {
