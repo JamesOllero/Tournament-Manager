@@ -69,9 +69,9 @@ public class OrganizersController {
             produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity getOrganizers(@RequestBody Organizers organizer) throws IOException {
-        System.out.println(organizer.toString());
+//        System.out.println(organizer.toString());
         List<Organizers> organizers=organizerService.getOrganizersByCredential(organizer);
-        System.out.println(organizers);
+//        System.out.println(organizers);
         if(organizers.isEmpty()){
             String errorMessage = "Invalid Login Credentials";
             return new ResponseEntity<>(errorMessage, HttpStatus.UNAUTHORIZED);

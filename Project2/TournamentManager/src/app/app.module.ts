@@ -9,6 +9,8 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { NewEventComponent } from './components/new-event/new-event.component';
 import { ParticipantRegisterComponent } from './components/participant-register/participant-register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { ContainerComponent } from './components/container/container.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     AccountCreationComponent,
     MainMenuComponent,
     NewEventComponent,
-    ParticipantRegisterComponent
+    ParticipantRegisterComponent,
+    NavigationComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
