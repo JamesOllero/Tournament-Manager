@@ -3,7 +3,26 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: "http://localhost:3000",
+  navigator: [
+    {
+      title: 'Create Event',
+      link: 'main/event/new'
+    },
+    {
+      title: 'Create Account',
+      link: 'main/create-account'
+    },
+    {
+      title: 'Register New Participant',
+      link: 'main/participant-register'
+    },
+    {
+      title: 'View In-Progress Events',
+      link: 'main/event/active'
+    }
+  ]
 };
 
 /*

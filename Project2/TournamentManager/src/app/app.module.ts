@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -8,6 +8,9 @@ import { AccountCreationComponent } from './components/account-creation/account-
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { NewEventComponent } from './components/new-event/new-event.component';
 import { ParticipantRegisterComponent } from './components/participant-register/participant-register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { ContainerComponent } from './components/container/container.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,15 @@ import { ParticipantRegisterComponent } from './components/participant-register/
     AccountCreationComponent,
     MainMenuComponent,
     NewEventComponent,
-    ParticipantRegisterComponent
+    ParticipantRegisterComponent,
+    NavigationComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
