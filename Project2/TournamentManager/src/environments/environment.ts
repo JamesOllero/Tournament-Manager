@@ -8,7 +8,7 @@ export const environment = {
   navigator: [
     {
       title: 'Main Menu',
-      link: 'main/menu'
+      link: 'menu'
     },
     {
       title: 'Create Event',

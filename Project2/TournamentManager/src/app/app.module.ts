@@ -11,6 +11,7 @@ import { ParticipantRegisterComponent } from './components/participant-register/
 import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ContainerComponent } from './components/container/container.component';
+import { ParticipantSearchComponent } from './components/participant-search/participant-search.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ContainerComponent } from './components/container/container.component';
     NewEventComponent,
     ParticipantRegisterComponent,
     NavigationComponent,
-    ContainerComponent
+    ContainerComponent,
+    ParticipantSearchComponent
   ],
   imports: [
     BrowserModule,

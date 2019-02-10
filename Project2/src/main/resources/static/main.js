@@ -41,6 +41,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
 /* harmony import */ var _components_container_container_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/container/container.component */ "./src/app/components/container/container.component.ts");
 /* harmony import */ var _components_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/new-event/new-event.component */ "./src/app/components/new-event/new-event.component.ts");
+/* harmony import */ var _components_participant_register_participant_register_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/participant-register/participant-register.component */ "./src/app/components/participant-register/participant-register.component.ts");
+/* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
+
+
 
 
 
@@ -65,6 +69,19 @@ var routes = [
                     {
                         path: 'new',
                         component: _components_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_7__["NewEventComponent"]
+                    }
+                ]
+            },
+            {
+                path: 'participant',
+                children: [
+                    {
+                        path: 'register',
+                        component: _components_participant_register_participant_register_component__WEBPACK_IMPORTED_MODULE_8__["ParticipantRegisterComponent"]
+                    },
+                    {
+                        path: 'search',
+                        component: _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_9__["ParticipantSearchComponent"]
                     }
                 ]
             },
@@ -178,6 +195,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/navigation/navigation.component */ "./src/app/components/navigation/navigation.component.ts");
 /* harmony import */ var _components_container_container_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/container/container.component */ "./src/app/components/container/container.component.ts");
+/* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
+
 
 
 
@@ -205,7 +224,8 @@ var AppModule = /** @class */ (function () {
                 _components_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_9__["NewEventComponent"],
                 _components_participant_register_participant_register_component__WEBPACK_IMPORTED_MODULE_10__["ParticipantRegisterComponent"],
                 _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_12__["NavigationComponent"],
-                _components_container_container_component__WEBPACK_IMPORTED_MODULE_13__["ContainerComponent"]
+                _components_container_container_component__WEBPACK_IMPORTED_MODULE_13__["ContainerComponent"],
+                _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__["ParticipantSearchComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -399,6 +419,7 @@ var LoginComponent = /** @class */ (function () {
         var _this = this;
         // localStorage.setItem('testItem', JSON.stringify({username: this.username, password: this.password}));
         this.authService.authenticate(this.username, this.password, function () { return _this.router.navigate([_this.returnUrl]); }, function (err) {
+            console.log("Username/Password pair not found");
             console.log(err);
         });
     };
@@ -471,8 +492,10 @@ var MainMenuComponent = /** @class */ (function () {
         this.router.navigate(['/main/event/new']);
     };
     MainMenuComponent.prototype.goToParticipantRegistry = function () {
+        this.router.navigate(['/main/participant/register']);
     };
     MainMenuComponent.prototype.goToParticipantLookup = function () {
+        this.router.navigate(['/main/participant/search']);
     };
     MainMenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -677,6 +700,62 @@ var ParticipantRegisterComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/participant-search/participant-search.component.css":
+/*!********************************************************************************!*\
+  !*** ./src/app/components/participant-search/participant-search.component.css ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGFydGljaXBhbnQtc2VhcmNoL3BhcnRpY2lwYW50LXNlYXJjaC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/participant-search/participant-search.component.html":
+/*!*********************************************************************************!*\
+  !*** ./src/app/components/participant-search/participant-search.component.html ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  participant-search works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/participant-search/participant-search.component.ts":
+/*!*******************************************************************************!*\
+  !*** ./src/app/components/participant-search/participant-search.component.ts ***!
+  \*******************************************************************************/
+/*! exports provided: ParticipantSearchComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ParticipantSearchComponent", function() { return ParticipantSearchComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ParticipantSearchComponent = /** @class */ (function () {
+    function ParticipantSearchComponent() {
+    }
+    ParticipantSearchComponent.prototype.ngOnInit = function () {
+    };
+    ParticipantSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-participant-search',
+            template: __webpack_require__(/*! ./participant-search.component.html */ "./src/app/components/participant-search/participant-search.component.html"),
+            styles: [__webpack_require__(/*! ./participant-search.component.css */ "./src/app/components/participant-search/participant-search.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ParticipantSearchComponent);
+    return ParticipantSearchComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/Auth/auth.service.ts":
 /*!***********************************************!*\
   !*** ./src/app/services/Auth/auth.service.ts ***!
@@ -787,7 +866,7 @@ var environment = {
     navigator: [
         {
             title: 'Main Menu',
-            link: 'main/menu'
+            link: 'menu'
         },
         {
             title: 'Create Event',
