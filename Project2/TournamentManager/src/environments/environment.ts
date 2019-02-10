@@ -15,10 +15,6 @@ export const environment = {
       link: 'event/new'
     },
     {
-      title: 'Create Account',
-      link: 'account/register'
-    },
-    {
       title: 'Register New Participant',
       link: 'participant/register'
     },
