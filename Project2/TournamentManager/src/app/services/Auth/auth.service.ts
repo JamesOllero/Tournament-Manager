@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  // private authUrl = 'http://localhost:8080/organizer/getid';
-  OrganizersUrl = 'assets/Localorganizers.json';
+  private authUrl = 'http://localhost:8080/organizer/getid';
+  // OrganizersUrl = 'https://api.myjson.com/bins/1de9pk';
   constructor(private http: HttpClient) { }
 
   isLoggedIn(): boolean {
@@ -14,7 +14,7 @@ export class AuthService {
   }
 
   authenticate(username: string, password: string, success, fail) {
-    return this.http.post<any>(this.OrganizersUrl,
+    return this.http.post<any>(this.authUrl,
       JSON.stringify({email: username, password: password}),
       {
         headers: {
@@ -30,4 +30,9 @@ export class AuthService {
         fail(err);
         });
   }
-}
+  // authenticate(username: string, password: string, success, fail){
+  //   return this.http.get(this.OrganizersUrl).subscribe((resp)=>{
+  //     console.log(resp);
+  //   });
+  }
+
