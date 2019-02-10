@@ -4,12 +4,33 @@ import {MainMenuComponent} from "./components/main-menu/main-menu.component";
 import {AuthGuardService} from "./services/auth-guard.service";
 import {LoginComponent} from "./components/login/login.component";
 import {ContainerComponent} from "./components/container/container.component";
+import {NewEventComponent} from "./components/new-event/new-event.component";
 
 const routes: Routes = [
   {
     path: 'main',
     component: ContainerComponent,
-    canActivate: [AuthGuardService]
+    canActivate: [AuthGuardService],
+    children: [
+      {
+        path: 'menu',
+        component: MainMenuComponent
+      },
+      {
+        path: 'event',
+        children: [
+          {
+            path: 'new',
+            component: NewEventComponent
+          }
+        ]
+      },
+      {
+        path: '',
+        redirectTo: 'menu',
+        pathMatch: 'full'
+      }
+    ]
   },
   {
     path: 'login',
@@ -18,11 +39,6 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'main'
-  },
-  {
-    path: 'logout',
-    redirectTo: '',
-    pathMatch: 'full'
   }
 ];
 

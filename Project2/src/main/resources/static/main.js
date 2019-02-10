@@ -36,9 +36,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_auth_guard_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/auth-guard.service */ "./src/app/services/auth-guard.service.ts");
-/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
-/* harmony import */ var _components_container_container_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/container/container.component */ "./src/app/components/container/container.component.ts");
+/* harmony import */ var _components_main_menu_main_menu_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/main-menu/main-menu.component */ "./src/app/components/main-menu/main-menu.component.ts");
+/* harmony import */ var _services_auth_guard_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/auth-guard.service */ "./src/app/services/auth-guard.service.ts");
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony import */ var _components_container_container_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/container/container.component */ "./src/app/components/container/container.component.ts");
+/* harmony import */ var _components_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/new-event/new-event.component */ "./src/app/components/new-event/new-event.component.ts");
+
+
 
 
 
@@ -48,21 +52,36 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     {
         path: 'main',
-        component: _components_container_container_component__WEBPACK_IMPORTED_MODULE_5__["ContainerComponent"],
-        canActivate: [_services_auth_guard_service__WEBPACK_IMPORTED_MODULE_3__["AuthGuardService"]]
+        component: _components_container_container_component__WEBPACK_IMPORTED_MODULE_6__["ContainerComponent"],
+        canActivate: [_services_auth_guard_service__WEBPACK_IMPORTED_MODULE_4__["AuthGuardService"]],
+        children: [
+            {
+                path: 'menu',
+                component: _components_main_menu_main_menu_component__WEBPACK_IMPORTED_MODULE_3__["MainMenuComponent"]
+            },
+            {
+                path: 'event',
+                children: [
+                    {
+                        path: 'new',
+                        component: _components_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_7__["NewEventComponent"]
+                    }
+                ]
+            },
+            {
+                path: '',
+                redirectTo: 'menu',
+                pathMatch: 'full'
+            }
+        ]
     },
     {
         path: 'login',
-        component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"]
+        component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"]
     },
     {
         path: '**',
         redirectTo: 'main'
-    },
-    {
-        path: 'logout',
-        redirectTo: '',
-        pathMatch: 'full'
     }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -279,7 +298,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navs\">\n  <span>\n    <app-navigation [navItems]=\"navs\"></app-navigation>\n  </span>\n</div>\n<router-outlet></router-outlet>\n\n\n<!--This is a comment to force a recomiple and reindex-->\n"
+module.exports = "<div class=\"navs\">\r\n  <span>\r\n    <app-navigation [navItems]=\"navs\"></app-navigation>\r\n  </span>\r\n</div>\r\n<router-outlet></router-outlet>\r\n\r\n\r\n<!--This is a comment to force a recomiple and reindex-->\r\n"
 
 /***/ }),
 
@@ -418,7 +437,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<div><button (click)=\"goToEventCreator()\">Create new Event</button></div>\r\n<div><button (click)=\"goToParticipantRegistry()\">Register new Participant</button></div>\r\n<div><button (click)=\"goToParticipantLookup()\">Participant Lookup</button></div>\r\n"
 
 /***/ }),
 
@@ -447,12 +466,13 @@ var MainMenuComponent = /** @class */ (function () {
         this.route = route;
     }
     MainMenuComponent.prototype.ngOnInit = function () {
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'login';
     };
-    MainMenuComponent.prototype.logout = function () {
-        localStorage.clear();
-        this.router.navigate([this.returnUrl]);
-        window.location.reload();
+    MainMenuComponent.prototype.goToEventCreator = function () {
+        this.router.navigate(['/main/event/new']);
+    };
+    MainMenuComponent.prototype.goToParticipantRegistry = function () {
+    };
+    MainMenuComponent.prototype.goToParticipantLookup = function () {
     };
     MainMenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -489,7 +509,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n  border-bottom: 1px solid #bbb
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n  <ul>\n    <li *ngFor=\"let item of navItems\">\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\n    </li>\n    <button (click)=\"logout()\">Logout</button>\n  </ul>\n</nav>\n"
+module.exports = "<nav>\r\n  <ul>\r\n    <li *ngFor=\"let item of navItems\">\r\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n    </li>\r\n    <button (click)=\"logout()\">Logout</button>\r\n  </ul>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -518,12 +538,11 @@ var NavigationComponent = /** @class */ (function () {
         this.route = route;
     }
     NavigationComponent.prototype.ngOnInit = function () {
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'logout';
+        this.returnUrl = 'logout';
     };
     NavigationComponent.prototype.logout = function () {
         localStorage.clear();
-        this.router.navigate([this.returnUrl]);
-        window.location.reload();
+        this.router.navigate(['/login']);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -772,11 +791,11 @@ var environment = {
         },
         {
             title: 'Create Account',
-            link: 'main/create-account'
+            link: 'main/account/register'
         },
         {
             title: 'Register New Participant',
-            link: 'main/participant-register'
+            link: 'main/participant/register'
         },
         {
             title: 'View In-Progress Events',

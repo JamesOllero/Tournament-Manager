@@ -12,11 +12,11 @@ export const environment = {
     },
     {
       title: 'Create Account',
-      link: 'main/create-account'
+      link: 'main/account/register'
     },
     {
       title: 'Register New Participant',
-      link: 'main/participant-register'
+      link: 'main/participant/register'
     },
     {
       title: 'View In-Progress Events',
