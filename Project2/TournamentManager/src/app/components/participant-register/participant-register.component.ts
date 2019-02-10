@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Participant} from "../../model/participant";
 
 @Component({
   selector: 'app-participant-register',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./participant-register.component.css']
 })
 export class ParticipantRegisterComponent implements OnInit {
-
+  public newParticipant: Participant;
   constructor() { }
 
   ngOnInit() {
