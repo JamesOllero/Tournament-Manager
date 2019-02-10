@@ -720,7 +720,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n}\r\n\r\n/*# sourceMappingURL=d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<table>\r\n  <tr>\r\n    <th>Id</th><th>First Name</th><th>Last Name</th>\r\n  </tr>\r\n  <tr *ngFor=\"let p of participants | searchUtil : searchText; let i = index\">\r\n    <td>{{p.player_Id}}</td>\r\n    <td>{{p.firstName}}</td>\r\n    <td>{{p.lastName}}</td>\r\n  </tr>\r\n</table>\r\n<button type=\"button\" (click)=\"goBack()\">Go Back</button>\r\n"
+module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<table>\r\n  <tr>\r\n    <th>Id</th><th>Name</th>\r\n  </tr>\r\n  <tr *ngFor=\"let p of participants | searchUtil : 'name' : searchText; let i = index\">\r\n    <td>{{p.player_Id}}</td>\r\n    <td>{{p.firstName}} {{p.lastName}}</td>\r\n  </tr>\r\n</table>\r\n<button type=\"button\" (click)=\"goBack()\">Go Back</button>\r\n"
 
 /***/ }),
 
@@ -757,7 +757,7 @@ var ParticipantSearchComponent = /** @class */ (function () {
             // localStorage.removeItem('participants');
             var i;
             for (i = 0; i < participantArr.length; i++) {
-                console.log(participantArr[i]);
+                participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;
             }
             _this.participants = participantArr;
             return;
@@ -768,6 +768,10 @@ var ParticipantSearchComponent = /** @class */ (function () {
     ParticipantSearchComponent.prototype.goBack = function () {
         this.location.back();
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], ParticipantSearchComponent.prototype, "searchText", void 0);
     ParticipantSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-participant-search',
