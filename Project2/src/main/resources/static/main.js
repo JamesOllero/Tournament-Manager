@@ -468,11 +468,11 @@ var MainMenuComponent = /** @class */ (function () {
     MainMenuComponent.prototype.ngOnInit = function () {
     };
     MainMenuComponent.prototype.goToEventCreator = function () {
+        this.router.navigate(['/main/event/new']);
     };
     MainMenuComponent.prototype.goToParticipantRegistry = function () {
     };
     MainMenuComponent.prototype.goToParticipantLookup = function () {
-        this.router.navigate(['event/new']);
     };
     MainMenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
