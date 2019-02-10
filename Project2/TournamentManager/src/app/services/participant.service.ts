@@ -6,13 +6,13 @@ import {Participant} from "../model/participant";
   providedIn: 'root'
 })
 export class ParticipantService {
-  private participantUrl = 'http://localhost:8080/player/players';
+  private participantUrl = 'http://localhost:8080/player';
   constructor(
     private http: HttpClient
   ) { }
 
   getAllParticipants(success, fail) {
-    return this.http.get<Array<Participant>>(this.participantUrl).toPromise()
+    return this.http.get<Array<Participant>>(this.participantUrl + '/players').toPromise()
       .then((resp) => {
         localStorage.setItem('participants', JSON.stringify(resp));
         console.log('Got Participants');
@@ -23,5 +23,13 @@ export class ParticipantService {
         });
   }
 
-
+  registerParticipant(newParticipant: Participant, success, fail) {
+    return this.http.post(this.participantUrl + '/addplayer', JSON.stringify(newParticipant)).toPromise()
+      .then((resp)=>{
+        success();
+      },
+        (err) => {
+        fail(err);
+        })
+  }
 }

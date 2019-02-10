@@ -135,7 +135,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -387,7 +387,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"login-form\">\r\n  <form #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n    <div>\r\n      <input type=\"text\" name=\"user_email\" placeholder=\"email\" [(ngModel)]=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <input type=\"password\" name=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"login-form\">\r\n  <form #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n    <div>\r\n      <input type=\"text\" name=\"user_email\" placeholder=\"email\" [(ngModel)]=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <input type=\"password\" name=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n\r\n    </div>\r\n  </form>\r\n  <button type=\"reset\">Reset</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -664,7 +664,7 @@ module.exports = ".margin-left{\r\n    margin-left: 40px !important;\r\n}\r\n#bt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"bg-primary\" id=\"html\" >\r\n    <div class=\"row justify-content-center align-items-center\" style=\"height:100vh\">\r\n        <div class=\"col-4\">\r\n            <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n<div  class=\"form-container w-400 p-3 h-150 \" >\r\n  <h4  class=\" pb-3 section one text-center \">Participant Registration</h4>\r\n  <form class=\"pb-3\" (ngSubmit)=\"onSubmit()\" #participantForm=\"ngForm\">\r\n    <div class=\"form-group\">\r\n      <!-- <button class=glyphicon-chevron-left></button>  -->\r\n      <label for=\"firstName\">First Name: </label>\r\n      <input type=\"text\" class=\"form-control\" placeholder= \"Bobby\"[(ngModel)]=\"newParticipant.firstName\" required>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"lastName\">Last Name: </label>\r\n      <input type=\"text\" id=\"lastName\"  class=\"form-control\" placeholder= \"Kernel\"[(ngModel)]=\"newParticipant.lastName\" name=\"lastName\" required>\r\n    </div>\r\n  \r\n  <div class=\"form-group\">\r\n    <label for=\"email\">Email: </label>\r\n    <input type=\"email\" id=\"email\"  class=\"form-control\" placeholder= \"BobbyK@gmail.com\"[(ngModel)]=\"newParticipant.email\" name=\"lastName\" required>\r\n  </div >\r\n    \r\n    <div class=\"btn-toolbar \"> \r\n      <button  class=\"btn btn-success btn-sm col \" type=\"button\" id=\"btn\" [disabled]=\"!participantForm.form.valid\"> Submit</button>\r\n    \r\n      <button  class=\"btn btn-danger btn-sm col \"type=\"button\" id=\"btn\" >Reset</button>\r\n      <button  class=\"btn btn-info btn-sm col\"  type=\"button\" id=\"\">Sumbit and add new participant</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n"
+module.exports = "\r\n<div class=\"bg-primary\" id=\"html\" >\r\n    <div class=\"row justify-content-center align-items-center\" style=\"height:100vh\">\r\n        <div class=\"col-4\">\r\n            <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n<div  class=\"form-container w-400 p-3 h-150 \" >\r\n  <h4  class=\" pb-3 section one text-center \">Participant Registration</h4>\r\n  <form class=\"pb-3\" #participantForm=\"ngForm\" name=\"participantForm\">\r\n    <div class=\"form-group\">\r\n      <!-- <button class=glyphicon-chevron-left></button>  -->\r\n      <label for=\"firstName\">First Name: </label>\r\n      <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder= \"Bobby\" [(ngModel)]=\"newParticipant.firstName\" required name=\"firstName\">\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"lastName\">Last Name: </label>\r\n      <input type=\"text\" id=\"lastName\"  class=\"form-control\" placeholder= \"Kernel\"[(ngModel)]=\"newParticipant.lastName\" name=\"lastName\" required>\r\n    </div>\r\n  \r\n  <div class=\"form-group\">\r\n    <label for=\"email\">Email: </label>\r\n    <input type=\"email\" id=\"email\"  class=\"form-control\" placeholder= \"BobbyK@gmail.com\"[(ngModel)]=\"newParticipant.email\" name=\"email\" required>\r\n  </div >\r\n    \r\n    <div class=\"btn-toolbar \"> \r\n      <button  class=\"btn btn-success btn-sm col \" type=\"button\" id=\"btn-submit\" [disabled]=\"!participantForm.form.valid\" (click)=\"createReturn()\"> Submit</button>\r\n    \r\n      <button  class=\"btn btn-danger btn-sm col \"type=\"reset\" id=\"btn-reset\" >Reset</button>\r\n      <button  class=\"btn btn-info btn-sm col\"  type=\"reset\" id=\"btn-repeat\" (click)=\"createContinue(participantForm)\">Sumbit and add new participant</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n"
 
 /***/ }),
 
@@ -680,12 +680,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ParticipantRegisterComponent", function() { return ParticipantRegisterComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_participant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../model/participant */ "./src/app/model/participant.ts");
+/* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
+
+
 
 
 var ParticipantRegisterComponent = /** @class */ (function () {
-    function ParticipantRegisterComponent() {
+    function ParticipantRegisterComponent(participantService, location) {
+        this.participantService = participantService;
+        this.location = location;
+        this.newParticipant = new _model_participant__WEBPACK_IMPORTED_MODULE_2__["Participant"];
     }
     ParticipantRegisterComponent.prototype.ngOnInit = function () {
+        this.newParticipant.firstName = '';
+        this.newParticipant.lastName = '';
+        this.newParticipant.email = '';
+    };
+    ParticipantRegisterComponent.prototype.createReturn = function () {
+        var _this = this;
+        this.participantService.registerParticipant(this.newParticipant, function () {
+            _this.location.back();
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    ParticipantRegisterComponent.prototype.createContinue = function (participantForm) {
+        var _this = this;
+        this.participantService.registerParticipant(this.newParticipant, function () {
+            _this.newParticipant = new _model_participant__WEBPACK_IMPORTED_MODULE_2__["Participant"];
+            participantForm.resetForm();
+        }, function (err) {
+            console.log(err);
+        });
     };
     ParticipantRegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -693,7 +722,8 @@ var ParticipantRegisterComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./participant-register.component.html */ "./src/app/components/participant-register/participant-register.component.html"),
             styles: [__webpack_require__(/*! ./participant-register.component.css */ "./src/app/components/participant-register/participant-register.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_3__["ParticipantService"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"]])
     ], ParticipantRegisterComponent);
     return ParticipantRegisterComponent;
 }());
@@ -782,6 +812,26 @@ var ParticipantSearchComponent = /** @class */ (function () {
             _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
     ], ParticipantSearchComponent);
     return ParticipantSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/participant.ts":
+/*!**************************************!*\
+  !*** ./src/app/model/participant.ts ***!
+  \**************************************/
+/*! exports provided: Participant */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Participant", function() { return Participant; });
+var Participant = /** @class */ (function () {
+    function Participant() {
+    }
+    return Participant;
 }());
 
 
@@ -937,13 +987,21 @@ __webpack_require__.r(__webpack_exports__);
 var ParticipantService = /** @class */ (function () {
     function ParticipantService(http) {
         this.http = http;
-        this.participantUrl = 'http://localhost:8080/player/players';
+        this.participantUrl = 'http://localhost:8080/player';
     }
     ParticipantService.prototype.getAllParticipants = function (success, fail) {
-        return this.http.get(this.participantUrl).toPromise()
+        return this.http.get(this.participantUrl + '/players').toPromise()
             .then(function (resp) {
             localStorage.setItem('participants', JSON.stringify(resp));
             console.log('Got Participants');
+            success();
+        }, function (err) {
+            fail(err);
+        });
+    };
+    ParticipantService.prototype.registerParticipant = function (newParticipant, success, fail) {
+        return this.http.post(this.participantUrl + '/addplayer', JSON.stringify(newParticipant)).toPromise()
+            .then(function (resp) {
             success();
         }, function (err) {
             fail(err);
