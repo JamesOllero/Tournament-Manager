@@ -25,10 +25,18 @@ export class MainMenuComponent implements OnInit {
   }
 
   goToParticipantRegistry() {
+<<<<<<< master
     this.router.navigate(['/main/participant/register']);
   }
 
   goToParticipantLookup() {
     this.router.navigate(['/main/participant/search']);
+=======
+    this.router.navigate(['/main/participant/register'])
+  }
+
+  goToParticipantLookup() {
+    this.router.navigate(['/main/participant/search'])
+>>>>>>> Code Update
   }
 }

@@ -1,8 +1,12 @@
+<<<<<<< master
 import { Component, OnInit, Input } from '@angular/core';
 import {Participant} from "../../model/participant";
 import {ParticipantService} from "../../services/participant.service";
 import { SearchUtilPipe } from "../../pipes/search-util.pipe";
 import { Location } from "@angular/common";
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> Code Update
 
 @Component({
   selector: 'app-participant-search',
@@ -10,6 +14,7 @@ import { Location } from "@angular/common";
   styleUrls: ['./participant-search.component.css']
 })
 export class ParticipantSearchComponent implements OnInit {
+<<<<<<< master
   participants: Participant[];
   constructor(
     private participantService: ParticipantService,
@@ -42,4 +47,12 @@ export class ParticipantSearchComponent implements OnInit {
   goBack() {
     this.location.back();
   }
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+>>>>>>> Code Update
 }

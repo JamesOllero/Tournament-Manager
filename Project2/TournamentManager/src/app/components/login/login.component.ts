@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     this.authService.authenticate(this.username, this.password,
       () => this.router.navigate([this.returnUrl]),
       (err) => {
+      console.log("Username/Password pair not found");
       console.log(err);
       });
   }
