@@ -720,7 +720,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n}\r\n\r\n/*# sourceMappingURL=d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<ul>\r\n  <li *ngFor=\"let p of participants | searchUtil : searchText\">{{p.firstName}} {{p.lastNmae}}</li>\r\n</ul>\r\n<button type=\"button\" (click)=\"goBack()\">Go Back</button>\r\n"
+module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<ul>\r\n  <li *ngFor=\"let p of participants\">{{p.firstName}} {{p.lastNmae}}</li>\r\n</ul>\r\n"
 
 /***/ }),
 
@@ -753,8 +753,13 @@ var ParticipantSearchComponent = /** @class */ (function () {
     ParticipantSearchComponent.prototype.getParticipants = function () {
         var _this = this;
         this.participantService.getAllParticipants(function () {
-            _this.participants = JSON.parse(localStorage.getItem('participants'));
+            var participantArr = JSON.parse(localStorage.getItem('participants'));
             // localStorage.removeItem('participants');
+            var i;
+            for (i = 0; i < participantArr.length; i++) {
+                console.log(participantArr[i]);
+            }
+            _this.participants = participantArr;
             return;
         }, function (err) {
             console.log(err);

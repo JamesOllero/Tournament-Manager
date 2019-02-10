@@ -1,5 +1,5 @@
 <input [(ngModel)]="searchText" placeholder="Participant Name">
 <ul>
-  <li *ngFor="let p of participants | searchUtil : searchText">{{p.firstName}} {{p.lastNmae}}</li>
+  <li *ngFor="let p of participants">{{p.firstName}} {{p.lastName}}</li>
 </ul>
 <button type="button" (click)="goBack()">Go Back</button>
