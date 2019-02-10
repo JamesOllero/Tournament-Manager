@@ -786,20 +786,24 @@ var environment = {
     apiUrl: "http://localhost:3000",
     navigator: [
         {
+            title: 'Main Menu',
+            link: 'main/menu'
+        },
+        {
             title: 'Create Event',
-            link: 'main/event/new'
+            link: 'event/new'
         },
         {
             title: 'Create Account',
-            link: 'main/account/register'
+            link: 'account/register'
         },
         {
             title: 'Register New Participant',
-            link: 'main/participant/register'
+            link: 'participant/register'
         },
         {
             title: 'View In-Progress Events',
-            link: 'main/event/active'
+            link: 'event/active'
         }
     ]
 };
@@ -848,7 +852,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })
