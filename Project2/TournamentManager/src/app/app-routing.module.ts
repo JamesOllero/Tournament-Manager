@@ -5,6 +5,8 @@ import {AuthGuardService} from "./services/auth-guard.service";
 import {LoginComponent} from "./components/login/login.component";
 import {ContainerComponent} from "./components/container/container.component";
 import {NewEventComponent} from "./components/new-event/new-event.component";
+import {ParticipantRegisterComponent} from "./components/participant-register/participant-register.component";
+import {ParticipantSearchComponent} from "./components/participant-search/participant-search.component";
 
 const routes: Routes = [
   {
@@ -22,6 +24,19 @@ const routes: Routes = [
           {
             path: 'new',
             component: NewEventComponent
+          }
+        ]
+      },
+      {
+        path: 'participant',
+        children: [
+          {
+            path: 'register',
+            component: ParticipantRegisterComponent
+          },
+          {
+            path: 'search',
+            component: ParticipantSearchComponent
           }
         ]
       },
