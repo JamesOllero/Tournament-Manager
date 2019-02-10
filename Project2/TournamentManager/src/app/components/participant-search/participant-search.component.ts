@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Participant} from "../../model/participant";
 import {ParticipantService} from "../../services/participant.service";
 import { SearchUtilPipe } from "../../pipes/search-util.pipe";
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-participant-search',
@@ -11,9 +12,11 @@ import { SearchUtilPipe } from "../../pipes/search-util.pipe";
 export class ParticipantSearchComponent implements OnInit {
   participants: Participant[];
   constructor(
-    private participantService: ParticipantService
+    private participantService: ParticipantService,
+    private location: Location
   ) { }
-
+  public searchText: string;
+  public participant: Participant;
   ngOnInit() {
     this.getParticipants();
   }
@@ -33,5 +36,9 @@ export class ParticipantSearchComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  goBack() {
+    this.location.back();
   }
 }
