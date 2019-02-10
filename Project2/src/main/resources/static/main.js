@@ -720,7 +720,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n}\r\n\r\n/*# sourceMappingURL=d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<ul>\r\n  <li *ngFor=\"let p of participants | filter : searchText\">{{p.firstName}} {{p.lastNmae}}</li>\r\n</ul>\r\n"
+module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<ul>\r\n  <li *ngFor=\"let p of participants | searchUtil : searchText\">{{p.firstName}} {{p.lastNmae}}</li>\r\n</ul>\r\n<button type=\"button\" (click)=\"goBack()\">Go Back</button>\r\n"
 
 /***/ }),
 
@@ -737,12 +737,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
 
 
 
 var ParticipantSearchComponent = /** @class */ (function () {
-    function ParticipantSearchComponent(participantService) {
+    function ParticipantSearchComponent(participantService, location) {
         this.participantService = participantService;
+        this.location = location;
     }
     ParticipantSearchComponent.prototype.ngOnInit = function () {
         this.getParticipants();
@@ -751,11 +754,14 @@ var ParticipantSearchComponent = /** @class */ (function () {
         var _this = this;
         this.participantService.getAllParticipants(function () {
             _this.participants = JSON.parse(localStorage.getItem('participants'));
-            localStorage.removeItem('participants');
+            // localStorage.removeItem('participants');
             return;
         }, function (err) {
             console.log(err);
         });
+    };
+    ParticipantSearchComponent.prototype.goBack = function () {
+        this.location.back();
     };
     ParticipantSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -763,7 +769,8 @@ var ParticipantSearchComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./participant-search.component.html */ "./src/app/components/participant-search/participant-search.component.html"),
             styles: [__webpack_require__(/*! ./participant-search.component.css */ "./src/app/components/participant-search/participant-search.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
     ], ParticipantSearchComponent);
     return ParticipantSearchComponent;
 }());
