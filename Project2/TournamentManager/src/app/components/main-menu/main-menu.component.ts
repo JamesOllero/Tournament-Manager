@@ -17,13 +17,18 @@ export class MainMenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("in the ngoninit from main menu")
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'login';
+
   }
 
-  logout() {
-    localStorage.clear();
-    this.router.navigate([this.returnUrl]);
-    window.location.reload();
+  goToEventCreator() {
+    this.router.navigate(['/main/event/new']);
+  }
+
+  goToParticipantRegistry() {
+    this.router.navigate(['/main/participant/register']);
+  }
+
+  goToParticipantLookup() {
+    this.router.navigate(['/main/participant/search']);
   }
 }

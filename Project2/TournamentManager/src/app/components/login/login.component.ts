@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginSubmit() {
-    localStorage.setItem('testItem', JSON.stringify({username: this.username, password: this.password}));
+    // localStorage.setItem('testItem', JSON.stringify({username: this.username, password: this.password}));
     this.authService.authenticate(this.username, this.password,
       () => this.router.navigate([this.returnUrl]),
       (err) => {
