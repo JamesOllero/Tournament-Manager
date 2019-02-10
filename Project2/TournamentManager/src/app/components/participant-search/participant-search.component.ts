@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Participant} from "../../model/participant";
 import {ParticipantService} from "../../services/participant.service";
 import { SearchUtilPipe } from "../../pipes/search-util.pipe";
@@ -15,6 +15,7 @@ export class ParticipantSearchComponent implements OnInit {
     private participantService: ParticipantService,
     private location: Location
   ) { }
+  @Input()
   public searchText: string;
   public participant: Participant;
   ngOnInit() {
@@ -27,7 +28,7 @@ export class ParticipantSearchComponent implements OnInit {
         // localStorage.removeItem('participants');
         let i: number;
         for(i=0;i<participantArr.length;i++){
-          console.log(participantArr[i]);
+          participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;
         }
         this.participants = participantArr;
         return;
