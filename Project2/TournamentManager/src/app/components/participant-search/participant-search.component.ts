@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< master
 import { Component, OnInit, Input } from '@angular/core';
 import {Participant} from "../../model/participant";
@@ -7,6 +8,9 @@ import { Location } from "@angular/common";
 =======
 import { Component, OnInit } from '@angular/core';
 >>>>>>> Code Update
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> Joe
 
 @Component({
   selector: 'app-participant-search',
@@ -14,6 +18,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./participant-search.component.css']
 })
 export class ParticipantSearchComponent implements OnInit {
+<<<<<<< HEAD
 <<<<<<< master
   participants: Participant[];
   constructor(
@@ -48,11 +53,16 @@ export class ParticipantSearchComponent implements OnInit {
     this.location.back();
   }
 =======
+=======
+>>>>>>> Joe
 
   constructor() { }
 
   ngOnInit() {
   }
 
+<<<<<<< HEAD
 >>>>>>> Code Update
+=======
+>>>>>>> Joe
 }

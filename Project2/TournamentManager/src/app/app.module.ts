@@ -12,10 +12,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ContainerComponent } from './components/container/container.component';
 import { ParticipantSearchComponent } from './components/participant-search/participant-search.component';
+<<<<<<< HEAD
 <<<<<<< master
 import { SearchUtilPipe } from "./pipes/search-util.pipe";
 =======
 >>>>>>> Code Update
+=======
+>>>>>>> Joe
 
 @NgModule({
   declarations: [
@@ -27,12 +30,16 @@ import { SearchUtilPipe } from "./pipes/search-util.pipe";
     ParticipantRegisterComponent,
     NavigationComponent,
     ContainerComponent,
+<<<<<<< HEAD
 <<<<<<< master
     ParticipantSearchComponent,
     SearchUtilPipe
 =======
     ParticipantSearchComponent
 >>>>>>> Code Update
+=======
+    ParticipantSearchComponent
+>>>>>>> Joe
   ],
   imports: [
     BrowserModule,
