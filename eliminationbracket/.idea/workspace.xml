@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c05c192c-1207-4cc8-9cac-c2e43ba7ba94" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/spark_nov27_usf/Week7_J2EE_Angular/SOAPDemo/src/com/company/container/MinMaxException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/spark_nov27_usf/Week7_J2EE_Angular/SOAPDemo/src/com/company/container/TempConverterImpl.java" afterDir="false" />
@@ -311,6 +312,11 @@
       <change beforePath="$PROJECT_DIR$/project_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project_1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+=======
+    <list default="true" id="fbc3c2fd-1390-4b6e-9481-4353603f2d9a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ollero/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ollero/Main.java" afterDir="false" />
+>>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -324,10 +330,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/ollero/Main.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="120">
               <caret line="90" column="44" lean-forward="true" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
+=======
+            <state relative-caret-position="393">
+              <caret line="114" column="58" selection-start-line="114" selection-start-column="58" selection-end-line="114" selection-end-column="58" />
+>>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4287#4288#0" expanded="true" />
+                <element signature="e#4352#4353#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -336,6 +349,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/ollero/model/participant.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="119">
               <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="51" />
             </state>
@@ -356,6 +370,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+=======
+            <state relative-caret-position="408">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+>>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
             </state>
           </provider>
         </entry>
@@ -394,11 +412,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
+<<<<<<< HEAD
               <item name="spark_nov27_usf" type="b2602c69:ProjectViewProjectNode" />
               <item name="spark_nov27_usf" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -420,11 +442,28 @@
               <item name="ollero" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
+=======
+              <item name="eliminationbracket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliminationbracket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eliminationbracket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliminationbracket" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eliminationbracket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliminationbracket" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ollero" type="462c0819:PsiDirectoryNode" />
+            </path>
+>>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -470,20 +509,35 @@
       <created>1549672128022</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1549672128022</updated>
       <workItem from="1549672136528" duration="7082000" />
       <workItem from="1549741025906" duration="3353000" />
+=======
+      <updated>1549748214919</updated>
+      <workItem from="1549748219935" duration="142000" />
+      <workItem from="1549748434971" duration="517000" />
+      <workItem from="1549764336182" duration="1812000" />
+>>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="10435000" />
+=======
+    <option name="totallyTimeSpent" value="2471000" />
+>>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
+>>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -549,6 +603,7 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/org/ollero/model/Loser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -574,9 +629,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="90" column="44" lean-forward="true" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/org/ollero/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="114" column="58" selection-start-line="114" selection-start-column="58" selection-end-line="114" selection-end-column="58" />
+>>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4287#4288#0" expanded="true" />
+            <element signature="e#4352#4353#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ollero/model/participant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
         </state>
       </provider>
     </entry>
