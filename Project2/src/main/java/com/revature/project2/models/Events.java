@@ -15,8 +15,8 @@ public class Events {
     public Events() {
     }
 
-    public Events(int organizer, int playerNum, String eventType, String description, boolean in_Progress) {
-        this.organizer = organizer;
+    public Events(Organizers organizers, int playerNum, String eventType, String description, boolean in_Progress) {
+        this.organizers = organizers;
         this.playerNum = playerNum;
         EventType = eventType;
         Description = description;
@@ -27,7 +27,7 @@ public class Events {
     public String toString() {
         return "Events{" +
                 "id=" + id +
-                ", organizer=" + organizer +
+                ", organizers=" + organizers +
                 ", playerNum=" + playerNum +
                 ", EventType='" + EventType + '\'' +
                 ", Description='" + Description + '\'' +
@@ -40,11 +40,16 @@ public class Events {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-//    @OnDelete(set = null)
-//    @ManyToOne
-//    @JoinColumn(name = "ID")
-    @Column(name="organizer_id")
-    private int organizer;
+
+
+    //    @OnDelete(set = null)
+    @ManyToOne
+    @JoinColumn(name = "ORGANIZER_ID")
+    private Organizers organizers;
+//    @Column(name="organizer_id")
+
+
+//    private int organizer;
 
     @Column(name = "player_count")
     private int playerNum;
@@ -65,14 +70,14 @@ public class Events {
     public void setId(int id) {
         this.id = id;
     }
-
-    public int getOrganizer() {
-        return organizer;
-    }
-
-    public void setOrganizer(int organizer) {
-        this.organizer = organizer;
-    }
+//
+//    public int getOrganizer() {
+//        return organizer;
+//    }
+//
+//    public void setOrganizer(int organizer) {
+//        this.organizer = organizer;
+//    }
 
     public int
     getPlayerNum() {
@@ -107,7 +112,13 @@ public class Events {
         this.in_Progress = in_Progress;
     }
 
+    public Organizers getOrganizers() {
+        return organizers;
+    }
 
+    public void setOrganizers(Organizers organizers) {
+        this.organizers = organizers;
+    }
 }
 
 

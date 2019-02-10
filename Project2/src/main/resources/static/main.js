@@ -664,7 +664,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"participant-registration\">\r\n  <form (ngSubmit)=\"submitFinish()\" #participantForm=\"ngForm\">\r\n    <div>\r\n      <label for=\"firstName\">First Name: </label>\r\n      <input type=\"text\" id=\"firstName\" [(ngModel)]=\"newParticipant.firstName\" name=\"firstName\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"lastName\">Last Name: </label>\r\n      <input type=\"text\" id=\"lastName\" [(ngModel)]=\"newParticipant.lastName\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">Email: </label>\r\n      <input type=\"email\" id=\"email\" [(ngModel)]=\"newParticipant.email\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!participantForm.form.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n      <button type=\"button\" [disabled]=\"!participantForm.form.valid\" (click)=\"submitContinue()\">Submit and add Another</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "\r\n<div class=\"form-container\" id=\"participant-registration\">\r\n  <form (ngSubmit)=\"onSubmit()\" #participantForm=\"ngForm\">\r\n    <div>\r\n      <label for=\"firstName\">First Name: </label>\r\n      <input type=\"text\" id=\"firstName\" [(ngModel)]=\"newParticipant.firstName\" name=\"firstName\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"lastName\">Last Name: </label>\r\n      <input type=\"text\" id=\"lastName\" [(ngModel)]=\"newParticipant.lastName\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!participantForm.form.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1040,7 +1040,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Star\Desktop\project_2\project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })

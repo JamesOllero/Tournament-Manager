@@ -1,21 +1,36 @@
-<div class="form-container" id="participant-registration">
-  <form (ngSubmit)="submitFinish()" #participantForm="ngForm">
-    <div>
+
+<div class="bg-primary" id="html" >
+    <div class="row justify-content-center align-items-center" style="height:100vh">
+        <div class="col-4">
+            <div class="card mt-sm-3 mb-sm-5 " id="my-preview-div">
+<div  class="form-container w-400 p-3 h-150 " >
+  <h4  class=" pb-3 section one text-center ">Participant Registration</h4>
+  <form class="pb-3" (ngSubmit)="onSubmit()" #participantForm="ngForm">
+    <div class="form-group">
+      <!-- <button class=glyphicon-chevron-left></button>  -->
       <label for="firstName">First Name: </label>
-      <input type="text" id="firstName" [(ngModel)]="newParticipant.firstName" name="firstName" required>
+      <input type="text" class="form-control" placeholder= "Bobby"[(ngModel)]="newParticipant.firstName" required>
     </div>
-    <div>
+    <div class="form-group">
       <label for="lastName">Last Name: </label>
-      <input type="text" id="lastName" [(ngModel)]="newParticipant.lastName" required>
+      <input type="text" id="lastName"  class="form-control" placeholder= "Kernel"[(ngModel)]="newParticipant.lastName" name="lastName" required>
     </div>
-    <div>
-      <label for="email">Email: </label>
-      <input type="email" id="email" [(ngModel)]="newParticipant.email" required>
-    </div>
-    <div>
-      <button type="submit" [disabled]="!participantForm.form.valid">Submit</button>
-      <button type="reset">Reset</button>
-      <button type="button" [disabled]="!participantForm.form.valid" (click)="submitContinue()">Submit and add Another</button>
+  
+  <div class="form-group">
+    <label for="email">Email: </label>
+    <input type="email" id="email"  class="form-control" placeholder= "BobbyK@gmail.com"[(ngModel)]="newParticipant.email" name="lastName" required>
+  </div >
+    
+    <div class="btn-toolbar "> 
+      <button  class="btn btn-success btn-sm col " type="button" id="btn" [disabled]="!participantForm.form.valid"> Submit</button>
+    
+      <button  class="btn btn-danger btn-sm col "type="button" id="btn" >Reset</button>
+      <button  class="btn btn-info btn-sm col"  type="button" id="">Sumbit and add new participant</button>
     </div>
   </form>
 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
