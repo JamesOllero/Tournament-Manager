@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/eliminationbracket.iml" filepath="$PROJECT_DIR$/eliminationbracket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/random_manual_bracket.iml" filepath="$PROJECT_DIR$/.idea/random_manual_bracket.iml" />
     </modules>
   </component>
 </project>

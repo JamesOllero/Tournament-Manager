@@ -15,6 +15,8 @@ public class Main {
         participant p3 = new participant("Star");
         participant p4 = new participant("Joe");
         participant p5 = new participant("Christian");
+        //use this to call on the winner
+        String winner="";
 
         List<participant> participants = new ArrayList<>();
         List<participant> losers = new ArrayList<>();
@@ -30,122 +32,74 @@ public class Main {
         winners.addAll(participants);
         int round = 1;
 
+        //note: turn this while loop into a method to be called
         while (winners.size() + losers.size() > 2) {
-<<<<<<< HEAD
-            int random = (int) (Math.random() * winners.size());
-            int random2 = (int) (Math.random() * losers.size());
-            if (winners.size() % 2 == 1) {
-                winners.get(random).opponentname = "freewin";
-            }
+            matchmaking(winners);
+            matchmaking(losers);
 
-            if (losers.size() % 2 == 1) {
-                losers.get(random).opponentname = "freewin";
-            }
-=======
-            // If arrays have an odd amount of people in them
-            // For winner's array, choose a random person from the array
-            int random = (int) (Math.random() * winners.size());
-            // For loser's array, choose a random person from the array
-            int random2 = (int) (Math.random() * losers.size());
-            // If winner's array is odd, choose the random person to get a "bye"
-            if (winners.size() % 2 == 1) {
-                winners.get(random).opponentname = "freewin";
-            }
-
-            // If loser's array is odd, choose the random person to get a "bye"
-            if (losers.size() % 2 == 1) {
-                losers.get(random).opponentname = "freewin";
-            }
-
-            // for loop to get opponents
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
-
-            for (int i = 0; i < winners.size(); i++) {
-                if (winners.get(i).opponentname == "") {
-                    if (winners.get(i + 1).opponentname == "freewin") {
-                        winners.get(i).opponentname = winners.get(i + 2).username;
-                        winners.get(i + 2).opponentname = winners.get(i).username;
-                    } else {
-                        winners.get(i + 1).opponentname = winners.get(i).username;
-                        winners.get(i).opponentname = winners.get(i + 1).username;
-                    }
-                }
-            }
-
-<<<<<<< HEAD
-            for (int i = 0; i < losers.size(); i++) {
-                if (losers.get(i).opponentname == "") {
-                    if (losers.get(i + 1).opponentname == "freewin") {
-                        losers.get(i).opponentname = losers.get(i + 2).username;
-                        losers.get(i + 2).opponentname = losers.get(i).username;
-                    } else {
-                        losers.get(i + 1).opponentname = losers.get(i).username;
-                        losers.get(i).opponentname = losers.get(i + 1).username;
-                    }
-                }
-            }
-
-            for (int i = 0; i < winners.size(); i++) {
-                for (int j = i + 1; j < winners.size(); j++) {
-                    if (winners.get(i).opponentname == winners.get(j).username) {
-                        winners.get(i).compete(winners.get(j));
-                    }
-                }
-            }
-
-            for (int i = 0; i < losers.size(); i++) {
-                for (int j = i + 1; j < losers.size(); j++) {
-                    if (losers.get(i).opponentname == losers.get(j).username) {
-                        losers.get(i).compete(losers.get(j));
-                    }
-                }
-            }
-=======
             tourney(winners);
             tourney(losers);
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
 
-            for (int i = 0; i < winners.size(); i++) {
-                if (winners.get(i).wld > 0) {
-                    losers.add(winners.get(i));
-                }
-            }
-
-            for (int i = 0; i < losers.size(); i++) {
-                if (losers.get(i).wld > 1) {
-                    eliminated.add(losers.get(i));
-                }
-            }
-
-            winners.removeAll(losers);
-            losers.removeAll(eliminated);
+            cull(winners, losers, 0);
+            cull(losers, eliminated,1);
 
             System.out.println("Round" + round);
-<<<<<<< HEAD
-            System.out.println("Winners: " + winners.toString());
-            System.out.println("Losers: " + losers.toString());
-            System.out.println("Eliminated: " + eliminated.toString());
-=======
-            //System.out.println("Winners: " + winners.toString());
-
-            //System.out.println("Losers: " + losers.toString());
-            //System.out.println("Eliminated: " + eliminated.toString());
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
             System.out.println();
 
-            for (int i = 0; i < participants.size(); i++) {
-                participants.get(i).opponentname = "";
-                participants.get(i).score= (int)(Math.random() * 1000);
-            }
+            roundReset(participants);
+
             round++;
 
         }
-<<<<<<< HEAD
-=======
         System.out.println("Winner: " + winners.get(0).username);
         System.out.println("Loser's bracket winner: " + losers.get(0).username);
+
+        //Turn this to a method to be called when winners+losers==2
+        while(winners.size()+losers.size()>1){
+            if(winners.size() > 0){
+                losers.get(0).compete(winners.get(0));
+            }else{
+                losers.get(0).compete(losers.get(1));
+            }
+            cull(winners, losers, 0);
+            cull(losers, eliminated, 1);
+        }
+
+        for(int i=0; i < participants.size(); i++){
+            if(participants.get(i).wld < 2){
+                winner=participants.get(i).username;
+            }
+        }
+        System.out.println();
+        System.out.println("Tournament winner: "+winner);
+    }
+
+
+    //methods
+    public static void cull(List<participant> p1, List<participant>p2, int threshold){
+        for (int i = 0; i < p1.size(); i++) {
+            if (p1.get(i).wld > threshold) {
+                p2.add(p1.get(i));
+            }
+        }
+        p1.removeAll(p2);
+    }
+    public static void roundReset(List<participant> participants){
+        for(int i = 0; i < participants.size();i++){
+            participants.get(i).opponentname ="";
+            participants.get(i).score=(int)(Math.random()*1000);
+        }
+    }
+    public static void manual(participant p1, participant p2){
+        p1.opponentname=p2.username;
+        p2.opponentname=p1.username;
+    }
+
+    public static void autowin(participant p){
+        p.opponentname="freewin";
     }
     public static void matchmaking(List<participant> participants){
+        oddResolver(participants);
         for (int i = 0; i < participants.size(); i++) {
             //Prevent opponent reassignment
             if (participants.get(i).opponentname == "") {
@@ -172,7 +126,16 @@ public class Main {
         }
     }
     public static void oddResolver(List<participant>participants){
-        int rand = (int) (Math.random() * winners.size());
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
+        int rand = (int) (Math.random() * participants.size());
+        boolean freeSet = false;
+        if(participants.size() >1 &&participants.size()%2==1){
+            while(freeSet=false){
+                if(participants.get(rand).freewin==false){
+                    participants.get(rand).opponentname="freewin";
+                    participants.get(rand).freewin=true;
+                    freeSet=true;
+                }rand=(int)(Math.random()*participants.size());
+            }
+        }
     }
 }

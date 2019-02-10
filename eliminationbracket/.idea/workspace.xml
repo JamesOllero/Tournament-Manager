@@ -1,322 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="c05c192c-1207-4cc8-9cac-c2e43ba7ba94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/spark_nov27_usf/Week7_J2EE_Angular/SOAPDemo/src/com/company/container/MinMaxException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spark_nov27_usf/Week7_J2EE_Angular/SOAPDemo/src/com/company/container/TempConverterImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spark_nov27_usf/Week7_J2EE_Angular/SOAPDemo/src/com/company/container/tempConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/ollero/model/Loser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/src/main/java/com/ex/spark/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/src/main/java/com/ex/spark/data/UserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/src/main/java/com/ex/spark/data/UserDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/src/main/java/com/ex/spark/platform/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/src/main/java/com/ex/spark/platform/UserLoginFailure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/src/main/java/com/ex/spark/platform/UserLoginSuccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/src/main/java/com/ex/spark/pojos/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/src/main/java/com/ex/spark/services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/blogs/src/main/java/com/ex/spark/util/ConnectionUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/jdbcdemo/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/jdbcdemo/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/jdbcdemo/src/main/java/com/ex/spark/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/jdbcdemo/src/main/java/com/ex/spark/data/AlbumDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/jdbcdemo/src/main/java/com/ex/spark/data/ArtistDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/jdbcdemo/src/main/java/com/ex/spark/data/IAlbumDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/jdbcdemo/src/main/java/com/ex/spark/platform/MyApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/jdbcdemo/src/main/java/com/ex/spark/pojos/Album.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/jdbcdemo/src/main/java/com/ex/spark/services/AlbumService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week5_SQL_JDBC/jdbcdemo/src/main/java/com/ex/spark/util/ConnectionUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/JavaScript.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/db.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/games/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/games/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/games/styles/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/javascript/inde.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/javascript/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/todo/db.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/todo/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/todo/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week6_HTML_JS_CSS/todo/styles/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_Devops_Hibernate/hibernatedemo/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_Devops_Hibernate/hibernatedemo/src/main/java/com/spark/hibernate/entities/Bear.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_Devops_Hibernate/hibernatedemo/src/main/java/com/spark/hibernate/entities/Cave.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_Devops_Hibernate/hibernatedemo/src/main/java/com/spark/hibernate/entities/Honeypot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_Devops_Hibernate/hibernatedemo/src/main/java/com/spark/hibernate/launcher/Launcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/e2e/tsconfig.e2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/app/components/guest-form/guest-form.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/app/components/guest-form/guest-form.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/app/components/guest-form/guest-form.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/app/components/guest-form/guest-form.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/src/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-forms/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/db.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/e2e/tsconfig.e2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/components/title/title.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/components/title/title.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/components/title/title.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/components/title/title.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-detail/todo-detail.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-detail/todo-detail.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-detail/todo-detail.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-detail/todo-detail.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-edit/todo-edit.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-edit/todo-edit.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-edit/todo-edit.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-edit/todo-edit.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-item/todo-item.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-item/todo-item.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-item/todo-item.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-item/todo-item.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-list/todo-list.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-list/todo-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-list/todo-list.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/components/todo-list/todo-list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/model/todo.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/services/todo-detail.resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/services/todo.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/services/todo.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/todos-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/todos.module.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/app/todos/todos.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/src/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/angular-todo/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/db.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/e2e/tsconfig.e2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/home/home.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/home/home.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/home/home.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/login/login.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/login/login.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/login/login.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/login/login.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/nav/nav.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/nav/nav.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/nav/nav.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/components/nav/nav.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/services/auth-guard.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/services/auth-guard.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/services/auth.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/app/services/auth.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/src/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-app/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/login-demo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/java/com/spark/ex/data/UserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/java/com/spark/ex/data/UserDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/java/com/spark/ex/pojos/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/java/com/spark/ex/services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/java/com/spark/ex/util/ConnectionUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/java/com/spark/ex/web/ContextListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/java/com/spark/ex/web/LoginServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/3rdpartylicenses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/polyfills.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/polyfills.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/runtime.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/styles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/styles.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/vendor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/src/main/webapp/vendor.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/classes/com/spark/ex/data/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/classes/com/spark/ex/data/UserDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/classes/com/spark/ex/pojos/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/classes/com/spark/ex/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/classes/com/spark/ex/util/ConnectionUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/classes/com/spark/ex/web/ContextListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/classes/com/spark/ex/web/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/3rdpartylicenses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/classes/com/spark/ex/data/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/classes/com/spark/ex/data/UserDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/classes/com/spark/ex/pojos/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/classes/com/spark/ex/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/classes/com/spark/ex/util/ConnectionUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/classes/com/spark/ex/web/ContextListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/classes/com/spark/ex/web/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/lib/jackson-annotations-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/lib/jackson-core-2.9.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/lib/jackson-databind-2.9.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/lib/javax.servlet-api-3.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/lib/postgresql-42.2.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/polyfills.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/polyfills.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/runtime.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/styles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/styles.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/vendor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/login-demo/target/login/vendor.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/todowebapp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/todowebapp/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/todowebapp/src/main/java/com/spark/ex/pojos/Todo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/todowebapp/src/main/java/com/spark/ex/web/ContextConfigServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/todowebapp/src/main/java/com/spark/ex/web/DemoServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/todowebapp/src/main/java/com/spark/ex/web/TodoServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/todowebapp/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/todowebapp/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/webpack_babbel/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/webpack_babbel/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/webpack_babbel/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/webpack_babbel/src/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/webpack_babbel/src/person.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/webpack_babbel/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week7_J2EE_Angular/webpack_babbel/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/src/main/java/com/ex/aopdemo/AopDemoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/src/main/java/com/ex/aopdemo/aspects/EventAspects.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/src/main/java/com/ex/aopdemo/domain/AmusementPark.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/src/main/java/com/ex/aopdemo/domain/Concert.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/src/main/java/com/ex/aopdemo/domain/Event.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/src/main/java/com/ex/aopdemo/domain/NonEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/src/main/java/com/ex/aopdemo/domain/Play.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/src/main/java/com/ex/aopdemo/services/EventServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/aop-demo/src/test/java/com/ex/aopdemo/AopDemoApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/src/main/java/com/spark/boothelloworld/BootHelloWorldApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/src/main/java/com/spark/boothelloworld/MyComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/src/main/java/com/spark/boothelloworld/MyComponentConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/boot-hello-world/src/test/java/com/spark/boothelloworld/BootHelloWorldApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/src/main/java/com/spark/web/webdemo/WebDemoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/src/main/java/com/spark/web/webdemo/controllers/TodoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/src/main/java/com/spark/web/webdemo/data/TodoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/src/main/java/com/spark/web/webdemo/data/TodoRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/src/main/java/com/spark/web/webdemo/models/Todo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/src/main/java/com/spark/web/webdemo/services/TodoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/src/main/resources/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week8_Spring/web-demo/src/test/java/com/spark/web/webdemo/WebDemoApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/file" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitflow/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/ers-client/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_1/ers-client/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/target/EmployeeReimbursementSystem/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/target/EmplyeeReimbursmentSystem.war" beforeDir="false" afterPath="$PROJECT_DIR$/project_1/target/EmplyeeReimbursmentSystem.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/target/EmplyeeReimbursmentSystem/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_1/target/EmplyeeReimbursmentSystem/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/target/EmplyeeReimbursmentSystem/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/project_1/target/EmplyeeReimbursmentSystem/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-=======
-    <list default="true" id="fbc3c2fd-1390-4b6e-9481-4353603f2d9a" name="Default Changelist" comment="">
+    <list default="true" id="f1db1632-c2ae-4d4b-bcfd-0f2cab50033d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/ollero/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ollero/Main.java" afterDir="false" />
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
+      <change beforePath="$PROJECT_DIR$/src/org/ollero/model/participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ollero/model/participant.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -326,85 +20,47 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/ollero/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="120">
-              <caret line="90" column="44" lean-forward="true" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
-=======
-            <state relative-caret-position="393">
-              <caret line="114" column="58" selection-start-line="114" selection-start-column="58" selection-end-line="114" selection-end-column="58" />
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
+            <state relative-caret-position="2295">
+              <caret line="139" column="5" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="139" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4287#4288#0" expanded="true" />
-                <element signature="e#4352#4353#0" expanded="true" />
+                <element signature="e#2364#2365#0" expanded="true" />
+                <element signature="e#2393#2394#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/ollero/model/participant.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="119">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/ollero/model/Winner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/ollero/model/Loser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-=======
-            <state relative-caret-position="408">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
+            <state relative-caret-position="323">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/ollero/model/Winner.java" />
         <option value="$PROJECT_DIR$/src/org/ollero/model/participant.java" />
-        <option value="$PROJECT_DIR$/src/org/ollero/model/Loser.java" />
         <option value="$PROJECT_DIR$/src/org/ollero/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="57" />
-    <option name="y" value="38" />
-    <option name="width" value="336" />
-    <option name="height" value="216" />
+    <option name="x" value="599" />
+    <option name="y" value="-17" />
+    <option name="width" value="734" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -412,64 +68,45 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
+      <pane id="PackagesPane" />
       <pane id="Scope" />
-=======
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-<<<<<<< HEAD
-              <item name="spark_nov27_usf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spark_nov27_usf" type="462c0819:PsiDirectoryNode" />
+              <item name="eliminationbracket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliminationbracket" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spark_nov27_usf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spark_nov27_usf" type="462c0819:PsiDirectoryNode" />
+              <item name="eliminationbracket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliminationbracket" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spark_nov27_usf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spark_nov27_usf" type="462c0819:PsiDirectoryNode" />
+              <item name="eliminationbracket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliminationbracket" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ollero" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spark_nov27_usf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spark_nov27_usf" type="462c0819:PsiDirectoryNode" />
+              <item name="eliminationbracket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliminationbracket" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ollero" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
-=======
-              <item name="eliminationbracket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eliminationbracket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eliminationbracket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eliminationbracket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eliminationbracket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eliminationbracket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ollero" type="462c0819:PsiDirectoryNode" />
-            </path>
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549744416768" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549836208642" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -483,172 +120,93 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="org.ollero.Main" />
-      <module name="spark_nov27_usf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c05c192c-1207-4cc8-9cac-c2e43ba7ba94" name="Default Changelist" comment="" />
-      <created>1549672128022</created>
+      <changelist id="f1db1632-c2ae-4d4b-bcfd-0f2cab50033d" name="Default Changelist" comment="" />
+      <created>1549826342114</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-<<<<<<< HEAD
-      <updated>1549672128022</updated>
-      <workItem from="1549672136528" duration="7082000" />
-      <workItem from="1549741025906" duration="3353000" />
-=======
-      <updated>1549748214919</updated>
-      <workItem from="1549748219935" duration="142000" />
-      <workItem from="1549748434971" duration="517000" />
-      <workItem from="1549764336182" duration="1812000" />
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
+      <updated>1549826342114</updated>
+      <workItem from="1549826343775" duration="3618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="10435000" />
-=======
-    <option name="totallyTimeSpent" value="2471000" />
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
+    <option name="totallyTimeSpent" value="3618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-<<<<<<< HEAD
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
-=======
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12708019" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/org/ollero/model/Loser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ollero/model/Winner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ollero/model/participant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/ollero/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="90" column="44" lean-forward="true" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/org/ollero/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="114" column="58" selection-start-line="114" selection-start-column="58" selection-end-line="114" selection-end-column="58" />
->>>>>>> parent of c60912a... starting work on Hibernate+Angular integration of Standard Brackets
+        <state relative-caret-position="2295">
+          <caret line="139" column="5" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="139" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4287#4288#0" expanded="true" />
-            <element signature="e#4352#4353#0" expanded="true" />
+            <element signature="e#2364#2365#0" expanded="true" />
+            <element signature="e#2393#2394#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/ollero/model/participant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

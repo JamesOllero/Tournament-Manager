@@ -9,6 +9,8 @@ public class participant {
     public participant(){ }
     public int score = (int)(Math.random() * 1000);
     public int wld = 0;
+    //shows whether a participant already had a free win this tournament
+    public boolean freewin=false;
 
     @Override
     public String toString() {
