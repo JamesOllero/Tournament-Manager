@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Participant} from "../../model/participant";
 import {ParticipantService} from "../../services/participant.service";
+import { SearchUtilPipe } from "../../pipes/search-util.pipe";
 
 @Component({
   selector: 'app-participant-search',
@@ -19,8 +20,13 @@ export class ParticipantSearchComponent implements OnInit {
   getParticipants() {
     this.participantService.getAllParticipants(
       () => {
-        this.participants = JSON.parse(localStorage.getItem('participants'));
-        localStorage.removeItem('participants');
+        let participantArr = JSON.parse(localStorage.getItem('participants'));
+        // localStorage.removeItem('participants');
+        let i: number;
+        for(i=0;i<participantArr.length;i++){
+          console.log(participantArr[i]);
+        }
+        this.participants = participantArr;
         return;
       },
       (err) => {

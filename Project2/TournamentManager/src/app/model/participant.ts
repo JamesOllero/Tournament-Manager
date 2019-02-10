@@ -1,5 +1,5 @@
 export class Participant {
-  id: number;
+  player_Id: number;
   firstName: string;
   lastName: string;
   wins: number;

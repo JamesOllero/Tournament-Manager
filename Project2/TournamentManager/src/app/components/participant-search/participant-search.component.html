@@ -1,4 +1,4 @@
 <input [(ngModel)]="searchText" placeholder="Participant Name">
 <ul>
-  <li *ngFor="let p of participants | filter : searchText">{{p.firstName}} {{p.lastNmae}}</li>
+  <li *ngFor="let p of participants">{{p.firstName}} {{p.lastName}}</li>
 </ul>
