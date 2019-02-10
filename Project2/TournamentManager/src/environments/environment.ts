@@ -7,20 +7,24 @@ export const environment = {
   apiUrl: "http://localhost:3000",
   navigator: [
     {
+      title: 'Main Menu',
+      link: 'main/menu'
+    },
+    {
       title: 'Create Event',
-      link: 'main/event/new'
+      link: 'event/new'
     },
     {
       title: 'Create Account',
-      link: 'main/account/register'
+      link: 'account/register'
     },
     {
       title: 'Register New Participant',
-      link: 'main/participant/register'
+      link: 'participant/register'
     },
     {
       title: 'View In-Progress Events',
-      link: 'main/event/active'
+      link: 'event/active'
     }
   ]
 };
