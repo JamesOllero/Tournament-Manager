@@ -32,4 +32,8 @@ export class LoginComponent implements OnInit {
       });
   }
 
+  accountCreation(){
+    this.router.navigate(['/registration']);
+  }
+
 }

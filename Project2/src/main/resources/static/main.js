@@ -43,6 +43,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/new-event/new-event.component */ "./src/app/components/new-event/new-event.component.ts");
 /* harmony import */ var _components_participant_register_participant_register_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/participant-register/participant-register.component */ "./src/app/components/participant-register/participant-register.component.ts");
 /* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
+/* harmony import */ var _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/account-creation/account-creation.component */ "./src/app/components/account-creation/account-creation.component.ts");
+
 
 
 
@@ -91,6 +93,10 @@ var routes = [
                 pathMatch: 'full'
             }
         ]
+    },
+    {
+        path: 'registration',
+        component: _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__["AccountCreationComponent"]
     },
     {
         path: 'login',
@@ -196,14 +202,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/navigation/navigation.component */ "./src/app/components/navigation/navigation.component.ts");
 /* harmony import */ var _components_container_container_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/container/container.component */ "./src/app/components/container/container.component.ts");
 /* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
-<<<<<<< HEAD
-<<<<<<< master
 /* harmony import */ var _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pipes/search-util.pipe */ "./src/app/pipes/search-util.pipe.ts");
 
-=======
->>>>>>> Code Update
-=======
->>>>>>> Joe
 
 
 
@@ -233,16 +233,8 @@ var AppModule = /** @class */ (function () {
                 _components_participant_register_participant_register_component__WEBPACK_IMPORTED_MODULE_10__["ParticipantRegisterComponent"],
                 _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_12__["NavigationComponent"],
                 _components_container_container_component__WEBPACK_IMPORTED_MODULE_13__["ContainerComponent"],
-<<<<<<< HEAD
-<<<<<<< master
                 _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__["ParticipantSearchComponent"],
                 _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__["SearchUtilPipe"]
-=======
-                _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__["ParticipantSearchComponent"]
->>>>>>> Code Update
-=======
-                _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__["ParticipantSearchComponent"]
->>>>>>> Joe
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -279,7 +271,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"participant-registration\">\r\n  <form (ngSubmit)=\"onSubmit()\" #organizerForm=\"ngForm\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" id=\"username\" [(ngModel)]=\"newOrganizer.username\" name=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Last Name: </label>\r\n      <input type=\"password\" id=\"password\" [(ngModel)]=\"newOrganizer.password\" name=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"email\" id=\"email\" [(ngModel)]=\"newOrganizer.email\" name=\"email\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!organizerForm.form.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"organizer-registration\">\r\n  <form (ngSubmit)=\"onSubmit()\" novalidate #organizerForm=\"ngForm\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" id=\"username\" [(ngModel)]=\"newOrganizer.username\" name=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Last Name: </label>\r\n      <input type=\"password\" id=\"password\" [(ngModel)]=\"newOrganizer.password\" name=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"email\" id=\"email\" [(ngModel)]=\"newOrganizer.email\" name=\"email\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!organizerForm.form.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -401,7 +393,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"login-form\">\r\n  <form #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n    <div>\r\n      <input type=\"text\" name=\"user_email\" placeholder=\"email\" [(ngModel)]=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <input type=\"password\" name=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"login-form\">\r\n  <form #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n    <div>\r\n      <input type=\"text\" name=\"user_email\" placeholder=\"email\" [(ngModel)]=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <input type=\"password\" name=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n  <button (click)=\"accountCreation()\">Register an Account</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -439,6 +431,9 @@ var LoginComponent = /** @class */ (function () {
             console.log("Username/Password pair not found");
             console.log(err);
         });
+    };
+    LoginComponent.prototype.accountCreation = function () {
+        this.router.navigate(['/registration']);
     };
     LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -724,15 +719,7 @@ var ParticipantRegisterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
-<<<<<<< master
 module.exports = "ul {\r\n  list-style: none;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wYXJ0aWNpcGFudC1zZWFyY2gvcGFydGljaXBhbnQtc2VhcmNoLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBZ0I7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3BhcnRpY2lwYW50LXNlYXJjaC9wYXJ0aWNpcGFudC1zZWFyY2guY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInVsIHtcclxuICBsaXN0LXN0eWxlOiBub25lO1xyXG59XHJcbiJdfQ== */"
-=======
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGFydGljaXBhbnQtc2VhcmNoL3BhcnRpY2lwYW50LXNlYXJjaC5jb21wb25lbnQuY3NzIn0= */"
->>>>>>> Code Update
-=======
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGFydGljaXBhbnQtc2VhcmNoL3BhcnRpY2lwYW50LXNlYXJjaC5jb21wb25lbnQuY3NzIn0= */"
->>>>>>> Joe
 
 /***/ }),
 
@@ -743,15 +730,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
-<<<<<<< master
-module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<table>\r\n  <tr>\r\n    <th>Id</th><th>Name</th>\r\n  </tr>\r\n  <tr *ngFor=\"let p of participants | searchUtil : 'name' : searchText; let i = index\">\r\n    <td>{{p.player_Id}}</td>\r\n    <td>{{p.firstName}} {{p.lastName}}</td>\r\n  </tr>\r\n</table>\r\n<button type=\"button\" (click)=\"goBack()\">Go Back</button>\r\n"
-=======
-module.exports = "<p>\n  participant-search works!\n</p>\n"
->>>>>>> Code Update
-=======
-module.exports = "<p>\n  participant-search works!\n</p>\n"
->>>>>>> Joe
+module.exports = "<<<<<<< HEAD\r\n<<<<<<< master\r\n<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<table>\r\n  <tr>\r\n    <th>Id</th><th>Name</th>\r\n  </tr>\r\n  <tr *ngFor=\"let p of participants | searchUtil : 'name' : searchText; let i = index\">\r\n    <td>{{p.player_Id}}</td>\r\n    <td>{{p.firstName}} {{p.lastName}}</td>\r\n  </tr>\r\n</table>\r\n<button type=\"button\" (click)=\"goBack()\">Go Back</button>\r\n=======\r\n<p>\r\n  participant-search works!\r\n</p>\r\n>>>>>>> Code Update\r\n=======\r\n<p>\r\n  participant-search works!\r\n</p>\r\n>>>>>>> Joe\r\n"
 
 /***/ }),
 
@@ -767,8 +746,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ParticipantSearchComponent", function() { return ParticipantSearchComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-<<<<<<< HEAD
-<<<<<<< master
 /* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 
@@ -805,36 +782,14 @@ var ParticipantSearchComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
     ], ParticipantSearchComponent.prototype, "searchText", void 0);
-=======
-=======
->>>>>>> Joe
-
-
-var ParticipantSearchComponent = /** @class */ (function () {
-    function ParticipantSearchComponent() {
-    }
-    ParticipantSearchComponent.prototype.ngOnInit = function () {
-    };
-<<<<<<< HEAD
->>>>>>> Code Update
-=======
->>>>>>> Joe
     ParticipantSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-participant-search',
             template: __webpack_require__(/*! ./participant-search.component.html */ "./src/app/components/participant-search/participant-search.component.html"),
             styles: [__webpack_require__(/*! ./participant-search.component.css */ "./src/app/components/participant-search/participant-search.component.css")]
         }),
-<<<<<<< HEAD
-<<<<<<< master
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"],
             _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
-=======
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
->>>>>>> Code Update
-=======
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
->>>>>>> Joe
     ], ParticipantSearchComponent);
     return ParticipantSearchComponent;
 }());
@@ -843,8 +798,6 @@ var ParticipantSearchComponent = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< master
 /***/ "./src/app/pipes/search-util.pipe.ts":
 /*!*******************************************!*\
   !*** ./src/app/pipes/search-util.pipe.ts ***!
@@ -883,10 +836,6 @@ var SearchUtilPipe = /** @class */ (function () {
 
 /***/ }),
 
-=======
->>>>>>> Code Update
-=======
->>>>>>> Joe
 /***/ "./src/app/services/Auth/auth.service.ts":
 /*!***********************************************!*\
   !*** ./src/app/services/Auth/auth.service.ts ***!
@@ -1049,10 +998,6 @@ var environment = {
             link: 'event/new'
         },
         {
-            title: 'Create Account',
-            link: 'account/register'
-        },
-        {
             title: 'Register New Participant',
             link: 'participant/register'
         },
@@ -1107,7 +1052,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })
