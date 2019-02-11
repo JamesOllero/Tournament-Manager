@@ -17,6 +17,7 @@ export class NavigationComponent implements OnInit {
   returnUrl: string;
   ngOnInit() {
     this.returnUrl = 'logout';
+
   }
   logout() {
     localStorage.clear();
