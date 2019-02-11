@@ -426,7 +426,7 @@ var LoginComponent = /** @class */ (function () {
         this.route = route;
     }
     LoginComponent.prototype.ngOnInit = function () {
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/login';
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     };
     LoginComponent.prototype.loginSubmit = function () {
         var _this = this;
@@ -537,7 +537,7 @@ var MainMenuComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ul {\r\n  list-style: none;\r\n  border-bottom: 1px solid #bbbb;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nli {\r\n  display: inline-block;\r\n  margin-right: 20px;\r\n}\r\n\r\nnav{\r\nz-index:1;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uYXZpZ2F0aW9uL25hdmlnYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQiw4QkFBOEI7RUFDOUIsU0FBUztFQUNULFVBQVU7QUFDWjs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixrQkFBa0I7QUFDcEI7O0FBQ0E7QUFDQSxTQUFTO0FBQ1QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL25hdmlnYXRpb24vbmF2aWdhdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidWwge1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiYmJiO1xyXG4gIG1hcmdpbjogMDtcclxuICBwYWRkaW5nOiAwO1xyXG59XHJcblxyXG5saSB7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIG1hcmdpbi1yaWdodDogMjBweDtcclxufVxyXG5uYXZ7XHJcbnotaW5kZXg6MTtcclxufVxyXG4iXX0= */"
+module.exports = "ul {\r\n  list-style: none;\r\n  border-bottom: 1px solid #bbbb;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nli {\r\n  display: inline-block;\r\n  margin-right: 20px;\r\n}\r\n\r\nnav{\r\nz-index: 10;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uYXZpZ2F0aW9uL25hdmlnYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQiw4QkFBOEI7RUFDOUIsU0FBUztFQUNULFVBQVU7QUFDWjs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixrQkFBa0I7QUFDcEI7O0FBQ0E7QUFDQSxXQUFXO0FBQ1giLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL25hdmlnYXRpb24vbmF2aWdhdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidWwge1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiYmJiO1xyXG4gIG1hcmdpbjogMDtcclxuICBwYWRkaW5nOiAwO1xyXG59XHJcblxyXG5saSB7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIG1hcmdpbi1yaWdodDogMjBweDtcclxufVxyXG5uYXZ7XHJcbnotaW5kZXg6IDEwO1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -548,7 +548,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n  border-bottom: 1px solid #bbb
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar fixed-top navbar-expand-sm navbar-light bg-white\">\r\n  <ul>\r\n    <li *ngFor=\"let item of navItems\">\r\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n    </li>\r\n    <button (click)=\"logout()\">Logout</button>\r\n  </ul>\r\n</nav>\r\n"
+module.exports = "<nav>\r\n  <ul>\r\n    <li *ngFor=\"let item of navItems\">\r\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n    </li>\r\n    <button (click)=\"logout()\">Logout</button>\r\n  </ul>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -678,7 +678,7 @@ module.exports = ".margin-left{\r\n    margin-left: 40px !important;\r\n}\r\n#bt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"bg-primary\" id=\"shiftdown\" >\r\n  <div class=\"row justify-content-center align-items-center\" style=\"height:100vh\">\r\n    <div class=\"col-4\">\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n        <div class=\"form-container w-400 p-3 h-150 \" >\r\n            <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h4 class=\" pb-3 section one text-center \">Participant Registration</h4>\r\n          <form class=\"pb-3\" (ngSubmit)=\"onSubmit()\" #participantForm=\"ngForm\">\r\n            <div class=\"form-group\">\r\n              <label for=\"firstName\">First Name: </label>\r\n              <input type=\"text\" class=\"form-control\" placeholder= \"Bobby\"[(ngModel)]=\"newParticipant.firstName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"lastName\">Last Name: </label>\r\n              <input type=\"text\" id=\"lastName\"  class=\"form-control\" placeholder= \"Kernel\"[(ngModel)]=\"newParticipant.lastName\" name=\"lastName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"email\">Email: </label>\r\n              <input type=\"email\" id=\"email\"  class=\"form-control\" placeholder= \"BobbyK@gmail.com\"[(ngModel)]=\"newParticipant.email\" name=\"lastName\" required>\r\n            </div>\r\n            <div class=\"btn-toolbar \"> \r\n              <button  class=\"btn btn-success btn-sm col \" type=\"button\" id=\"btn\" [disabled]=\"!participantForm.form.valid\"> Submit</button>\r\n              <button  class=\"btn btn-danger btn-sm col \"type=\"button\" id=\"btn\" >Reset</button>\r\n              <button  class=\"btn btn-info btn-sm col\"  type=\"button\" id=\"\">Sumbit and add new participant</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"bg-primary\" id=\"shiftdown\" >\r\n  <div class=\"row justify-content-center align-items-center\" style=\"height:100vh\">\r\n    <div class=\"col-4\">\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n        <div class=\"form-container w-400 p-3 h-150 \" >\r\n            <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h4 class=\" pb-3 section one text-center \">Participant Registration</h4>\r\n          <form class=\"pb-3\" #participantForm=\"ngForm\">\r\n            <div class=\"form-group\">\r\n              <label for=\"firstName\">First Name: </label>\r\n              <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder= \"Bobby\"[(ngModel)]=\"newParticipant.firstName\" name=\"firstName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"lastName\">Last Name: </label>\r\n              <input type=\"text\" id=\"lastName\"  class=\"form-control\" placeholder= \"Kernel\"[(ngModel)]=\"newParticipant.lastName\" name=\"lastName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"email\">Email: </label>\r\n              <input type=\"email\" id=\"email\"  class=\"form-control\" placeholder= \"BobbyK@gmail.com\"[(ngModel)]=\"newParticipant.email\" name=\"email\" required>\r\n            </div>\r\n            <div class=\"btn-toolbar \"> \r\n              <button  class=\"btn btn-success btn-sm col \" type=\"button\" id=\"submit\" (click)=\"createReturn()\" [disabled]=\"!participantForm.form.valid\"> Submit</button>\r\n              <button  class=\"btn btn-danger btn-sm col \"type=\"button\" id=\"reset\" >Reset</button>\r\n              <button  class=\"btn btn-info btn-sm col\"  type=\"button\" id=\"loop\" (click)=\"createContinue(participantForm)\">Sumbit and add new participant</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -715,7 +715,8 @@ var ParticipantRegisterComponent = /** @class */ (function () {
     };
     ParticipantRegisterComponent.prototype.createReturn = function () {
         var _this = this;
-        this.participantService.registerParticipant(this.newParticipant, function () {
+        localStorage.setItem('newParticipant', JSON.stringify(this.newParticipant));
+        this.participantService.registerParticipant(function () {
             _this.location.back();
         }, function (err) {
             console.log(err);
@@ -723,7 +724,8 @@ var ParticipantRegisterComponent = /** @class */ (function () {
     };
     ParticipantRegisterComponent.prototype.createContinue = function (participantForm) {
         var _this = this;
-        this.participantService.registerParticipant(this.newParticipant, function () {
+        localStorage.setItem('newParticipant', JSON.stringify(this.newParticipant));
+        this.participantService.registerParticipant(function () {
             _this.newParticipant = new _model_participant__WEBPACK_IMPORTED_MODULE_2__["Participant"];
             participantForm.resetForm();
         }, function (err) {
@@ -764,7 +766,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n}\r\n\r\n/*# sourceMappingURL=d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<ul>\r\n  <li *ngFor=\"let p of participants\">{{p.firstName}} {{p.lastName}}</li>\r\n</ul>\r\n"
+module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<table>\r\n  <tr>\r\n    <th>Id</th><th>Name</th>\r\n  </tr>\r\n  <tr *ngFor=\"let p of participants | searchUtil : 'name' : searchText; let i = index\">\r\n    <td>{{p.player_Id}}</td>\r\n    <td>{{p.firstName}} {{p.lastName}}</td>\r\n  </tr>\r\n</table>\r\n<button type=\"button\" (click)=\"goBack()\">Go Back</button>\r\n"
 
 /***/ }),
 
@@ -798,7 +800,7 @@ var ParticipantSearchComponent = /** @class */ (function () {
         var _this = this;
         this.participantService.getAllParticipants(function () {
             var participantArr = JSON.parse(localStorage.getItem('participants'));
-            // localStorage.removeItem('participants');
+            localStorage.removeItem('participants');
             var i;
             for (i = 0; i < participantArr.length; i++) {
                 participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;
@@ -1013,8 +1015,13 @@ var ParticipantService = /** @class */ (function () {
             fail(err);
         });
     };
-    ParticipantService.prototype.registerParticipant = function (newParticipant, success, fail) {
-        return this.http.post(this.participantUrl + '/addplayer', JSON.stringify(newParticipant)).toPromise()
+    ParticipantService.prototype.registerParticipant = function (success, fail) {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+            'Content-Type': 'application/json'
+        });
+        var options = { headers: headers };
+        var newParticipant = JSON.parse(localStorage.getItem('newParticipant'));
+        return this.http.post(this.participantUrl + '/addplayer', JSON.stringify(newParticipant), options).toPromise()
             .then(function (resp) {
             success();
         }, function (err) {
@@ -1114,7 +1121,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })
