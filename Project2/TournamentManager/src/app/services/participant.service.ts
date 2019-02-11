@@ -35,6 +35,6 @@ export class ParticipantService {
       },
         (err) => {
         fail(err);
-        })
+        });
   }
 }
