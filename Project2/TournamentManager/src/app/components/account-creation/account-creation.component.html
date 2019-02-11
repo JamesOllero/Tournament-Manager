@@ -1,5 +1,5 @@
-<div class="form-container" id="participant-registration">
-  <form (ngSubmit)="onSubmit()" #organizerForm="ngForm">
+<div class="form-container" id="organizer-registration">
+  <form (ngSubmit)="onSubmit()" novalidate #organizerForm="ngForm">
     <div>
       <label for="username">Username: </label>
       <input type="text" id="username" [(ngModel)]="newOrganizer.username" name="username" required>

@@ -7,6 +7,7 @@ import {ContainerComponent} from "./components/container/container.component";
 import {NewEventComponent} from "./components/new-event/new-event.component";
 import {ParticipantRegisterComponent} from "./components/participant-register/participant-register.component";
 import {ParticipantSearchComponent} from "./components/participant-search/participant-search.component";
+import {AccountCreationComponent} from "./components/account-creation/account-creation.component";
 
 const routes: Routes = [
   {
@@ -52,6 +53,10 @@ const routes: Routes = [
   //   path:'',
   //   component: ParticipantRegisterComponent
   // },
+  {
+    path: 'registration',
+    component: AccountCreationComponent
+  },
   {
     path: 'login',
     component: LoginComponent

@@ -43,6 +43,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/new-event/new-event.component */ "./src/app/components/new-event/new-event.component.ts");
 /* harmony import */ var _components_participant_register_participant_register_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/participant-register/participant-register.component */ "./src/app/components/participant-register/participant-register.component.ts");
 /* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
+/* harmony import */ var _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/account-creation/account-creation.component */ "./src/app/components/account-creation/account-creation.component.ts");
+
 
 
 
@@ -97,6 +99,10 @@ var routes = [
     //   component: ParticipantRegisterComponent
     // },
     {
+        path: 'registration',
+        component: _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__["AccountCreationComponent"]
+    },
+    {
         path: 'login',
         component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"]
     },
@@ -139,7 +145,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -269,7 +275,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"participant-registration\">\r\n  <form (ngSubmit)=\"onSubmit()\" #organizerForm=\"ngForm\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" id=\"username\" [(ngModel)]=\"newOrganizer.username\" name=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Last Name: </label>\r\n      <input type=\"password\" id=\"password\" [(ngModel)]=\"newOrganizer.password\" name=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"email\" id=\"email\" [(ngModel)]=\"newOrganizer.email\" name=\"email\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!organizerForm.form.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"organizer-registration\">\r\n  <form (ngSubmit)=\"onSubmit()\" novalidate #organizerForm=\"ngForm\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" id=\"username\" [(ngModel)]=\"newOrganizer.username\" name=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Last Name: </label>\r\n      <input type=\"password\" id=\"password\" [(ngModel)]=\"newOrganizer.password\" name=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"email\" id=\"email\" [(ngModel)]=\"newOrganizer.email\" name=\"email\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!organizerForm.form.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -426,8 +432,12 @@ var LoginComponent = /** @class */ (function () {
         var _this = this;
         // localStorage.setItem('testItem', JSON.stringify({username: this.username, password: this.password}));
         this.authService.authenticate(this.username, this.password, function () { return _this.router.navigate([_this.returnUrl]); }, function (err) {
+            console.log("Username/Password pair not found");
             console.log(err);
         });
+    };
+    LoginComponent.prototype.accountCreation = function () {
+        this.router.navigate(['/registration']);
     };
     LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -684,12 +694,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ParticipantRegisterComponent", function() { return ParticipantRegisterComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_participant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../model/participant */ "./src/app/model/participant.ts");
+/* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
+
+
 
 
 var ParticipantRegisterComponent = /** @class */ (function () {
-    function ParticipantRegisterComponent() {
+    function ParticipantRegisterComponent(participantService, location) {
+        this.participantService = participantService;
+        this.location = location;
+        this.newParticipant = new _model_participant__WEBPACK_IMPORTED_MODULE_2__["Participant"];
     }
     ParticipantRegisterComponent.prototype.ngOnInit = function () {
+        this.newParticipant.firstName = '';
+        this.newParticipant.lastName = '';
+        this.newParticipant.email = '';
+    };
+    ParticipantRegisterComponent.prototype.createReturn = function () {
+        var _this = this;
+        this.participantService.registerParticipant(this.newParticipant, function () {
+            _this.location.back();
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    ParticipantRegisterComponent.prototype.createContinue = function (participantForm) {
+        var _this = this;
+        this.participantService.registerParticipant(this.newParticipant, function () {
+            _this.newParticipant = new _model_participant__WEBPACK_IMPORTED_MODULE_2__["Participant"];
+            participantForm.resetForm();
+        }, function (err) {
+            console.log(err);
+        });
     };
     ParticipantRegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -697,7 +736,8 @@ var ParticipantRegisterComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./participant-register.component.html */ "./src/app/components/participant-register/participant-register.component.html"),
             styles: [__webpack_require__(/*! ./participant-register.component.css */ "./src/app/components/participant-register/participant-register.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_3__["ParticipantService"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"]])
     ], ParticipantRegisterComponent);
     return ParticipantRegisterComponent;
 }());
@@ -741,12 +781,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
 
 
 
 var ParticipantSearchComponent = /** @class */ (function () {
-    function ParticipantSearchComponent(participantService) {
+    function ParticipantSearchComponent(participantService, location) {
         this.participantService = participantService;
+        this.location = location;
     }
     ParticipantSearchComponent.prototype.ngOnInit = function () {
         this.getParticipants();
@@ -758,7 +801,7 @@ var ParticipantSearchComponent = /** @class */ (function () {
             // localStorage.removeItem('participants');
             var i;
             for (i = 0; i < participantArr.length; i++) {
-                console.log(participantArr[i]);
+                participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;
             }
             _this.participants = participantArr;
             return;
@@ -766,15 +809,43 @@ var ParticipantSearchComponent = /** @class */ (function () {
             console.log(err);
         });
     };
+    ParticipantSearchComponent.prototype.goBack = function () {
+        this.location.back();
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], ParticipantSearchComponent.prototype, "searchText", void 0);
     ParticipantSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-participant-search',
             template: __webpack_require__(/*! ./participant-search.component.html */ "./src/app/components/participant-search/participant-search.component.html"),
             styles: [__webpack_require__(/*! ./participant-search.component.css */ "./src/app/components/participant-search/participant-search.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
     ], ParticipantSearchComponent);
     return ParticipantSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/participant.ts":
+/*!**************************************!*\
+  !*** ./src/app/model/participant.ts ***!
+  \**************************************/
+/*! exports provided: Participant */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Participant", function() { return Participant; });
+var Participant = /** @class */ (function () {
+    function Participant() {
+    }
+    return Participant;
 }());
 
 
@@ -798,14 +869,15 @@ __webpack_require__.r(__webpack_exports__);
 var SearchUtilPipe = /** @class */ (function () {
     function SearchUtilPipe() {
     }
-    SearchUtilPipe.prototype.transform = function (items, searchText) {
-        if (!items)
+    SearchUtilPipe.prototype.transform = function (items, field, value) {
+        if (!items) {
             return [];
-        if (!searchText)
-            return [];
-        searchText = searchText.toLowerCase();
-        return items.filter(function (it) {
-            return it.toLowerCase().includes(searchText);
+        }
+        if (!field || !value) {
+            return items;
+        }
+        return items.filter(function (singleItem) {
+            return singleItem[field].toLowerCase().includes(value.toLowerCase());
         });
     };
     SearchUtilPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -929,13 +1001,21 @@ __webpack_require__.r(__webpack_exports__);
 var ParticipantService = /** @class */ (function () {
     function ParticipantService(http) {
         this.http = http;
-        this.participantUrl = 'http://localhost:8080/player/players';
+        this.participantUrl = 'http://localhost:8080/player';
     }
     ParticipantService.prototype.getAllParticipants = function (success, fail) {
-        return this.http.get(this.participantUrl).toPromise()
+        return this.http.get(this.participantUrl + '/players').toPromise()
             .then(function (resp) {
             localStorage.setItem('participants', JSON.stringify(resp));
             console.log('Got Participants');
+            success();
+        }, function (err) {
+            fail(err);
+        });
+    };
+    ParticipantService.prototype.registerParticipant = function (newParticipant, success, fail) {
+        return this.http.post(this.participantUrl + '/addplayer', JSON.stringify(newParticipant)).toPromise()
+            .then(function (resp) {
             success();
         }, function (err) {
             fail(err);
@@ -973,15 +1053,11 @@ var environment = {
     navigator: [
         {
             title: 'Main Menu',
-            link: 'main/menu'
+            link: 'menu'
         },
         {
             title: 'Create Event',
             link: 'event/new'
-        },
-        {
-            title: 'Create Account',
-            link: 'account/register'
         },
         {
             title: 'Register New Participant',
@@ -1038,7 +1114,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Star\Desktop\project_2\project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -5,4 +5,6 @@ export class Participant {
   wins: number;
   losses: number;
   draws: number;
+  name: string;
+  email: string;
 }

@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/login';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   loginSubmit() {
@@ -27,8 +27,13 @@ export class LoginComponent implements OnInit {
     this.authService.authenticate(this.username, this.password,
       () => this.router.navigate([this.returnUrl]),
       (err) => {
+      console.log("Username/Password pair not found");
       console.log(err);
       });
+  }
+
+  accountCreation(){
+    this.router.navigate(['/registration']);
   }
 
 }
