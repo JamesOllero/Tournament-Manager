@@ -39,7 +39,8 @@ const routes: Routes = [
             component: ParticipantSearchComponent
           }
         ]
-      },
+      }
+      ,
       {
         path: '',
         redirectTo: 'menu',
@@ -47,10 +48,10 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path:'',
-    component: ParticipantRegisterComponent
-  },
+  // {
+  //   path:'',
+  //   component: ParticipantRegisterComponent
+  // },
   {
     path: 'login',
     component: LoginComponent
