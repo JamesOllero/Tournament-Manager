@@ -275,7 +275,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"organizer-registration\">\r\n  <form (ngSubmit)=\"onSubmit()\" novalidate #organizerForm=\"ngForm\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" id=\"username\" [(ngModel)]=\"newOrganizer.username\" name=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Last Name: </label>\r\n      <input type=\"password\" id=\"password\" [(ngModel)]=\"newOrganizer.password\" name=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"email\" id=\"email\" [(ngModel)]=\"newOrganizer.email\" name=\"email\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!organizerForm.form.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"organizer-registration\">\r\n  <form #organizerForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" name=\"username\" id=\"username\" placeholder=\"Username\" [(ngModel)]=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Password: </label>\r\n      <input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Password\" [(ngModel)]=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"text\" name=\"email\" id=\"email\" placeholder=\"Email\" [(ngModel)]=\"email\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!organizerForm.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -297,6 +297,12 @@ var AccountCreationComponent = /** @class */ (function () {
     function AccountCreationComponent() {
     }
     AccountCreationComponent.prototype.ngOnInit = function () {
+    };
+    AccountCreationComponent.prototype.onSubmit = function () {
+        console.log("Submit button is displaying this.");
+        console.log("Username of organizer is: ", this.username);
+        console.log("Password of organizer is: ", this.password);
+        console.log("E-mail of organizer is: ", this.email);
     };
     AccountCreationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
