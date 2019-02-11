@@ -15,10 +15,14 @@ public class Main {
         participant p3 = new participant("Star");
         participant p4 = new participant("Joe");
         participant p5 = new participant("Christian");
+        participant p6 = new participant("Steve");
+        participant p7 = new participant("Alex");
+        participant p8 = new participant("Lonnie");
         //use this to call on the winner
         String winner="";
 
         List<participant> participants = new ArrayList<>();
+        List<participant> winners = new ArrayList<>();
         List<participant> losers = new ArrayList<>();
         List<participant> eliminated = new ArrayList<>();
 
@@ -27,52 +31,55 @@ public class Main {
         participants.add(p3);
         participants.add(p4);
         participants.add(p5);
+        participants.add(p6);
+        participants.add(p7);
 
-        List<participant> winners = new ArrayList<>();
         winners.addAll(participants);
+        System.out.println(winners.toString());
+        System.out.println(participants.toString());
         int round = 1;
 
         //note: turn this while loop into a method to be called
-        while (winners.size() + losers.size() > 2) {
-            matchmaking(winners);
+//        while (winners.size() + losers.size() > 2) {
+        //Remember to replace tourney with a manual means of choosing a winner
             matchmaking(losers);
-
-            tourney(winners);
+            matchmaking(winners);
+            //Somewhere over here, you can add wins/losses in a best of x as matches progress
             tourney(losers);
-
-            cull(winners, losers, 0);
+            tourney(winners);
             cull(losers, eliminated,1);
-
+            cull(winners, losers, 0);
             System.out.println("Round" + round);
             System.out.println();
-
+            System.out.println(winners.toString());
+            System.out.println(losers.toString());
+            System.out.println();
             roundReset(participants);
-
             round++;
 
-        }
-        System.out.println("Winner: " + winners.get(0).username);
-        System.out.println("Loser's bracket winner: " + losers.get(0).username);
+//        }
+//        System.out.println("Winner: " + winners.get(0).username);
+//        System.out.println("Loser's bracket winner: " + losers.get(0).username);
 
         //Turn this to a method to be called when winners+losers==2
-        while(winners.size()+losers.size()>1){
-            if(winners.size() > 0){
-                losers.get(0).compete(winners.get(0));
-            }else{
-                losers.get(0).compete(losers.get(1));
-            }
-            cull(winners, losers, 0);
-            cull(losers, eliminated, 1);
-        }
-
-        for(int i=0; i < participants.size(); i++){
-            if(participants.get(i).wld < 2){
-                winner=participants.get(i).username;
-            }
-        }
-        System.out.println();
-        System.out.println("Tournament winner: "+winner);
-    }
+//        while(winners.size()+losers.size()>1){
+//            if(winners.size() > 0){
+//                losers.get(0).compete(winners.get(0));
+//            }else{
+//                losers.get(0).compete(losers.get(1));
+//            }
+//            cull(winners, losers, 0);
+//            cull(losers, eliminated, 1);
+//        }
+//
+//        for(int i=0; i < participants.size(); i++){
+//            if(participants.get(i).wld < 2){
+//                winner=participants.get(i).username;
+//            }
+//        }
+//        System.out.println();
+//        System.out.println("Tournament winner: "+winner);
+  }
 
 
     //methods
@@ -86,8 +93,8 @@ public class Main {
     }
     public static void roundReset(List<participant> participants){
         for(int i = 0; i < participants.size();i++){
-            participants.get(i).opponentname ="";
-            participants.get(i).score=(int)(Math.random()*1000);
+            participants.get(i).opponentname =" ";
+//            participants.get(i).score=(int)(Math.random()*1000);
         }
     }
     public static void manual(participant p1, participant p2){
@@ -98,24 +105,27 @@ public class Main {
     public static void autowin(participant p){
         p.opponentname="freewin";
     }
+
     public static void matchmaking(List<participant> participants){
         oddResolver(participants);
-        for (int i = 0; i < participants.size(); i++) {
-            //Prevent opponent reassignment
-            if (participants.get(i).opponentname == "") {
-                // If the opponent's name is "freewin", they get the bye
-                if (participants.get(i + 1).opponentname == "freewin") {
-                    participants.get(i).opponentname = participants.get(i + 2).username;
-                    participants.get(i + 2).opponentname = participants.get(i).username;
-                }
-                // Normal case
-                else {
-                    participants.get(i + 1).opponentname = participants.get(i).username;
-                    participants.get(i).opponentname = participants.get(i + 1).username;
+        if(participants.size() > 1) {
+            for (int i = 0; i < participants.size(); i++) {
+                //Prevent opponent reassignment
+                while (participants.get(i).opponentname == " ") {
+                    // If the opponent's name is "freewin", they get the bye
+                    for(int j = i+1; j < participants.size(); j++){
+                        if(participants.get(j).opponentname==" "){
+                            participants.get(j).opponentname=participants.get(i).username;
+                            participants.get(i).opponentname=participants.get(j).username;
+                            break;
+                        }
+                    }
                 }
             }
         }
     }
+
+    //To be replaced by a manual means of choosing a winner
     public static void tourney(List<participant>participants){
         for (int i = 0; i < participants.size(); i++) {
             for (int j = i + 1; j < participants.size(); j++) {
@@ -125,11 +135,12 @@ public class Main {
             }
         }
     }
+
     public static void oddResolver(List<participant>participants){
         int rand = (int) (Math.random() * participants.size());
         boolean freeSet = false;
-        if(participants.size() >1 &&participants.size()%2==1){
-            while(freeSet=false){
+        if(participants.size() > 1 && participants.size()%2==1){
+            while(freeSet==false){
                 if(participants.get(rand).freewin==false){
                     participants.get(rand).opponentname="freewin";
                     participants.get(rand).freewin=true;
