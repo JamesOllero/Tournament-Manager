@@ -25,5 +25,6 @@ background-size: 150% 100%;
       }
 
 #shiftdown{
-    padding-top: 80px;
+    padding: 15px;
+  box-sizing: border-box;
 }

@@ -43,7 +43,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/new-event/new-event.component */ "./src/app/components/new-event/new-event.component.ts");
 /* harmony import */ var _components_participant_register_participant_register_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/participant-register/participant-register.component */ "./src/app/components/participant-register/participant-register.component.ts");
 /* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
-/* harmony import */ var _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/account-creation/account-creation.component */ "./src/app/components/account-creation/account-creation.component.ts");
+/* harmony import */ var _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/navigation/navigation.component */ "./src/app/components/navigation/navigation.component.ts");
 
 
 
@@ -86,21 +86,18 @@ var routes = [
                         component: _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_9__["ParticipantSearchComponent"]
                     }
                 ]
-            },
-            {
-                path: '',
-                redirectTo: 'menu',
-                pathMatch: 'full'
             }
+            // ,
+            // {
+            //   path: '',
+            //   redirectTo: 'menu',
+            //   pathMatch: 'full'
+            // }
         ]
     },
-    // {
-    //   path:'',
-    //   component: ParticipantRegisterComponent
-    // },
     {
-        path: 'registration',
-        component: _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__["AccountCreationComponent"]
+        path: '',
+        component: _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_10__["NavigationComponent"]
     },
     {
         path: 'login',
@@ -555,7 +552,7 @@ var MainMenuComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ul {\r\n  list-style: none;\r\n  border-bottom: 1px solid #bbbb;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nli {\r\n  display: inline-block;\r\n  margin-right: 20px;\r\n}\r\n\r\nnav{\r\nz-index: 10;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uYXZpZ2F0aW9uL25hdmlnYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQiw4QkFBOEI7RUFDOUIsU0FBUztFQUNULFVBQVU7QUFDWjs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixrQkFBa0I7QUFDcEI7O0FBQ0E7QUFDQSxXQUFXO0FBQ1giLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL25hdmlnYXRpb24vbmF2aWdhdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidWwge1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiYmJiO1xyXG4gIG1hcmdpbjogMDtcclxuICBwYWRkaW5nOiAwO1xyXG59XHJcblxyXG5saSB7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIG1hcmdpbi1yaWdodDogMjBweDtcclxufVxyXG5uYXZ7XHJcbnotaW5kZXg6IDEwO1xyXG59XHJcbiJdfQ== */"
+module.exports = "ul {\r\n  list-style: none;\r\n  border-bottom: 1px solid #bbbb;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nli {\r\n  display: inline-block;\r\n  margin-right: 20px;\r\n}\r\n\r\n.ui#content{\r\n  padding-top:55px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uYXZpZ2F0aW9uL25hdmlnYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQiw4QkFBOEI7RUFDOUIsU0FBUztFQUNULFVBQVU7QUFDWjs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL25hdmlnYXRpb24vbmF2aWdhdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidWwge1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiYmJiO1xyXG4gIG1hcmdpbjogMDtcclxuICBwYWRkaW5nOiAwO1xyXG59XHJcblxyXG5saSB7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIG1hcmdpbi1yaWdodDogMjBweDtcclxufVxyXG5cclxuLnVpI2NvbnRlbnR7XHJcbiAgcGFkZGluZy10b3A6NTVweDtcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -566,7 +563,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n  border-bottom: 1px solid #bbb
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\r\n  <ul>\r\n    <li *ngFor=\"let item of navItems\">\r\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n    </li>\r\n    <button (click)=\"logout()\">Logout</button>\r\n  </ul>\r\n</nav>\r\n"
+module.exports = "<nav class=\"navbar fixed-top navbar-expand-sm navbar-light bg-white\">\r\n    <ul>\r\n      <li *ngFor=\"let item of navItems\">\r\n        <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n      </li>\r\n      <button (click)=\"logout()\">Logout</button>\r\n    </ul>\r\n  </nav>"
 
 /***/ }),
 
@@ -682,7 +679,7 @@ var NewEventComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".margin-left{\r\n    margin-left: 40px !important;\r\n}\r\n#btn{\r\n    margin-right: 34px;\r\n}\r\n/* #participant-registration{ */\r\n#changeme{\r\n background: radial-gradient(#fd6119, #682d00);\r\nbackground-size: 150% 100%;\r\n\r\n\r\n}\r\n#my-preview-div {\r\n    -webkit-transform: scale(1.5);\r\n            transform: scale(1.5);   \r\n    /* height: 500px;\r\n    weight: 700px;   */\r\n    }\r\nhtml { \r\n        background-color: lightblue; \r\n        background-size: cover;\r\n      }\r\n#shiftdown{\r\n    padding-top: 80px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wYXJ0aWNpcGFudC1yZWdpc3Rlci9wYXJ0aWNpcGFudC1yZWdpc3Rlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksNEJBQTRCO0FBQ2hDO0FBQ0E7SUFDSSxrQkFBa0I7QUFDdEI7QUFHQSwrQkFBK0I7QUFDM0I7Q0FDSCw2Q0FBNkM7QUFDOUMsMEJBQTBCOzs7QUFHMUI7QUFDQTtJQUNJLDZCQUFxQjtZQUFyQixxQkFBcUI7SUFDckI7c0JBQ2tCO0lBQ2xCO0FBRUE7UUFDSSwyQkFBMkI7UUFDM0Isc0JBQXNCO01BQ3hCO0FBRU47SUFDSSxpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3BhcnRpY2lwYW50LXJlZ2lzdGVyL3BhcnRpY2lwYW50LXJlZ2lzdGVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWFyZ2luLWxlZnR7XHJcbiAgICBtYXJnaW4tbGVmdDogNDBweCAhaW1wb3J0YW50O1xyXG59XHJcbiNidG57XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDM0cHg7XHJcbn1cclxuXHJcblxyXG4vKiAjcGFydGljaXBhbnQtcmVnaXN0cmF0aW9ueyAqL1xyXG4gICAgI2NoYW5nZW1le1xyXG4gYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KCNmZDYxMTksICM2ODJkMDApO1xyXG5iYWNrZ3JvdW5kLXNpemU6IDE1MCUgMTAwJTtcclxuXHJcblxyXG59XHJcbiNteS1wcmV2aWV3LWRpdiB7XHJcbiAgICB0cmFuc2Zvcm06IHNjYWxlKDEuNSk7ICAgXHJcbiAgICAvKiBoZWlnaHQ6IDUwMHB4O1xyXG4gICAgd2VpZ2h0OiA3MDBweDsgICAqL1xyXG4gICAgfVxyXG5cclxuICAgIGh0bWwgeyBcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGJsdWU7IFxyXG4gICAgICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbiAgICAgIH1cclxuXHJcbiNzaGlmdGRvd257XHJcbiAgICBwYWRkaW5nLXRvcDogODBweDtcclxufSJdfQ== */"
+module.exports = ".margin-left{\r\n    margin-left: 40px !important;\r\n}\r\n#btn{\r\n    margin-right: 34px;\r\n}\r\n/* #participant-registration{ */\r\n#changeme{\r\n background: radial-gradient(#fd6119, #682d00);\r\nbackground-size: 150% 100%;\r\n\r\n\r\n}\r\n#my-preview-div {\r\n    -webkit-transform: scale(1.5);\r\n            transform: scale(1.5);   \r\n    /* height: 500px;\r\n    weight: 700px;   */\r\n    }\r\nhtml { \r\n        background-color: lightblue; \r\n        background-size: cover;\r\n      }\r\n#shiftdown{\r\n    padding: 15px;\r\n  box-sizing: border-box;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wYXJ0aWNpcGFudC1yZWdpc3Rlci9wYXJ0aWNpcGFudC1yZWdpc3Rlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksNEJBQTRCO0FBQ2hDO0FBQ0E7SUFDSSxrQkFBa0I7QUFDdEI7QUFHQSwrQkFBK0I7QUFDM0I7Q0FDSCw2Q0FBNkM7QUFDOUMsMEJBQTBCOzs7QUFHMUI7QUFDQTtJQUNJLDZCQUFxQjtZQUFyQixxQkFBcUI7SUFDckI7c0JBQ2tCO0lBQ2xCO0FBRUE7UUFDSSwyQkFBMkI7UUFDM0Isc0JBQXNCO01BQ3hCO0FBRU47SUFDSSxhQUFhO0VBQ2Ysc0JBQXNCO0FBQ3hCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9wYXJ0aWNpcGFudC1yZWdpc3Rlci9wYXJ0aWNpcGFudC1yZWdpc3Rlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hcmdpbi1sZWZ0e1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQwcHggIWltcG9ydGFudDtcclxufVxyXG4jYnRue1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAzNHB4O1xyXG59XHJcblxyXG5cclxuLyogI3BhcnRpY2lwYW50LXJlZ2lzdHJhdGlvbnsgKi9cclxuICAgICNjaGFuZ2VtZXtcclxuIGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCgjZmQ2MTE5LCAjNjgyZDAwKTtcclxuYmFja2dyb3VuZC1zaXplOiAxNTAlIDEwMCU7XHJcblxyXG5cclxufVxyXG4jbXktcHJldmlldy1kaXYge1xyXG4gICAgdHJhbnNmb3JtOiBzY2FsZSgxLjUpOyAgIFxyXG4gICAgLyogaGVpZ2h0OiA1MDBweDtcclxuICAgIHdlaWdodDogNzAwcHg7ICAgKi9cclxuICAgIH1cclxuXHJcbiAgICBodG1sIHsgXHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRibHVlOyBcclxuICAgICAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xyXG4gICAgICB9XHJcblxyXG4jc2hpZnRkb3due1xyXG4gICAgcGFkZGluZzogMTVweDtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59Il19 */"
 
 /***/ }),
 
@@ -693,7 +690,7 @@ module.exports = ".margin-left{\r\n    margin-left: 40px !important;\r\n}\r\n#bt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"bg-primary\" id=\"shiftdown\" >\r\n  <div class=\"row justify-content-center align-items-center\" style=\"height:100vh\">\r\n    <div class=\"col-4\">\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n        <div class=\"form-container w-400 p-3 h-150 \" >\r\n            <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h4 class=\" pb-3 section one text-center \">Participant Registration</h4>\r\n          <form class=\"pb-3\" #participantForm=\"ngForm\">\r\n            <div class=\"form-group\">\r\n              <label for=\"firstName\">First Name: </label>\r\n              <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder= \"Bobby\"[(ngModel)]=\"newParticipant.firstName\" name=\"firstName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"lastName\">Last Name: </label>\r\n              <input type=\"text\" id=\"lastName\"  class=\"form-control\" placeholder= \"Kernel\"[(ngModel)]=\"newParticipant.lastName\" name=\"lastName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"email\">Email: </label>\r\n              <input type=\"email\" id=\"email\"  class=\"form-control\" placeholder= \"BobbyK@gmail.com\"[(ngModel)]=\"newParticipant.email\" name=\"email\" required>\r\n            </div>\r\n            <div class=\"btn-toolbar \"> \r\n              <button  class=\"btn btn-success btn-sm col \" type=\"button\" id=\"submit\" (click)=\"createReturn()\" [disabled]=\"!participantForm.form.valid\"> Submit</button>\r\n              <button  class=\"btn btn-danger btn-sm col \"type=\"button\" id=\"reset\" >Reset</button>\r\n              <button  class=\"btn btn-info btn-sm col\"  type=\"button\" id=\"loop\" (click)=\"createContinue(participantForm)\">Sumbit and add new participant</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"bg-primary\"  >\r\n  <div class=\"row justify-content-center align-items-center\" style=\"height:100vh\">\r\n    <div class=\"col-4\">\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n        <div class=\"form-container w-400 p-3 h-150 \" id=\"shiftdown\">\r\n            <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h4 class=\" pb-3 section one text-center \">Participant Registration</h4>\r\n          <form class=\"pb-3\" (ngSubmit)=\"onSubmit()\" #participantForm=\"ngForm\">\r\n            <div class=\"form-group\">\r\n              <label for=\"firstName\">First Name: </label>\r\n              <input type=\"text\" class=\"form-control\" placeholder= \"Bobby\"[(ngModel)]=\"newParticipant.firstName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"lastName\">Last Name: </label>\r\n              <input type=\"text\" id=\"lastName\"  class=\"form-control\" placeholder= \"Kernel\"[(ngModel)]=\"newParticipant.lastName\" name=\"lastName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"email\">Email: </label>\r\n              <input type=\"email\" id=\"email\"  class=\"form-control\" placeholder= \"BobbyK@gmail.com\"[(ngModel)]=\"newParticipant.email\" name=\"lastName\" required>\r\n            </div>\r\n            <div class=\"btn-toolbar \"> \r\n              <button  class=\"btn btn-success btn-sm col \" type=\"button\" id=\"btn\" [disabled]=\"!participantForm.form.valid\"> Submit</button>\r\n              <button  class=\"btn btn-danger btn-sm col \"type=\"button\" id=\"btn\" >Reset</button>\r\n              <button  class=\"btn btn-info btn-sm col\"  type=\"button\" id=\"\">Sumbit and add new participant</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
