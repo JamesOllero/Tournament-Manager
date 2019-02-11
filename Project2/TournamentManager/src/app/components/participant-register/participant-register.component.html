@@ -5,10 +5,10 @@
         <div class="form-container w-400 p-3 h-150 " id="shiftdown">
             <button type="button" class="btn btn-light"> <i class="fas fa-angle-left"></i> </button>
           <h4 class=" pb-3 section one text-center ">Participant Registration</h4>
-          <form class="pb-3" (ngSubmit)="onSubmit()" #participantForm="ngForm">
+          <form class="pb-3" #participantForm="ngForm">
             <div class="form-group">
               <label for="firstName">First Name: </label>
-              <input type="text" class="form-control" placeholder= "Bobby"[(ngModel)]="newParticipant.firstName" required>
+              <input type="text" id="firstName" class="form-control" placeholder= "Bobby"[(ngModel)]="newParticipant.firstName" name="firstName" required>
             </div>
             <div class="form-group">
               <label for="lastName">Last Name: </label>
@@ -16,12 +16,12 @@
             </div>
             <div class="form-group">
               <label for="email">Email: </label>
-              <input type="email" id="email"  class="form-control" placeholder= "BobbyK@gmail.com"[(ngModel)]="newParticipant.email" name="lastName" required>
+              <input type="email" id="email"  class="form-control" placeholder= "BobbyK@gmail.com"[(ngModel)]="newParticipant.email" name="email" required>
             </div>
             <div class="btn-toolbar "> 
-              <button  class="btn btn-success btn-sm col " type="button" id="btn" [disabled]="!participantForm.form.valid"> Submit</button>
-              <button  class="btn btn-danger btn-sm col "type="button" id="btn" >Reset</button>
-              <button  class="btn btn-info btn-sm col"  type="button" id="">Sumbit and add new participant</button>
+              <button  class="btn btn-success btn-sm col " type="button" id="submit" (click)="createReturn()" [disabled]="!participantForm.form.valid"> Submit</button>
+              <button  class="btn btn-danger btn-sm col "type="button" id="reset" >Reset</button>
+              <button  class="btn btn-info btn-sm col"  type="button" id="loop" (click)="createContinue(participantForm)">Sumbit and add new participant</button>
             </div>
           </form>
         </div>

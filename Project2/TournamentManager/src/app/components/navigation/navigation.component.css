@@ -9,7 +9,6 @@ li {
   display: inline-block;
   margin-right: 20px;
 }
-
-.ui#content{
-  padding-top:55px;
+nav{
+z-index: 10;
 }

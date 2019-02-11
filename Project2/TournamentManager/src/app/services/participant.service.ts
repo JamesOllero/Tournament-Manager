@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders } from "@angular/common/http";
 import {Participant} from "../model/participant";
 
 @Injectable({
@@ -23,13 +23,18 @@ export class ParticipantService {
         });
   }
 
-  registerParticipant(newParticipant: Participant, success, fail) {
-    return this.http.post(this.participantUrl + '/addplayer', JSON.stringify(newParticipant)).toPromise()
+  registerParticipant(success, fail) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    let options = { headers: headers };
+    let newParticipant = JSON.parse(localStorage.getItem('newParticipant'));
+    return this.http.post(this.participantUrl + '/addplayer', JSON.stringify(newParticipant), options).toPromise()
       .then((resp)=>{
         success();
       },
         (err) => {
         fail(err);
-        })
+        });
   }
 }

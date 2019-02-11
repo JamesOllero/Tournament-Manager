@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from "../../services/Auth/auth.service";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-navigation',
@@ -11,13 +11,10 @@ export class NavigationComponent implements OnInit {
   @Input() navItems: Array<{title: string, link:string}>;
   constructor(
     private authService: AuthService,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
   ) { }
   returnUrl: string;
   ngOnInit() {
-    this.returnUrl = 'logout';
-
   }
   logout() {
     localStorage.clear();

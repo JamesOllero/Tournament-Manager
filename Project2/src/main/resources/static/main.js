@@ -272,7 +272,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"organizer-registration\">\r\n  <form (ngSubmit)=\"onSubmit()\" novalidate #organizerForm=\"ngForm\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" id=\"username\" [(ngModel)]=\"newOrganizer.username\" name=\"username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Last Name: </label>\r\n      <input type=\"password\" id=\"password\" [(ngModel)]=\"newOrganizer.password\" name=\"password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"email\" id=\"email\" [(ngModel)]=\"newOrganizer.email\" name=\"email\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!organizerForm.form.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"organizer-registration\">\r\n  <form #organizerForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" name=\"username\" id=\"username\" placeholder=\"Username\" [(ngModel)]=\"newOrganizer.username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Password: </label>\r\n      <input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Password\" [(ngModel)]=\"newOrganizer.password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"text\" name=\"email\" id=\"email\" placeholder=\"Email\" [(ngModel)]=\"newOrganizer.email\" required>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!organizerForm.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -288,12 +288,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountCreationComponent", function() { return AccountCreationComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_organizer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../model/organizer */ "./src/app/model/organizer.ts");
+/* harmony import */ var _services_organizer_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/organizer.service */ "./src/app/services/organizer.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
+
+
 
 
 var AccountCreationComponent = /** @class */ (function () {
-    function AccountCreationComponent() {
+    function AccountCreationComponent(organizerService, location) {
+        this.organizerService = organizerService;
+        this.location = location;
+        this.newOrganizer = new _model_organizer__WEBPACK_IMPORTED_MODULE_2__["Organizer"];
     }
     AccountCreationComponent.prototype.ngOnInit = function () {
+    };
+    AccountCreationComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.organizerService.registerOrganizer(this.newOrganizer, function () {
+            _this.location.back();
+        }, function (err) {
+            console.log(err);
+        });
     };
     AccountCreationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -301,7 +318,8 @@ var AccountCreationComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./account-creation.component.html */ "./src/app/components/account-creation/account-creation.component.html"),
             styles: [__webpack_require__(/*! ./account-creation.component.css */ "./src/app/components/account-creation/account-creation.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_organizer_service__WEBPACK_IMPORTED_MODULE_3__["OrganizerService"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"]])
     ], AccountCreationComponent);
     return AccountCreationComponent;
 }());
@@ -394,7 +412,7 @@ module.exports = "/* :root {\r\n    --input-padding-x: 1.5rem;\r\n    --input-pa
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- \r\n  <div class=\"form-container\" id=\"login-form\">\r\n    <form #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n      <div>\r\n        <input type=\"text\" name=\"user_email\" placeholder=\"email\" [(ngModel)]=\"username\" required>\r\n      </div>\r\n      <div>\r\n        <input type=\"password\" name=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" required>\r\n      </div>\r\n      <div>\r\n        <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n        <button type=\"reset\">Reset</button>\r\n      </div>\r\n    </form>\r\n  </div> -->\r\n\r\n\r\n  <body>\r\n   \r\n      <div class=\"container\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n            <div class=\"card card-signin my-5\" id=\"login-form\"> \r\n              <div class=\"card-body form-container\">\r\n                <h5 class=\"card-title text-center\">Sign In</h5>\r\n                <form class=\"form-signin\" #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n                  <div class=\"form-label-group h-50\">\r\n                    <input style=\"height:50px\" type=\"email\" name=\"user_email\" id=\"inputEmail\" class=\"form-control \" placeholder=\"email\" [(ngModel)]=\"username\" required autofocus>\r\n                    <label for=\"inputEmail\" class =\" ml-3\">Email address</label>\r\n                  </div>\r\n    \r\n                  <div class=\"form-label-group\">\r\n                  \r\n                    <input style=\"height:50px\" type=\"password\"  [(ngModel)]=\"password\"  name=\"password\" id=\"inputPassword\" class=\"form-control \" placeholder=\"Password\" required>\r\n                    <label for=\"inputPassword\" class =\"ml-3\">Password</label>\r\n                  </div>\r\n    \r\n                  \r\n                  <button [disabled]=\"!loginForm.valid\" class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                  <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Create new account</button>\r\n                  \r\n                </form>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </body>\r\n\r\n\r\n    <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->\r\n\r\n<!-- <body>\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n          <div class=\"card card-signin my-5\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title text-center\">Sign In</h5>\r\n              <form class=\"form-signin\">\r\n                <div class=\"form-label-group\">\r\n                  <input style=\"height:50px\" type=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>\r\n                  <label for=\"inputEmail\">Email address</label>\r\n                </div>\r\n  \r\n                <div class=\"form-label-group\">\r\n                  <input  style=\"height:50px\" type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>\r\n                  <label for=\"inputPassword\">Password</label>\r\n                </div>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Create New Account</button>\r\n      \r\n              </form>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </body> -->\r\n  "
+module.exports = "<!-- \r\n  <div class=\"form-container\" id=\"login-form\">\r\n    <form #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n      <div>\r\n        <input type=\"text\" name=\"user_email\" placeholder=\"email\" [(ngModel)]=\"username\" required>\r\n      </div>\r\n      <div>\r\n        <input type=\"password\" name=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" required>\r\n      </div>\r\n      <div>\r\n        <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n        <button type=\"reset\">Reset</button>\r\n      </div>\r\n    </form>\r\n  </div> -->\r\n\r\n\r\n  <body>\r\n   \r\n      <div class=\"container\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n            <div class=\"card card-signin my-5\" id=\"login-form\"> \r\n              <div class=\"card-body form-container\">\r\n                <h5 class=\"card-title text-center\">Sign In</h5>\r\n                <form class=\"form-signin\" #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n                  <div class=\"form-label-group h-50\">\r\n                    <input style=\"height:50px\" type=\"email\" name=\"user_email\" id=\"inputEmail\" class=\"form-control \" placeholder=\"email\" [(ngModel)]=\"username\" required autofocus>\r\n                    <label for=\"inputEmail\" class =\" ml-3\">Email address</label>\r\n                  </div>\r\n    \r\n                  <div class=\"form-label-group\">\r\n                  \r\n                    <input style=\"height:50px\" type=\"password\"  [(ngModel)]=\"password\"  name=\"password\" id=\"inputPassword\" class=\"form-control \" placeholder=\"Password\" required>\r\n                    <label for=\"inputPassword\" class =\"ml-3\">Password</label>\r\n                  </div>\r\n    \r\n                  \r\n                  <button [disabled]=\"!loginForm.valid\" class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                  <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"button\" (click)=\"accountCreation()\">Create new account</button>\r\n                  \r\n                </form>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </body>\r\n\r\n\r\n    <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->\r\n\r\n<!-- <body>\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n          <div class=\"card card-signin my-5\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title text-center\">Sign In</h5>\r\n              <form class=\"form-signin\">\r\n                <div class=\"form-label-group\">\r\n                  <input style=\"height:50px\" type=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>\r\n                  <label for=\"inputEmail\">Email address</label>\r\n                </div>\r\n  \r\n                <div class=\"form-label-group\">\r\n                  <input  style=\"height:50px\" type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>\r\n                  <label for=\"inputPassword\">Password</label>\r\n                </div>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Create New Account</button>\r\n      \r\n              </form>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </body> -->\r\n"
 
 /***/ }),
 
@@ -423,7 +441,7 @@ var LoginComponent = /** @class */ (function () {
         this.route = route;
     }
     LoginComponent.prototype.ngOnInit = function () {
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/login';
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     };
     LoginComponent.prototype.loginSubmit = function () {
         var _this = this;
@@ -568,13 +586,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var NavigationComponent = /** @class */ (function () {
-    function NavigationComponent(authService, router, route) {
+    function NavigationComponent(authService, router) {
         this.authService = authService;
         this.router = router;
-        this.route = route;
     }
     NavigationComponent.prototype.ngOnInit = function () {
-        this.returnUrl = 'logout';
     };
     NavigationComponent.prototype.logout = function () {
         localStorage.clear();
@@ -591,8 +607,7 @@ var NavigationComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./navigation.component.css */ "./src/app/components/navigation/navigation.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_Auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], NavigationComponent);
     return NavigationComponent;
 }());
@@ -712,7 +727,8 @@ var ParticipantRegisterComponent = /** @class */ (function () {
     };
     ParticipantRegisterComponent.prototype.createReturn = function () {
         var _this = this;
-        this.participantService.registerParticipant(this.newParticipant, function () {
+        localStorage.setItem('newParticipant', JSON.stringify(this.newParticipant));
+        this.participantService.registerParticipant(function () {
             _this.location.back();
         }, function (err) {
             console.log(err);
@@ -720,7 +736,8 @@ var ParticipantRegisterComponent = /** @class */ (function () {
     };
     ParticipantRegisterComponent.prototype.createContinue = function (participantForm) {
         var _this = this;
-        this.participantService.registerParticipant(this.newParticipant, function () {
+        localStorage.setItem('newParticipant', JSON.stringify(this.newParticipant));
+        this.participantService.registerParticipant(function () {
             _this.newParticipant = new _model_participant__WEBPACK_IMPORTED_MODULE_2__["Participant"];
             participantForm.resetForm();
         }, function (err) {
@@ -761,7 +778,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n}\r\n\r\n/*# sourceMappingURL=d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<ul>\r\n  <li *ngFor=\"let p of participants\">{{p.firstName}} {{p.lastName}}</li>\r\n</ul>\r\n"
+module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<table>\r\n  <tr>\r\n    <th>Id</th><th>Name</th>\r\n  </tr>\r\n  <tr *ngFor=\"let p of participants | searchUtil : 'name' : searchText; let i = index\">\r\n    <td>{{p.player_Id}}</td>\r\n    <td>{{p.firstName}} {{p.lastName}}</td>\r\n  </tr>\r\n</table>\r\n<button type=\"button\" (click)=\"goBack()\">Go Back</button>\r\n"
 
 /***/ }),
 
@@ -795,7 +812,7 @@ var ParticipantSearchComponent = /** @class */ (function () {
         var _this = this;
         this.participantService.getAllParticipants(function () {
             var participantArr = JSON.parse(localStorage.getItem('participants'));
-            // localStorage.removeItem('participants');
+            localStorage.removeItem('participants');
             var i;
             for (i = 0; i < participantArr.length; i++) {
                 participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;
@@ -823,6 +840,26 @@ var ParticipantSearchComponent = /** @class */ (function () {
             _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
     ], ParticipantSearchComponent);
     return ParticipantSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/organizer.ts":
+/*!************************************!*\
+  !*** ./src/app/model/organizer.ts ***!
+  \************************************/
+/*! exports provided: Organizer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Organizer", function() { return Organizer; });
+var Organizer = /** @class */ (function () {
+    function Organizer() {
+    }
+    return Organizer;
 }());
 
 
@@ -979,6 +1016,52 @@ var AuthGuardService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/organizer.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/services/organizer.service.ts ***!
+  \***********************************************/
+/*! exports provided: OrganizerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrganizerService", function() { return OrganizerService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+var OrganizerService = /** @class */ (function () {
+    function OrganizerService(http) {
+        this.http = http;
+        this.organizerUrl = 'http://localhost:8080/organizer';
+    }
+    OrganizerService.prototype.registerOrganizer = function (newOrganizer, success, fail) {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+            'Content-Type': 'application/json'
+        });
+        var options = { headers: headers };
+        return this.http.post(this.organizerUrl + '/addorganizer', newOrganizer, options).toPromise()
+            .then(function (resp) {
+            success();
+        }, function (err) {
+            fail(err);
+        });
+    };
+    OrganizerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], OrganizerService);
+    return OrganizerService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/participant.service.ts":
 /*!*************************************************!*\
   !*** ./src/app/services/participant.service.ts ***!
@@ -1010,8 +1093,13 @@ var ParticipantService = /** @class */ (function () {
             fail(err);
         });
     };
-    ParticipantService.prototype.registerParticipant = function (newParticipant, success, fail) {
-        return this.http.post(this.participantUrl + '/addplayer', JSON.stringify(newParticipant)).toPromise()
+    ParticipantService.prototype.registerParticipant = function (success, fail) {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+            'Content-Type': 'application/json'
+        });
+        var options = { headers: headers };
+        var newParticipant = JSON.parse(localStorage.getItem('newParticipant'));
+        return this.http.post(this.participantUrl + '/addplayer', JSON.stringify(newParticipant), options).toPromise()
             .then(function (resp) {
             success();
         }, function (err) {
@@ -1111,7 +1199,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })
