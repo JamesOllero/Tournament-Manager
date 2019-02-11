@@ -28,14 +28,11 @@
                     <input style="height:50px; padding-left:17px" type="email" name="user_email" id="inputEmail" class="form-control " placeholder="email" [(ngModel)]="username" required autofocus>
                     <label for="inputEmail" class =" ml-3">Email address</label>
                   </div>
-    
                   <div class="form-label-group">
                   
                     <input style="height:50px; padding-left:17px" type="password"  [(ngModel)]="password"  name="password" id="inputPassword" class="form-control " placeholder="Password" required>
                     <label for="inputPassword" class ="ml-3">Password</label>
                   </div>
-    
-                  
                   <button [disabled]="!loginForm.valid" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
                   <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button" (click)="accountCreation()">Create new account</button>
                   
