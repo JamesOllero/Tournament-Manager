@@ -42,4 +42,5 @@ export class ParticipantSearchComponent implements OnInit {
   goBack() {
     this.location.back();
   }
+
 }
