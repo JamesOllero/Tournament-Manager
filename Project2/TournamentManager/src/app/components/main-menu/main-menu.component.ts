@@ -29,6 +29,6 @@ export class MainMenuComponent implements OnInit {
   }
 
   goToParticipantLookup() {
-    this.router.navigate(['/main/participant/search']);
+    this.router.navigate(['/main/participant/search'])
   }
 }
