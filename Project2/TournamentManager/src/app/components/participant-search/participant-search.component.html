@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+<<<<<<< master
+<input [(ngModel)]="searchText" placeholder="Participant Name">
+<table>
+  <tr>
+    <th>Id</th><th>Name</th>
+  </tr>
+  <tr *ngFor="let p of participants | searchUtil : 'name' : searchText; let i = index">
+    <td>{{p.player_Id}}</td>
+    <td>{{p.firstName}} {{p.lastName}}</td>
+  </tr>
+</table>
+<button type="button" (click)="goBack()">Go Back</button>
+=======
+<p>
+  participant-search works!
+</p>
+>>>>>>> Code Update
+=======
+<p>
+  participant-search works!
+</p>
+>>>>>>> Joe

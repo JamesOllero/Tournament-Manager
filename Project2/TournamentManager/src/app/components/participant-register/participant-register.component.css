@@ -1,0 +1,29 @@
+.margin-left{
+    margin-left: 40px !important;
+}
+#btn{
+    margin-right: 34px;
+}
+
+
+/* #participant-registration{ */
+    #changeme{
+ background: radial-gradient(#fd6119, #682d00);
+background-size: 150% 100%;
+
+
+}
+#my-preview-div {
+    transform: scale(1.5);   
+    /* height: 500px;
+    weight: 700px;   */
+    }
+
+    html { 
+        background-color: lightblue; 
+        background-size: cover;
+      }
+
+#shiftdown{
+    padding-top: 80px;
+}

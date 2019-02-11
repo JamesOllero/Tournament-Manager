@@ -16,11 +16,10 @@ export class NavigationComponent implements OnInit {
   ) { }
   returnUrl: string;
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'logout';
+    this.returnUrl = 'logout';
   }
   logout() {
     localStorage.clear();
-    this.router.navigate([this.returnUrl]);
-    window.location.reload();
+    this.router.navigate(['/login']);
   }
 }
