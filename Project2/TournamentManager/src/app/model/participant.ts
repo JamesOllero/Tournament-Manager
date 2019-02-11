@@ -6,4 +6,5 @@ export class Participant {
   losses: number;
   draws: number;
   name: string;
+  email: string;
 }
