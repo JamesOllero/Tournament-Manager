@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Organizer} from "../../model/organizer";
+import {OrganizerService} from "../../services/organizer.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-account-creation',
@@ -6,18 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-creation.component.css']
 })
 export class AccountCreationComponent implements OnInit {
-  username: string;
-  password: string;
-  email: string;
-  constructor() { }
+  newOrganizer = new Organizer;
+  constructor(
+    private organizerService: OrganizerService,
+    private location: Location
+  ) { }
 
   ngOnInit() {
   }
 
   onSubmit(){
-    console.log("Submit button is displaying this.");
-    console.log("Username of organizer is: ", this.username);
-    console.log("Password of organizer is: ", this.password);
-    console.log("E-mail of organizer is: ", this.email);
+    this.organizerService.registerOrganizer(this.newOrganizer,
+      () => {
+      this.location.back();
+      },
+      (err) => {
+      console.log(err);
+      }
+    );
   }
 }
