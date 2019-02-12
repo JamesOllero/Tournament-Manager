@@ -1,11 +1,11 @@
-<input [(ngModel)]="searchText" placeholder="Participant Name">
-<table>
+<input style="margin-left: 2em" [(ngModel)]="searchText" placeholder="Participant Name">
+<table style="margin-left: 2em">
   <tr>
-    <th>Id</th><th>Name</th>
+    <th style="width: 4em;">Id</th><th>Name</th>
   </tr>
   <tr *ngFor="let p of participants | searchUtil : 'name' : searchText; let i = index">
     <td>{{p.player_Id}}</td>
     <td>{{p.firstName}} {{p.lastName}}</td>
   </tr>
 </table>
-<button type="button" (click)="goBack()">Go Back</button>
+<button style="margin-left: 2em;" type="button" (click)="goBack()">Go Back</button>

@@ -1,5 +1,5 @@
 export class Organizer{
-  id: number;
+  managerId: number;
   username: string;
   email: string;
   password: string;

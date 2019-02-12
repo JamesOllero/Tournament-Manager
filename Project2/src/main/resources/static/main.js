@@ -415,7 +415,7 @@ module.exports = "/* :root {\r\n    --input-padding-x: 1.5rem;\r\n    --input-pa
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- \r\n  <div class=\"form-container\" id=\"login-form\">\r\n    <form #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n      <div>\r\n        <input type=\"text\" name=\"user_email\" placeholder=\"email\" [(ngModel)]=\"username\" required>\r\n      </div>\r\n      <div>\r\n        <input type=\"password\" name=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" required>\r\n      </div>\r\n      <div>\r\n        <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n        <button type=\"reset\">Reset</button>\r\n      </div>\r\n    </form>\r\n  </div> -->\r\n\r\n\r\n  <body>\r\n   \r\n      <div class=\"container\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n            <div class=\"card card-signin my-5\" id=\"login-form\"> \r\n              <div class=\"card-body form-container\">\r\n                <h5 class=\"card-title text-center\">Sign In</h5>\r\n                <form class=\"form-signin\" #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n                  <div class=\"form-label-group h-50\">\r\n                    <input style=\"height:50px; padding-left:17px\" type=\"email\" name=\"user_email\" id=\"inputEmail\" class=\"form-control \" placeholder=\"email\" [(ngModel)]=\"username\" required autofocus>\r\n                    <label for=\"inputEmail\" class =\" ml-3\">Email address</label>\r\n                  </div>\r\n    \r\n                  <div class=\"form-label-group\">\r\n                  \r\n                    <input style=\"height:50px; padding-left:17px\" type=\"password\"  [(ngModel)]=\"password\"  name=\"password\" id=\"inputPassword\" class=\"form-control \" placeholder=\"Password\" required>\r\n                    <label for=\"inputPassword\" class =\"ml-3\">Password</label>\r\n                  </div>\r\n    \r\n                  \r\n                  <button [disabled]=\"!loginForm.valid\" class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                  <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"button\" (click)=\"accountCreation()\">Create new account</button>\r\n                  \r\n                </form>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </body>\r\n\r\n\r\n    <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->\r\n\r\n<!-- <body>\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n          <div class=\"card card-signin my-5\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title text-center\">Sign In</h5>\r\n              <form class=\"form-signin\">\r\n                <div class=\"form-label-group\">\r\n                  <input style=\"height:50px\" type=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>\r\n                  <label for=\"inputEmail\">Email address</label>\r\n                </div>\r\n  \r\n                <div class=\"form-label-group\">\r\n                  <input  style=\"height:50px\" type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>\r\n                  <label for=\"inputPassword\">Password</label>\r\n                </div>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Create New Account</button>\r\n      \r\n              </form>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </body> -->\r\n"
+module.exports = "<!-- \r\n  <div class=\"form-container\" id=\"login-form\">\r\n    <form #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n      <div>\r\n        <input type=\"text\" name=\"user_email\" placeholder=\"email\" [(ngModel)]=\"username\" required>\r\n      </div>\r\n      <div>\r\n        <input type=\"password\" name=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" required>\r\n      </div>\r\n      <div>\r\n        <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n        <button type=\"reset\">Reset</button>\r\n      </div>\r\n    </form>\r\n  </div> -->\r\n\r\n\r\n  <body>\r\n   \r\n      <div class=\"container\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n            <div class=\"card card-signin my-5\" id=\"login-form\"> \r\n              <div class=\"card-body form-container\">\r\n                <h5 class=\"card-title text-center\">Sign In</h5>\r\n                <form class=\"form-signin\" #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n                  <div class=\"form-label-group h-50\">\r\n                    <input style=\"height:50px; padding-left:17px\" type=\"email\" name=\"user_email\" id=\"inputEmail\" class=\"form-control \" placeholder=\"email\" [(ngModel)]=\"username\" required autofocus>\r\n                    <label for=\"inputEmail\" class =\" ml-3\">Email address</label>\r\n                  </div>\r\n                  <div class=\"form-label-group\">\r\n                  \r\n                    <input style=\"height:50px; padding-left:17px\" type=\"password\"  [(ngModel)]=\"password\"  name=\"password\" id=\"inputPassword\" class=\"form-control \" placeholder=\"Password\" required>\r\n                    <label for=\"inputPassword\" class =\"ml-3\">Password</label>\r\n                  </div>\r\n                  <button [disabled]=\"!loginForm.valid\" class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                  <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"button\" (click)=\"accountCreation()\">Create new account</button>\r\n                  \r\n                </form>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </body>\r\n\r\n\r\n    <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->\r\n\r\n<!-- <body>\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n          <div class=\"card card-signin my-5\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title text-center\">Sign In</h5>\r\n              <form class=\"form-signin\">\r\n                <div class=\"form-label-group\">\r\n                  <input style=\"height:50px\" type=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>\r\n                  <label for=\"inputEmail\">Email address</label>\r\n                </div>\r\n  \r\n                <div class=\"form-label-group\">\r\n                  <input  style=\"height:50px\" type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>\r\n                  <label for=\"inputPassword\">Password</label>\r\n                </div>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Create New Account</button>\r\n      \r\n              </form>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </body> -->\r\n"
 
 /***/ }),
 
@@ -566,7 +566,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n  border-bottom: 1px solid #bbb
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\r\n  <ul>\r\n    <li *ngFor=\"let item of navItems\">\r\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n    </li>\r\n    <button (click)=\"logout()\">Logout</button>\r\n  </ul>\r\n</nav>\r\n"
+module.exports = "<nav>\r\n  <ul>\r\n    <li *ngFor=\"let item of navItems\">\r\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n    </li>\r\n    <button (click)=\"logout()\" style=\"\r\n    float: right;\r\n    margin-right: 20px;\r\n    margin-top: 5px;\r\n\">Logout</button>\r\n  </ul>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -626,7 +626,7 @@ var NavigationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbmV3LWV2ZW50L25ldy1ldmVudC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\r\n  width: 20em;\r\n}*/\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uZXctZXZlbnQvbmV3LWV2ZW50LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxVQUFVO0FBQ1o7QUFDQTs7O0VBR0UiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL25ldy1ldmVudC9uZXctZXZlbnQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImxhYmVse1xyXG4gIHdpZHRoOiA5ZW07XHJcbn1cclxuLyp0ZXh0YXJlYXtcclxuICBoZWlnaHQ6IDVlbTtcclxuICB3aWR0aDogMjBlbTtcclxufSovXHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -637,7 +637,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  new-event works!\r\n</p>\r\n"
+module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"count\">Player Count: </label>\r\n      <input type=\"number\" name=\"count\" id=\"count\" min=\"2\" value=\"2\" [(ngModel)]=\"newEvent.player_count\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"newEvent.evt_type\" required>\r\n        <option ng-selected=\"selected\" value=\"Custom\">Custom</option>\r\n        <option value=\"Single Elimination\">Single Elimination</option>\r\n        <option value=\"Double Elimination\">Double Elimination</option>\r\n        <option value=\"Swiss\">Swiss</option>\r\n        <option value=\"Round Robin\">Round Robin</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"newEvent.evt_desc\" required></textarea>\r\n    </div>\r\n    <!--<p>The validity of the form is: {{ eventForm.valid }}.</p>-->\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -653,12 +653,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewEventComponent", function() { return NewEventComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_event__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../model/event */ "./src/app/model/event.ts");
+
 
 
 var NewEventComponent = /** @class */ (function () {
     function NewEventComponent() {
+        this.newEvent = new _model_event__WEBPACK_IMPORTED_MODULE_2__["Event"]();
+        this.in_progress = true;
+        this.newOrganizer = JSON.parse(localStorage.getItem('authToken'));
     }
     NewEventComponent.prototype.ngOnInit = function () {
+    };
+    NewEventComponent.prototype.onSubmit = function () {
+        this.newEvent.organizer_id = this.newOrganizer.managerId;
+        console.log("Organizer id: ", this.newEvent.organizer_id, " player count: ", this.newEvent.player_count);
+        console.log("Event Type: ", this.newEvent.evt_type, " Event Description: ", this.newEvent.evt_desc);
+        if (this.in_progress == true) {
+            console.log("Tournament is currently in progress");
+        }
+        else
+            console.log("Tournament is not currently in progress");
+        //console.log(this.newOrganizer.id);
+        console.log(this.newOrganizer.managerId);
     };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -781,7 +798,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n}\r\n\r\n/*# sourceMappingURL=d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<table>\r\n  <tr>\r\n    <th>Id</th><th>Name</th>\r\n  </tr>\r\n  <tr *ngFor=\"let p of participants | searchUtil : 'name' : searchText; let i = index\">\r\n    <td>{{p.player_Id}}</td>\r\n    <td>{{p.firstName}} {{p.lastName}}</td>\r\n  </tr>\r\n</table>\r\n<button type=\"button\" (click)=\"goBack()\">Go Back</button>\r\n"
+module.exports = "<input style=\"margin-left: 2em\" [(ngModel)]=\"searchText\" placeholder=\"Participant Name\">\r\n<table style=\"margin-left: 2em\">\r\n  <tr>\r\n    <th style=\"width: 4em;\">Id</th><th>Name</th>\r\n  </tr>\r\n  <tr *ngFor=\"let p of participants | searchUtil : 'name' : searchText; let i = index\">\r\n    <td>{{p.player_Id}}</td>\r\n    <td>{{p.firstName}} {{p.lastName}}</td>\r\n  </tr>\r\n</table>\r\n<button style=\"margin-left: 2em;\" type=\"button\" (click)=\"goBack()\">Go Back</button>\r\n"
 
 /***/ }),
 
@@ -843,6 +860,27 @@ var ParticipantSearchComponent = /** @class */ (function () {
             _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
     ], ParticipantSearchComponent);
     return ParticipantSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/event.ts":
+/*!********************************!*\
+  !*** ./src/app/model/event.ts ***!
+  \********************************/
+/*! exports provided: Event */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Event", function() { return Event; });
+var Event = /** @class */ (function () {
+    function Event() {
+        this.in_progress = true;
+    }
+    return Event;
 }());
 
 
@@ -1202,7 +1240,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })
