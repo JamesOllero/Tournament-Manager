@@ -1,6 +1,8 @@
 package com.revature.project2.services;
 
 import com.revature.project2.models.Events;
+import com.revature.project2.models.LocalResults;
+import com.revature.project2.models.Organizers;
 import com.revature.project2.models.Players;
 
 import java.util.ArrayList;
@@ -8,50 +10,52 @@ import java.util.List;
 
 public class BracketServiceImpl implements BracketService{
     @Override
-    public Events finalResults() {
+    public List<LocalResults> tourneySetup() {
         return null;
     }
 
     @Override
-    public List<Players> singleElim(List<Players> pList) {
-        List<Players> winners = new ArrayList<>();
-        winners.addAll(pList);
-        return winners;
-    }
-
-    @Override
-    public List<Players> doubleElim() {
-        List<Players> losers = new ArrayList<>();
-        return losers;
-    }
-
-    @Override
-    public List<Players> manualMatch(Players p1, Players p2) {
+    public Events tourneyStart(String description, Organizers organizer, List<LocalResults> participantList) {
         return null;
     }
 
     @Override
-    public List<Players> autoMatch(List<Players> pList) {
+    public List<LocalResults> singleElim(List<LocalResults> participantList) {
         return null;
     }
 
     @Override
-    public void cull(List<Players> pList1, List<Players> pList2, int check) {
+    public List<LocalResults> doubleElim() {
+        return null;
+    }
+
+    @Override
+    public List<LocalResults> manualMatch(LocalResults participant1, LocalResults participant2) {
+        return null;
+    }
+
+    @Override
+    public List<LocalResults> autoMatch(List<Players> participantList) {
+        return null;
+    }
+
+    @Override
+    public void cull(List<LocalResults> participantList1, List<LocalResults> participantList2, int check) {
 
     }
 
     @Override
-    public void freeWin(Players p) {
+    public void freeWin(LocalResults participant) {
 
     }
 
     @Override
-    public void freewinReset(List<Players> pList) {
+    public void freewinReset(List<LocalResults> participantList) {
 
     }
 
     @Override
-    public void wonRound(Players p) {
+    public void wonRound(LocalResults participant) {
 
     }
 
