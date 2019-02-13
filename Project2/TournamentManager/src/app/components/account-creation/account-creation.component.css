@@ -1,0 +1,33 @@
+.margin-left{
+    margin-left: 40px !important;
+}
+#btn{
+    margin-right: 34px;
+}
+
+
+/* #participant-registration{ */
+    #changeme{
+ background: radial-gradient(#fd6119, #682d00);
+background-size: 150% 100%;
+    }
+#pad{
+    padding-top: 5%;
+}
+
+#fullpage{
+    position:fixed;
+    padding:0;
+    margin:0;
+
+
+    left:0;
+
+    width: 100%;
+    height: 100%;
+}
+
+#organizer-registration{
+    padding: 15px;
+  box-sizing: border-box;
+}
