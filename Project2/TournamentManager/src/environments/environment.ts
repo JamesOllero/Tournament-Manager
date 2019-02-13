@@ -22,6 +22,28 @@ export const environment = {
       title: 'View In-Progress Events',
       link: 'event/active'
     }
+  ],
+  formats: [
+    {
+      title: 'Custom',
+      type: 'Custom'
+    },
+    {
+      title: 'Single Elimination',
+      type: 'Elimination'
+    },
+    {
+      title: 'Double Elimination',
+      type: 'Elimination'
+    },
+    {
+      title: 'Swiss',
+      type: 'Wide'
+    },
+    {
+      title: 'Round Robin',
+      type: 'Wide'
+    }
   ]
 };
 
