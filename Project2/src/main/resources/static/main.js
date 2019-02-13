@@ -640,7 +640,7 @@ module.exports = "label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\">\r\n        <option *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\">Submit</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n    <div>\r\n      <select multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 200px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n      <select multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 200px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n      <div>\r\n        <button type=\"button\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\">Submit</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -665,6 +665,10 @@ __webpack_require__.r(__webpack_exports__);
 var NewEventComponent = /** @class */ (function () {
     function NewEventComponent(participantService) {
         this.participantService = participantService;
+        this.playerCount = 0;
+        this.entrants = new Array();
+        this.currentEntrants = new Array();
+        this.removals = new Array();
     }
     NewEventComponent.prototype.ngOnInit = function () {
         this.getParticipants();
@@ -685,9 +689,32 @@ var NewEventComponent = /** @class */ (function () {
             console.log(err);
         });
     };
+    NewEventComponent.prototype.addParticipants = function () {
+        var i;
+        for (i = 0; i < this.entrants.length; i++) {
+            this.currentEntrants.push(this.entrants[i]);
+            var index = this.participants.indexOf(this.entrants[i]);
+            this.participants.splice(index, 1);
+        }
+        this.entrants = [];
+        this.playerCount = this.currentEntrants.length;
+    };
+    NewEventComponent.prototype.removeParticipants = function () {
+        var i;
+        for (i = 0; i < this.removals.length; i++) {
+            this.participants.push(this.removals[i]);
+            var index = this.currentEntrants.indexOf(this.removals[i]);
+            this.currentEntrants.splice(index, 1);
+        }
+        this.removals = [];
+        this.playerCount = this.currentEntrants.length;
+    };
     NewEventComponent.prototype.onSubmit = function () {
         console.log(this.usedFormat.title);
         console.log(this.usedFormat.type);
+        console.log(this.evt_desc);
+        console.log(this.playerCount);
+        console.log(this.currentEntrants);
     };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

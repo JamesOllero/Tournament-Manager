@@ -2,13 +2,27 @@
   <form #eventForm="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div>
       <label for="type">Event Type: </label>
-      <select name="type" id="type" [(ngModel)]="usedFormat">
+      <select name="type" id="type" [(ngModel)]="usedFormat" required>
+        <option [ngValue]="null" disabled>Choose an Event Type</option>
         <option *ngFor="let format of formats" [ngValue]="format">{{format.title}}</option>
       </select>
     </div>
     <div>
       <label for="description" style="vertical-align: top;">Event Description: </label>
       <textarea name="event-description" id="description" placeholder="Event Description" [(ngModel)]="evt_desc" required></textarea>
+    </div>
+    <label id="player-count">Player Count: {{playerCount}}</label>
+    <div>
+      <select multiple name="entrantSelectable" [(ngModel)]="entrants" style="min-width: 200px">
+        <option *ngFor="let participant of participants" [ngValue]="participant">{{participant.name}}</option>
+      </select>
+      <select multiple name="entrantRemovable" [(ngModel)]="removals" style="min-width: 200px">
+        <option *ngFor="let entrant of currentEntrants" [ngValue]="entrant">{{entrant.name}}</option>
+      </select>
+      <div>
+        <button type="button" (click)="addParticipants()">Add Participants</button>
+        <button type="button" (click)="removeParticipants()">Remove Participants</button>
+      </div>
     </div>
     <div>
       <button type="submit">Submit</button>

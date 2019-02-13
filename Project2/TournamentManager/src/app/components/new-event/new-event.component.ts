@@ -14,6 +14,10 @@ export class NewEventComponent implements OnInit {
   formats: Array<{title: string, type: string}>;
   usedFormat: {title:string,type:string};
   evt_desc: String;
+  playerCount = 0;
+  entrants = new Array<Participant>();
+  currentEntrants = new Array<Participant>();
+  removals = new Array<Participant>();
 
   constructor(
     private participantService: ParticipantService
@@ -42,9 +46,34 @@ export class NewEventComponent implements OnInit {
     );
   }
 
+  addParticipants() {
+    let i:number;
+    for(i=0;i<this.entrants.length;i++) {
+      this.currentEntrants.push(this.entrants[i]);
+      let index = this.participants.indexOf(this.entrants[i]);
+      this.participants.splice(index, 1);
+    }
+    this.entrants = [];
+    this.playerCount = this.currentEntrants.length;
+  }
+
+  removeParticipants() {
+    let i: number;
+    for(i=0;i<this.removals.length;i++) {
+      this.participants.push(this.removals[i]);
+      let index = this.currentEntrants.indexOf(this.removals[i]);
+      this.currentEntrants.splice(index, 1);
+    }
+    this.removals = [];
+    this.playerCount = this.currentEntrants.length;
+  }
+
   onSubmit() {
     console.log(this.usedFormat.title);
     console.log(this.usedFormat.type);
     console.log(this.evt_desc);
+    console.log(this.playerCount);
+    console.log(this.currentEntrants);
   }
+
 }
