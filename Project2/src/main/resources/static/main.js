@@ -637,7 +637,7 @@ module.exports = "label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"count\">Player Count: </label>\r\n      <input type=\"number\" name=\"count\" id=\"count\" min=\"2\" value=\"2\" [(ngModel)]=\"newEvent.player_count\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"newEvent.evt_type\" required>\r\n        <option ng-selected=\"selected\" value=\"Custom\">Custom</option>\r\n        <option value=\"Single Elimination\">Single Elimination</option>\r\n        <option value=\"Double Elimination\">Double Elimination</option>\r\n        <option value=\"Swiss\">Swiss</option>\r\n        <option value=\"Round Robin\">Round Robin</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"newEvent.evt_desc\" required></textarea>\r\n    </div>\r\n    <!--<p>The validity of the form is: {{ eventForm.valid }}.</p>-->\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"count\">Player Count: </label>\r\n      <input type=\"number\" name=\"count\" id=\"count\" min=\"2\" value=\"2\" [(ngModel)]=\"newEvent.player_count\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"newEvent.evt_type\" required>\r\n        <option ng-selected=\"selected\" value=\"Custom\">Custom</option>\r\n        <option value=\"Single Elimination\">Single Elimination</option>\r\n        <option value=\"Double Elimination\">Double Elimination</option>\r\n        <option value=\"Swiss\">Swiss</option>\r\n        <option value=\"Round Robin\">Round Robin</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"newEvent.evt_desc\" required></textarea>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -674,7 +674,7 @@ var NewEventComponent = /** @class */ (function () {
         }
         else
             console.log("Tournament is not currently in progress");
-        //console.log(this.newOrganizer.id);
+        console.log(this.newOrganizer.managerId);
         console.log(this.newOrganizer.managerId);
     };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
