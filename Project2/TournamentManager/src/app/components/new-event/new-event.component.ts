@@ -23,14 +23,12 @@ export class NewEventComponent implements OnInit {
 
   onSubmit(){
     this.newEvent.organizer_id = this.newOrganizer.managerId;
-    console.log("Organizer id: ", this.newEvent.organizer_id, " player count: ", this.newEvent.player_count);
+    console.log("Organizer id: ", this.newEvent.organizer_id, " Player count: ", this.newEvent.player_count);
     console.log("Event Type: ", this.newEvent.evt_type, " Event Description: ", this.newEvent.evt_desc);
-    if (this.in_progress == true){
+    if (this.newEvent.in_progress == true){
       console.log("Tournament is currently in progress");
     }
     else console.log("Tournament is not currently in progress");
-    console.log(this.newOrganizer.managerId);
-    console.log(this.newOrganizer.managerId);
   }
 
 }

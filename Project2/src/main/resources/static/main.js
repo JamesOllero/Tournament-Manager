@@ -674,15 +674,19 @@ var NewEventComponent = /** @class */ (function () {
     NewEventComponent.prototype.ngOnInit = function () {
     };
     NewEventComponent.prototype.onSubmit = function () {
+        var organizer = JSON.parse(localStorage.getItem('authToken'));
+        console.log("Organizer test: ", organizer);
+        var organizerId = JSON.parse(localStorage.getItem('authToken')).id;
+        console.log("Id test: ", organizerId);
         this.newEvent.organizer_id = this.newOrganizer.managerId;
         console.log("Organizer id: ", this.newEvent.organizer_id, " player count: ", this.newEvent.player_count);
         console.log("Event Type: ", this.newEvent.evt_type, " Event Description: ", this.newEvent.evt_desc);
-        if (this.in_progress == true) {
+        if (this.newEvent.in_progress == true) {
             console.log("Tournament is currently in progress");
         }
         else
             console.log("Tournament is not currently in progress");
-        console.log(this.newOrganizer.managerId);
+        console.log(this.newOrganizer);
         console.log(this.newOrganizer.managerId);
     };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
