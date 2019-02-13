@@ -79,7 +79,7 @@ public class OrganizersController {
 
             return new ResponseEntity<String>(errorMessage, HttpStatus.UNAUTHORIZED);
         }
-        return new ResponseEntity<List>(organizers, HttpStatus.OK);
+        return new ResponseEntity<Organizers>(organizers.get(0), HttpStatus.OK);
     }
 }
 
