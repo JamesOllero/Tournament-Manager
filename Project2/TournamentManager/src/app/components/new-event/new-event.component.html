@@ -1,3 +1,26 @@
-<p>
-  new-event works!
-</p>
+<div class="form-container" id="event-creation">
+  <form #eventForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div>
+      <label for="count">Player Count: </label>
+      <input type="number" name="count" id="count" min="2" value="2" [(ngModel)]="newEvent.player_count" required>
+    </div>
+    <div>
+      <label for="type">Event Type: </label>
+      <select name="type" id="type" [(ngModel)]="newEvent.evt_type" required>
+        <option ng-selected="selected" value="Custom">Custom</option>
+        <option value="Single Elimination">Single Elimination</option>
+        <option value="Double Elimination">Double Elimination</option>
+        <option value="Swiss">Swiss</option>
+        <option value="Round Robin">Round Robin</option>
+      </select>
+    </div>
+    <div>
+      <label for="description" style="vertical-align: top;">Event Description: </label>
+      <textarea name="description" id="description" placeholder="Event Description" [(ngModel)]="newEvent.evt_desc" required></textarea>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!eventForm.valid">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+</div>
