@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1db1632-c2ae-4d4b-bcfd-0f2cab50033d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Project2/src/main/java/com/revature/project2/models/LocalResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/src/main/java/com/revature/project2/models/LocalResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/src/main/java/com/revature/project2/services/BracketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/src/main/java/com/revature/project2/services/BracketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/src/main/java/com/revature/project2/services/BracketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/src/main/java/com/revature/project2/services/BracketServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +17,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/ollero/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-684">
+            <state relative-caret-position="2176">
               <caret line="134" column="41" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
             </state>
           </provider>
@@ -143,12 +143,12 @@
       <workItem from="1549839114593" duration="1806000" />
       <workItem from="1549846919833" duration="4429000" />
       <workItem from="1549901799672" duration="13127000" />
-      <workItem from="1550016175012" duration="750000" />
+      <workItem from="1550016175012" duration="756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23730000" />
+    <option name="totallyTimeSpent" value="23736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="544" y="0" width="832" height="735" extended-state="0" />
@@ -191,7 +191,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/org/ollero/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684">
+        <state relative-caret-position="2176">
           <caret line="134" column="41" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
         </state>
       </provider>
