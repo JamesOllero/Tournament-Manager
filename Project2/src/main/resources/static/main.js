@@ -207,6 +207,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_container_container_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/container/container.component */ "./src/app/components/container/container.component.ts");
 /* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
 /* harmony import */ var _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pipes/search-util.pipe */ "./src/app/pipes/search-util.pipe.ts");
+/* harmony import */ var _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/tournament/tournament.component */ "./src/app/components/tournament/tournament.component.ts");
+
 
 
 
@@ -238,7 +240,8 @@ var AppModule = /** @class */ (function () {
                 _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_12__["NavigationComponent"],
                 _components_container_container_component__WEBPACK_IMPORTED_MODULE_13__["ContainerComponent"],
                 _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__["ParticipantSearchComponent"],
-                _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__["SearchUtilPipe"]
+                _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__["SearchUtilPipe"],
+                _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_16__["TournamentComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -415,7 +418,7 @@ module.exports = "/* :root {\r\n    --input-padding-x: 1.5rem;\r\n    --input-pa
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- \r\n  <div class=\"form-container\" id=\"login-form\">\r\n    <form #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n      <div>\r\n        <input type=\"text\" name=\"user_email\" placeholder=\"email\" [(ngModel)]=\"username\" required>\r\n      </div>\r\n      <div>\r\n        <input type=\"password\" name=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" required>\r\n      </div>\r\n      <div>\r\n        <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n        <button type=\"reset\">Reset</button>\r\n      </div>\r\n    </form>\r\n  </div> -->\r\n\r\n\r\n  <body>\r\n   \r\n      <div class=\"container\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n            <div class=\"card card-signin my-5\" id=\"login-form\"> \r\n              <div class=\"card-body form-container\">\r\n                <h5 class=\"card-title text-center\">Sign In</h5>\r\n                <form class=\"form-signin\" #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n                  <div class=\"form-label-group h-50\">\r\n                    <input style=\"height:50px; padding-left:17px\" type=\"email\" name=\"user_email\" id=\"inputEmail\" class=\"form-control \" placeholder=\"email\" [(ngModel)]=\"username\" required autofocus>\r\n                    <label for=\"inputEmail\" class =\" ml-3\">Email address</label>\r\n                  </div>\r\n                  <div class=\"form-label-group\">\r\n                  \r\n                    <input style=\"height:50px; padding-left:17px\" type=\"password\"  [(ngModel)]=\"password\"  name=\"password\" id=\"inputPassword\" class=\"form-control \" placeholder=\"Password\" required>\r\n                    <label for=\"inputPassword\" class =\"ml-3\">Password</label>\r\n                  </div>\r\n                  <button [disabled]=\"!loginForm.valid\" class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                  <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"button\" (click)=\"accountCreation()\">Create new account</button>\r\n                  \r\n                </form>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </body>\r\n\r\n\r\n    <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->\r\n\r\n<!-- <body>\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n          <div class=\"card card-signin my-5\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title text-center\">Sign In</h5>\r\n              <form class=\"form-signin\">\r\n                <div class=\"form-label-group\">\r\n                  <input style=\"height:50px\" type=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>\r\n                  <label for=\"inputEmail\">Email address</label>\r\n                </div>\r\n  \r\n                <div class=\"form-label-group\">\r\n                  <input  style=\"height:50px\" type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>\r\n                  <label for=\"inputPassword\">Password</label>\r\n                </div>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Create New Account</button>\r\n      \r\n              </form>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </body> -->\r\n"
+module.exports = "<!-- \r\n  <div class=\"form-container\" id=\"login-form\">\r\n    <form #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n      <div>\r\n        <input type=\"text\" name=\"user_email\" placeholder=\"email\" [(ngModel)]=\"username\" required>\r\n      </div>\r\n      <div>\r\n        <input type=\"password\" name=\"password\" placeholder=\"password\" [(ngModel)]=\"password\" required>\r\n      </div>\r\n      <div>\r\n        <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n        <button type=\"reset\">Reset</button>\r\n      </div>\r\n    </form>\r\n  </div> -->\r\n\r\n\r\n  <body>\r\n   \r\n      <div class=\"container\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n            <div class=\"card card-signin my-5\" id=\"login-form\"> \r\n              <div class=\"card-body form-container\">\r\n                <h5 class=\"card-title text-center\">Sign In</h5>\r\n                <form class=\"form-signin\" #loginForm=\"ngForm\" novalidate (ngSubmit)=\"loginSubmit()\">\r\n                  <div class=\"form-label-group h-50\">\r\n                    <input style=\"height:50px; padding-left:17px\" type=\"email\" name=\"user_email\" id=\"inputEmail\" class=\"form-control \" placeholder=\"email\" [(ngModel)]=\"username\" required autofocus>\r\n                    <label for=\"inputEmail\" class =\" ml-3\">Email address</label>\r\n                  </div>\r\n                  <div class=\"form-label-group\">\r\n                    <input style=\"height:50px; padding-left:17px\" type=\"password\"  [(ngModel)]=\"password\"  name=\"password\" id=\"inputPassword\" class=\"form-control \" placeholder=\"Password\" required>\r\n                    <label for=\"inputPassword\" class =\"ml-3\">Password</label>\r\n                  </div>\r\n                  <button [disabled]=\"!loginForm.valid\" class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                  <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"button\" (click)=\"accountCreation()\">Create new account</button>\r\n                </form>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </body>\r\n\r\n\r\n    <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->\r\n\r\n<!-- <body>\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">\r\n          <div class=\"card card-signin my-5\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title text-center\">Sign In</h5>\r\n              <form class=\"form-signin\">\r\n                <div class=\"form-label-group\">\r\n                  <input style=\"height:50px\" type=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>\r\n                  <label for=\"inputEmail\">Email address</label>\r\n                </div>\r\n  \r\n                <div class=\"form-label-group\">\r\n                  <input  style=\"height:50px\" type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>\r\n                  <label for=\"inputPassword\">Password</label>\r\n                </div>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Sign in</button>\r\n                <button class=\"btn btn-lg btn-primary btn-block text-uppercase\" type=\"submit\">Create New Account</button>\r\n      \r\n              </form>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </body> -->\r\n"
 
 /***/ }),
 
@@ -637,7 +640,7 @@ module.exports = "label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"count\">Player Count: </label>\r\n      <input type=\"number\" name=\"count\" id=\"count\" min=\"2\" value=\"2\" [(ngModel)]=\"newEvent.player_count\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"newEvent.evt_type\" required>\r\n        <option ng-selected=\"selected\" value=\"Custom\">Custom</option>\r\n        <option value=\"Single Elimination\">Single Elimination</option>\r\n        <option value=\"Double Elimination\">Double Elimination</option>\r\n        <option value=\"Swiss\">Swiss</option>\r\n        <option value=\"Round Robin\">Round Robin</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"newEvent.evt_desc\" required></textarea>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"count\">Player Count: </label>\r\n      <input type=\"number\" name=\"count\" id=\"count\" min=\"2\" value=\"2\" [(ngModel)]=\"newEvent.player_count\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"newEvent.evt_type\" required>\r\n        <option ng-selected=\"selected\" value=\"Custom\">Custom</option>\r\n        <option value=\"Single Elimination\">Single Elimination</option>\r\n        <option value=\"Double Elimination\">Double Elimination</option>\r\n        <option value=\"Swiss\">Swiss</option>\r\n        <option value=\"Round Robin\">Round Robin</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"newEvent.evt_desc\" required></textarea>\r\n    </div>\r\n    <div>\r\n      <select size=\"15\" [(ngModel)]=\"additions\" multiple=\"multiple\" name=\"participantPotential\">\r\n        <option *ngFor=\"let p of participants\" value=\"p\">{{p.name}}</option>\r\n      </select>\r\n      <select size=\"15\" [(ngModel)]=\"removals\" multiple=\"multiple\" name=\"currentEntrants\">\r\n        <option *ngFor=\"let e of entrants\" value=\"e\">{{e.name}}</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <button type=\"button\" (click)=\"addEntrants()\"> + </button>\r\n      <button type=\"button\" (click)=\"removeEntrants()\"> - </button>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -654,16 +657,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _model_event__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../model/event */ "./src/app/model/event.ts");
+/* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
+
 
 
 
 var NewEventComponent = /** @class */ (function () {
-    function NewEventComponent() {
+    function NewEventComponent(participantService) {
+        this.participantService = participantService;
         this.newEvent = new _model_event__WEBPACK_IMPORTED_MODULE_2__["Event"]();
         this.in_progress = true;
         this.newOrganizer = JSON.parse(localStorage.getItem('authToken'));
+        this.participants = new Array();
+        this.additions = new Array();
+        this.entrants = new Array();
+        this.removals = new Array();
     }
     NewEventComponent.prototype.ngOnInit = function () {
+        this.getAllParticipants();
     };
     NewEventComponent.prototype.onSubmit = function () {
         this.newEvent.organizer_id = this.newOrganizer.managerId;
@@ -677,13 +688,46 @@ var NewEventComponent = /** @class */ (function () {
         console.log(this.newOrganizer.managerId);
         console.log(this.newOrganizer.managerId);
     };
+    NewEventComponent.prototype.getAllParticipants = function () {
+        var _this = this;
+        this.participantService.getAllParticipants(function () {
+            var participantArr = JSON.parse(localStorage.getItem('participants'));
+            localStorage.removeItem('participants');
+            var i;
+            for (i = 0; i < participantArr.length; i++) {
+                participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;
+            }
+            _this.participants = participantArr;
+            return;
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    NewEventComponent.prototype.addEntrants = function () {
+        var i;
+        for (i = 0; i < this.additions.length; i++) {
+            this.entrants.push(this.additions[i]);
+            var index = this.participants.indexOf(this.additions[i]);
+            this.participants.splice(index, 1);
+        }
+        this.additions = [];
+    };
+    NewEventComponent.prototype.removeEntrants = function () {
+        var i;
+        for (i = 0; i < this.removals.length; i++) {
+            this.participants.push(this.removals[i]);
+            var index = this.entrants.indexOf(this.removals[i]);
+            this.entrants.splice(index, 1);
+        }
+        this.removals = [];
+    };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-new-event',
             template: __webpack_require__(/*! ./new-event.component.html */ "./src/app/components/new-event/new-event.component.html"),
             styles: [__webpack_require__(/*! ./new-event.component.css */ "./src/app/components/new-event/new-event.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_3__["ParticipantService"]])
     ], NewEventComponent);
     return NewEventComponent;
 }());
@@ -860,6 +904,62 @@ var ParticipantSearchComponent = /** @class */ (function () {
             _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
     ], ParticipantSearchComponent);
     return ParticipantSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/tournament/tournament.component.css":
+/*!****************************************************************!*\
+  !*** ./src/app/components/tournament/tournament.component.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdG91cm5hbWVudC90b3VybmFtZW50LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/tournament/tournament.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/tournament/tournament.component.html ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  tournament works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/tournament/tournament.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/components/tournament/tournament.component.ts ***!
+  \***************************************************************/
+/*! exports provided: TournamentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TournamentComponent", function() { return TournamentComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var TournamentComponent = /** @class */ (function () {
+    function TournamentComponent() {
+    }
+    TournamentComponent.prototype.ngOnInit = function () {
+    };
+    TournamentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-tournament',
+            template: __webpack_require__(/*! ./tournament.component.html */ "./src/app/components/tournament/tournament.component.html"),
+            styles: [__webpack_require__(/*! ./tournament.component.css */ "./src/app/components/tournament/tournament.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], TournamentComponent);
+    return TournamentComponent;
 }());
 
 
@@ -1240,7 +1340,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })

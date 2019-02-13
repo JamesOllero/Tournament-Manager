@@ -16,7 +16,19 @@
     </div>
     <div>
       <label for="description" style="vertical-align: top;">Event Description: </label>
-      <textarea name="description" id="description" placeholder="Event Description" [(ngModel)]="newEvent.evt_desc" required></textarea>
+      <textarea name="event-description" id="description" placeholder="Event Description" [(ngModel)]="newEvent.evt_desc" required></textarea>
+    </div>
+    <div>
+      <select size="15" [(ngModel)]="additions" multiple="multiple" name="participantPotential">
+        <option *ngFor="let p of participants" value="p">{{p.name}}</option>
+      </select>
+      <select size="15" [(ngModel)]="removals" multiple="multiple" name="currentEntrants">
+        <option *ngFor="let e of entrants" value="e">{{e.name}}</option>
+      </select>
+    </div>
+    <div>
+      <button type="button" (click)="addEntrants()"> + </button>
+      <button type="button" (click)="removeEntrants()"> - </button>
     </div>
     <div>
       <button type="submit" [disabled]="!eventForm.valid">Submit</button>

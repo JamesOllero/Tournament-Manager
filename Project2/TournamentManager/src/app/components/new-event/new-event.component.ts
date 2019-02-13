@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../../model/event';
 import { Organizer } from "../../model/organizer";
+import {ParticipantService} from "../../services/participant.service";
+import {Participant} from "../../model/participant";
 
 @Component({
   selector: 'app-new-event',
@@ -15,10 +17,16 @@ export class NewEventComponent implements OnInit {
   evt_desc: string;
   in_progress: boolean = true;
   newOrganizer: Organizer = JSON.parse(localStorage.getItem('authToken'));
-
-  constructor() { }
+  participants = new Array<Participant>();
+  additions = new Array<Participant>();
+  entrants = new Array<Participant>();
+  removals = new Array<Participant>();
+  constructor(
+    private participantService: ParticipantService
+  ) { }
 
   ngOnInit() {
+    this.getAllParticipants();
   }
 
   onSubmit(){
@@ -33,4 +41,41 @@ export class NewEventComponent implements OnInit {
     console.log(this.newOrganizer.managerId);
   }
 
+  getAllParticipants() {
+    this.participantService.getAllParticipants(
+      () => {
+        let participantArr = JSON.parse(localStorage.getItem('participants'));
+        localStorage.removeItem('participants');
+        let i: number;
+        for(i=0;i<participantArr.length;i++){
+          participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;
+        }
+        this.participants = participantArr;
+        return;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  addEntrants() {
+    let i: number;
+    for(i=0;i<this.additions.length;i++){
+      this.entrants.push(this.additions[i]);
+      let index = this.participants.indexOf(this.additions[i]);
+      this.participants.splice(index, 1);
+    }
+    this.additions = [];
+  }
+
+  removeEntrants() {
+    let i: number;
+    for(i=0;i<this.removals.length;i++){
+      this.participants.push(this.removals[i]);
+      let index = this.entrants.indexOf(this.removals[i]);
+      this.entrants.splice(index, 1);
+    }
+    this.removals = [];
+  }
 }
