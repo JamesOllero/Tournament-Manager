@@ -640,7 +640,7 @@ module.exports = "label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"count\">Player Count: </label>\r\n      <input type=\"number\" name=\"count\" id=\"count\" min=\"2\" value=\"2\" [(ngModel)]=\"newEvent.player_count\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"newEvent.evt_type\" required>\r\n        <option ng-selected=\"selected\" value=\"Custom\">Custom</option>\r\n        <option value=\"Single Elimination\">Single Elimination</option>\r\n        <option value=\"Double Elimination\">Double Elimination</option>\r\n        <option value=\"Swiss\">Swiss</option>\r\n        <option value=\"Round Robin\">Round Robin</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"newEvent.evt_desc\" required></textarea>\r\n    </div>\r\n    <div>\r\n      <select size=\"15\" [(ngModel)]=\"additions\" multiple=\"multiple\" name=\"participantPotential\">\r\n        <option *ngFor=\"let p of participants\" value=\"p\">{{p.name}}</option>\r\n      </select>\r\n      <select size=\"15\" [(ngModel)]=\"removals\" multiple=\"multiple\" name=\"currentEntrants\">\r\n        <option *ngFor=\"let e of entrants\" value=\"e\">{{e.name}}</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <button type=\"button\" (click)=\"addEntrants()\"> + </button>\r\n      <button type=\"button\" (click)=\"removeEntrants()\"> - </button>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n      <button type=\"reset\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\">\r\n        <option *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\">Submit</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -656,8 +656,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewEventComponent", function() { return NewEventComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _model_event__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../model/event */ "./src/app/model/event.ts");
-/* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
+/* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
 
 
 
@@ -665,30 +665,12 @@ __webpack_require__.r(__webpack_exports__);
 var NewEventComponent = /** @class */ (function () {
     function NewEventComponent(participantService) {
         this.participantService = participantService;
-        this.newEvent = new _model_event__WEBPACK_IMPORTED_MODULE_2__["Event"]();
-        this.in_progress = true;
-        this.newOrganizer = JSON.parse(localStorage.getItem('authToken'));
-        this.participants = new Array();
-        this.additions = new Array();
-        this.entrants = new Array();
-        this.removals = new Array();
     }
     NewEventComponent.prototype.ngOnInit = function () {
-        this.getAllParticipants();
+        this.getParticipants();
+        this.formats = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].formats;
     };
-    NewEventComponent.prototype.onSubmit = function () {
-        this.newEvent.organizer_id = this.newOrganizer.managerId;
-        console.log("Organizer id: ", this.newEvent.organizer_id, " player count: ", this.newEvent.player_count);
-        console.log("Event Type: ", this.newEvent.evt_type, " Event Description: ", this.newEvent.evt_desc);
-        if (this.in_progress == true) {
-            console.log("Tournament is currently in progress");
-        }
-        else
-            console.log("Tournament is not currently in progress");
-        console.log(this.newOrganizer.managerId);
-        console.log(this.newOrganizer.managerId);
-    };
-    NewEventComponent.prototype.getAllParticipants = function () {
+    NewEventComponent.prototype.getParticipants = function () {
         var _this = this;
         this.participantService.getAllParticipants(function () {
             var participantArr = JSON.parse(localStorage.getItem('participants'));
@@ -703,23 +685,9 @@ var NewEventComponent = /** @class */ (function () {
             console.log(err);
         });
     };
-    NewEventComponent.prototype.addEntrants = function () {
-        var i;
-        for (i = 0; i < this.additions.length; i++) {
-            this.entrants.push(this.additions[i]);
-            var index = this.participants.indexOf(this.additions[i]);
-            this.participants.splice(index, 1);
-        }
-        this.additions = [];
-    };
-    NewEventComponent.prototype.removeEntrants = function () {
-        var i;
-        for (i = 0; i < this.removals.length; i++) {
-            this.participants.push(this.removals[i]);
-            var index = this.entrants.indexOf(this.removals[i]);
-            this.entrants.splice(index, 1);
-        }
-        this.removals = [];
+    NewEventComponent.prototype.onSubmit = function () {
+        console.log(this.usedFormat.title);
+        console.log(this.usedFormat.type);
     };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -727,7 +695,7 @@ var NewEventComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./new-event.component.html */ "./src/app/components/new-event/new-event.component.html"),
             styles: [__webpack_require__(/*! ./new-event.component.css */ "./src/app/components/new-event/new-event.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_3__["ParticipantService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"]])
     ], NewEventComponent);
     return NewEventComponent;
 }());
@@ -960,27 +928,6 @@ var TournamentComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], TournamentComponent);
     return TournamentComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/model/event.ts":
-/*!********************************!*\
-  !*** ./src/app/model/event.ts ***!
-  \********************************/
-/*! exports provided: Event */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Event", function() { return Event; });
-var Event = /** @class */ (function () {
-    function Event() {
-        this.in_progress = true;
-    }
-    return Event;
 }());
 
 
@@ -1292,6 +1239,28 @@ var environment = {
         {
             title: 'View In-Progress Events',
             link: 'event/active'
+        }
+    ],
+    formats: [
+        {
+            title: 'Custom',
+            type: 'Custom'
+        },
+        {
+            title: 'Single Elimination',
+            type: 'Elimination'
+        },
+        {
+            title: 'Double Elimination',
+            type: 'Elimination'
+        },
+        {
+            title: 'Swiss',
+            type: 'Wide'
+        },
+        {
+            title: 'Round Robin',
+            type: 'Wide'
         }
     ]
 };
