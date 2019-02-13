@@ -37,7 +37,10 @@ public class BracketServiceImpl implements BracketService{
 
     @Override
     public List<LocalResults> manualMatch(LocalResults participant1, LocalResults participant2) {
-        return null;
+        List<LocalResults> matchup = new ArrayList<>();
+        matchup.add(participant1);
+        matchup.add(participant2);
+        return matchup;
     }
 
 //    @Override
