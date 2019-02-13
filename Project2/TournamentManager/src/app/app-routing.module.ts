@@ -7,8 +7,8 @@ import {ContainerComponent} from "./components/container/container.component";
 import {NewEventComponent} from "./components/new-event/new-event.component";
 import {ParticipantRegisterComponent} from "./components/participant-register/participant-register.component";
 import {ParticipantSearchComponent} from "./components/participant-search/participant-search.component";
+import {NavigationComponent} from "./components/navigation/navigation.component";
 import {AccountCreationComponent} from "./components/account-creation/account-creation.component";
-
 const routes: Routes = [
   {
     path: 'main',
@@ -51,7 +51,7 @@ const routes: Routes = [
   },
   // {
   //   path:'',
-  //   component: NavigationComponent
+  //   component: MainMenuComponent
   // },
   {
     path: 'registration',
