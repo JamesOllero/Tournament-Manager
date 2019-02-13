@@ -18,6 +18,7 @@ export class NewEventComponent implements OnInit {
   entrants = new Array<Participant>();
   currentEntrants = new Array<Participant>();
   removals = new Array<Participant>();
+  manual: boolean;
 
   constructor(
     private participantService: ParticipantService
@@ -74,6 +75,7 @@ export class NewEventComponent implements OnInit {
     console.log(this.evt_desc);
     console.log(this.playerCount);
     console.log(this.currentEntrants);
+    console.log(this.manual);
   }
 
 }

@@ -3,7 +3,7 @@
     <div>
       <label for="type">Event Type: </label>
       <select name="type" id="type" [(ngModel)]="usedFormat" required>
-        <option [ngValue]="null" disabled>Choose an Event Type</option>
+        <option selected [ngValue]="null" disabled>Choose an Event Type</option>
         <option *ngFor="let format of formats" [ngValue]="format">{{format.title}}</option>
       </select>
     </div>
@@ -11,12 +11,18 @@
       <label for="description" style="vertical-align: top;">Event Description: </label>
       <textarea name="event-description" id="description" placeholder="Event Description" [(ngModel)]="evt_desc" required></textarea>
     </div>
-    <label id="player-count">Player Count: {{playerCount}}</label>
     <div>
-      <select multiple name="entrantSelectable" [(ngModel)]="entrants" style="min-width: 200px">
+      <label id="player-count">Player Count: {{playerCount}}</label>
+    </div>
+    <div>
+      <label for="manualization">Manually Assign Seeding: </label>
+      <input name="manualization" type="checkbox" id="manualization" [(ngModel)]="manual">
+    </div>
+    <div>
+      <select multiple name="entrantSelectable" [(ngModel)]="entrants" style="min-width: 500px">
         <option *ngFor="let participant of participants" [ngValue]="participant">{{participant.name}}</option>
       </select>
-      <select multiple name="entrantRemovable" [(ngModel)]="removals" style="min-width: 200px">
+      <select multiple name="entrantRemovable" [(ngModel)]="removals" style="min-width: 500px">
         <option *ngFor="let entrant of currentEntrants" [ngValue]="entrant">{{entrant.name}}</option>
       </select>
       <div>
@@ -25,7 +31,7 @@
       </div>
     </div>
     <div>
-      <button type="submit">Submit</button>
+      <button type="submit" [disabled]="!eventForm.valid">Submit</button>
     </div>
   </form>
 </div>
