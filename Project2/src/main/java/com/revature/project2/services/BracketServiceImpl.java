@@ -16,17 +16,23 @@ public class BracketServiceImpl implements BracketService{
 
     @Override
     public Events tourneyStart(String description, Organizers organizer, List<LocalResults> participantList) {
-        return null;
+        Events elimination = new Events(organizer, participantList.size(), "Elimination", description, true);
+        return elimination;
     }
 
     @Override
-    public List<LocalResults> singleElim(List<LocalResults> participantList) {
-        return null;
+    public List<LocalResults> singleElim(List<LocalResults> participantList, Events elimination) {
+        List<LocalResults> winners= new ArrayList<>();
+        winners.addAll(participantList);
+        elimination.setEventType("Single elimination");
+        return winners;
     }
 
     @Override
-    public List<LocalResults> doubleElim() {
-        return null;
+    public List<LocalResults> doubleElim(Events elimination) {
+        List<LocalResults> losers = new ArrayList<>();
+        elimination.setEventType("Double Elimination");
+        return losers;
     }
 
     @Override
@@ -34,38 +40,50 @@ public class BracketServiceImpl implements BracketService{
         return null;
     }
 
-    @Override
-    public List<LocalResults> autoMatch(List<Players> participantList) {
-        return null;
-    }
+//    @Override
+//    public List<LocalResults> autoMatch(List<Players> participantList) {
+//        return null;
+//    }
 
     @Override
     public void cull(List<LocalResults> participantList1, List<LocalResults> participantList2, int check) {
-
+        for (LocalResults p:participantList1){
+            if(p.getLocal_losses() >= check){
+                participantList2.add(p);
+            }
+            participantList1.removeAll(participantList2);
+        }
     }
 
-    @Override
-    public void freeWin(LocalResults participant) {
+//    @Override
+//    public void freeWin(LocalResults participant) {
+//
+//    }
+//
+//    @Override
+//    public void freewinReset(List<LocalResults> participantList) {
+//
+//    }
+//
+//    @Override
+//    public void wonRound(LocalResults participant) {
+//
+//    }
+//
+//    @Override
+//    public void autoOddResolver(List<Players> pList) {
+//
+//    }
 
+    @Override
+    public void matchResults(LocalResults participant, int wins, int losses) {
+        participant.setLocal_wins(wins);
+        participant.setLocal_losses(losses);
     }
 
-    @Override
-    public void freewinReset(List<LocalResults> participantList) {
-
-    }
 
     @Override
-    public void wonRound(LocalResults participant) {
-
-    }
-
-    @Override
-    public void autoOddResolver(List<Players> pList) {
-
-    }
-
-    @Override
-    public void matchResults(Players p1, Players p2) {
-
+    public void finalResults(Events elimination){
+        elimination.setIn_Progress(false);
     }
 }
