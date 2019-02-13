@@ -2,6 +2,8 @@ import {Component, OnInit} from "@angular/core";
 import {ParticipantService} from "../../services/participant.service";
 import {Participant} from "../../model/participant";
 import {environment} from "../../../environments/environment";
+import {Event} from "../../model/event";
+import {Organizer} from "../../model/organizer";
 
 @Component({
   selector: 'app-new-event',
@@ -13,7 +15,7 @@ export class NewEventComponent implements OnInit {
   participants: Participant[];
   formats: Array<{title: string, type: string}>;
   usedFormat: {title:string,type:string};
-  evt_desc: String;
+  evt_desc: string;
   playerCount = 0;
   entrants = new Array<Participant>();
   currentEntrants = new Array<Participant>();
@@ -70,12 +72,15 @@ export class NewEventComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.usedFormat.title);
-    console.log(this.usedFormat.type);
-    console.log(this.evt_desc);
-    console.log(this.playerCount);
-    console.log(this.currentEntrants);
-    console.log(this.manual);
+    let newEvent = new Event();
+    let currentOrganizer = new Organizer();
+    currentOrganizer = JSON.parse(localStorage.getItem('authToken'));
+    newEvent.player_count = this.playerCount;
+    newEvent.organizer_id = currentOrganizer.managerId;
+    newEvent.evt_type = this.usedFormat.title;
+    newEvent.evt_desc = this.evt_desc;
+    newEvent.in_progress = true;
+    console.log(newEvent);
   }
 
 }

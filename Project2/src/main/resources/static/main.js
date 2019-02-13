@@ -658,6 +658,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _model_event__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../model/event */ "./src/app/model/event.ts");
+/* harmony import */ var _model_organizer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../model/organizer */ "./src/app/model/organizer.ts");
+
+
 
 
 
@@ -710,12 +714,15 @@ var NewEventComponent = /** @class */ (function () {
         this.playerCount = this.currentEntrants.length;
     };
     NewEventComponent.prototype.onSubmit = function () {
-        console.log(this.usedFormat.title);
-        console.log(this.usedFormat.type);
-        console.log(this.evt_desc);
-        console.log(this.playerCount);
-        console.log(this.currentEntrants);
-        console.log(this.manual);
+        var newEvent = new _model_event__WEBPACK_IMPORTED_MODULE_4__["Event"]();
+        var currentOrganizer = new _model_organizer__WEBPACK_IMPORTED_MODULE_5__["Organizer"]();
+        currentOrganizer = JSON.parse(localStorage.getItem('authToken'));
+        newEvent.player_count = this.playerCount;
+        newEvent.organizer_id = currentOrganizer.managerId;
+        newEvent.evt_type = this.usedFormat.title;
+        newEvent.evt_desc = this.evt_desc;
+        newEvent.in_progress = true;
+        console.log(newEvent);
     };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -956,6 +963,27 @@ var TournamentComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], TournamentComponent);
     return TournamentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/event.ts":
+/*!********************************!*\
+  !*** ./src/app/model/event.ts ***!
+  \********************************/
+/*! exports provided: Event */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Event", function() { return Event; });
+var Event = /** @class */ (function () {
+    function Event() {
+        this.in_progress = true;
+    }
+    return Event;
 }());
 
 
