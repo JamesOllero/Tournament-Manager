@@ -5,7 +5,7 @@
 
 
 <div class="form-container w-400 p-3 h-150" id="organizer-registration">
-    <button type="button" class="btn btn-light"> <i class="fas fa-angle-left"></i> </button>
+    <button type="button" class="btn btn-light" (click)="redirect()"> <i class="fas fa-angle-left"></i> </button>
     <h4 class=" pb-3 section one text-center ">Account Creation</h4>
   <form #organizerForm="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div>

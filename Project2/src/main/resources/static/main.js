@@ -292,7 +292,7 @@ module.exports = ".margin-left{\r\n    margin-left: 40px !important;\r\n}\r\n#bt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"bg-primary bg\" id=fullpage>\r\n<div class=\"row justify-content-center align-items-center\">\r\n    <div class=\"col-10 col-sm-2 col-md-6\" id=pad>\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n\r\n\r\n<div class=\"form-container w-400 p-3 h-150\" id=\"organizer-registration\">\r\n    <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n    <h4 class=\" pb-3 section one text-center \">Account Creation</h4>\r\n  <form #organizerForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" [(ngModel)]=\"newOrganizer.username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Password: </label>\r\n      <input type=\"password\" class=\"form-control\" name=\"password\" id=\"password\" placeholder=\"Password\" [(ngModel)]=\"newOrganizer.password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"text\" class=\"form-control\" name=\"email\" id=\"email\" placeholder=\"Email\" [(ngModel)]=\"newOrganizer.email\" required>\r\n    </div>\r\n    <div class=\"btn-toolbar d-flex justify-content-around\">\r\n      <button  class=\"btn btn-success btn-sm col m-3\" type=\"button\" [disabled]=\"!organizerForm.valid\">Submit</button>\r\n      <button  class=\"btn btn-danger btn-sm col m-3\" type=\"button\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>"
+module.exports = "<div class=\"bg-primary bg\" id=fullpage>\r\n<div class=\"row justify-content-center align-items-center\">\r\n    <div class=\"col-10 col-sm-2 col-md-6\" id=pad>\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n\r\n\r\n<div class=\"form-container w-400 p-3 h-150\" id=\"organizer-registration\">\r\n    <button type=\"button\" class=\"btn btn-light\" (click)=\"redirect()\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n    <h4 class=\" pb-3 section one text-center \">Account Creation</h4>\r\n  <form #organizerForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" [(ngModel)]=\"newOrganizer.username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Password: </label>\r\n      <input type=\"password\" class=\"form-control\" name=\"password\" id=\"password\" placeholder=\"Password\" [(ngModel)]=\"newOrganizer.password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"text\" class=\"form-control\" name=\"email\" id=\"email\" placeholder=\"Email\" [(ngModel)]=\"newOrganizer.email\" required>\r\n    </div>\r\n    <div class=\"btn-toolbar d-flex justify-content-around\">\r\n      <button  class=\"btn btn-success btn-sm col m-3\" type=\"button\" [disabled]=\"!organizerForm.valid\">Submit</button>\r\n      <button  class=\"btn btn-danger btn-sm col m-3\" type=\"button\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -323,6 +323,9 @@ var AccountCreationComponent = /** @class */ (function () {
         this.newOrganizer = new _model_organizer__WEBPACK_IMPORTED_MODULE_2__["Organizer"];
     }
     AccountCreationComponent.prototype.ngOnInit = function () {
+    };
+    AccountCreationComponent.prototype.redirect = function () {
+        this.location.back();
     };
     AccountCreationComponent.prototype.onSubmit = function () {
         var _this = this;
@@ -1015,7 +1018,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--<tr>-->\r\n  <!--<td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>-->\r\n<!--</tr>-->\r\n\r\n<form>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Wins:</th><th>Player 2 Wins:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr>\r\n        <td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n      <!--<app-tournament-item></app-tournament-item>-->\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\">Submit round results</button>\r\n</form>\r\n"
+module.exports = "<!--<tr>-->\r\n  <!--<td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>-->\r\n<!--</tr>-->\r\n\r\n<form>\r\n  <label>Event ID: {{currentRound.evtId}}</label><br>\r\n  <label>Round Number: {{currentRound.evtRoundNumber}}</label>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Score:</th><th>Player 2 Score:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr *ngFor=\"let match of roundMatches\">\r\n        <td>{{match.playerOne.name}}</td><td>VS.</td><td>{{match.playerTwo.name}}</td><td><input name=\"P1Score\" [(ngModel)]=\"match.pOneScore\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input name=\"P2Score\" [(ngModel)]=\"match.pTwoScore\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n      <!--<app-tournament-item></app-tournament-item>-->\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\">Submit round results</button>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -1031,10 +1034,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TournamentItemComponent", function() { return TournamentItemComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_matchmaking_matchmaking_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/matchmaking/matchmaking.service */ "./src/app/services/matchmaking/matchmaking.service.ts");
+
 
 
 var TournamentItemComponent = /** @class */ (function () {
-    function TournamentItemComponent() {
+    function TournamentItemComponent(matchmakingService) {
+        this.matchmakingService = matchmakingService;
     }
     TournamentItemComponent.prototype.ngOnInit = function () {
     };
@@ -1044,7 +1050,7 @@ var TournamentItemComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./tournament-item.component.html */ "./src/app/components/tournament-item/tournament-item.component.html"),
             styles: [__webpack_require__(/*! ./tournament-item.component.css */ "./src/app/components/tournament-item/tournament-item.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_matchmaking_matchmaking_service__WEBPACK_IMPORTED_MODULE_2__["MatchmakingService"]])
     ], TournamentItemComponent);
     return TournamentItemComponent;
 }());
@@ -1071,7 +1077,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  tournament works!\r\n</p>\r\n<app-tournament-item></app-tournament-item>\r\n<!--<form>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Wins:</th><th>Player 2 Wins:</th><th>Lock result</th>\r\n      </tr>\r\n      &lt;!&ndash;<tr>\r\n        <td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>&ndash;&gt;\r\n      <app-tournament-item></app-tournament-item>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\">Submit round results</button>\r\n</form>-->\r\n"
+module.exports = "<p>Tournament Management:</p>\r\n<app-tournament-item></app-tournament-item>\r\n<!--<form>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Wins:</th><th>Player 2 Wins:</th><th>Lock result</th>\r\n      </tr>\r\n      &lt;!&ndash;<tr>\r\n        <td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>&ndash;&gt;\r\n      <app-tournament-item></app-tournament-item>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\">Submit round results</button>\r\n</form>-->\r\n"
 
 /***/ }),
 
@@ -1087,12 +1093,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TournamentComponent", function() { return TournamentComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_event_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/event.service */ "./src/app/services/event.service.ts");
+
 
 
 var TournamentComponent = /** @class */ (function () {
-    function TournamentComponent() {
+    function TournamentComponent(eventService) {
+        this.eventService = eventService;
     }
     TournamentComponent.prototype.ngOnInit = function () {
+        this.getEvents();
+    };
+    TournamentComponent.prototype.getEvents = function () {
+        var _this = this;
+        this.eventService.getEvents(function () {
+            _this.events = JSON.parse(localStorage.getItem('eventList'));
+            // localStorage.removeItem('eventList');
+        }, function (err) {
+            console.log(err);
+        });
     };
     TournamentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1100,7 +1119,7 @@ var TournamentComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./tournament.component.html */ "./src/app/components/tournament/tournament.component.html"),
             styles: [__webpack_require__(/*! ./tournament.component.css */ "./src/app/components/tournament/tournament.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_event_service__WEBPACK_IMPORTED_MODULE_2__["EventService"]])
     ], TournamentComponent);
     return TournamentComponent;
 }());
@@ -1294,6 +1313,119 @@ var AuthGuardService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], AuthGuardService);
     return AuthGuardService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/event.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/event.service.ts ***!
+  \*******************************************/
+/*! exports provided: EventService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventService", function() { return EventService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+var EventService = /** @class */ (function () {
+    function EventService(http) {
+        this.http = http;
+        this.eventUrl = 'http://localhost:8080/event';
+    }
+    EventService.prototype.getEvents = function (success, fail) {
+        return this.http.get(this.eventUrl + '/events').toPromise()
+            .then(function (resp) {
+            localStorage.setItem('eventList', JSON.stringify(resp));
+            console.log('Got Events');
+            success();
+        }, function (err) {
+            fail(err);
+        });
+    };
+    EventService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], EventService);
+    return EventService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/matchmaking/matchmaking.service.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/services/matchmaking/matchmaking.service.ts ***!
+  \*************************************************************/
+/*! exports provided: MatchmakingService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatchmakingService", function() { return MatchmakingService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var MatchmakingService = /** @class */ (function () {
+    function MatchmakingService() {
+    }
+    MatchmakingService_1 = MatchmakingService;
+    MatchmakingService.prototype.randomWeight = function (rando) {
+        var rand;
+        for (var i = 0; i < rando.length; i++) {
+            rand[i] = MatchmakingService_1.random();
+        }
+    };
+    MatchmakingService.random = function () {
+        return Math.pow((Math.random() * 100), (Math.random() * 100));
+    };
+    MatchmakingService.prototype.Pseudorandom = function (people) {
+        var sorted;
+        for (var i = 0; i < people.length; i += 2) {
+            var p1 = people[i];
+            var p2 = people[i + 1];
+            sorted = people.sort(function (p1, p2) {
+                if (MatchmakingService_1.weight(p1) > MatchmakingService_1.weight(p2)) {
+                    return 1;
+                }
+                else if (MatchmakingService_1.weight(p1) < MatchmakingService_1.weight(p2)) {
+                    return -1;
+                }
+                return 0;
+            });
+        }
+        return sorted;
+    };
+    MatchmakingService.weight = function (p) {
+        var result;
+        var total = p.wins + p.losses + p.draws;
+        if (total != 0) {
+            result = (((p.wins * 3) + p.draws) / total);
+        }
+        else {
+            result = 0;
+        }
+        return result;
+    };
+    var MatchmakingService_1;
+    MatchmakingService = MatchmakingService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], MatchmakingService);
+    return MatchmakingService;
 }());
 
 
