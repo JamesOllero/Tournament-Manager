@@ -6,22 +6,22 @@ import { Participant } from '../../model/participant';
 })
 export class MatchmakingService {
 
-  player1: Participant[];
-  player2: Participant[];
+  player1: Array<Participant>;
+  player2: Array<Participant>;
   constructor() { }
 
-  randomWeight(rando: Participant[]){
+  randomWeight(rando: Array<Participant>){
     let rand: number[];
     for (let i = 0; i < rando.length; i++){
       rand[i] = MatchmakingService.random();
     }
-  }
+  } 
 
   static random(){
     return Math.pow((Math.random() * 100), (Math.random() * 100));
   }
 
-  pairings(people: Participant[]){
+  pairings(people: Array<Participant>){
     let bye: Participant = new Participant();
     bye.name = "Bye";
     for (let i = people.length - 1; i >= 0; i-=2) {
@@ -36,8 +36,8 @@ export class MatchmakingService {
     }
   }
 
-  Pseudorandom(people: Participant[]) {
-    let sorted: Participant[];
+  Pseudorandom(people: Array<Participant>) {
+    let sorted: Array<Participant>;
     for (let i = 0; i < people.length; i += 2) {
       let p1: Participant = people[i];
       let p2: Participant = people[i + 1];
