@@ -50,18 +50,13 @@ const routes: Routes = [
             component: ParticipantSearchComponent
           }
         ]
+      },
+      {
+        path: '',
+        redirectTo: 'menu',
+        pathMatch: 'full'
       }
-      // ,
-      // {
-      //   path: '',
-      //   redirectTo: 'menu',
-      //   pathMatch: 'full'
-      // }
     ]
-  },
-  {
-    path: '',
-    component: NewEventComponent
   },
   {
     path: 'registration',
