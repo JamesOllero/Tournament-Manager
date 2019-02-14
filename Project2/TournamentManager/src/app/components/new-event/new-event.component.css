@@ -26,8 +26,8 @@
 }
 select, textarea{
   border: none;
-  background-color:rgb(158, 200, 255);
-  opacity: 0.5;
+  background-color:rgb(181, 213, 255);
+
 }
 #center {
   margin: auto;
@@ -40,8 +40,8 @@ select, textarea{
   background-color: white;
   
 }
-/* option:nth-child(odd)   { background-color:white; } */
-.participants:nth-child(even)    { background-color:white; }
+/* option:nth-child(odd)   { background-color:rgb(181, 213, 255); }
+option:nth-child(even)    { background-color:white; } */
 
 
 .scroll {
