@@ -12,3 +12,12 @@ li {
 nav{
 z-index: 10;
 }
+#logout{
+  float: right;
+  margin-right: 20px;
+  margin-top: 5px;
+  padding: 0;
+border: none;
+background: none;
+color:red;
+}
