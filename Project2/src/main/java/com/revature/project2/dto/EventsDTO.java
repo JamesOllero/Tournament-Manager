@@ -12,7 +12,8 @@ public class EventsDTO {
     public EventsDTO() {
     }
 
-    public EventsDTO(OrganizersDTO organizers, int playerNum, String eventType, String description, boolean in_Progress) {
+    public EventsDTO(int id, int organizers, int playerNum, String eventType, String description, boolean in_Progress) {
+        this.id=id;
         this.organizers = organizers;
         this.playerNum = playerNum;
         EventType = eventType;
@@ -34,7 +35,15 @@ public class EventsDTO {
 
     private int id;
 
-    private OrganizersDTO organizers;
+    public int getOrganizers() {
+        return organizers;
+    }
+
+    public void setOrganizers(int organizers) {
+        this.organizers = organizers;
+    }
+
+    private int organizers;
 
     private int playerNum;
 
