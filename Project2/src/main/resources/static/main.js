@@ -722,6 +722,8 @@ var NewEventComponent = /** @class */ (function () {
         newEvent.evt_type = this.usedFormat.title;
         newEvent.evt_desc = this.evt_desc;
         newEvent.in_progress = true;
+        newEvent.participants = this.currentEntrants;
+        localStorage.setItem('newEvent', JSON.stringify(newEvent));
         console.log(newEvent);
     };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([

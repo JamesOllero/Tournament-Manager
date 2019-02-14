@@ -29,6 +29,7 @@ export class NewEventComponent implements OnInit {
   ngOnInit() {
     this.getParticipants();
     this.formats = environment.formats;
+
   }
 
   getParticipants() {
@@ -74,12 +75,13 @@ export class NewEventComponent implements OnInit {
   onSubmit() {
     let newEvent = new Event();
     let currentOrganizer = new Organizer();
-    currentOrganizer = JSON.parse(localStorage.getItem('authToken'));
     newEvent.player_count = this.playerCount;
-    newEvent.organizer_id = currentOrganizer.managerId;
+    newEvent.organizer_id = JSON.parse(localStorage.getItem('authToken')).managerId;
     newEvent.evt_type = this.usedFormat.title;
     newEvent.evt_desc = this.evt_desc;
     newEvent.in_progress = true;
+    newEvent.participants = this.currentEntrants;
+    localStorage.setItem('newEvent', JSON.stringify(newEvent));
     console.log(newEvent);
   }
 
