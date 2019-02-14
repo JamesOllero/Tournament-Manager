@@ -1,3 +1,21 @@
 ul {
   list-style: none;
 }
+i,input{
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  border: none;
+  font-size: 17px;
+}
+#search{
+  padding-top: 10px;
+}
+#back{
+  margin-top:3px;
+  padding-left:20px;
+ /* padding-bottom:3px; */
+}
+/* tr:nth-child(odd)   { background-color:#4285F4; } */
+tr:nth-child(even)    { background-color:#E2E9FF; }

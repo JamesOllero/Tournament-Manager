@@ -1,6 +1,7 @@
-<div class="bg-primary"  >
-  <div class="row justify-content-center align-items-center" style="height:100vh">
-    <div class="col-4">
+
+<div class="bg-primary bg" id=fullpage>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-10 col-sm-2 col-md-6" id=pad>
       <div class="card mt-sm-3 mb-sm-5 " id="my-preview-div">
         <div class="form-container w-400 p-3 h-150 " id="shiftdown">
             <button type="button" class="btn btn-light"> <i class="fas fa-angle-left"></i> </button>
@@ -18,10 +19,10 @@
               <label for="email">Email: </label>
               <input type="email" id="email"  class="form-control" placeholder= "BobbyK@gmail.com"[(ngModel)]="newParticipant.email" name="email" required>
             </div>
-            <div class="btn-toolbar "> 
-              <button  class="btn btn-success btn-sm col " type="button" id="submit" (click)="createReturn()" [disabled]="!participantForm.form.valid"> Submit</button>
-              <button  class="btn btn-danger btn-sm col "type="button" id="reset" >Reset</button>
-              <button  class="btn btn-info btn-sm col"  type="button" id="loop" (click)="createContinue(participantForm)">Sumbit and add new participant</button>
+            <div class="btn-toolbar d-flex justify-content-around"> 
+              <button  class="btn btn-success btn-sm col m-3" type="button" id="submit" (click)="createReturn()" [disabled]="!participantForm.form.valid"> Submit</button>
+              <button  class="btn btn-danger btn-sm col m-3"type="button" id="reset" >Reset</button>
+              <button  class="btn btn-info btn-sm col m-3"  type="button" id="loop" (click)="createContinue(participantForm)">Sumbit and add new participant</button>
             </div>
           </form>
         </div>

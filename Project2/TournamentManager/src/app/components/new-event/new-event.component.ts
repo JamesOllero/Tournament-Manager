@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Event } from '../../model/event';
-import { Organizer } from "../../model/organizer";
-import {Participant} from "../../model/participant";
+import {Component, OnInit} from "@angular/core";
 import {ParticipantService} from "../../services/participant.service";
+import {Participant} from "../../model/participant";
 import {environment} from "../../../environments/environment";
+import {Event} from "../../model/event";
+import {Organizer} from "../../model/organizer";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-event',
@@ -11,26 +12,29 @@ import {environment} from "../../../environments/environment";
   styleUrls: ['./new-event.component.css']
 })
 export class NewEventComponent implements OnInit {
-  // newEvent = new Event();
-  // organizer_id: number;
-  // newOrganizer: Organizer = JSON.parse(localStorage.getItem('authToken'));
-
+  private manualSeedUrl = "/main/event/seeding";
+  private randomSeedUrl = "/main/event/active";
   participants: Participant[];
-  formats: Array<{title: string, type: string}>;
-  usedFormat: {title:string,type:string};
+  formats: Array<{ title: string, type: string }>;
+  usedFormat: { title: string, type: string };
   evt_desc: string;
   playerCount = 0;
   entrants = new Array<Participant>();
   currentEntrants = new Array<Participant>();
   removals = new Array<Participant>();
   manual: boolean;
+  submitDisabled: boolean;
 
-
-  constructor(private participantService: ParticipantService) { }
+  constructor(
+    private participantService: ParticipantService,
+    private router: Router
+  ) {
+  }
 
   ngOnInit() {
     this.getParticipants();
     this.formats = environment.formats;
+    this.submitDisabled = false;
   }
 
   getParticipants() {
@@ -39,10 +43,10 @@ export class NewEventComponent implements OnInit {
         let participantArr = JSON.parse(localStorage.getItem('participants'));
         localStorage.removeItem('participants');
         let i: number;
-        for(i=0;i<participantArr.length;i++){
+        for (i = 0; i < participantArr.length; i++) {
           participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;
         }
-        this.participants =  participantArr;
+        this.participants = participantArr;
         return;
       },
       (err) => {
@@ -52,19 +56,20 @@ export class NewEventComponent implements OnInit {
   }
 
   addParticipants() {
-    let i:number;
-    for(i=0;i<this.entrants.length;i++) {
+    let i: number;
+    for (i = 0; i < this.entrants.length; i++) {
       this.currentEntrants.push(this.entrants[i]);
       let index = this.participants.indexOf(this.entrants[i]);
       this.participants.splice(index, 1);
     }
     this.entrants = [];
     this.playerCount = this.currentEntrants.length;
+
   }
 
   removeParticipants() {
     let i: number;
-    for(i=0;i<this.removals.length;i++) {
+    for (i = 0; i < this.removals.length; i++) {
       this.participants.push(this.removals[i]);
       let index = this.currentEntrants.indexOf(this.removals[i]);
       this.currentEntrants.splice(index, 1);
@@ -74,15 +79,23 @@ export class NewEventComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.playerCount < 2) {
+      alert("You don't have enough participants to begin a tournament.\nPlease ensure there are at least two entrants.");
+      return;
+    }
     let newEvent = new Event();
-    let currentOrganizer = new Organizer();
-    currentOrganizer = JSON.parse(localStorage.getItem('authToken'));
     newEvent.player_count = this.playerCount;
-    newEvent.organizer_id = currentOrganizer.managerId;
+    newEvent.organizer_id = JSON.parse(localStorage.getItem('authToken')).managerId;
     newEvent.evt_type = this.usedFormat.title;
     newEvent.evt_desc = this.evt_desc;
     newEvent.in_progress = true;
-    console.log(newEvent);
+    newEvent.participants = this.currentEntrants;
+    localStorage.setItem('newEvent', JSON.stringify(newEvent));
+    if (this.manual) {
+      this.router.navigateByUrl(this.manualSeedUrl);
+    } else {
+      this.router.navigateByUrl(this.randomSeedUrl);
+    }
   }
-
 }
+

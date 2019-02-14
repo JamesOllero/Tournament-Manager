@@ -3,10 +3,6 @@
     <li *ngFor="let item of navItems">
       <a [routerLink]=[item.link] class="nav-link">{{item.title}}</a>
     </li>
-    <button (click)="logout()" style="
-    float: right;
-    margin-right: 20px;
-    margin-top: 5px;
-">Logout</button>
+    <button (click)="logout()" id="logout">Logout</button>
   </ul>
 </nav>

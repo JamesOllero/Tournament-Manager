@@ -1,14 +1,15 @@
-import { AccountCreationComponent } from "./components/account-creation/account-creation.component";
-import { AuthGuardService } from "./services/auth-guard.service";
-import { ContainerComponent } from "./components/container/container.component";
-import { LoginComponent } from "./components/login/login.component";
-import { MainMenuComponent } from "./components/main-menu/main-menu.component";
-import { NewEventComponent } from "./components/new-event/new-event.component";
 import { NgModule } from '@angular/core';
-import { ParticipantRegisterComponent } from "./components/participant-register/participant-register.component";
-import { ParticipantSearchComponent } from "./components/participant-search/participant-search.component";
 import { Routes, RouterModule } from '@angular/router';
+import {MainMenuComponent} from "./components/main-menu/main-menu.component";
+import {AuthGuardService} from "./services/auth-guard.service";
+import {LoginComponent} from "./components/login/login.component";
+import {ContainerComponent} from "./components/container/container.component";
+import {NewEventComponent} from "./components/new-event/new-event.component";
+import {ParticipantRegisterComponent} from "./components/participant-register/participant-register.component";
+import {ParticipantSearchComponent} from "./components/participant-search/participant-search.component";
+import {AccountCreationComponent} from "./components/account-creation/account-creation.component";
 import { TournamentComponent } from "./components/tournament/tournament.component";
+import {SeedingComponent} from "./components/seeding/seeding.component";
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
           {
             path:'active',
             component: TournamentComponent
+          },
+          {
+            path: 'seeding',
+            component: SeedingComponent
           }
         ]
       },
@@ -45,8 +50,7 @@ const routes: Routes = [
             component: ParticipantSearchComponent
           }
         ]
-      }
-      ,
+      },
       {
         path: '',
         redirectTo: 'menu',
