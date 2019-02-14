@@ -14,6 +14,7 @@ import { ContainerComponent } from './components/container/container.component';
 import { ParticipantSearchComponent } from './components/participant-search/participant-search.component';
 import { SearchUtilPipe } from "./pipes/search-util.pipe";
 import { TournamentComponent } from './components/tournament/tournament.component';
+import { TournamentItemComponent } from './components/tournament-item/tournament-item.component';
 import { SeedingComponent } from './components/seeding/seeding.component';
 
 @NgModule({
@@ -29,6 +30,7 @@ import { SeedingComponent } from './components/seeding/seeding.component';
     ParticipantSearchComponent,
     SearchUtilPipe,
     TournamentComponent,
+    TournamentItemComponent,
     SeedingComponent
   ],
   imports: [

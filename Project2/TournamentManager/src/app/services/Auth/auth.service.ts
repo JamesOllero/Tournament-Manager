@@ -30,9 +30,5 @@ export class AuthService {
         fail(err);
         });
   }
-  // authenticate(username: string, password: string, success, fail){
-  //   return this.http.get(this.OrganizersUrl).subscribe((resp)=>{
-  //     console.log(resp);
-  //   });
-  }
 
+}
