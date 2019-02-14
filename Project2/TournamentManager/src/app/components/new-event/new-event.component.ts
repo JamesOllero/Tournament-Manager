@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
 })
 export class NewEventComponent implements OnInit {
   private manualSeedUrl = "/main/event/seeding";
-  private randomSeedUrl = "/main/event/randomizing";
+  private randomSeedUrl = "/main/event/active";
   participants: Participant[];
   formats: Array<{ title: string, type: string }>;
   usedFormat: { title: string, type: string };

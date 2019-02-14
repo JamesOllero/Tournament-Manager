@@ -30,8 +30,7 @@ import { SeedingComponent } from './components/seeding/seeding.component';
     ParticipantSearchComponent,
     SearchUtilPipe,
     TournamentComponent,
-    TournamentItemComponent
-    TournamentComponent,
+    TournamentItemComponent,
     SeedingComponent
   ],
   imports: [
