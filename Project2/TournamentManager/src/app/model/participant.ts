@@ -1,11 +1,10 @@
-export class Participant {
-  player_Id: number;
-  firstName: string;
-  lastName: string;
+ export class Participant {
+  participantId: number;
   wins: number;
   losses: number;
   draws: number;
   name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  eliminated: boolean;
-}
+ }

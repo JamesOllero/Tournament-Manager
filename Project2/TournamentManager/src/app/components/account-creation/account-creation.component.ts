@@ -18,9 +18,6 @@ export class AccountCreationComponent implements OnInit {
   ngOnInit() {
   }
 
-  redirect() {
-    this.location.back();
-  }
   onSubmit(){
     this.organizerService.registerOrganizer(this.newOrganizer,
       () => {
