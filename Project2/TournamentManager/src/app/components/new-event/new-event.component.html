@@ -14,10 +14,10 @@
     <div>
       <label id="player-count">Player Count: {{playerCount}}</label>
     </div>
-    <div>
+<!--    <div>
       <label for="manualization">Manually Assign Seeding: </label>
       <input name="manualization" type="checkbox" id="manualization" [(ngModel)]="manual">
-    </div>
+    </div> -->
     <div>
       <select multiple name="entrantSelectable" [(ngModel)]="entrants" style="min-width: 500px">
         <option *ngFor="let participant of participants" [ngValue]="participant">{{participant.name}}</option>

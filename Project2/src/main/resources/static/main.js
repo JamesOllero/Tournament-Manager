@@ -45,8 +45,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
 /* harmony import */ var _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/account-creation/account-creation.component */ "./src/app/components/account-creation/account-creation.component.ts");
 /* harmony import */ var _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/seeding/seeding.component */ "./src/app/components/seeding/seeding.component.ts");
-/* harmony import */ var _components_random_random_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/random/random.component */ "./src/app/components/random/random.component.ts");
-
 
 
 
@@ -79,10 +77,6 @@ var routes = [
                     {
                         path: 'seeding',
                         component: _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_11__["SeedingComponent"]
-                    },
-                    {
-                        path: 'randomizing',
-                        component: _components_random_random_component__WEBPACK_IMPORTED_MODULE_12__["RandomComponent"]
                     }
                 ]
             },
@@ -221,8 +215,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pipes/search-util.pipe */ "./src/app/pipes/search-util.pipe.ts");
 /* harmony import */ var _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/tournament/tournament.component */ "./src/app/components/tournament/tournament.component.ts");
 /* harmony import */ var _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/seeding/seeding.component */ "./src/app/components/seeding/seeding.component.ts");
-/* harmony import */ var _components_random_random_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/random/random.component */ "./src/app/components/random/random.component.ts");
-
 
 
 
@@ -258,8 +250,7 @@ var AppModule = /** @class */ (function () {
                 _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__["ParticipantSearchComponent"],
                 _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__["SearchUtilPipe"],
                 _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_16__["TournamentComponent"],
-                _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_17__["SeedingComponent"],
-                _components_random_random_component__WEBPACK_IMPORTED_MODULE_18__["RandomComponent"]
+                _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_17__["SeedingComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -658,7 +649,7 @@ module.exports = "label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <div>\r\n      <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n    </div>\r\n    <div>\r\n      <label for=\"manualization\">Manually Assign Seeding: </label>\r\n      <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\">\r\n    </div>\r\n    <div>\r\n      <select multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n      <select multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n      <div>\r\n        <button type=\"button\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <div>\r\n      <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n    </div>\r\n<!--    <div>\r\n      <label for=\"manualization\">Manually Assign Seeding: </label>\r\n      <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\">\r\n    </div> -->\r\n    <div>\r\n      <select multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n      <select multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n      <div>\r\n        <button type=\"button\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -688,8 +679,8 @@ var NewEventComponent = /** @class */ (function () {
     function NewEventComponent(participantService, router) {
         this.participantService = participantService;
         this.router = router;
-        this.manualSeedUrl = "./seeding";
-        this.randomSeedUrl = "./randomizing";
+        this.manualSeedUrl = "/main/event/seeding";
+        this.randomSeedUrl = "/main/event/randomizing";
         this.playerCount = 0;
         this.entrants = new Array();
         this.currentEntrants = new Array();
@@ -698,6 +689,7 @@ var NewEventComponent = /** @class */ (function () {
     NewEventComponent.prototype.ngOnInit = function () {
         this.getParticipants();
         this.formats = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].formats;
+        this.submitDisabled = false;
     };
     NewEventComponent.prototype.getParticipants = function () {
         var _this = this;
@@ -735,6 +727,10 @@ var NewEventComponent = /** @class */ (function () {
         this.playerCount = this.currentEntrants.length;
     };
     NewEventComponent.prototype.onSubmit = function () {
+        if (this.playerCount < 2) {
+            alert("You don't have enough participants to begin a tournament.\nPlease ensure there are at least two entrants.");
+            return;
+        }
         var newEvent = new _model_event__WEBPACK_IMPORTED_MODULE_4__["Event"]();
         newEvent.player_count = this.playerCount;
         newEvent.organizer_id = JSON.parse(localStorage.getItem('authToken')).managerId;
@@ -744,10 +740,10 @@ var NewEventComponent = /** @class */ (function () {
         newEvent.participants = this.currentEntrants;
         localStorage.setItem('newEvent', JSON.stringify(newEvent));
         if (this.manual) {
-            this.router.navigate([this.manualSeedUrl]);
+            this.router.navigateByUrl(this.manualSeedUrl);
         }
         else {
-            this.router.navigate([this.randomSeedUrl]);
+            this.router.navigateByUrl(this.randomSeedUrl);
         }
     };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -934,62 +930,6 @@ var ParticipantSearchComponent = /** @class */ (function () {
             _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
     ], ParticipantSearchComponent);
     return ParticipantSearchComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/random/random.component.css":
-/*!********************************************************!*\
-  !*** ./src/app/components/random/random.component.css ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcmFuZG9tL3JhbmRvbS5jb21wb25lbnQuY3NzIn0= */"
-
-/***/ }),
-
-/***/ "./src/app/components/random/random.component.html":
-/*!*********************************************************!*\
-  !*** ./src/app/components/random/random.component.html ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\r\n  random works!\r\n</p>\r\n"
-
-/***/ }),
-
-/***/ "./src/app/components/random/random.component.ts":
-/*!*******************************************************!*\
-  !*** ./src/app/components/random/random.component.ts ***!
-  \*******************************************************/
-/*! exports provided: RandomComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RandomComponent", function() { return RandomComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var RandomComponent = /** @class */ (function () {
-    function RandomComponent() {
-    }
-    RandomComponent.prototype.ngOnInit = function () {
-    };
-    RandomComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-random',
-            template: __webpack_require__(/*! ./random.component.html */ "./src/app/components/random/random.component.html"),
-            styles: [__webpack_require__(/*! ./random.component.css */ "./src/app/components/random/random.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], RandomComponent);
-    return RandomComponent;
 }());
 
 

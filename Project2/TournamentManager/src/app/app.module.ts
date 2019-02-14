@@ -15,7 +15,6 @@ import { ParticipantSearchComponent } from './components/participant-search/part
 import { SearchUtilPipe } from "./pipes/search-util.pipe";
 import { TournamentComponent } from './components/tournament/tournament.component';
 import { SeedingComponent } from './components/seeding/seeding.component';
-import { RandomComponent } from './components/random/random.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,7 @@ import { RandomComponent } from './components/random/random.component';
     ParticipantSearchComponent,
     SearchUtilPipe,
     TournamentComponent,
-    SeedingComponent,
-    RandomComponent
+    SeedingComponent
   ],
   imports: [
     BrowserModule,
