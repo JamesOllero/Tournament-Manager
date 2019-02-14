@@ -9,6 +9,7 @@ import {ParticipantRegisterComponent} from "./components/participant-register/pa
 import {ParticipantSearchComponent} from "./components/participant-search/participant-search.component";
 import {AccountCreationComponent} from "./components/account-creation/account-creation.component";
 import { TournamentComponent } from "./components/tournament/tournament.component";
+import {SeedingComponent} from "./components/seeding/seeding.component";
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
           {
             path:'active',
             component: TournamentComponent
+          },
+          {
+            path: 'seeding',
+            component: SeedingComponent
           }
         ]
       },
