@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../../model/event';
 import { Organizer } from "../../model/organizer";
+import {Participant} from "../../model/participant";
+import {ParticipantService} from "../../services/participant.service";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-new-event',
@@ -8,27 +11,78 @@ import { Organizer } from "../../model/organizer";
   styleUrls: ['./new-event.component.css']
 })
 export class NewEventComponent implements OnInit {
-  newEvent = new Event();
-  organizer_id: number;
-  player_count: number;
-  evt_type: string;
-  evt_desc: string;
-  in_progress: boolean = true;
-  newOrganizer: Organizer = JSON.parse(localStorage.getItem('authToken'));
+  // newEvent = new Event();
+  // organizer_id: number;
+  // newOrganizer: Organizer = JSON.parse(localStorage.getItem('authToken'));
 
-  constructor() { }
+  participants: Participant[];
+  formats: Array<{title: string, type: string}>;
+  usedFormat: {title:string,type:string};
+  evt_desc: string;
+  playerCount = 0;
+  entrants = new Array<Participant>();
+  currentEntrants = new Array<Participant>();
+  removals = new Array<Participant>();
+  manual: boolean;
+
+
+  constructor(private participantService: ParticipantService) { }
 
   ngOnInit() {
+    this.getParticipants();
+    this.formats = environment.formats;
   }
 
-  onSubmit(){
-    this.newEvent.organizer_id = this.newOrganizer.managerId;
-    console.log("Organizer id: ", this.newEvent.organizer_id, " Player count: ", this.newEvent.player_count);
-    console.log("Event Type: ", this.newEvent.evt_type, " Event Description: ", this.newEvent.evt_desc);
-    if (this.newEvent.in_progress == true){
-      console.log("Tournament is currently in progress");
+  getParticipants() {
+    this.participantService.getAllParticipants(
+      () => {
+        let participantArr = JSON.parse(localStorage.getItem('participants'));
+        localStorage.removeItem('participants');
+        let i: number;
+        for(i=0;i<participantArr.length;i++){
+          participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;
+        }
+        this.participants =  participantArr;
+        return;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  addParticipants() {
+    let i:number;
+    for(i=0;i<this.entrants.length;i++) {
+      this.currentEntrants.push(this.entrants[i]);
+      let index = this.participants.indexOf(this.entrants[i]);
+      this.participants.splice(index, 1);
     }
-    else console.log("Tournament is not currently in progress");
+    this.entrants = [];
+    this.playerCount = this.currentEntrants.length;
+  }
+
+  removeParticipants() {
+    let i: number;
+    for(i=0;i<this.removals.length;i++) {
+      this.participants.push(this.removals[i]);
+      let index = this.currentEntrants.indexOf(this.removals[i]);
+      this.currentEntrants.splice(index, 1);
+    }
+    this.removals = [];
+    this.playerCount = this.currentEntrants.length;
+  }
+
+  onSubmit() {
+    let newEvent = new Event();
+    let currentOrganizer = new Organizer();
+    currentOrganizer = JSON.parse(localStorage.getItem('authToken'));
+    newEvent.player_count = this.playerCount;
+    newEvent.organizer_id = currentOrganizer.managerId;
+    newEvent.evt_type = this.usedFormat.title;
+    newEvent.evt_desc = this.evt_desc;
+    newEvent.in_progress = true;
+    console.log(newEvent);
   }
 
 }

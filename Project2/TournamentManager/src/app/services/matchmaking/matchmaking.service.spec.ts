@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SwissService } from './swiss.service';
+import { MatchmakingService } from './matchmaking.service';
 
-describe('SwissService', () => {
+describe('MatchmakingService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SwissService = TestBed.get(SwissService);
+    const service: MatchmakingService = TestBed.get(MatchmakingService);
     expect(service).toBeTruthy();
   });
 });
