@@ -4,6 +4,7 @@ import {Participant} from "../../model/participant";
 import {environment} from "../../../environments/environment";
 import {Event} from "../../model/event";
 import {Organizer} from "../../model/organizer";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-event',
@@ -23,7 +24,8 @@ export class NewEventComponent implements OnInit {
   manual: boolean;
 
   constructor(
-    private participantService: ParticipantService
+    private participantService: ParticipantService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -74,7 +76,6 @@ export class NewEventComponent implements OnInit {
 
   onSubmit() {
     let newEvent = new Event();
-    let currentOrganizer = new Organizer();
     newEvent.player_count = this.playerCount;
     newEvent.organizer_id = JSON.parse(localStorage.getItem('authToken')).managerId;
     newEvent.evt_type = this.usedFormat.title;
@@ -82,7 +83,7 @@ export class NewEventComponent implements OnInit {
     newEvent.in_progress = true;
     newEvent.participants = this.currentEntrants;
     localStorage.setItem('newEvent', JSON.stringify(newEvent));
-    console.log(newEvent);
+
   }
 
 }
