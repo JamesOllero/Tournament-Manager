@@ -12,4 +12,11 @@ export class TournamentItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  roundSubmit(){
+    console.log("It's the end of the round!");
+  }
+
+  finalSubmit(){
+    console.log("It's the final submit!");
+  }
 }

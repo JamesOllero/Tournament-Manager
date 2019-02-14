@@ -645,7 +645,7 @@ module.exports = "label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--<div class=\"form-container\" id=\"event-creation\">-->\r\n  <!--<form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">-->\r\n    <!--<div>-->\r\n      <!--<label for=\"count\">Player Count: </label>-->\r\n      <!--<input type=\"number\" name=\"count\" id=\"count\" min=\"2\" value=\"2\" [(ngModel)]=\"newEvent.player_count\" required>-->\r\n    <!--</div>-->\r\n    <!--<div>-->\r\n      <!--<label for=\"type\">Event Type: </label>-->\r\n      <!--<select name=\"type\" id=\"type\" [(ngModel)]=\"newEvent.evt_type\" required>-->\r\n        <!--<option ng-selected=\"selected\" value=\"Custom\">Custom</option>-->\r\n        <!--<option value=\"Single Elimination\">Single Elimination</option>-->\r\n        <!--<option value=\"Double Elimination\">Double Elimination</option>-->\r\n        <!--<option value=\"Swiss\">Swiss</option>-->\r\n        <!--<option value=\"Round Robin\">Round Robin</option>-->\r\n      <!--</select>-->\r\n    <!--</div>-->\r\n    <!--<div>-->\r\n      <!--<label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>-->\r\n      <!--<textarea name=\"description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"newEvent.evt_desc\" required></textarea>-->\r\n    <!--</div>-->\r\n    <!--<div>-->\r\n      <!--<button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>-->\r\n      <!--<button type=\"reset\">Reset</button>-->\r\n    <!--</div>-->\r\n  <!--</form>-->\r\n<!--</div>-->\r\n<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <div>\r\n      <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n    </div>\r\n    <div>\r\n      <label for=\"manualization\">Manually Assign Seeding: </label>\r\n      <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\">\r\n    </div>\r\n    <div>\r\n      <select multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n      <select multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n      <div>\r\n        <button type=\"button\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"form-container\" id=\"event-creation\">\r\n  <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div>\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <div>\r\n      <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n    </div>\r\n    <div>\r\n      <label for=\"manualization\">Manually Assign Seeding: </label>\r\n      <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\">\r\n    </div>\r\n    <div>\r\n      <select multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n      <select multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n      <div>\r\n        <button type=\"button\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n    </div>\r\n    <div>\r\n      <button type=\"submit\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -679,68 +679,6 @@ var NewEventComponent = /** @class */ (function () {
         this.currentEntrants = new Array();
         this.removals = new Array();
     }
-    // ngOnInit() {
-    //   this.getParticipants();
-    //   this.formats = environment.formats;
-    //
-    // }
-    //
-    // getParticipants() {
-    //   this.participantService.getAllParticipants(
-    //     () => {
-    //       let participantArr = JSON.parse(localStorage.getItem('participants'));
-    //       localStorage.removeItem('participants');
-    //       let i: number;
-    //       for(i=0;i<participantArr.length;i++){
-    //         participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;
-    //       }
-    //       this.participants =  participantArr;
-    //       return;
-    //     },
-    //     (err) => {
-    //       console.log(err);
-    //     }
-    //   );
-    // }
-    //
-    // addParticipants() {
-    //   let i:number;
-    //   for(i=0;i<this.entrants.length;i++) {
-    //     this.currentEntrants.push(this.entrants[i]);
-    //     let index = this.participants.indexOf(this.entrants[i]);
-    //     this.participants.splice(index, 1);
-    //   }
-    //   this.entrants = [];
-    //   this.newEvent.player_count = this.currentEntrants.length;
-    // }
-    //
-    // removeParticipants() {
-    //   let i: number;
-    //   for(i=0;i<this.removals.length;i++) {
-    //     this.participants.push(this.removals[i]);
-    //     let index = this.currentEntrants.indexOf(this.removals[i]);
-    //     this.currentEntrants.splice(index, 1);
-    //   }
-    //   this.removals = [];
-    //   this.newEvent.player_count = this.currentEntrants.length;
-    // }
-    //
-    //
-    // onSubmit(){
-    //   this.newEvent.organizer_id = this.newOrganizer.managerId;
-    //   this.newEvent.in_progress = true;
-    //
-    //   let newEvent = new Event();
-    //   let currentOrganizer = new Organizer();
-    //   currentOrganizer = JSON.parse(localStorage.getItem('authToken'));
-    //   newEvent.player_count = this.playerCount;
-    //   newEvent.organizer_id = currentOrganizer.managerId;
-    //   newEvent.evt_type = this.usedFormat.title;
-    //   newEvent.evt_desc = this.evt_desc;
-    //   newEvent.in_progress = true;
-    //   console.log(newEvent);
-    //
-    // }
     NewEventComponent.prototype.ngOnInit = function () {
         this.getParticipants();
         this.formats = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].formats;
@@ -998,7 +936,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--<tr>-->\r\n  <!--<td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>-->\r\n<!--</tr>-->\r\n\r\n<form>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Wins:</th><th>Player 2 Wins:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr>\r\n        <td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n      <!--<app-tournament-item></app-tournament-item>-->\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\">Submit round results</button>\r\n</form>\r\n"
+module.exports = "<form>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Wins:</th><th>Player 2 Wins:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr>\r\n        <td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\" (click)=\"[roundSubmit()]\">Submit round results</button> <button type=\"button\" (click)=\"[finalSubmit()]\">Tournament is over</button>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -1020,6 +958,12 @@ var TournamentItemComponent = /** @class */ (function () {
     function TournamentItemComponent() {
     }
     TournamentItemComponent.prototype.ngOnInit = function () {
+    };
+    TournamentItemComponent.prototype.roundSubmit = function () {
+        console.log("It's the end of the round!");
+    };
+    TournamentItemComponent.prototype.finalSubmit = function () {
+        console.log("It's the final submit!");
     };
     TournamentItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1054,7 +998,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  tournament works!\r\n</p>\r\n<app-tournament-item></app-tournament-item>\r\n<!--<form>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Wins:</th><th>Player 2 Wins:</th><th>Lock result</th>\r\n      </tr>\r\n      &lt;!&ndash;<tr>\r\n        <td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>&ndash;&gt;\r\n      <app-tournament-item></app-tournament-item>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\">Submit round results</button>\r\n</form>-->\r\n"
+module.exports = "<p>\r\n  This is the tournament!\r\n  Below are your round pairings!\r\n</p>\r\n<app-tournament-item></app-tournament-item>\r\n"
 
 /***/ }),
 

@@ -6,8 +6,8 @@ import { Participant } from '../../model/participant';
 })
 export class MatchmakingService {
 
-  player1: Participant;
-  player2: Participant;
+  player1: Participant[];
+  player2: Participant[];
   constructor() { }
 
   randomWeight(rando: Participant[]){
@@ -19,6 +19,21 @@ export class MatchmakingService {
 
   static random(){
     return Math.pow((Math.random() * 100), (Math.random() * 100));
+  }
+
+  pairings(people: Participant[]){
+    let bye: Participant = new Participant();
+    bye.name = "Bye";
+    for (let i = people.length - 1; i >= 0; i-=2) {
+      if (i == 0 && people.length % 2 != 0){
+        this.player1[i] = people[i];
+        this.player2[i] = bye;
+      }
+      else{
+        this.player1[i] = people[i];
+        this.player2[i] = people[i-1];
+      }
+    }
   }
 
   Pseudorandom(people: Participant[]) {
