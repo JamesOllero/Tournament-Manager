@@ -3,6 +3,7 @@ import {Participant} from "../../model/participant";
 import {ParticipantService} from "../../services/participant.service";
 import { Location } from "@angular/common";
 import { NgForm } from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-participant-register',
@@ -13,7 +14,8 @@ export class ParticipantRegisterComponent implements OnInit {
   public newParticipant = new Participant;
   constructor(
     private participantService: ParticipantService,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -43,5 +45,9 @@ export class ParticipantRegisterComponent implements OnInit {
       (err) => {
       console.log(err);
       });
+  }
+
+  redirect(){
+    this.router.navigate(['main']);
   }
 }

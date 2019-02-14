@@ -13,6 +13,12 @@ export class TournamentItemComponent implements OnInit {
   }
 
   roundSubmit(){
+    // for (let i in matches){
+    //   if(!matches[i].lock){
+    //     alert("Not all matches locked.");
+    //     return;
+    //   }
+    // }
     console.log("It's the end of the round!");
   }
 
