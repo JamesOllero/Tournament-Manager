@@ -1,7 +1,50 @@
-label{
+/* label{
   width: 9em;
 }
 /*textarea{
   height: 5em;
   width: 20em;
 }*/
+
+#pad{
+  padding-top: 5%;
+}
+
+#bar{
+  position: absolute;
+  padding:0;
+  margin:0;
+
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+  left:0;
+
+  width: 100%;
+  height: 100%;
+  font-size: 1.25em;
+ 
+}
+select, textarea{
+  border: none;
+  background-color:rgb(158, 200, 255);
+  opacity: 0.5;
+}
+#center {
+  margin: auto;
+  width: 50%;
+  
+  padding: 10px;
+}
+#my-preview-div{
+  width: max-content;
+  background-color: white;
+  
+}
+/* option:nth-child(odd)   { background-color:white; } */
+.participants:nth-child(even)    { background-color:white; }
+
+
+.scroll {
+  
+  overflow-y: auto;
+}

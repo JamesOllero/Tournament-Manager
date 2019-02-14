@@ -46,13 +46,17 @@ const routes: Routes = [
           }
         ]
       }
-      ,
-      {
-        path: '',
-        redirectTo: 'menu',
-        pathMatch: 'full'
-      }
+      // ,
+      // {
+      //   path: '',
+      //   redirectTo: 'menu',
+      //   pathMatch: 'full'
+      // }
     ]
+  },
+  {
+    path: '',
+    component: NewEventComponent
   },
   {
     path: 'registration',
