@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
   templateUrl: './new-event.component.html',
   styleUrls: ['./new-event.component.css']
 })
+
 export class NewEventComponent implements OnInit {
   private manualSeedUrl = "/main/event/seeding";
   private randomSeedUrl = "/main/event/active";
@@ -96,6 +97,10 @@ export class NewEventComponent implements OnInit {
     } else {
       this.router.navigateByUrl(this.randomSeedUrl);
     }
+  }
+
+  redirect(){
+    this.router.navigate(['main']);
   }
 }
 

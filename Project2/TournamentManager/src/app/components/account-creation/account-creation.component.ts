@@ -28,4 +28,8 @@ export class AccountCreationComponent implements OnInit {
       }
     );
   }
+
+  redirect(){
+    this.location.back();
+  }
 }
