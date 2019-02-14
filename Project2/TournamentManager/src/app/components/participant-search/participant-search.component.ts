@@ -25,7 +25,7 @@ export class ParticipantSearchComponent implements OnInit {
     this.participantService.getAllParticipants(
       () => {
         let participantArr = JSON.parse(localStorage.getItem('participants'));
-        // localStorage.removeItem('participants');
+        localStorage.removeItem('participants');
         let i: number;
         for(i=0;i<participantArr.length;i++){
           participantArr[i].name = participantArr[i].firstName + ' ' + participantArr[i].lastName;

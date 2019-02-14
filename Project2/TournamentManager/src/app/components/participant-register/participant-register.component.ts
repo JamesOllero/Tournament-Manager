@@ -23,7 +23,8 @@ export class ParticipantRegisterComponent implements OnInit {
   }
 
   createReturn() {
-    this.participantService.registerParticipant(this.newParticipant,
+    localStorage.setItem('newParticipant', JSON.stringify(this.newParticipant));
+    this.participantService.registerParticipant(
       () => {
       this.location.back();
       },
@@ -33,7 +34,8 @@ export class ParticipantRegisterComponent implements OnInit {
   }
 
   createContinue(participantForm: any) {
-    this.participantService.registerParticipant(this.newParticipant,
+    localStorage.setItem('newParticipant', JSON.stringify(this.newParticipant));
+    this.participantService.registerParticipant(
       () => {
       this.newParticipant = new Participant;
       participantForm.resetForm();

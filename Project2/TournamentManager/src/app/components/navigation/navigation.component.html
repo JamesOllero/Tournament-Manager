@@ -1,8 +1,12 @@
-<nav class="navbar fixed-top navbar-expand-sm navbar-light bg-white">
+<nav>
   <ul>
     <li *ngFor="let item of navItems">
       <a [routerLink]=[item.link] class="nav-link">{{item.title}}</a>
     </li>
-    <button (click)="logout()">Logout</button>
+    <button (click)="logout()" style="
+    float: right;
+    margin-right: 20px;
+    margin-top: 5px;
+">Logout</button>
   </ul>
 </nav>

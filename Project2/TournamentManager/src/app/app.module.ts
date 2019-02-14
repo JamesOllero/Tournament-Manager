@@ -13,6 +13,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ContainerComponent } from './components/container/container.component';
 import { ParticipantSearchComponent } from './components/participant-search/participant-search.component';
 import { SearchUtilPipe } from "./pipes/search-util.pipe";
+import { TournamentComponent } from './components/tournament/tournament.component';
+import { TournamentItemComponent } from './components/tournament-item/tournament-item.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SearchUtilPipe } from "./pipes/search-util.pipe";
     NavigationComponent,
     ContainerComponent,
     ParticipantSearchComponent,
-    SearchUtilPipe
+    SearchUtilPipe,
+    TournamentComponent,
+    TournamentItemComponent
   ],
   imports: [
     BrowserModule,
