@@ -15,7 +15,6 @@ import java.util.List;
 @RequestMapping("/event")
 
 public class EventController {
-    private OrganizersDTO organizersDTO = new OrganizersDTO();
     private EventService eventService;
 
     @Autowired

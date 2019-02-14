@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Match} from "../../model/match";
+import {Round} from "../../model/round";
+import {MatchmakingService} from "../../services/matchmaking/matchmaking.service";
 
 @Component({
   selector: 'app-tournament-item',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TournamentItemComponent implements OnInit {
 
-  constructor() { }
+  currentRound: Round;
+  roundMatches: Array<Match>;
+  constructor(
+    private matchmakingService: MatchmakingService
+  ) { }
 
   ngOnInit() {
   }

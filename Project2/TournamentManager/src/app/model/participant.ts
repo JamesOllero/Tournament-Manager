@@ -7,4 +7,5 @@ export class Participant {
   draws: number;
   name: string;
   email: string;
+  eliminated: boolean;
 }
