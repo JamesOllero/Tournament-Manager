@@ -8,6 +8,8 @@ import {NewEventComponent} from "./components/new-event/new-event.component";
 import {ParticipantRegisterComponent} from "./components/participant-register/participant-register.component";
 import {ParticipantSearchComponent} from "./components/participant-search/participant-search.component";
 import {AccountCreationComponent} from "./components/account-creation/account-creation.component";
+import {SeedingComponent} from "./components/seeding/seeding.component";
+import {RandomComponent} from "./components/random/random.component";
 
 const routes: Routes = [
   {
@@ -25,6 +27,14 @@ const routes: Routes = [
           {
             path: 'new',
             component: NewEventComponent
+          },
+          {
+            path: 'seeding',
+            component: SeedingComponent
+          },
+          {
+            path: 'randomizing',
+            component: RandomComponent
           }
         ]
       },

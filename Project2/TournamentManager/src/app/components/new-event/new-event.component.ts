@@ -12,7 +12,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./new-event.component.css']
 })
 export class NewEventComponent implements OnInit {
-
+  private manualSeedUrl = "./seeding";
+  private randomSeedUrl = "./randomizing";
   participants: Participant[];
   formats: Array<{title: string, type: string}>;
   usedFormat: {title:string,type:string};
@@ -83,7 +84,11 @@ export class NewEventComponent implements OnInit {
     newEvent.in_progress = true;
     newEvent.participants = this.currentEntrants;
     localStorage.setItem('newEvent', JSON.stringify(newEvent));
-
+    if(this.manual) {
+      this.router.navigate([this.manualSeedUrl]);
+    } else {
+      this.router.navigate([this.randomSeedUrl]);
+    }
   }
 
 }

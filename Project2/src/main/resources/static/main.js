@@ -44,6 +44,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_participant_register_participant_register_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/participant-register/participant-register.component */ "./src/app/components/participant-register/participant-register.component.ts");
 /* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
 /* harmony import */ var _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/account-creation/account-creation.component */ "./src/app/components/account-creation/account-creation.component.ts");
+/* harmony import */ var _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/seeding/seeding.component */ "./src/app/components/seeding/seeding.component.ts");
+/* harmony import */ var _components_random_random_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/random/random.component */ "./src/app/components/random/random.component.ts");
+
+
 
 
 
@@ -71,6 +75,14 @@ var routes = [
                     {
                         path: 'new',
                         component: _components_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_7__["NewEventComponent"]
+                    },
+                    {
+                        path: 'seeding',
+                        component: _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_11__["SeedingComponent"]
+                    },
+                    {
+                        path: 'randomizing',
+                        component: _components_random_random_component__WEBPACK_IMPORTED_MODULE_12__["RandomComponent"]
                     }
                 ]
             },
@@ -208,6 +220,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
 /* harmony import */ var _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pipes/search-util.pipe */ "./src/app/pipes/search-util.pipe.ts");
 /* harmony import */ var _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/tournament/tournament.component */ "./src/app/components/tournament/tournament.component.ts");
+/* harmony import */ var _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/seeding/seeding.component */ "./src/app/components/seeding/seeding.component.ts");
+/* harmony import */ var _components_random_random_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/random/random.component */ "./src/app/components/random/random.component.ts");
+
+
 
 
 
@@ -241,7 +257,9 @@ var AppModule = /** @class */ (function () {
                 _components_container_container_component__WEBPACK_IMPORTED_MODULE_13__["ContainerComponent"],
                 _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__["ParticipantSearchComponent"],
                 _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__["SearchUtilPipe"],
-                _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_16__["TournamentComponent"]
+                _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_16__["TournamentComponent"],
+                _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_17__["SeedingComponent"],
+                _components_random_random_component__WEBPACK_IMPORTED_MODULE_18__["RandomComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -659,7 +677,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _model_event__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../model/event */ "./src/app/model/event.ts");
-/* harmony import */ var _model_organizer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../model/organizer */ "./src/app/model/organizer.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
 
@@ -667,8 +685,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var NewEventComponent = /** @class */ (function () {
-    function NewEventComponent(participantService) {
+    function NewEventComponent(participantService, router) {
         this.participantService = participantService;
+        this.router = router;
+        this.manualSeedUrl = "./seeding";
+        this.randomSeedUrl = "./randomizing";
         this.playerCount = 0;
         this.entrants = new Array();
         this.currentEntrants = new Array();
@@ -715,16 +736,19 @@ var NewEventComponent = /** @class */ (function () {
     };
     NewEventComponent.prototype.onSubmit = function () {
         var newEvent = new _model_event__WEBPACK_IMPORTED_MODULE_4__["Event"]();
-        var currentOrganizer = new _model_organizer__WEBPACK_IMPORTED_MODULE_5__["Organizer"]();
-        currentOrganizer = JSON.parse(localStorage.getItem('authToken'));
         newEvent.player_count = this.playerCount;
-        newEvent.organizer_id = currentOrganizer.managerId;
+        newEvent.organizer_id = JSON.parse(localStorage.getItem('authToken')).managerId;
         newEvent.evt_type = this.usedFormat.title;
         newEvent.evt_desc = this.evt_desc;
         newEvent.in_progress = true;
         newEvent.participants = this.currentEntrants;
         localStorage.setItem('newEvent', JSON.stringify(newEvent));
-        console.log(newEvent);
+        if (this.manual) {
+            this.router.navigate([this.manualSeedUrl]);
+        }
+        else {
+            this.router.navigate([this.randomSeedUrl]);
+        }
     };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -732,7 +756,8 @@ var NewEventComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./new-event.component.html */ "./src/app/components/new-event/new-event.component.html"),
             styles: [__webpack_require__(/*! ./new-event.component.css */ "./src/app/components/new-event/new-event.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
     ], NewEventComponent);
     return NewEventComponent;
 }());
@@ -909,6 +934,118 @@ var ParticipantSearchComponent = /** @class */ (function () {
             _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
     ], ParticipantSearchComponent);
     return ParticipantSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/random/random.component.css":
+/*!********************************************************!*\
+  !*** ./src/app/components/random/random.component.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcmFuZG9tL3JhbmRvbS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/random/random.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/components/random/random.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  random works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/random/random.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/components/random/random.component.ts ***!
+  \*******************************************************/
+/*! exports provided: RandomComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RandomComponent", function() { return RandomComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var RandomComponent = /** @class */ (function () {
+    function RandomComponent() {
+    }
+    RandomComponent.prototype.ngOnInit = function () {
+    };
+    RandomComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-random',
+            template: __webpack_require__(/*! ./random.component.html */ "./src/app/components/random/random.component.html"),
+            styles: [__webpack_require__(/*! ./random.component.css */ "./src/app/components/random/random.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], RandomComponent);
+    return RandomComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/seeding/seeding.component.css":
+/*!**********************************************************!*\
+  !*** ./src/app/components/seeding/seeding.component.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2VlZGluZy9zZWVkaW5nLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/seeding/seeding.component.html":
+/*!***********************************************************!*\
+  !*** ./src/app/components/seeding/seeding.component.html ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  seeding works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/seeding/seeding.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/seeding/seeding.component.ts ***!
+  \*********************************************************/
+/*! exports provided: SeedingComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SeedingComponent", function() { return SeedingComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var SeedingComponent = /** @class */ (function () {
+    function SeedingComponent() {
+    }
+    SeedingComponent.prototype.ngOnInit = function () {
+    };
+    SeedingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-seeding',
+            template: __webpack_require__(/*! ./seeding.component.html */ "./src/app/components/seeding/seeding.component.html"),
+            styles: [__webpack_require__(/*! ./seeding.component.css */ "./src/app/components/seeding/seeding.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], SeedingComponent);
+    return SeedingComponent;
 }());
 
 
