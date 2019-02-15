@@ -6,4 +6,5 @@ export class EventParticipant {
   name: string;
   dropped: boolean;
   eventId: number;
+  bye: boolean;
 }

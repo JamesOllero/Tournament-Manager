@@ -2,20 +2,39 @@ import { Injectable } from '@angular/core';
 import { Participant } from '../../model/participant';
 import {EventParticipant} from "../../model/event-participant";
 import {Match} from "../../model/match";
+import {Round} from "../../model/round";
+import {Event} from "../../model/event";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MatchmakingService {
 
-  player1: Array<Participant>;
-  player2: Array<Participant>;
+  player1 = new Array<EventParticipant>();
+  player2 = new Array<EventParticipant>();
   constructor() { }
 
-  singleElim(people: Array<Participant>) {
+  advanceRound(event: Event, round: Round, matches: Match[]) {
+    this.player1 = [];
+    this.player2 = [];
+    event.activeParticipants = this.compareResults(matches);
+    // this.compareResults(matches);
+    // event.activeParticipants = this.singleElim(event.activeParticipants);
+    console.log("This is after the compareResults method ", event.activeParticipants);
+    if(event.eventType==='Single Elimination'){
+      event.activeParticipants = this.singleElim(event.activeParticipants);
+    }
+    round.current = false;
+    console.log("This is from advanceRound method ", event.activeParticipants);
+    event.rounds.push(this.generateRound(event.activeParticipants, round));
+    localStorage.setItem('newEvent', JSON.stringify(event));
+  }
 
-    let winners: Array<Participant> = people;
-
+  singleElim(people: Array<EventParticipant>) {
+    //console.log(people);
+    let winners: Array<EventParticipant> = people;
+    //console.log(winners);
+    console.log("I'm in the single Elim method");
     let roundBye: string;
     if (winners.length % 2 != 0) {
       let set: boolean = false;
@@ -28,16 +47,22 @@ export class MatchmakingService {
       }
     }
 
-    for (let i = 0; i < winners.length; i++){
+    for (let i = 0; i < winners.length-1; i+=2){
+      console.log(i);
       if (winners[i].name != roundBye){
-        if (winners[i].wins > winners[i+1].wins){
+        if (winners[i].localWins > winners[i+1].localWins){
           winners.splice(i+1, 1);
+          winners[i].localWins++;
         }
-        else if (winners[i].wins < winners[i+1].wins){
+        else if (winners[i].localWins < winners[i+1].localWins){
           winners.splice(i, 1);
+          winners[i+1].localWins++;
         }
+        console.log(winners[i].name, " has ", winners[i].localWins, " wins.");
+        console.log(winners[i+1].name, " has ", winners[i+1].localWins, " wins.");
       }
     }
+    return winners;
   }
 
   // doubleElim(people: Array<Participant>){
@@ -56,25 +81,39 @@ export class MatchmakingService {
     //   rand[i] = this.random();
     // }
     // return rand;
-  } 
+  }
 
   random(){
     return Math.pow((Math.random() * 100), (Math.random() * 100));
   }
 
-  pairings(people: Array<Participant>){
-    let bye: Participant = new Participant();
+  pairings(people: Array<EventParticipant>, roundId: number):Match[] {
+    let bye: EventParticipant = new EventParticipant();
     bye.name = "Bye";
     for (let i = people.length - 1; i >= 0; i-=2) {
       if (i == 0 && people.length % 2 != 0){
-        this.player1[i] = people[i];
-        this.player2[i] = bye;
+        this.player1.push(people[i]);
+        this.player2.push(bye);
       }
       else{
-        this.player1[i] = people[i];
-        this.player2[i] = people[i-1];
+        this.player1.push(people[i]);
+        this.player2.push(people[i-1]);
       }
     }
+    let newMatches = new Array<Match>();
+    for(let i=0;i<this.player1.length;i++){
+      let match = new Match();
+      match.p1 = this.player1[i];
+      match.p2 = this.player2[i];
+      match.p1Score = 0;
+      match.p2Score = 0;
+      match.roundId = roundId;
+      match.lock = false;
+      match.p1Drop = false;
+      match.p2Drop = false;
+      newMatches.push(match);
+    }
+    return newMatches;
   }
 
   Pseudorandom(people: Array<Participant>) {
@@ -139,4 +178,41 @@ export class MatchmakingService {
     return result;
   }
 
+  // This is causing the problem of one person being dropped.
+  compareResults(matches: Match[]): Array<EventParticipant>{
+    console.log("I'm inside the compareResults method!");
+    console.log("The matches are as follows: ", matches);
+    let array = new Array<EventParticipant>();
+    for(let i in matches){
+      if(matches[i].p1Score>matches[i].p2Score){
+        matches[i].p1.localWins++;
+        array.push(matches[i].p1);
+        //array.push(matches[i].p2);
+        matches[i].p2.localLosses++;
+        console.log("Case 1 array: ", array);
+      }
+      //else if(matches[i].p1Score<matches[i].p2Score){
+      else{
+        matches[i].p2.localWins++;
+        //array.push(matches[i].p1);
+        matches[i].p1.localLosses++;
+        array.push(matches[i].p2);
+        console.log("Case 2 array: ", array);
+      }
+    }
+    console.log("The array compare is returning is this: ", array);
+    return array;
+  }
+
+
+
+  generateRound(availableParticipants: Array<EventParticipant>, oldRound: Round):Round {
+    let newRound = new Round();
+    newRound.roundId = Math.round(Math.random()*10);
+    newRound.roundNum = oldRound.roundNum+1;
+    newRound.participants = availableParticipants;
+    newRound.eventId = oldRound.eventId;
+    newRound.matches = this.pairings(newRound.participants, newRound.roundId);
+    return newRound;
+  }
 }
