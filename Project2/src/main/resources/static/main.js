@@ -45,8 +45,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/participant-search/participant-search.component */ "./src/app/components/participant-search/participant-search.component.ts");
 /* harmony import */ var _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/account-creation/account-creation.component */ "./src/app/components/account-creation/account-creation.component.ts");
 /* harmony import */ var _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/tournament/tournament.component */ "./src/app/components/tournament/tournament.component.ts");
+<<<<<<< Updated upstream
 /* harmony import */ var _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/seeding/seeding.component */ "./src/app/components/seeding/seeding.component.ts");
 
+=======
+>>>>>>> Stashed changes
 
 
 
@@ -79,10 +82,13 @@ var routes = [
                     {
                         path: 'active',
                         component: _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_11__["TournamentComponent"]
+<<<<<<< Updated upstream
                     },
                     {
                         path: 'seeding',
                         component: _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_12__["SeedingComponent"]
+=======
+>>>>>>> Stashed changes
                     }
                 ]
             },
@@ -221,8 +227,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pipes/search-util.pipe */ "./src/app/pipes/search-util.pipe.ts");
 /* harmony import */ var _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/tournament/tournament.component */ "./src/app/components/tournament/tournament.component.ts");
 /* harmony import */ var _components_tournament_item_tournament_item_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/tournament-item/tournament-item.component */ "./src/app/components/tournament-item/tournament-item.component.ts");
+<<<<<<< Updated upstream
 /* harmony import */ var _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/seeding/seeding.component */ "./src/app/components/seeding/seeding.component.ts");
 
+=======
+>>>>>>> Stashed changes
 
 
 
@@ -258,8 +267,12 @@ var AppModule = /** @class */ (function () {
                 _components_participant_search_participant_search_component__WEBPACK_IMPORTED_MODULE_14__["ParticipantSearchComponent"],
                 _pipes_search_util_pipe__WEBPACK_IMPORTED_MODULE_15__["SearchUtilPipe"],
                 _components_tournament_tournament_component__WEBPACK_IMPORTED_MODULE_16__["TournamentComponent"],
+<<<<<<< Updated upstream
                 _components_tournament_item_tournament_item_component__WEBPACK_IMPORTED_MODULE_17__["TournamentItemComponent"],
                 _components_seeding_seeding_component__WEBPACK_IMPORTED_MODULE_18__["SeedingComponent"]
+=======
+                _components_tournament_item_tournament_item_component__WEBPACK_IMPORTED_MODULE_17__["TournamentItemComponent"]
+>>>>>>> Stashed changes
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -296,7 +309,11 @@ module.exports = ".margin-left{\r\n    margin-left: 40px !important;\r\n}\r\n#bt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< Updated upstream
 module.exports = "<div class=\"bg-primary bg\" id=fullpage>\r\n  <div class=\"row justify-content-center align-items-center\">\r\n    <div class=\"col-10 col-sm-2 col-md-6\" id=pad>\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n\r\n        <div class=\"form-container w-400 p-3 h-150\" id=\"organizer-registration\">\r\n          <button type=\"button\" class=\"btn btn-light\" (click)=\"redirect()\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h4 class=\" pb-3 section one text-center \">Account Creation</h4>\r\n          <form #organizerForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n            <div>\r\n              <label for=\"username\">Username: </label>\r\n              <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" [(ngModel)]=\"newOrganizer.username\" required>\r\n            </div>\r\n            <div>\r\n              <label for=\"password\">Password: </label>\r\n              <input type=\"password\" class=\"form-control\" name=\"password\" id=\"password\" placeholder=\"Password\" [(ngModel)]=\"newOrganizer.password\" required>\r\n            </div>\r\n            <div>\r\n              <label for=\"email\">E-mail: </label>\r\n              <input type=\"text\" class=\"form-control\" name=\"email\" id=\"email\" placeholder=\"Email\" [(ngModel)]=\"newOrganizer.email\" required>\r\n            </div>\r\n            <div class=\"btn-toolbar d-flex justify-content-around\">\r\n              <button  class=\"btn btn-success btn-sm col m-3\" type=\"button\" [disabled]=\"!organizerForm.valid\">Submit</button>\r\n              <button  class=\"btn btn-danger btn-sm col m-3\" type=\"button\">Reset</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+=======
+module.exports = "<div class=\"bg-primary bg\" id=fullpage>\r\n<div class=\"row justify-content-center align-items-center\">\r\n    <div class=\"col-10 col-sm-2 col-md-6\" id=pad>\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n\r\n\r\n<div class=\"form-container w-400 p-3 h-150\" id=\"organizer-registration\">\r\n    <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n    <h4 class=\" pb-3 section one text-center \">Account Creation</h4>\r\n  <form #organizerForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" [(ngModel)]=\"newOrganizer.username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Password: </label>\r\n      <input type=\"password\" class=\"form-control\" name=\"password\" id=\"password\" placeholder=\"Password\" [(ngModel)]=\"newOrganizer.password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"text\" class=\"form-control\" name=\"email\" id=\"email\" placeholder=\"Email\" [(ngModel)]=\"newOrganizer.email\" required>\r\n    </div>\r\n    <div class=\"btn-toolbar d-flex justify-content-around\">\r\n      <button  class=\"btn btn-success btn-sm col m-3\" type=\"button\" [disabled]=\"!organizerForm.valid\">Submit</button>\r\n      <button  class=\"btn btn-danger btn-sm col m-3\" type=\"button\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>"
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -326,7 +343,12 @@ var AccountCreationComponent = /** @class */ (function () {
         this.location = location;
         this.newOrganizer = new _model_organizer__WEBPACK_IMPORTED_MODULE_2__["Organizer"];
     }
+<<<<<<< Updated upstream
     AccountCreationComponent.prototype.ngOnInit = function () { };
+=======
+    AccountCreationComponent.prototype.ngOnInit = function () {
+    };
+>>>>>>> Stashed changes
     AccountCreationComponent.prototype.onSubmit = function () {
         var _this = this;
         this.organizerService.registerOrganizer(this.newOrganizer, function () {
@@ -335,9 +357,12 @@ var AccountCreationComponent = /** @class */ (function () {
             console.log(err);
         });
     };
+<<<<<<< Updated upstream
     AccountCreationComponent.prototype.redirect = function () {
         this.location.back();
     };
+=======
+>>>>>>> Stashed changes
     AccountCreationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-account-creation',
@@ -660,7 +685,11 @@ module.exports = "/* label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5e
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< Updated upstream
 module.exports = "<body id=\"bar\" class=\"bg-primary\">\r\n    \r\n\r\n  <div class=\"d-flex justify-content-center\" id=pad>\r\n    <div class=\"card p-4 \" id=\"my-preview-div\">\r\n\r\n      <div class=\"d-flex justify-content-center card-body\" id=\"center\">\r\n        <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n          <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h1  class=\"d-flex justify-content-center mb-4\" >Customize your event</h1>\r\n\r\n    \r\n    <div>\r\n      <label class=\"mb-4 pr-4\" for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option style=\"background-color: white\" *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"mb-4\">\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\"  class=\"form-control\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <div class=\"d-flex justify-content-around mt-4 \">\r\n      <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n      <!--<label for=\"manualization\">Manually Assign Seeding: <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\"></label>-->\r\n      \r\n    </div>\r\n   \r\n\r\n    \r\n    <div class=\"d-flex justify-content-around\">\r\n      \r\n      <select class=\"m-3 participants\" multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n    \r\n      <select class=\"m-3\" multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n  </div>\r\n\r\n      <div class=\"d-flex justify-content-around\">\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\"  class=\"btn btn-danger\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n\r\n          <div class=\"d-flex justify-content-center\">\r\n            <button type=\"sumbit\" class=\"btn btn-primary nt-5 w50\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n          </div>\r\n        </form>\r\n    </div>\r\n\r\n  </div>\r\n  </div>\r\n\r\n</body>\r\n"
+=======
+module.exports = "<body id=\"bar\" class=\"bg-primary\">\r\n    \r\n\r\n  <div class=\"d-flex justify-content-center\" id=pad>\r\n    <div class=\"card p-4 \" id=\"my-preview-div\">\r\n\r\n      <div class=\"d-flex justify-content-center card-body\" id=\"center\">\r\n        <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n          <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h1  class=\"d-flex justify-content-center mb-4\" >Customize your event</h1>\r\n\r\n    \r\n    <div>\r\n      <label class=\"mb-4 pr-4\" for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option style=\"background-color: white\" *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"mb-4\">\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\"  class=\"form-control\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <div class=\"d-flex justify-content-around mt-4 \">\r\n      <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n      <label for=\"manualization\">Manually Assign Seeding: <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\"></label>\r\n      \r\n    </div>\r\n   \r\n\r\n    \r\n    <div class=\"d-flex justify-content-around\">\r\n      \r\n      <select class=\"m-3 participants\" multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n    \r\n      <select class=\"m-3\" multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n  </div>\r\n\r\n      <div class=\"d-flex justify-content-around\">\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\"  class=\"btn btn-danger\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n    \r\n    <div class=\"d-flex justify-content-center\">\r\n      <button type=\"submit\" class=\"btn btn-primary mt-5 w-50\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n    </div>\r\n  </form>\r\n  </div>\r\n  </div>\r\n  </div>\r\n\r\n</body>"
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -678,23 +707,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+<<<<<<< Updated upstream
 /* harmony import */ var _model_event__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../model/event */ "./src/app/model/event.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _services_event_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/event.service */ "./src/app/services/event.service.ts");
 
 
 
+=======
+>>>>>>> Stashed changes
 
 
 
 
 var NewEventComponent = /** @class */ (function () {
+<<<<<<< Updated upstream
     function NewEventComponent(participantService, router, eventService) {
         this.participantService = participantService;
         this.router = router;
         this.eventService = eventService;
         this.manualSeedUrl = "/main/event/seeding";
         this.randomSeedUrl = "/main/event/active";
+=======
+    function NewEventComponent(participantService) {
+        this.participantService = participantService;
+>>>>>>> Stashed changes
         this.playerCount = 0;
         this.entrants = new Array();
         this.currentEntrants = new Array();
@@ -703,7 +740,10 @@ var NewEventComponent = /** @class */ (function () {
     NewEventComponent.prototype.ngOnInit = function () {
         this.getParticipants();
         this.formats = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].formats;
+<<<<<<< Updated upstream
         this.submitDisabled = false;
+=======
+>>>>>>> Stashed changes
     };
     NewEventComponent.prototype.getParticipants = function () {
         var _this = this;
@@ -740,6 +780,7 @@ var NewEventComponent = /** @class */ (function () {
         this.removals = [];
         this.playerCount = this.currentEntrants.length;
     };
+<<<<<<< Updated upstream
     // Debugging method
     NewEventComponent.prototype.getEvents = function () {
         this.eventService.getAllEvents(function () {
@@ -776,6 +817,15 @@ var NewEventComponent = /** @class */ (function () {
     };
     NewEventComponent.prototype.redirect = function () {
         this.router.navigate(['main']);
+=======
+    NewEventComponent.prototype.onSubmit = function () {
+        console.log(this.usedFormat.title);
+        console.log(this.usedFormat.type);
+        console.log(this.evt_desc);
+        console.log(this.playerCount);
+        console.log(this.currentEntrants);
+        console.log(this.manual);
+>>>>>>> Stashed changes
     };
     NewEventComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -783,9 +833,13 @@ var NewEventComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./new-event.component.html */ "./src/app/components/new-event/new-event.component.html"),
             styles: [__webpack_require__(/*! ./new-event.component.css */ "./src/app/components/new-event/new-event.component.css")]
         }),
+<<<<<<< Updated upstream
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
             _services_event_service__WEBPACK_IMPORTED_MODULE_6__["EventService"]])
+=======
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"]])
+>>>>>>> Stashed changes
     ], NewEventComponent);
     return NewEventComponent;
 }());
@@ -812,7 +866,11 @@ module.exports = ".margin-left{\r\n    margin-left: 40px !important;\r\n}\r\n#bt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< Updated upstream
 module.exports = "<div class=\"bg-primary bg\" id=fullpage>\r\n  <div class=\"row justify-content-center align-items-center\">\r\n    <div class=\"col-10 col-sm-2 col-md-6\" id=pad>\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n        <div class=\"form-container w-400 p-3 h-150 \" id=\"shiftdown\">\r\n          <button type=\"button\" class=\"btn btn-light\" (click)=\"redirect()\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h4 class=\" pb-3 section one text-center \">Participant Registration</h4>\r\n          <form class=\"pb-3\" #participantForm=\"ngForm\">\r\n            <div class=\"form-group\">\r\n              <label for=\"firstName\">First Name: </label>\r\n              <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder= \"Bobby\"[(ngModel)]=\"newParticipant.firstName\" name=\"firstName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"lastName\">Last Name: </label>\r\n              <input type=\"text\" id=\"lastName\"  class=\"form-control\" placeholder= \"Kernel\"[(ngModel)]=\"newParticipant.lastName\" name=\"lastName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"email\">Email: </label>\r\n              <input type=\"email\" id=\"email\"  class=\"form-control\" placeholder= \"BobbyK@gmail.com\"[(ngModel)]=\"newParticipant.email\" name=\"email\" required>\r\n            </div>\r\n            <div class=\"btn-toolbar d-flex justify-content-around\"> \r\n              <button  class=\"btn btn-success btn-sm col m-3\" type=\"button\" id=\"submit\" (click)=\"createReturn()\" [disabled]=\"!participantForm.form.valid\"> Submit</button>\r\n              <button  class=\"btn btn-danger btn-sm col m-3\"type=\"button\" id=\"reset\" >Reset</button>\r\n              <button  class=\"btn btn-info btn-sm col m-3\"  type=\"button\" id=\"loop\" (click)=\"createContinue(participantForm)\">Sumbit and add new participant</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
+=======
+module.exports = "\r\n<div class=\"bg-primary bg\" id=fullpage>\r\n  <div class=\"row justify-content-center align-items-center\">\r\n    <div class=\"col-10 col-sm-2 col-md-6\" id=pad>\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n        <div class=\"form-container w-400 p-3 h-150 \" id=\"shiftdown\">\r\n            <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h4 class=\" pb-3 section one text-center \">Participant Registration</h4>\r\n          <form class=\"pb-3\" #participantForm=\"ngForm\">\r\n            <div class=\"form-group\">\r\n              <label for=\"firstName\">First Name: </label>\r\n              <input type=\"text\" id=\"firstName\" class=\"form-control\" placeholder= \"Bobby\"[(ngModel)]=\"newParticipant.firstName\" name=\"firstName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"lastName\">Last Name: </label>\r\n              <input type=\"text\" id=\"lastName\"  class=\"form-control\" placeholder= \"Kernel\"[(ngModel)]=\"newParticipant.lastName\" name=\"lastName\" required>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label for=\"email\">Email: </label>\r\n              <input type=\"email\" id=\"email\"  class=\"form-control\" placeholder= \"BobbyK@gmail.com\"[(ngModel)]=\"newParticipant.email\" name=\"email\" required>\r\n            </div>\r\n            <div class=\"btn-toolbar d-flex justify-content-around\"> \r\n              <button  class=\"btn btn-success btn-sm col m-3\" type=\"button\" id=\"submit\" (click)=\"createReturn()\" [disabled]=\"!participantForm.form.valid\"> Submit</button>\r\n              <button  class=\"btn btn-danger btn-sm col m-3\"type=\"button\" id=\"reset\" >Reset</button>\r\n              <button  class=\"btn btn-info btn-sm col m-3\"  type=\"button\" id=\"loop\" (click)=\"createContinue(participantForm)\">Sumbit and add new participant</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -831,18 +889,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _model_participant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../model/participant */ "./src/app/model/participant.ts");
 /* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+<<<<<<< Updated upstream
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
+=======
+>>>>>>> Stashed changes
 
 
 
 
 
 var ParticipantRegisterComponent = /** @class */ (function () {
+<<<<<<< Updated upstream
     function ParticipantRegisterComponent(participantService, location, router) {
         this.participantService = participantService;
         this.location = location;
         this.router = router;
+=======
+    function ParticipantRegisterComponent(participantService, location) {
+        this.participantService = participantService;
+        this.location = location;
+>>>>>>> Stashed changes
         this.newParticipant = new _model_participant__WEBPACK_IMPORTED_MODULE_2__["Participant"];
     }
     ParticipantRegisterComponent.prototype.ngOnInit = function () {
@@ -869,9 +936,12 @@ var ParticipantRegisterComponent = /** @class */ (function () {
             console.log(err);
         });
     };
+<<<<<<< Updated upstream
     ParticipantRegisterComponent.prototype.redirect = function () {
         this.router.navigate(['main']);
     };
+=======
+>>>>>>> Stashed changes
     ParticipantRegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-participant-register',
@@ -879,8 +949,12 @@ var ParticipantRegisterComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./participant-register.component.css */ "./src/app/components/participant-register/participant-register.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_3__["ParticipantService"],
+<<<<<<< Updated upstream
             _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"],
             _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+=======
+            _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"]])
+>>>>>>> Stashed changes
     ], ParticipantRegisterComponent);
     return ParticipantRegisterComponent;
 }());
@@ -975,6 +1049,7 @@ var ParticipantSearchComponent = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ "./src/app/components/seeding/seeding.component.css":
 /*!**********************************************************!*\
   !*** ./src/app/components/seeding/seeding.component.css ***!
@@ -1031,6 +1106,8 @@ var SeedingComponent = /** @class */ (function () {
 
 /***/ }),
 
+=======
+>>>>>>> Stashed changes
 /***/ "./src/app/components/tournament-item/tournament-item.component.css":
 /*!**************************************************************************!*\
   !*** ./src/app/components/tournament-item/tournament-item.component.css ***!
@@ -1049,7 +1126,11 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< Updated upstream
 module.exports = "<form>\r\n  <label>Event ID: {{currentEvent.eventId}}</label><br>\r\n  <label>Round Number: {{currentRound.roundNum}}</label>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Score:</th><th>Player 2 Score:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr *ngFor=\"let match of roundMatches\">\r\n        <td>{{match.p1.name}}</td><td>VS.</td><td>{{match.p2.name}}</td><td><input name=\"P1Score\" [(ngModel)]=\"match.p1Score\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input name=\"P2Score\" [(ngModel)]=\"match.p2Score\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" name=\"lockCheck\" [(ngModel)]=\"match.lock\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"!currentEvent.in_progress\" (click)=\"roundSubmit()\">Submit round results</button> <button type=\"button\" [disabled]=\"!currentEvent.in_progress\" (click)=\"finalSubmit()\">Tournament is over</button>\r\n</form>\r\n<br>\r\n<div *ngIf=\"!currentEvent.in_progress\">\r\n  <label>Tournament Winner: {{currentEvent.winner.name}}</label>\r\n  <br>\r\n  <button type=\"button\" (click)=\"goHome()\">Go to Menu</button>\r\n</div>\r\n"
+=======
+module.exports = "<!--<tr>-->\r\n  <!--<td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>-->\r\n<!--</tr>-->\r\n\r\n<form>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Wins:</th><th>Player 2 Wins:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr>\r\n        <td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n      <!--<app-tournament-item></app-tournament-item>-->\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\">Submit round results</button>\r\n</form>\r\n"
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -1065,6 +1146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TournamentItemComponent", function() { return TournamentItemComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+<<<<<<< Updated upstream
 /* harmony import */ var _services_matchmaking_matchmaking_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/matchmaking/matchmaking.service */ "./src/app/services/matchmaking/matchmaking.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
@@ -1147,6 +1229,14 @@ var TournamentItemComponent = /** @class */ (function () {
     TournamentItemComponent.prototype.goHome = function () {
         localStorage.removeItem('newEvent');
         this.router.navigateByUrl('/main');
+=======
+
+
+var TournamentItemComponent = /** @class */ (function () {
+    function TournamentItemComponent() {
+    }
+    TournamentItemComponent.prototype.ngOnInit = function () {
+>>>>>>> Stashed changes
     };
     TournamentItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1154,8 +1244,12 @@ var TournamentItemComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./tournament-item.component.html */ "./src/app/components/tournament-item/tournament-item.component.html"),
             styles: [__webpack_require__(/*! ./tournament-item.component.css */ "./src/app/components/tournament-item/tournament-item.component.css")]
         }),
+<<<<<<< Updated upstream
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_matchmaking_matchmaking_service__WEBPACK_IMPORTED_MODULE_2__["MatchmakingService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+=======
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+>>>>>>> Stashed changes
     ], TournamentItemComponent);
     return TournamentItemComponent;
 }());
@@ -1182,7 +1276,11 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< Updated upstream
 module.exports = "<p>\r\n  This is the tournament!\r\n</p>\r\n<p>\r\n  Below are your round pairings!\r\n</p>\r\n<app-tournament-item></app-tournament-item>\r\n"
+=======
+module.exports = "<p>\r\n  tournament works!\r\n</p>\r\n<app-tournament-item></app-tournament-item>\r\n<!--<form>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Wins:</th><th>Player 2 Wins:</th><th>Lock result</th>\r\n      </tr>\r\n      &lt;!&ndash;<tr>\r\n        <td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>&ndash;&gt;\r\n      <app-tournament-item></app-tournament-item>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\">Submit round results</button>\r\n</form>-->\r\n"
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -1220,6 +1318,7 @@ var TournamentComponent = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ "./src/app/model/event-participant.ts":
 /*!********************************************!*\
   !*** ./src/app/model/event-participant.ts ***!
@@ -1280,6 +1379,8 @@ var Match = /** @class */ (function () {
 
 /***/ }),
 
+=======
+>>>>>>> Stashed changes
 /***/ "./src/app/model/organizer.ts":
 /*!************************************!*\
   !*** ./src/app/model/organizer.ts ***!
@@ -1320,6 +1421,7 @@ var Participant = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ "./src/app/model/round.ts":
 /*!********************************!*\
   !*** ./src/app/model/round.ts ***!
@@ -1340,6 +1442,8 @@ var Round = /** @class */ (function () {
 
 /***/ }),
 
+=======
+>>>>>>> Stashed changes
 /***/ "./src/app/pipes/search-util.pipe.ts":
 /*!*******************************************!*\
   !*** ./src/app/pipes/search-util.pipe.ts ***!
@@ -1470,6 +1574,7 @@ var AuthGuardService = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ "./src/app/services/event.service.ts":
 /*!*******************************************!*\
   !*** ./src/app/services/event.service.ts ***!
@@ -1801,6 +1906,8 @@ var MatchmakingService = /** @class */ (function () {
 
 /***/ }),
 
+=======
+>>>>>>> Stashed changes
 /***/ "./src/app/services/organizer.service.ts":
 /*!***********************************************!*\
   !*** ./src/app/services/organizer.service.ts ***!
@@ -2006,7 +2113,11 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< Updated upstream
 module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+=======
+module.exports = __webpack_require__(/*! C:\Users\Star\Desktop\project_2\project2\TournamentManager\src\main.ts */"./src/main.ts");
+>>>>>>> Stashed changes
 
 
 /***/ })
