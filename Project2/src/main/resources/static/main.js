@@ -660,7 +660,7 @@ module.exports = "/* label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5e
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body id=\"bar\" class=\"bg-primary\">\r\n    \r\n\r\n  <div class=\"d-flex justify-content-center\" id=pad>\r\n    <div class=\"card p-4 \" id=\"my-preview-div\">\r\n\r\n      <div class=\"d-flex justify-content-center card-body\" id=\"center\">\r\n        <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n          <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h1  class=\"d-flex justify-content-center mb-4\" >Customize your event</h1>\r\n\r\n    \r\n    <div>\r\n      <label class=\"mb-4 pr-4\" for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option style=\"background-color: white\" *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"mb-4\">\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\"  class=\"form-control\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <div class=\"d-flex justify-content-around mt-4 \">\r\n      <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n      <label for=\"manualization\">Manually Assign Seeding: <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\"></label>\r\n      \r\n    </div>\r\n   \r\n\r\n    \r\n    <div class=\"d-flex justify-content-around\">\r\n      \r\n      <select class=\"m-3 participants\" multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n    \r\n      <select class=\"m-3\" multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n  </div>\r\n\r\n      <div class=\"d-flex justify-content-around\">\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\"  class=\"btn btn-danger\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n\r\n          <div class=\"d-flex justify-content-center\">\r\n            <button type=\"sumbit\" class=\"btn btn-primary nt-5 w50\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n          </div>\r\n        </form>\r\n    </div>\r\n\r\n  </div>\r\n  </div>\r\n\r\n</body>\r\n"
+module.exports = "<body id=\"bar\" class=\"bg-primary\">\r\n    \r\n\r\n  <div class=\"d-flex justify-content-center\" id=pad>\r\n    <div class=\"card p-4 \" id=\"my-preview-div\">\r\n\r\n      <div class=\"d-flex justify-content-center card-body\" id=\"center\">\r\n        <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n          <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h1  class=\"d-flex justify-content-center mb-4\" >Customize your event</h1>\r\n\r\n    \r\n    <div>\r\n      <label class=\"mb-4 pr-4\" for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option style=\"background-color: white\" *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"mb-4\">\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\"  class=\"form-control\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <div class=\"d-flex justify-content-around mt-4 \">\r\n      <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n      <!--<label for=\"manualization\">Manually Assign Seeding: <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\"></label>-->\r\n      \r\n    </div>\r\n   \r\n\r\n    \r\n    <div class=\"d-flex justify-content-around\">\r\n      \r\n      <select class=\"m-3 participants\" multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n    \r\n      <select class=\"m-3\" multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n  </div>\r\n\r\n      <div class=\"d-flex justify-content-around\">\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\"  class=\"btn btn-danger\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n\r\n          <div class=\"d-flex justify-content-center\">\r\n            <button type=\"sumbit\" class=\"btn btn-primary nt-5 w50\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n          </div>\r\n        </form>\r\n    </div>\r\n\r\n  </div>\r\n  </div>\r\n\r\n</body>\r\n"
 
 /***/ }),
 
@@ -1049,7 +1049,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form>\r\n  <label>Event ID: {{currentEvent.eventId}}</label><br>\r\n  <label>Round Number: {{currentRound.roundNum}}</label>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Score:</th><th>Player 2 Score:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr *ngFor=\"let match of roundMatches\">\r\n        <td>{{match.p1.name}}</td><td>VS.</td><td>{{match.p2.name}}</td><td><input name=\"P1Score\" [(ngModel)]=\"match.p1Score\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input name=\"P2Score\" [(ngModel)]=\"match.p2Score\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" name=\"lockCheck\" [(ngModel)]=\"match.lock\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" (click)=\"roundSubmit()\">Submit round results</button> <button type=\"button\" (click)=\"finalSubmit()\">Tournament is over</button>\r\n</form>\r\n"
+module.exports = "<form>\r\n  <label>Event ID: {{currentEvent.eventId}}</label><br>\r\n  <label>Round Number: {{currentRound.roundNum}}</label>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Score:</th><th>Player 2 Score:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr *ngFor=\"let match of roundMatches\">\r\n        <td>{{match.p1.name}}</td><td>VS.</td><td>{{match.p2.name}}</td><td><input name=\"P1Score\" [(ngModel)]=\"match.p1Score\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input name=\"P2Score\" [(ngModel)]=\"match.p2Score\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" name=\"lockCheck\" [(ngModel)]=\"match.lock\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"!currentEvent.in_progress\" (click)=\"roundSubmit()\">Submit round results</button> <button type=\"button\" [disabled]=\"!currentEvent.in_progress\" (click)=\"finalSubmit()\">Tournament is over</button>\r\n</form>\r\n<br>\r\n<div *ngIf=\"!currentEvent.in_progress\">\r\n  <label>Tournament Winner: {{currentEvent.winner.name}}</label>\r\n  <br>\r\n  <button type=\"button\" (click)=\"goHome()\">Go to Menu</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1066,12 +1066,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_matchmaking_matchmaking_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/matchmaking/matchmaking.service */ "./src/app/services/matchmaking/matchmaking.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
 var TournamentItemComponent = /** @class */ (function () {
-    function TournamentItemComponent(matchmakingService) {
+    function TournamentItemComponent(matchmakingService, router) {
         this.matchmakingService = matchmakingService;
+        this.router = router;
     }
     TournamentItemComponent.prototype.ngOnInit = function () {
         this.currentEvent = JSON.parse(localStorage.getItem('newEvent'));
@@ -1086,6 +1089,10 @@ var TournamentItemComponent = /** @class */ (function () {
                 return;
             }
         }
+        if (this.roundMatches.length < 2) {
+            alert("There is only one match remaining.\nPlease finalize the Tournament.");
+            return;
+        }
         console.log("It's the end of the round!");
         this.matchmakingService.advanceRound(this.currentEvent, this.currentRound, this.roundMatches);
         this.ngOnInit();
@@ -1097,9 +1104,49 @@ var TournamentItemComponent = /** @class */ (function () {
         // }
     };
     TournamentItemComponent.prototype.finalSubmit = function () {
+        for (var i in this.roundMatches) {
+            if (!this.roundMatches[i].lock) {
+                alert("Not all matches locked.");
+                return;
+            }
+        }
+        if (this.roundMatches.length > 1 && (this.currentEvent.eventType === 'Single Elimination' || this.currentEvent.eventType === 'Double Elimination')) {
+            alert('There are presently too many matches in progress for an elimination tournament.\nPlease submit the current round instead.');
+            return;
+        }
         console.log("It's the final submit!");
-        // set inProgress to false!
-        // Add
+        this.currentEvent.in_progress = false;
+        this.compareFinal();
+        this.declareWinner();
+    };
+    TournamentItemComponent.prototype.compareFinal = function () {
+        var match = this.roundMatches[0];
+        var array = new Array();
+        if (match.p1Score > match.p2Score) {
+            match.p1.localWins++;
+            array.push(match.p1);
+            array.push(match.p2);
+        }
+        else {
+            match.p2.localWins++;
+            array.push(match.p2);
+            array.push(match.p1);
+        }
+        console.log(array);
+        this.currentEvent.activeParticipants = array;
+    };
+    TournamentItemComponent.prototype.declareWinner = function () {
+        if (this.currentEvent.activeParticipants[0].localWins > this.currentEvent.activeParticipants[1].localWins) {
+            this.currentEvent.winner = this.currentEvent.activeParticipants[0];
+        }
+        else {
+            this.currentEvent.winner = this.currentEvent.activeParticipants[1];
+        }
+        console.log(this.currentEvent.winner);
+    };
+    TournamentItemComponent.prototype.goHome = function () {
+        localStorage.removeItem('newEvent');
+        this.router.navigateByUrl('/main');
     };
     TournamentItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1107,7 +1154,8 @@ var TournamentItemComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./tournament-item.component.html */ "./src/app/components/tournament-item/tournament-item.component.html"),
             styles: [__webpack_require__(/*! ./tournament-item.component.css */ "./src/app/components/tournament-item/tournament-item.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_matchmaking_matchmaking_service__WEBPACK_IMPORTED_MODULE_2__["MatchmakingService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_matchmaking_matchmaking_service__WEBPACK_IMPORTED_MODULE_2__["MatchmakingService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], TournamentItemComponent);
     return TournamentItemComponent;
 }());
@@ -1958,7 +2006,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })

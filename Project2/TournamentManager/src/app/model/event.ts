@@ -11,7 +11,7 @@ export class Event {
   activeParticipants: Array<EventParticipant>;
   eventType: string;
   rounds: Array<Round>;
-  winner: Participant;
+  winner: EventParticipant;
   in_progress: boolean;
   description: string;
   playerNum: number;

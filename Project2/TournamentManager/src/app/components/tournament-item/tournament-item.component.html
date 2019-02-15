@@ -11,5 +11,11 @@
       </tr>
     </table>
   </div>
-  <button type="button" (click)="roundSubmit()">Submit round results</button> <button type="button" (click)="finalSubmit()">Tournament is over</button>
+  <button type="button" [disabled]="!currentEvent.in_progress" (click)="roundSubmit()">Submit round results</button> <button type="button" [disabled]="!currentEvent.in_progress" (click)="finalSubmit()">Tournament is over</button>
 </form>
+<br>
+<div *ngIf="!currentEvent.in_progress">
+  <label>Tournament Winner: {{currentEvent.winner.name}}</label>
+  <br>
+  <button type="button" (click)="goHome()">Go to Menu</button>
+</div>
