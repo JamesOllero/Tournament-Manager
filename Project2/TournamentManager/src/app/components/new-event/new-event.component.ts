@@ -95,7 +95,8 @@ export class NewEventComponent implements OnInit {
     if (this.manual) {
       this.router.navigateByUrl(this.manualSeedUrl);
     } else {
-      this.router.navigateByUrl(this.randomSeedUrl);
+      //this.router.navigateByUrl(this.randomSeedUrl);
+      this.router.navigate(['event/active'])
     }
   }
 

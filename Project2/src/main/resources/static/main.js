@@ -292,11 +292,7 @@ module.exports = ".margin-left{\r\n    margin-left: 40px !important;\r\n}\r\n#bt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = "<div class=\"bg-primary bg\" id=fullpage>\r\n  <div class=\"row justify-content-center align-items-center\">\r\n    <div class=\"col-10 col-sm-2 col-md-6\" id=pad>\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n\r\n        <div class=\"form-container w-400 p-3 h-150\" id=\"organizer-registration\">\r\n          <button type=\"button\" class=\"btn btn-light\" (click)=\"redirect()\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h4 class=\" pb-3 section one text-center \">Account Creation</h4>\r\n          <form #organizerForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n            <div>\r\n              <label for=\"username\">Username: </label>\r\n              <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" [(ngModel)]=\"newOrganizer.username\" required>\r\n            </div>\r\n            <div>\r\n              <label for=\"password\">Password: </label>\r\n              <input type=\"password\" class=\"form-control\" name=\"password\" id=\"password\" placeholder=\"Password\" [(ngModel)]=\"newOrganizer.password\" required>\r\n            </div>\r\n            <div>\r\n              <label for=\"email\">E-mail: </label>\r\n              <input type=\"text\" class=\"form-control\" name=\"email\" id=\"email\" placeholder=\"Email\" [(ngModel)]=\"newOrganizer.email\" required>\r\n            </div>\r\n            <div class=\"btn-toolbar d-flex justify-content-around\">\r\n              <button  class=\"btn btn-success btn-sm col m-3\" type=\"button\" [disabled]=\"!organizerForm.valid\">Submit</button>\r\n              <button  class=\"btn btn-danger btn-sm col m-3\" type=\"button\">Reset</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-=======
-module.exports = "<div class=\"bg-primary bg\" id=fullpage>\r\n<div class=\"row justify-content-center align-items-center\">\r\n    <div class=\"col-10 col-sm-2 col-md-6\" id=pad>\r\n      <div class=\"card mt-sm-3 mb-sm-5 \" id=\"my-preview-div\">\r\n\r\n\r\n<div class=\"form-container w-400 p-3 h-150\" id=\"organizer-registration\">\r\n    <button type=\"button\" class=\"btn btn-light\" (click)=\"redirect()\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n    <h4 class=\" pb-3 section one text-center \">Account Creation</h4>\r\n  <form #organizerForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <label for=\"username\">Username: </label>\r\n      <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" [(ngModel)]=\"newOrganizer.username\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"password\">Password: </label>\r\n      <input type=\"password\" class=\"form-control\" name=\"password\" id=\"password\" placeholder=\"Password\" [(ngModel)]=\"newOrganizer.password\" required>\r\n    </div>\r\n    <div>\r\n      <label for=\"email\">E-mail: </label>\r\n      <input type=\"text\" class=\"form-control\" name=\"email\" id=\"email\" placeholder=\"Email\" [(ngModel)]=\"newOrganizer.email\" required>\r\n    </div>\r\n    <div class=\"btn-toolbar d-flex justify-content-around\">\r\n      <button  class=\"btn btn-success btn-sm col m-3\" type=\"button\" [disabled]=\"!organizerForm.valid\">Submit</button>\r\n      <button  class=\"btn btn-danger btn-sm col m-3\" type=\"button\">Reset</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n"
->>>>>>> Chris
 
 /***/ }),
 
@@ -326,11 +322,7 @@ var AccountCreationComponent = /** @class */ (function () {
         this.location = location;
         this.newOrganizer = new _model_organizer__WEBPACK_IMPORTED_MODULE_2__["Organizer"];
     }
-    AccountCreationComponent.prototype.ngOnInit = function () {
-    };
-    AccountCreationComponent.prototype.redirect = function () {
-        this.location.back();
-    };
+    AccountCreationComponent.prototype.ngOnInit = function () { };
     AccountCreationComponent.prototype.onSubmit = function () {
         var _this = this;
         this.organizerService.registerOrganizer(this.newOrganizer, function () {
@@ -684,8 +676,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _model_event__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../model/event */ "./src/app/model/event.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-
 
 
 
@@ -693,10 +683,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var NewEventComponent = /** @class */ (function () {
-    function NewEventComponent(participantService, router, location) {
+    function NewEventComponent(participantService, router) {
         this.participantService = participantService;
         this.router = router;
-        this.location = location;
         this.manualSeedUrl = "/main/event/seeding";
         this.randomSeedUrl = "/main/event/active";
         this.playerCount = 0;
@@ -774,8 +763,7 @@ var NewEventComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./new-event.component.css */ "./src/app/components/new-event/new-event.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_6__["Location"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
     ], NewEventComponent);
     return NewEventComponent;
 }());
@@ -1039,11 +1027,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
-module.exports = "<form>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Wins:</th><th>Player 2 Wins:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr>\r\n        <td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\" (click)=\"[roundSubmit()]\">Submit round results</button> <button type=\"button\" (click)=\"[finalSubmit()]\">Tournament is over</button>\r\n</form>\r\n"
-=======
-module.exports = "<!--<tr>-->\r\n  <!--<td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>-->\r\n<!--</tr>-->\r\n\r\n<form>\r\n  <label>Event ID: {{currentRound.evtId}}</label><br>\r\n  <label>Round Number: {{currentRound.evtRoundNumber}}</label>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Score:</th><th>Player 2 Score:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr *ngFor=\"let match of roundMatches\">\r\n        <td>{{match.playerOne.name}}</td><td>VS.</td><td>{{match.playerTwo.name}}</td><td><input name=\"P1Score\" [(ngModel)]=\"match.pOneScore\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input name=\"P2Score\" [(ngModel)]=\"match.pTwoScore\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n      <!--<app-tournament-item></app-tournament-item>-->\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\">Submit round results</button>\r\n</form>\r\n"
->>>>>>> Chris
+module.exports = "<form>\r\n  <label>Event ID: {{currentRound.evtId}}</label><br>\r\n  <label>Round Number: {{currentRound.evtRoundNumber}}</label>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Score:</th><th>Player 2 Score:</th><th>Lock result</th>\r\n      </tr>\r\n      <tr *ngFor=\"let match of roundMatches\">\r\n        <td>{{match.playerOne.name}}</td><td>VS.</td><td>{{match.playerTwo.name}}</td><td><input name=\"P1Score\" [(ngModel)]=\"match.pOneScore\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input name=\"P2Score\" [(ngModel)]=\"match.pTwoScore\" type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\" (click)=\"roundSubmit()\">Submit round results</button> <button type=\"button\" (click)=\"finalSubmit()\">Tournament is over</button>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -1070,6 +1054,12 @@ var TournamentItemComponent = /** @class */ (function () {
     TournamentItemComponent.prototype.ngOnInit = function () {
     };
     TournamentItemComponent.prototype.roundSubmit = function () {
+        // for (let i in matches){
+        //   if(!matches[i].lock){
+        //     alert("Not all matches locked.");
+        //     return;
+        //   }
+        // }
         console.log("It's the end of the round!");
     };
     TournamentItemComponent.prototype.finalSubmit = function () {
@@ -1108,11 +1098,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = "<p>\r\n  This is the tournament!\r\n</p>\r\n<p>\r\n  Below are your round pairings!\r\n</p>\r\n<app-tournament-item></app-tournament-item>\r\n"
-=======
-module.exports = "<p>Tournament Management:</p>\r\n<app-tournament-item></app-tournament-item>\r\n<!--<form>\r\n  <div>\r\n    <table>\r\n      <tr>\r\n        <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Wins:</th><th>Player 2 Wins:</th><th>Lock result</th>\r\n      </tr>\r\n      &lt;!&ndash;<tr>\r\n        <td>Joe Milne</td><td>VS.</td><td>Chris Oberg</td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"number\" value=\"0\" style=\"width: 4em; float: right;\"/></td><td><input type=\"checkbox\" style=\"margin-left: 30%;\" required/></td>\r\n      </tr>&ndash;&gt;\r\n      <app-tournament-item></app-tournament-item>\r\n    </table>\r\n  </div>\r\n  <button type=\"button\" [disabled]=\"true\">Submit round results</button>\r\n</form>-->\r\n"
->>>>>>> Chris
 
 /***/ }),
 
@@ -1410,12 +1396,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatchmakingService", function() { return MatchmakingService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_participant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../model/participant */ "./src/app/model/participant.ts");
+
 
 
 var MatchmakingService = /** @class */ (function () {
     function MatchmakingService() {
     }
     MatchmakingService_1 = MatchmakingService;
+    MatchmakingService.prototype.singleElim = function () {
+        var winners = new Array();
+        winners.push("Joe");
+        winners.push("Chris");
+        winners.push("Star");
+        //winners.push("James");
+        //winners.push("Test");
+        for (var i in winners) {
+            console.log(winners[i]);
+        }
+        while (winners.length > 1) {
+            if (winners.length % 2 != 0) {
+                winners.push("BYE");
+            }
+            for (var i = 0; i < winners.length; i++) {
+                if (winners[i + 1] != "BYE") {
+                    console.log(winners[i], " plays against ", winners[i + 1]);
+                    var a = Math.pow((Math.random() * 100), (Math.random() * 100));
+                    var b = Math.pow((Math.random() * 100), (Math.random() * 100));
+                    if (a > b) {
+                        console.log(winners[i], " won the match.");
+                        winners.splice(i + 1, 1);
+                    }
+                    else if (a < b) {
+                        console.log(winners[i + 1], " won the match.");
+                        winners.splice(i, 1);
+                    }
+                }
+                else {
+                    console.log(winners[i], "got the BYE");
+                    winners.splice(i + 1, 1);
+                }
+            }
+        }
+    };
     MatchmakingService.prototype.randomWeight = function (rando) {
         var rand;
         for (var i = 0; i < rando.length; i++) {
@@ -1424,6 +1447,20 @@ var MatchmakingService = /** @class */ (function () {
     };
     MatchmakingService.random = function () {
         return Math.pow((Math.random() * 100), (Math.random() * 100));
+    };
+    MatchmakingService.prototype.pairings = function (people) {
+        var bye = new _model_participant__WEBPACK_IMPORTED_MODULE_2__["Participant"]();
+        bye.name = "Bye";
+        for (var i = people.length - 1; i >= 0; i -= 2) {
+            if (i == 0 && people.length % 2 != 0) {
+                this.player1[i] = people[i];
+                this.player2[i] = bye;
+            }
+            else {
+                this.player1[i] = people[i];
+                this.player2[i] = people[i - 1];
+            }
+        }
     };
     MatchmakingService.prototype.Pseudorandom = function (people) {
         var sorted;

@@ -10,19 +10,26 @@ export class MatchmakingService {
   player2: Array<Participant>;
   constructor() { }
 
-  singleElim(){
+  singleElim(people: Array<Participant>){
     let winners: Array<string> = new Array<string>();
 
     winners.push("Joe");
     winners.push("Chris");
     winners.push("Star");
-    winners.push("James");
+    //winners.push("James");
+    //winners.push("Test");
+
+    for (let i in winners) {
+      console.log(winners[i]);
+    }
 
     while (winners.length > 1) {
+      if (winners.length % 2 != 0) {
+        winners.push("BYE");
+      }
       for (let i = 0; i < winners.length; i++){
-        console.log(winners[i], " plays against ", winners[i + 1]);
-        if (winners.length % 2 != 0 && i + 1 == winners.length - 1) {}
-        else {
+        if (winners[i+1] != "BYE"){
+          console.log(winners[i], " plays against ", winners[i + 1]);
           let a = Math.pow((Math.random() * 100), (Math.random() * 100));
           let b = Math.pow((Math.random() * 100), (Math.random() * 100));
 
@@ -35,8 +42,20 @@ export class MatchmakingService {
             winners.splice(i, 1);
           }
         }
+        else {
+          console.log(winners[i], "got the BYE");
+          winners.splice(i + 1, 1);
+        }
       }
     }
+  }
+
+  doubleElim(people: Array<Participant>){
+    // TO-DO
+    let winners : Array<Participant>;
+    let losers: Array<Participant>;
+
+    return null;
   }
 
   randomWeight(rando: Array<Participant>){
