@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Event} from "../model/event";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Participant} from "../model/participant";
 
 @Injectable({
@@ -12,15 +12,31 @@ export class EventService {
     private http: HttpClient
   ) { }
 
-  getEvents(success, fail) {
-    return this.http.get<Array<Event>>(this.eventUrl + '/events').toPromise()
+  postNewEvent(newEvent: Event, success, fail) {
+    let headers = new HttpHeaders({'Content-Type': 'application/json'});
+    let options = {headers: headers};
+    return this.http.post(this.eventUrl + '/addevent', JSON.stringify(newEvent), options).toPromise()
       .then((resp) => {
-          localStorage.setItem('eventList', JSON.stringify(resp));
-          console.log('Got Events');
-          success();
-        },
+        localStorage.setItem('eventItem', JSON.stringify(resp));
+        newEvent.eventId = JSON.parse(localStorage.getItem('eventItem')).id;
+        localStorage.removeItem('eventItem');
+        localStorage.setItem('newEvent', JSON.stringify(newEvent));
+        success();
+      },
         (err) => {
-          fail(err);
+        fail(err);
+        });
+  }
+
+  getAllEvents(success, fail) {
+    return this.http.get<Array<Event>>(this.eventUrl + '/events').toPromise()
+      .then((resp)=>{
+        localStorage.setItem('allEvents', JSON.stringify(resp));
+        console.log('Got Events');
+        success();
+      },
+        (err)=>{
+        fail(err);
         });
   }
 }
