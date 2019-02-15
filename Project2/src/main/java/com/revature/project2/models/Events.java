@@ -15,8 +15,8 @@ public class Events {
     public Events() {
     }
 
-    public Events(Organizers organizers, int playerNum, String eventType, String description, boolean in_Progress) {
-        this.organizers = organizers;
+    public Events(int organizerId, int playerNum, String eventType, String description, boolean in_Progress) {
+        this.organizerId = organizerId;
         this.playerNum = playerNum;
         EventType = eventType;
         Description = description;
@@ -27,7 +27,7 @@ public class Events {
     public String toString() {
         return "Events{" +
                 "id=" + id +
-                ", organizers=" + organizers +
+                ", organizer id=" + organizerId +
                 ", playerNum=" + playerNum +
                 ", EventType='" + EventType + '\'' +
                 ", Description='" + Description + '\'' +
@@ -45,7 +45,7 @@ public class Events {
     //    @OnDelete(set = null)
     @ManyToOne
     @JoinColumn(name = "ORGANIZER_ID")
-    private Organizers organizers;
+    private int organizerId;
 //    @Column(name="organizer_id")
 
 
@@ -112,14 +112,11 @@ public class Events {
         this.in_Progress = in_Progress;
     }
 
-    public Organizers getOrganizers() {
-        return organizers;
+    public int getOrganizerId() {
+        return organizerId;
     }
 
-    public void setOrganizers(Organizers organizers) {
-        this.organizers = organizers;
+    public void setOrganizerId(int organizerId) {
+        this.organizerId = organizerId;
     }
 }
-
-
-
