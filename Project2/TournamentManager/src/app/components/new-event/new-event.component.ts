@@ -5,6 +5,7 @@ import {environment} from "../../../environments/environment";
 import {Event} from "../../model/event";
 import {Organizer} from "../../model/organizer";
 import {Router} from "@angular/router";
+import {EventService} from "../../services/event.service";
 
 @Component({
   selector: 'app-new-event',
@@ -28,7 +29,8 @@ export class NewEventComponent implements OnInit {
 
   constructor(
     private participantService: ParticipantService,
-    private router: Router
+    private router: Router,
+    private eventService: EventService
   ) {
   }
 
@@ -79,25 +81,41 @@ export class NewEventComponent implements OnInit {
     this.playerCount = this.currentEntrants.length;
   }
 
+  // Debugging method
+  getEvents() {
+    this.eventService.getAllEvents(
+      ()=>{
+        console.log('We did the thing');
+      },
+      (err)=>{
+        console.log(err);
+      }
+    );
+  }
+
   onSubmit() {
     if (this.playerCount < 2) {
       alert("You don't have enough participants to begin a tournament.\nPlease ensure there are at least two entrants.");
       return;
     }
     let newEvent = new Event();
-    newEvent.player_count = this.playerCount;
-    newEvent.organizer_id = JSON.parse(localStorage.getItem('authToken')).managerId;
-    newEvent.evt_type = this.usedFormat.title;
-    newEvent.evt_desc = this.evt_desc;
-    newEvent.in_progress = true;
+    newEvent.organizer = JSON.parse(localStorage.getItem('authToken'));
     newEvent.participants = this.currentEntrants;
-    localStorage.setItem('newEvent', JSON.stringify(newEvent));
-    if (this.manual) {
-      this.router.navigateByUrl(this.manualSeedUrl);
-    } else {
-      this.router.navigateByUrl(this.randomSeedUrl);
-    }
+    newEvent.type = this.usedFormat.title;
+    newEvent.inProgress = true;
+    newEvent.description = this.evt_desc;
+    newEvent.playerCount = this.currentEntrants.length;
+    this.eventService.postNewEvent(newEvent,
+      () => {
+        this.eventService.activatePlayers();
+        this.eventService.beginEvent();
+        this.router.navigateByUrl('/main/event/active');
+      },
+      (err) => {
+      console.log(err);
+      });
   }
+
 
   redirect(){
     this.router.navigate(['main']);
