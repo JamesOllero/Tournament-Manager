@@ -61,11 +61,11 @@ export class MatchmakingService {
   randomWeight(rando: Array<Participant>){
     let rand: number[];
     for (let i = 0; i < rando.length; i++){
-      rand[i] = MatchmakingService.random();
+      rand[i] = this.random();
     }
   } 
 
-  static random(){
+  random(){
     return Math.pow((Math.random() * 100), (Math.random() * 100));
   }
 

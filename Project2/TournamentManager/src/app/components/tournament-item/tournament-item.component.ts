@@ -40,5 +40,7 @@ export class TournamentItemComponent implements OnInit {
 
   finalSubmit(){
     console.log("It's the final submit!");
+    // set inProgress to false!
+    // Add
   }
 }
