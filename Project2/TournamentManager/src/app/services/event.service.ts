@@ -13,7 +13,7 @@ export class EventService {
   private eventUrl = 'http://localhost:8080/event';
   constructor(
     private http: HttpClient,
-    private matchmakingService: MatchmakingService;
+    private matchmakingService: MatchmakingService
   ) { }
 
   postNewEvent(newEvent: Event, success, fail) {
@@ -69,7 +69,7 @@ export class EventService {
     roundOne.roundNum = 1;
     roundOne.eventId = event.eventId;
     roundOne.current = true;
-    roundOne.matches = this.matchmakingService.randomize(roundOne.participants);
+    roundOne.matches = this.matchmakingService.random(roundOne.participants);
     event.rounds.push(roundOne);
     localStorage.setItem('newEvent', JSON.stringify(event));
     return;
