@@ -98,10 +98,18 @@ export class NewEventComponent implements OnInit {
       alert("You don't have enough participants to begin a tournament.\nPlease ensure there are at least two entrants.");
       return;
     }
-    let newEvent: Event;
+    let newEvent = new Event();
+    newEvent.organizer = JSON.parse(localStorage.getItem('authToken'));
+    newEvent.participants = this.currentEntrants;
+    newEvent.type = this.usedFormat.title;
+    newEvent.inProgress = true;
+    newEvent.description = this.evt_desc;
+    newEvent.playerCount = this.currentEntrants.length;
     this.eventService.postNewEvent(newEvent,
       () => {
-
+        this.eventService.activatePlayers();
+        this.eventService.beginEvent();
+        this.router.navigateByUrl('/main/event/active');
       },
       (err) => {
       console.log(err);
