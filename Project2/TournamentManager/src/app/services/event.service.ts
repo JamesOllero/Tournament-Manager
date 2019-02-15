@@ -16,9 +16,10 @@ export class EventService {
     private matchmakingService: MatchmakingService
   ) { }
 
-  postNewEvent(newEvent: Event, success, fail) {
+  postNewEvent(success, fail) {
     let headers = new HttpHeaders({'Content-Type': 'application/json'});
     let options = {headers: headers};
+    let newEvent = JSON.parse(localStorage.getItem('newEvent'));
     return this.http.post(this.eventUrl + '/addevent', JSON.stringify(newEvent), options).toPromise()
       .then((resp) => {
         localStorage.setItem('eventItem', JSON.stringify(resp));
@@ -47,6 +48,7 @@ export class EventService {
   activatePlayers() {
     let event: Event = JSON.parse(localStorage.getItem('newEvent'));
     let i: number;
+    event.activeParticipants = new Array<EventParticipant>();
     for(i=0;i<event.participants.length;i++){
       let activeParticipant = new EventParticipant();
       activeParticipant.participantId = event.participants[i].participantId;
@@ -64,12 +66,13 @@ export class EventService {
   beginEvent() {
     let roundOne = new Round();
     let event: Event = JSON.parse(localStorage.getItem('newEvent'));
+    event.rounds = new Array<Round>();
     roundOne.roundId = 1;
     roundOne.participants = event.activeParticipants;
     roundOne.roundNum = 1;
     roundOne.eventId = event.eventId;
     roundOne.current = true;
-    roundOne.matches = this.matchmakingService.random(roundOne.participants);
+    roundOne.matches = this.matchmakingService.Random(roundOne.participants);
     event.rounds.push(roundOne);
     localStorage.setItem('newEvent', JSON.stringify(event));
     return;

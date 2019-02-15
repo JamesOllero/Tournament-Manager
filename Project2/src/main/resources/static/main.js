@@ -106,6 +106,10 @@ var routes = [
             }
         ]
     },
+    // {
+    //   path: '',
+    //   component: NewEventComponent
+    // },
     {
         path: 'registration',
         component: _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__["AccountCreationComponent"]
@@ -322,8 +326,7 @@ var AccountCreationComponent = /** @class */ (function () {
         this.location = location;
         this.newOrganizer = new _model_organizer__WEBPACK_IMPORTED_MODULE_2__["Organizer"];
     }
-    AccountCreationComponent.prototype.ngOnInit = function () {
-    };
+    AccountCreationComponent.prototype.ngOnInit = function () { };
     AccountCreationComponent.prototype.onSubmit = function () {
         var _this = this;
         this.organizerService.registerOrganizer(this.newOrganizer, function () {
@@ -586,7 +589,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n  border-bottom: 1px solid #bbb
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\r\n  <ul>\r\n    <li *ngFor=\"let item of navItems\">\r\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n    </li>\r\n    <button (click)=\"logout()\" id=\"logout\">Logout</button>\r\n  </ul>\r\n</nav>\r\n"
+module.exports = "<nav>\r\n  <ul>\r\n    <li *ngFor=\"let item of navItems\">\r\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n      \r\n    </li>\r\n    <button (click)=\"logout()\" id=\"logout\"><i class=\"fas fa-sign-out-alt\"></i>Logout</button>\r\n  </ul>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -646,7 +649,7 @@ var NavigationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\r\n  width: 20em;\r\n}*/\r\n\r\n#pad{\r\n  padding-top: 5%;\r\n}\r\n\r\n#bar{\r\n  position: absolute;\r\n  padding:0;\r\n  margin:0;\r\n\r\n  background: #007bff;\r\n  background: linear-gradient(to right, #0062E6, #33AEFF);\r\n  left:0;\r\n\r\n  width: 100%;\r\n  height: 100%;\r\n  font-size: 1.25em;\r\n \r\n}\r\n\r\nselect, textarea{\r\n  border: none;\r\n  background-color:rgb(158, 200, 255);\r\n  opacity: 0.5;\r\n}\r\n\r\n#center {\r\n  margin: auto;\r\n  width: 50%;\r\n  \r\n  padding: 10px;\r\n}\r\n\r\n#my-preview-div{\r\n  width: -webkit-max-content;\r\n  width: -moz-max-content;\r\n  width: max-content;\r\n  background-color: white;\r\n  \r\n}\r\n\r\n/* option:nth-child(odd)   { background-color:white; } */\r\n\r\n.participants:nth-child(even)    { background-color:white; }\r\n\r\n.scroll {\r\n  \r\n  overflow-y: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uZXctZXZlbnQvbmV3LWV2ZW50LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7OztFQU1FOztBQUVGO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsUUFBUTs7RUFFUixtQkFBbUI7RUFDbkIsdURBQXVEO0VBQ3ZELE1BQU07O0VBRU4sV0FBVztFQUNYLFlBQVk7RUFDWixpQkFBaUI7O0FBRW5COztBQUNBO0VBQ0UsWUFBWTtFQUNaLG1DQUFtQztFQUNuQyxZQUFZO0FBQ2Q7O0FBQ0E7RUFDRSxZQUFZO0VBQ1osVUFBVTs7RUFFVixhQUFhO0FBQ2Y7O0FBQ0E7RUFDRSwwQkFBa0I7RUFBbEIsdUJBQWtCO0VBQWxCLGtCQUFrQjtFQUNsQix1QkFBdUI7O0FBRXpCOztBQUNBLHdEQUF3RDs7QUFDeEQsbUNBQW1DLHNCQUFzQixFQUFFOztBQUczRDs7RUFFRSxnQkFBZ0I7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL25ldy1ldmVudC9uZXctZXZlbnQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIGxhYmVse1xyXG4gIHdpZHRoOiA5ZW07XHJcbn1cclxuLyp0ZXh0YXJlYXtcclxuICBoZWlnaHQ6IDVlbTtcclxuICB3aWR0aDogMjBlbTtcclxufSovXHJcblxyXG4jcGFke1xyXG4gIHBhZGRpbmctdG9wOiA1JTtcclxufVxyXG5cclxuI2JhcntcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgcGFkZGluZzowO1xyXG4gIG1hcmdpbjowO1xyXG5cclxuICBiYWNrZ3JvdW5kOiAjMDA3YmZmO1xyXG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCh0byByaWdodCwgIzAwNjJFNiwgIzMzQUVGRik7XHJcbiAgbGVmdDowO1xyXG5cclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgZm9udC1zaXplOiAxLjI1ZW07XHJcbiBcclxufVxyXG5zZWxlY3QsIHRleHRhcmVhe1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNTgsIDIwMCwgMjU1KTtcclxuICBvcGFjaXR5OiAwLjU7XHJcbn1cclxuI2NlbnRlciB7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgXHJcbiAgcGFkZGluZzogMTBweDtcclxufVxyXG4jbXktcHJldmlldy1kaXZ7XHJcbiAgd2lkdGg6IG1heC1jb250ZW50O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIFxyXG59XHJcbi8qIG9wdGlvbjpudGgtY2hpbGQob2RkKSAgIHsgYmFja2dyb3VuZC1jb2xvcjp3aGl0ZTsgfSAqL1xyXG4ucGFydGljaXBhbnRzOm50aC1jaGlsZChldmVuKSAgICB7IGJhY2tncm91bmQtY29sb3I6d2hpdGU7IH1cclxuXHJcblxyXG4uc2Nyb2xsIHtcclxuICBcclxuICBvdmVyZmxvdy15OiBhdXRvO1xyXG59Il19 */"
+module.exports = "/* label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\r\n  width: 20em;\r\n}*/\r\n\r\n#pad{\r\n  padding-top: 5%;\r\n}\r\n\r\n#bar{\r\n  position: absolute;\r\n  padding:0;\r\n  margin:0;\r\n\r\n  background: #007bff;\r\n  background: linear-gradient(to right, #0062E6, #33AEFF);\r\n  left:0;\r\n\r\n  width: 100%;\r\n  height: 100%;\r\n  font-size: 1.25em;\r\n \r\n}\r\n\r\nselect, textarea{\r\n  border: none;\r\n  background-color:rgb(181, 213, 255);\r\n\r\n}\r\n\r\n#center {\r\n  margin: auto;\r\n  width: 50%;\r\n  \r\n  padding: 10px;\r\n}\r\n\r\n#my-preview-div{\r\n  width: -webkit-max-content;\r\n  width: -moz-max-content;\r\n  width: max-content;\r\n  background-color: white;\r\n  \r\n}\r\n\r\n/* option:nth-child(odd)   { background-color:rgb(181, 213, 255); }\r\noption:nth-child(even)    { background-color:white; } */\r\n\r\n.scroll {\r\n  \r\n  overflow-y: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uZXctZXZlbnQvbmV3LWV2ZW50LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7OztFQU1FOztBQUVGO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsUUFBUTs7RUFFUixtQkFBbUI7RUFDbkIsdURBQXVEO0VBQ3ZELE1BQU07O0VBRU4sV0FBVztFQUNYLFlBQVk7RUFDWixpQkFBaUI7O0FBRW5COztBQUNBO0VBQ0UsWUFBWTtFQUNaLG1DQUFtQzs7QUFFckM7O0FBQ0E7RUFDRSxZQUFZO0VBQ1osVUFBVTs7RUFFVixhQUFhO0FBQ2Y7O0FBQ0E7RUFDRSwwQkFBa0I7RUFBbEIsdUJBQWtCO0VBQWxCLGtCQUFrQjtFQUNsQix1QkFBdUI7O0FBRXpCOztBQUNBO3VEQUN1RDs7QUFHdkQ7O0VBRUUsZ0JBQWdCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9uZXctZXZlbnQvbmV3LWV2ZW50LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBsYWJlbHtcclxuICB3aWR0aDogOWVtO1xyXG59XHJcbi8qdGV4dGFyZWF7XHJcbiAgaGVpZ2h0OiA1ZW07XHJcbiAgd2lkdGg6IDIwZW07XHJcbn0qL1xyXG5cclxuI3BhZHtcclxuICBwYWRkaW5nLXRvcDogNSU7XHJcbn1cclxuXHJcbiNiYXJ7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHBhZGRpbmc6MDtcclxuICBtYXJnaW46MDtcclxuXHJcbiAgYmFja2dyb3VuZDogIzAwN2JmZjtcclxuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsICMwMDYyRTYsICMzM0FFRkYpO1xyXG4gIGxlZnQ6MDtcclxuXHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIGZvbnQtc2l6ZTogMS4yNWVtO1xyXG4gXHJcbn1cclxuc2VsZWN0LCB0ZXh0YXJlYXtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTgxLCAyMTMsIDI1NSk7XHJcblxyXG59XHJcbiNjZW50ZXIge1xyXG4gIG1hcmdpbjogYXV0bztcclxuICB3aWR0aDogNTAlO1xyXG4gIFxyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbn1cclxuI215LXByZXZpZXctZGl2e1xyXG4gIHdpZHRoOiBtYXgtY29udGVudDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBcclxufVxyXG4vKiBvcHRpb246bnRoLWNoaWxkKG9kZCkgICB7IGJhY2tncm91bmQtY29sb3I6cmdiKDE4MSwgMjEzLCAyNTUpOyB9XHJcbm9wdGlvbjpudGgtY2hpbGQoZXZlbikgICAgeyBiYWNrZ3JvdW5kLWNvbG9yOndoaXRlOyB9ICovXHJcblxyXG5cclxuLnNjcm9sbCB7XHJcbiAgXHJcbiAgb3ZlcmZsb3cteTogYXV0bztcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -657,7 +660,7 @@ module.exports = "/* label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5e
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body id=\"bar\" class=\"bg-primary\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"d-flex justify-content-center\" id=pad>\r\n      <div class=\"card p-4 \" id=\"my-preview-div\">\r\n        <div class=\"d-flex justify-content-center card-body\" id=\"center\">\r\n          <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n            <button type=\"button\" class=\"btn btn-light\" (click)=\"redirect()\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n            <h1  class=\"d-flex justify-content-center mb-4\" >Customize your event</h1>\r\n            <div>\r\n              <label class=\"mb-4 pr-4\" for=\"type\">Event Type: </label>\r\n              <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n                <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n                <option style=\"background-color: white\" *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n              </select>\r\n            </div>\r\n            <div class=\"mb-4\">\r\n              <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n              <textarea name=\"event-description\" id=\"description\"  class=\"form-control\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around mt-4 \">\r\n              <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n              <label for=\"manualization\">Manually Assign Seeding: <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\"></label>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around\">\r\n              <select class=\"m-3 participants\" multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n                <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n              </select>\r\n              <select class=\"m-3\" multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n                <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n              </select>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around\">\r\n              <button type=\"button\" class=\"btn btn-success\" (click)=\"addParticipants()\">Add Participants</button>\r\n              <button type=\"button\"  class=\"btn btn-danger\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n            </div>\r\n            <div class=\"d-flex justify-content-center\">\r\n              <button type=\"submit\" class=\"btn btn-primary mt-5 w-50\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n              <button type=\"button\" class=\"btn btn-primary mt-5 w-50\" (click)=\"getEvents()\">getSomeEvents</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</body>\r\n"
+module.exports = "<body id=\"bar\" class=\"bg-primary\">\r\n    \r\n\r\n  <div class=\"d-flex justify-content-center\" id=pad>\r\n    <div class=\"card p-4 \" id=\"my-preview-div\">\r\n\r\n      <div class=\"d-flex justify-content-center card-body\" id=\"center\">\r\n        <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n          <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h1  class=\"d-flex justify-content-center mb-4\" >Customize your event</h1>\r\n\r\n    \r\n    <div>\r\n      <label class=\"mb-4 pr-4\" for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option style=\"background-color: white\" *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"mb-4\">\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\"  class=\"form-control\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <div class=\"d-flex justify-content-around mt-4 \">\r\n      <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n      <label for=\"manualization\">Manually Assign Seeding: <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\"></label>\r\n      \r\n    </div>\r\n   \r\n\r\n    \r\n    <div class=\"d-flex justify-content-around\">\r\n      \r\n      <select class=\"m-3 participants\" multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n    \r\n      <select class=\"m-3\" multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n  </div>\r\n\r\n      <div class=\"d-flex justify-content-around\">\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\"  class=\"btn btn-danger\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n\r\n          <div class=\"d-flex justify-content-center\">\r\n            <button type=\"sumbit\" class=\"btn btn-primary nt-5 w50\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n          </div>\r\n        </form>\r\n    </div>\r\n\r\n  </div>\r\n  </div>\r\n\r\n</body>\r\n"
 
 /***/ }),
 
@@ -675,8 +678,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_participant_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/participant.service */ "./src/app/services/participant.service.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_event_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/event.service */ "./src/app/services/event.service.ts");
+/* harmony import */ var _model_event__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../model/event */ "./src/app/model/event.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_event_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/event.service */ "./src/app/services/event.service.ts");
+
 
 
 
@@ -735,6 +740,7 @@ var NewEventComponent = /** @class */ (function () {
         this.removals = [];
         this.playerCount = this.currentEntrants.length;
     };
+    // Debugging method
     NewEventComponent.prototype.getEvents = function () {
         this.eventService.getAllEvents(function () {
             console.log('We did the thing');
@@ -743,12 +749,27 @@ var NewEventComponent = /** @class */ (function () {
         });
     };
     NewEventComponent.prototype.onSubmit = function () {
+        var _this = this;
         if (this.playerCount < 2) {
             alert("You don't have enough participants to begin a tournament.\nPlease ensure there are at least two entrants.");
             return;
         }
-        var newEvent;
-        this.eventService.postNewEvent(newEvent, function () {
+        var newEvent = new _model_event__WEBPACK_IMPORTED_MODULE_4__["Event"]();
+        //newEvent.organizer = JSON.parse(localStorage.getItem('authToken'));
+        newEvent.organizers = JSON.parse(localStorage.getItem('authToken'));
+        // newEvent.organizerId = JSON.parse(localStorage.getItem('authToken')).managerId;
+        console.log(newEvent.organizers);
+        newEvent.participants = this.currentEntrants;
+        newEvent.eventType = this.usedFormat.title;
+        newEvent.in_progress = true;
+        newEvent.description = this.evt_desc;
+        newEvent.playerNum = this.currentEntrants.length;
+        localStorage.setItem('newEvent', JSON.stringify(newEvent));
+        this.eventService.postNewEvent(function () {
+            _this.eventService.activatePlayers();
+            _this.eventService.beginEvent();
+            console.log(JSON.parse(localStorage.getItem('newEvent')));
+            _this.router.navigateByUrl('/main/event/active');
         }, function (err) {
             console.log(err);
         });
@@ -763,8 +784,8 @@ var NewEventComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./new-event.component.css */ "./src/app/components/new-event/new-event.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_participant_service__WEBPACK_IMPORTED_MODULE_2__["ParticipantService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
-            _services_event_service__WEBPACK_IMPORTED_MODULE_5__["EventService"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
+            _services_event_service__WEBPACK_IMPORTED_MODULE_6__["EventService"]])
     ], NewEventComponent);
     return NewEventComponent;
 }());
@@ -1055,16 +1076,27 @@ var TournamentItemComponent = /** @class */ (function () {
     TournamentItemComponent.prototype.ngOnInit = function () {
     };
     TournamentItemComponent.prototype.roundSubmit = function () {
-        // for (let i in matches){
-        //   if(!matches[i].lock){
-        //     alert("Not all matches locked.");
-        //     return;
-        //   }
-        // }
+        for (var i in this.roundMatches) {
+            if (!this.roundMatches[i].lock) {
+                alert("Not all matches locked.");
+                return;
+            }
+        }
         console.log("It's the end of the round!");
+        if (localStorage.parse('newEvent').type == "Single Elimination") {
+            this.matchmakingService.singleElim(localStorage.parse('newEvent').participants);
+        }
+        //else if (localStorage.parse('newEvent').type == "Double Elimination"){
+        // this.matchmakingService.doubleElim(localStorage.parse('newEvent').participants);
+        //}
+        // else if (localStorage.parse('newEvent').type == "Swiss") {
+        //   this.matchmakingService.Pseudorandom(localStorage.parse('newEvent').participants);
+        // }
     };
     TournamentItemComponent.prototype.finalSubmit = function () {
         console.log("It's the final submit!");
+        // set inProgress to false!
+        // Add
     };
     TournamentItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1137,6 +1169,66 @@ var TournamentComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/model/event-participant.ts":
+/*!********************************************!*\
+  !*** ./src/app/model/event-participant.ts ***!
+  \********************************************/
+/*! exports provided: EventParticipant */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventParticipant", function() { return EventParticipant; });
+var EventParticipant = /** @class */ (function () {
+    function EventParticipant() {
+    }
+    return EventParticipant;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/event.ts":
+/*!********************************!*\
+  !*** ./src/app/model/event.ts ***!
+  \********************************/
+/*! exports provided: Event */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Event", function() { return Event; });
+var Event = /** @class */ (function () {
+    function Event() {
+    }
+    return Event;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/match.ts":
+/*!********************************!*\
+  !*** ./src/app/model/match.ts ***!
+  \********************************/
+/*! exports provided: Match */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Match", function() { return Match; });
+var Match = /** @class */ (function () {
+    function Match() {
+    }
+    return Match;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/model/organizer.ts":
 /*!************************************!*\
   !*** ./src/app/model/organizer.ts ***!
@@ -1171,6 +1263,26 @@ var Participant = /** @class */ (function () {
     function Participant() {
     }
     return Participant;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/round.ts":
+/*!********************************!*\
+  !*** ./src/app/model/round.ts ***!
+  \********************************/
+/*! exports provided: Round */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Round", function() { return Round; });
+var Round = /** @class */ (function () {
+    function Round() {
+    }
+    return Round;
 }());
 
 
@@ -1320,21 +1432,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _model_event_participant__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/event-participant */ "./src/app/model/event-participant.ts");
+/* harmony import */ var _model_round__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../model/round */ "./src/app/model/round.ts");
+/* harmony import */ var _matchmaking_matchmaking_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./matchmaking/matchmaking.service */ "./src/app/services/matchmaking/matchmaking.service.ts");
+
+
+
 
 
 
 var EventService = /** @class */ (function () {
-    function EventService(http) {
+    function EventService(http, matchmakingService) {
         this.http = http;
+        this.matchmakingService = matchmakingService;
         this.eventUrl = 'http://localhost:8080/event';
     }
-    EventService.prototype.postNewEvent = function (newEvent, success, fail) {
+    EventService.prototype.postNewEvent = function (success, fail) {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' });
         var options = { headers: headers };
+        var newEvent = JSON.parse(localStorage.getItem('newEvent'));
         return this.http.post(this.eventUrl + '/addevent', JSON.stringify(newEvent), options).toPromise()
             .then(function (resp) {
             localStorage.setItem('eventItem', JSON.stringify(resp));
-            newEvent.eventId = JSON.parse(localStorage.getItem('eventItem')).evt_id;
+            newEvent.eventId = JSON.parse(localStorage.getItem('eventItem')).id;
+            localStorage.removeItem('eventItem');
+            localStorage.setItem('newEvent', JSON.stringify(newEvent));
             success();
         }, function (err) {
             fail(err);
@@ -1350,11 +1472,43 @@ var EventService = /** @class */ (function () {
             fail(err);
         });
     };
+    EventService.prototype.activatePlayers = function () {
+        var event = JSON.parse(localStorage.getItem('newEvent'));
+        var i;
+        event.activeParticipants = new Array();
+        for (i = 0; i < event.participants.length; i++) {
+            var activeParticipant = new _model_event_participant__WEBPACK_IMPORTED_MODULE_3__["EventParticipant"]();
+            activeParticipant.participantId = event.participants[i].participantId;
+            activeParticipant.localWins = 0;
+            activeParticipant.localLosses = 0;
+            activeParticipant.localDraws = 0;
+            activeParticipant.name = event.participants[i].name;
+            activeParticipant.dropped = false;
+            activeParticipant.eventId = event.eventId;
+            event.activeParticipants.push(activeParticipant);
+        }
+        localStorage.setItem('newEvent', JSON.stringify(event));
+    };
+    EventService.prototype.beginEvent = function () {
+        var roundOne = new _model_round__WEBPACK_IMPORTED_MODULE_4__["Round"]();
+        var event = JSON.parse(localStorage.getItem('newEvent'));
+        event.rounds = new Array();
+        roundOne.roundId = 1;
+        roundOne.participants = event.activeParticipants;
+        roundOne.roundNum = 1;
+        roundOne.eventId = event.eventId;
+        roundOne.current = true;
+        roundOne.matches = this.matchmakingService.Random(roundOne.participants);
+        event.rounds.push(roundOne);
+        localStorage.setItem('newEvent', JSON.stringify(event));
+        return;
+    };
     EventService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"],
+            _matchmaking_matchmaking_service__WEBPACK_IMPORTED_MODULE_5__["MatchmakingService"]])
     ], EventService);
     return EventService;
 }());
@@ -1376,6 +1530,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _model_participant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../model/participant */ "./src/app/model/participant.ts");
+/* harmony import */ var _model_match__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../model/match */ "./src/app/model/match.ts");
+
 
 
 
@@ -1383,38 +1539,46 @@ var MatchmakingService = /** @class */ (function () {
     function MatchmakingService() {
     }
     MatchmakingService_1 = MatchmakingService;
-    MatchmakingService.prototype.singleElim = function () {
-        var winners = new Array();
-        winners.push("Joe");
-        winners.push("Chris");
-        winners.push("Star");
-        winners.push("James");
-        while (winners.length > 1) {
-            for (var i = 0; i < winners.length; i++) {
-                console.log(winners[i], " plays against ", winners[i + 1]);
-                if (winners.length % 2 != 0 && i + 1 == winners.length - 1) { }
-                else {
-                    var a = Math.pow((Math.random() * 100), (Math.random() * 100));
-                    var b = Math.pow((Math.random() * 100), (Math.random() * 100));
-                    if (a > b) {
-                        console.log(winners[i], " won the match.");
-                        winners.splice(i + 1, 1);
-                    }
-                    else if (a < b) {
-                        console.log(winners[i + 1], " won the match.");
-                        winners.splice(i, 1);
-                    }
+    MatchmakingService.prototype.singleElim = function (people) {
+        var winners = people;
+        var roundBye;
+        if (winners.length % 2 != 0) {
+            var set = false;
+            while (set == false) {
+                var rand = Math.floor(Math.random() * winners.length);
+                if (winners[rand].bye == false) {
+                    set = true;
+                    roundBye = winners[rand].name;
+                }
+            }
+        }
+        for (var i = 0; i < winners.length; i++) {
+            if (winners[i].name != roundBye) {
+                if (winners[i].wins > winners[i + 1].wins) {
+                    winners.splice(i + 1, 1);
+                }
+                else if (winners[i].wins < winners[i + 1].wins) {
+                    winners.splice(i, 1);
                 }
             }
         }
     };
+    // doubleElim(people: Array<Participant>){
+    //   // TO-DO
+    //   let winners : Array<Participant>;
+    //   let losers: Array<Participant>;
+    //
+    //   return null;
+    // }
     MatchmakingService.prototype.randomWeight = function (rando) {
         var rand;
-        for (var i = 0; i < rando.length; i++) {
-            rand[i] = MatchmakingService_1.random();
-        }
+        // let rand: number[];
+        // for (let i = 0; i < rando.length; i++){
+        //   rand[i] = this.random();
+        // }
+        // return rand;
     };
-    MatchmakingService.random = function () {
+    MatchmakingService.prototype.random = function () {
         return Math.pow((Math.random() * 100), (Math.random() * 100));
     };
     MatchmakingService.prototype.pairings = function (people) {
@@ -1447,6 +1611,43 @@ var MatchmakingService = /** @class */ (function () {
             });
         }
         return sorted;
+    };
+    MatchmakingService.prototype.Random = function (people) {
+        var rand = new Array(people.length);
+        var randomized = new Array();
+        var sorted;
+        var _loop_1 = function (i) {
+            rand[i] = this_1.random();
+            rand[i + 1] = this_1.random();
+            var p1 = people[i];
+            var p2 = people[i + 1];
+            sorted = people.sort(function (p1, p2) {
+                if (rand[i] > rand[i + 1]) {
+                    return 1;
+                }
+                else if (rand[i] < rand[i + 1]) {
+                    return -1;
+                }
+                return 0;
+            });
+        };
+        var this_1 = this;
+        for (var i = 0; i < people.length; i += 2) {
+            _loop_1(i);
+        }
+        for (var i = 0; i < sorted.length; i += 2) {
+            var match = new _model_match__WEBPACK_IMPORTED_MODULE_3__["Match"]();
+            match.p1 = sorted[i];
+            match.p2 = sorted[i + 1];
+            match.p1Drop = false;
+            match.p2Drop = false;
+            match.lock = false;
+            match.p1Score = 0;
+            match.p2Score = 0;
+            match.roundId = 1;
+            randomized.push(match);
+        }
+        return randomized;
     };
     MatchmakingService.weight = function (p) {
         var result;

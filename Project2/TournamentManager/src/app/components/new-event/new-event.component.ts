@@ -99,16 +99,21 @@ export class NewEventComponent implements OnInit {
       return;
     }
     let newEvent = new Event();
-    newEvent.organizer = JSON.parse(localStorage.getItem('authToken'));
+    //newEvent.organizer = JSON.parse(localStorage.getItem('authToken'));
+    newEvent.organizers = JSON.parse(localStorage.getItem('authToken'));
+    // newEvent.organizerId = JSON.parse(localStorage.getItem('authToken')).managerId;
+    console.log(newEvent.organizers);
     newEvent.participants = this.currentEntrants;
-    newEvent.type = this.usedFormat.title;
-    newEvent.inProgress = true;
+    newEvent.eventType = this.usedFormat.title;
+    newEvent.in_progress = true;
     newEvent.description = this.evt_desc;
-    newEvent.playerCount = this.currentEntrants.length;
-    this.eventService.postNewEvent(newEvent,
+    newEvent.playerNum = this.currentEntrants.length;
+    localStorage.setItem('newEvent', JSON.stringify(newEvent));
+    this.eventService.postNewEvent(
       () => {
         this.eventService.activatePlayers();
         this.eventService.beginEvent();
+        console.log(JSON.parse(localStorage.getItem('newEvent')));
         this.router.navigateByUrl('/main/event/active');
       },
       (err) => {
