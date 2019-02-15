@@ -99,9 +99,7 @@ export class NewEventComponent implements OnInit {
       return;
     }
     let newEvent = new Event();
-    //newEvent.organizer = JSON.parse(localStorage.getItem('authToken'));
     newEvent.organizers = JSON.parse(localStorage.getItem('authToken'));
-    // newEvent.organizerId = JSON.parse(localStorage.getItem('authToken')).managerId;
     console.log(newEvent.organizers);
     newEvent.participants = this.currentEntrants;
     newEvent.eventType = this.usedFormat.title;

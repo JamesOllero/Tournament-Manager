@@ -38,25 +38,38 @@ export class MatchmakingService {
         }
       }
     }
+
+    let randomized = new Array<Match>();
+
+    for (let i = 0; i < winners.length; i+= 2) {
+
+      let p1 = new EventParticipant();
+      let p2 = new EventParticipant();
+
+      p1.name = winners[i].name;
+      p1.dropped = false;
+      p1.localWins = winners[i].wins;
+      p1.localLosses = winners[i].losses;
+
+      p2.name = winners[i + 1].name;
+      p2.dropped = false;
+      p2.localWins = winners[i + 1].wins;
+      p2.localLosses = winners[i + 1].losses;
+
+      let match = new Match();
+      match.p1 = p1;
+      match.p2 = p2;
+      match.p1Drop = false;
+      match.p2Drop = false;
+      match.lock = false;
+      match.p1Score = 0;
+      match.p2Score = 0;
+      match.roundId = 1;
+      randomized.push(match);
+    }
+
+    return randomized;
   }
-
-  // doubleElim(people: Array<Participant>){
-  //   // TO-DO
-  //   let winners : Array<Participant>;
-  //   let losers: Array<Participant>;
-  //
-  //   return null;
-  // }
-
-  randomWeight(rando: Array<EventParticipant>){
-    let rand: Array<Match>;
-
-    // let rand: number[];
-    // for (let i = 0; i < rando.length; i++){
-    //   rand[i] = this.random();
-    // }
-    // return rand;
-  } 
 
   random(){
     return Math.pow((Math.random() * 100), (Math.random() * 100));

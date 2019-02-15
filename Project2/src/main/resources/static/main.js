@@ -755,9 +755,7 @@ var NewEventComponent = /** @class */ (function () {
             return;
         }
         var newEvent = new _model_event__WEBPACK_IMPORTED_MODULE_4__["Event"]();
-        //newEvent.organizer = JSON.parse(localStorage.getItem('authToken'));
         newEvent.organizers = JSON.parse(localStorage.getItem('authToken'));
-        // newEvent.organizerId = JSON.parse(localStorage.getItem('authToken')).managerId;
         console.log(newEvent.organizers);
         newEvent.participants = this.currentEntrants;
         newEvent.eventType = this.usedFormat.title;
@@ -1087,7 +1085,7 @@ var TournamentItemComponent = /** @class */ (function () {
             this.matchmakingService.singleElim(localStorage.parse('newEvent').participants);
         }
         //else if (localStorage.parse('newEvent').type == "Double Elimination"){
-        // this.matchmakingService.doubleElim(localStorage.parse('newEvent').participants);
+        //   this.matchmakingService.doubleElim(localStorage.parse('newEvent').participants);
         //}
         // else if (localStorage.parse('newEvent').type == "Swiss") {
         //   this.matchmakingService.Pseudorandom(localStorage.parse('newEvent').participants);
@@ -1095,8 +1093,6 @@ var TournamentItemComponent = /** @class */ (function () {
     };
     TournamentItemComponent.prototype.finalSubmit = function () {
         console.log("It's the final submit!");
-        // set inProgress to false!
-        // Add
     };
     TournamentItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1530,7 +1526,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _model_participant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../model/participant */ "./src/app/model/participant.ts");
-/* harmony import */ var _model_match__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../model/match */ "./src/app/model/match.ts");
+/* harmony import */ var _model_event_participant__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../model/event-participant */ "./src/app/model/event-participant.ts");
+/* harmony import */ var _model_match__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../model/match */ "./src/app/model/match.ts");
+
 
 
 
@@ -1562,21 +1560,30 @@ var MatchmakingService = /** @class */ (function () {
                 }
             }
         }
-    };
-    // doubleElim(people: Array<Participant>){
-    //   // TO-DO
-    //   let winners : Array<Participant>;
-    //   let losers: Array<Participant>;
-    //
-    //   return null;
-    // }
-    MatchmakingService.prototype.randomWeight = function (rando) {
-        var rand;
-        // let rand: number[];
-        // for (let i = 0; i < rando.length; i++){
-        //   rand[i] = this.random();
-        // }
-        // return rand;
+        var randomized = new Array();
+        for (var i = 0; i < winners.length; i += 2) {
+            var p1 = new _model_event_participant__WEBPACK_IMPORTED_MODULE_3__["EventParticipant"]();
+            var p2 = new _model_event_participant__WEBPACK_IMPORTED_MODULE_3__["EventParticipant"]();
+            p1.name = winners[i].name;
+            p1.dropped = false;
+            p1.localWins = winners[i].wins;
+            p1.localLosses = winners[i].losses;
+            p2.name = winners[i + 1].name;
+            p2.dropped = false;
+            p2.localWins = winners[i + 1].wins;
+            p2.localLosses = winners[i + 1].losses;
+            var match = new _model_match__WEBPACK_IMPORTED_MODULE_4__["Match"]();
+            match.p1 = p1;
+            match.p2 = p2;
+            match.p1Drop = false;
+            match.p2Drop = false;
+            match.lock = false;
+            match.p1Score = 0;
+            match.p2Score = 0;
+            match.roundId = 1;
+            randomized.push(match);
+        }
+        return randomized;
     };
     MatchmakingService.prototype.random = function () {
         return Math.pow((Math.random() * 100), (Math.random() * 100));
@@ -1636,7 +1643,7 @@ var MatchmakingService = /** @class */ (function () {
             _loop_1(i);
         }
         for (var i = 0; i < sorted.length; i += 2) {
-            var match = new _model_match__WEBPACK_IMPORTED_MODULE_3__["Match"]();
+            var match = new _model_match__WEBPACK_IMPORTED_MODULE_4__["Match"]();
             match.p1 = sorted[i];
             match.p2 = sorted[i + 1];
             match.p1Drop = false;
@@ -1879,7 +1886,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })

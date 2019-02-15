@@ -31,7 +31,7 @@ export class TournamentItemComponent implements OnInit {
       this.matchmakingService.singleElim(localStorage.parse('newEvent').participants);
     }
     //else if (localStorage.parse('newEvent').type == "Double Elimination"){
-      // this.matchmakingService.doubleElim(localStorage.parse('newEvent').participants);
+    //   this.matchmakingService.doubleElim(localStorage.parse('newEvent').participants);
     //}
     // else if (localStorage.parse('newEvent').type == "Swiss") {
     //   this.matchmakingService.Pseudorandom(localStorage.parse('newEvent').participants);
@@ -40,7 +40,5 @@ export class TournamentItemComponent implements OnInit {
 
   finalSubmit(){
     console.log("It's the final submit!");
-    // set inProgress to false!
-    // Add
   }
 }
