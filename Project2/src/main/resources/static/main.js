@@ -1550,18 +1550,22 @@ var MatchmakingService = /** @class */ (function () {
         this.player1 = [];
         this.player2 = [];
         event.activeParticipants = this.compareResults(matches);
-        console.log(event.activeParticipants);
+        // this.compareResults(matches);
+        // event.activeParticipants = this.singleElim(event.activeParticipants);
+        console.log("This is after the compareResults method ", event.activeParticipants);
         if (event.eventType === 'Single Elimination') {
             event.activeParticipants = this.singleElim(event.activeParticipants);
         }
         round.current = false;
+        console.log("This is from advanceRound method ", event.activeParticipants);
         event.rounds.push(this.generateRound(event.activeParticipants, round));
         localStorage.setItem('newEvent', JSON.stringify(event));
     };
     MatchmakingService.prototype.singleElim = function (people) {
-        console.log(people);
+        //console.log(people);
         var winners = people;
-        console.log(winners);
+        //console.log(winners);
+        console.log("I'm in the single Elim method");
         var roundBye;
         if (winners.length % 2 != 0) {
             var set = false;
@@ -1578,10 +1582,14 @@ var MatchmakingService = /** @class */ (function () {
             if (winners[i].name != roundBye) {
                 if (winners[i].localWins > winners[i + 1].localWins) {
                     winners.splice(i + 1, 1);
+                    winners[i].localWins++;
                 }
                 else if (winners[i].localWins < winners[i + 1].localWins) {
                     winners.splice(i, 1);
+                    winners[i + 1].localWins++;
                 }
+                console.log(winners[i].name, " has ", winners[i].localWins, " wins.");
+                console.log(winners[i + 1].name, " has ", winners[i + 1].localWins, " wins.");
             }
         }
         return winners;
@@ -1697,20 +1705,29 @@ var MatchmakingService = /** @class */ (function () {
         }
         return result;
     };
+    // This is causing the problem of one person being dropped.
     MatchmakingService.prototype.compareResults = function (matches) {
+        console.log("I'm inside the compareResults method!");
+        console.log("The matches are as follows: ", matches);
         var array = new Array();
         for (var i in matches) {
             if (matches[i].p1Score > matches[i].p2Score) {
                 matches[i].p1.localWins++;
                 array.push(matches[i].p1);
-                array.push(matches[i].p2);
+                //array.push(matches[i].p2);
+                matches[i].p2.localLosses++;
+                console.log("Case 1 array: ", array);
             }
-            else if (matches[i].p1Score < matches[i].p2Score) {
+            //else if(matches[i].p1Score<matches[i].p2Score){
+            else {
                 matches[i].p2.localWins++;
-                array.push(matches[i].p1);
+                //array.push(matches[i].p1);
+                matches[i].p1.localLosses++;
                 array.push(matches[i].p2);
+                console.log("Case 2 array: ", array);
             }
         }
+        console.log("The array compare is returning is this: ", array);
         return array;
     };
     MatchmakingService.prototype.generateRound = function (availableParticipants, oldRound) {
@@ -1941,7 +1958,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })

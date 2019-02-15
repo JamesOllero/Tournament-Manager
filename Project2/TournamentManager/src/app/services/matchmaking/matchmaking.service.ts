@@ -18,19 +18,23 @@ export class MatchmakingService {
     this.player1 = [];
     this.player2 = [];
     event.activeParticipants = this.compareResults(matches);
-    console.log(event.activeParticipants);
+    // this.compareResults(matches);
+    // event.activeParticipants = this.singleElim(event.activeParticipants);
+    console.log("This is after the compareResults method ", event.activeParticipants);
     if(event.eventType==='Single Elimination'){
       event.activeParticipants = this.singleElim(event.activeParticipants);
     }
     round.current = false;
+    console.log("This is from advanceRound method ", event.activeParticipants);
     event.rounds.push(this.generateRound(event.activeParticipants, round));
     localStorage.setItem('newEvent', JSON.stringify(event));
   }
 
   singleElim(people: Array<EventParticipant>) {
-    console.log(people);
+    //console.log(people);
     let winners: Array<EventParticipant> = people;
-   console.log(winners);
+    //console.log(winners);
+    console.log("I'm in the single Elim method");
     let roundBye: string;
     if (winners.length % 2 != 0) {
       let set: boolean = false;
@@ -48,10 +52,14 @@ export class MatchmakingService {
       if (winners[i].name != roundBye){
         if (winners[i].localWins > winners[i+1].localWins){
           winners.splice(i+1, 1);
+          winners[i].localWins++;
         }
         else if (winners[i].localWins < winners[i+1].localWins){
           winners.splice(i, 1);
+          winners[i+1].localWins++;
         }
+        console.log(winners[i].name, " has ", winners[i].localWins, " wins.");
+        console.log(winners[i+1].name, " has ", winners[i+1].localWins, " wins.");
       }
     }
     return winners;
@@ -73,7 +81,7 @@ export class MatchmakingService {
     //   rand[i] = this.random();
     // }
     // return rand;
-  } 
+  }
 
   random(){
     return Math.pow((Math.random() * 100), (Math.random() * 100));
@@ -170,19 +178,29 @@ export class MatchmakingService {
     return result;
   }
 
+  // This is causing the problem of one person being dropped.
   compareResults(matches: Match[]): Array<EventParticipant>{
+    console.log("I'm inside the compareResults method!");
+    console.log("The matches are as follows: ", matches);
     let array = new Array<EventParticipant>();
     for(let i in matches){
       if(matches[i].p1Score>matches[i].p2Score){
         matches[i].p1.localWins++;
         array.push(matches[i].p1);
-        array.push(matches[i].p2);
-      } else if(matches[i].p1Score<matches[i].p2Score){
+        //array.push(matches[i].p2);
+        matches[i].p2.localLosses++;
+        console.log("Case 1 array: ", array);
+      }
+      //else if(matches[i].p1Score<matches[i].p2Score){
+      else{
         matches[i].p2.localWins++;
-        array.push(matches[i].p1);
+        //array.push(matches[i].p1);
+        matches[i].p1.localLosses++;
         array.push(matches[i].p2);
+        console.log("Case 2 array: ", array);
       }
     }
+    console.log("The array compare is returning is this: ", array);
     return array;
   }
 
