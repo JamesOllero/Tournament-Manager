@@ -15,8 +15,7 @@ export class AccountCreationComponent implements OnInit {
     private location: Location
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSubmit(){
     this.organizerService.registerOrganizer(this.newOrganizer,

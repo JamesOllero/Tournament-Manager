@@ -69,7 +69,7 @@ export class EventService {
     roundOne.roundNum = 1;
     roundOne.eventId = event.eventId;
     roundOne.current = true;
-    roundOne.matches = this.matchmakingService.random(roundOne.participants);
+    roundOne.matches = this.matchmakingService.Random(roundOne.participants);
     event.rounds.push(roundOne);
     localStorage.setItem('newEvent', JSON.stringify(event));
     return;

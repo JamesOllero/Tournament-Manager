@@ -20,16 +20,27 @@ export class TournamentItemComponent implements OnInit {
   }
 
   roundSubmit(){
-    // for (let i in matches){
-    //   if(!matches[i].lock){
-    //     alert("Not all matches locked.");
-    //     return;
-    //   }
-    // }
+    for (let i in this.roundMatches){
+      if(!this.roundMatches[i].lock){
+        alert("Not all matches locked.");
+        return;
+      }
+    }
     console.log("It's the end of the round!");
+    if (localStorage.parse('newEvent').type == "Single Elimination"){
+      this.matchmakingService.singleElim(localStorage.parse('newEvent').participants);
+    }
+    //else if (localStorage.parse('newEvent').type == "Double Elimination"){
+      // this.matchmakingService.doubleElim(localStorage.parse('newEvent').participants);
+    //}
+    // else if (localStorage.parse('newEvent').type == "Swiss") {
+    //   this.matchmakingService.Pseudorandom(localStorage.parse('newEvent').participants);
+    // }
   }
 
   finalSubmit(){
     console.log("It's the final submit!");
+    // set inProgress to false!
+    // Add
   }
 }

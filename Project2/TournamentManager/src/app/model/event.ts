@@ -5,7 +5,9 @@ import {Organizer} from "./organizer";
 
 export class Event {
   eventId: number;
-  organizer: Organizer;
+  organizer_id: number;
+  // organizer: Organizer;
+  // organizerId: number;
   participants: Array<Participant>;
   activeParticipants: Array<EventParticipant>;
   type: string;
