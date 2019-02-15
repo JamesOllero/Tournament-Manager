@@ -95,8 +95,8 @@ export class MatchmakingService {
   }
 
   Random(people: Array<EventParticipant>){
-    let rand: number[];
-    let randomized: Array<Match>;
+    let rand = new Array<number>(people.length);
+    let randomized = new Array<Match>();
     let sorted: Array<EventParticipant>;
     for (let i = 0; i < people.length; i+= 2){
       rand[i] = this.random();

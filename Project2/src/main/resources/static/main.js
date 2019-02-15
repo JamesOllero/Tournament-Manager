@@ -106,6 +106,10 @@ var routes = [
             }
         ]
     },
+    // {
+    //   path: '',
+    //   component: NewEventComponent
+    // },
     {
         path: 'registration',
         component: _components_account_creation_account_creation_component__WEBPACK_IMPORTED_MODULE_10__["AccountCreationComponent"]
@@ -585,7 +589,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n  border-bottom: 1px solid #bbb
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\r\n  <ul>\r\n    <li *ngFor=\"let item of navItems\">\r\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n    </li>\r\n    <button (click)=\"logout()\" id=\"logout\">Logout</button>\r\n  </ul>\r\n</nav>\r\n"
+module.exports = "<nav>\r\n  <ul>\r\n    <li *ngFor=\"let item of navItems\">\r\n      <a [routerLink]=[item.link] class=\"nav-link\">{{item.title}}</a>\r\n      \r\n    </li>\r\n    <button (click)=\"logout()\" id=\"logout\"><i class=\"fas fa-sign-out-alt\"></i>Logout</button>\r\n  </ul>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -645,7 +649,7 @@ var NavigationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\r\n  width: 20em;\r\n}*/\r\n\r\n#pad{\r\n  padding-top: 5%;\r\n}\r\n\r\n#bar{\r\n  position: absolute;\r\n  padding:0;\r\n  margin:0;\r\n\r\n  background: #007bff;\r\n  background: linear-gradient(to right, #0062E6, #33AEFF);\r\n  left:0;\r\n\r\n  width: 100%;\r\n  height: 100%;\r\n  font-size: 1.25em;\r\n \r\n}\r\n\r\nselect, textarea{\r\n  border: none;\r\n  background-color:rgb(158, 200, 255);\r\n  opacity: 0.5;\r\n}\r\n\r\n#center {\r\n  margin: auto;\r\n  width: 50%;\r\n  \r\n  padding: 10px;\r\n}\r\n\r\n#my-preview-div{\r\n  width: -webkit-max-content;\r\n  width: -moz-max-content;\r\n  width: max-content;\r\n  background-color: white;\r\n  \r\n}\r\n\r\n/* option:nth-child(odd)   { background-color:white; } */\r\n\r\n.participants:nth-child(even)    { background-color:white; }\r\n\r\n.scroll {\r\n  \r\n  overflow-y: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uZXctZXZlbnQvbmV3LWV2ZW50LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7OztFQU1FOztBQUVGO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsUUFBUTs7RUFFUixtQkFBbUI7RUFDbkIsdURBQXVEO0VBQ3ZELE1BQU07O0VBRU4sV0FBVztFQUNYLFlBQVk7RUFDWixpQkFBaUI7O0FBRW5COztBQUNBO0VBQ0UsWUFBWTtFQUNaLG1DQUFtQztFQUNuQyxZQUFZO0FBQ2Q7O0FBQ0E7RUFDRSxZQUFZO0VBQ1osVUFBVTs7RUFFVixhQUFhO0FBQ2Y7O0FBQ0E7RUFDRSwwQkFBa0I7RUFBbEIsdUJBQWtCO0VBQWxCLGtCQUFrQjtFQUNsQix1QkFBdUI7O0FBRXpCOztBQUNBLHdEQUF3RDs7QUFDeEQsbUNBQW1DLHNCQUFzQixFQUFFOztBQUczRDs7RUFFRSxnQkFBZ0I7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL25ldy1ldmVudC9uZXctZXZlbnQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIGxhYmVse1xyXG4gIHdpZHRoOiA5ZW07XHJcbn1cclxuLyp0ZXh0YXJlYXtcclxuICBoZWlnaHQ6IDVlbTtcclxuICB3aWR0aDogMjBlbTtcclxufSovXHJcblxyXG4jcGFke1xyXG4gIHBhZGRpbmctdG9wOiA1JTtcclxufVxyXG5cclxuI2JhcntcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgcGFkZGluZzowO1xyXG4gIG1hcmdpbjowO1xyXG5cclxuICBiYWNrZ3JvdW5kOiAjMDA3YmZmO1xyXG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCh0byByaWdodCwgIzAwNjJFNiwgIzMzQUVGRik7XHJcbiAgbGVmdDowO1xyXG5cclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgZm9udC1zaXplOiAxLjI1ZW07XHJcbiBcclxufVxyXG5zZWxlY3QsIHRleHRhcmVhe1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNTgsIDIwMCwgMjU1KTtcclxuICBvcGFjaXR5OiAwLjU7XHJcbn1cclxuI2NlbnRlciB7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgXHJcbiAgcGFkZGluZzogMTBweDtcclxufVxyXG4jbXktcHJldmlldy1kaXZ7XHJcbiAgd2lkdGg6IG1heC1jb250ZW50O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIFxyXG59XHJcbi8qIG9wdGlvbjpudGgtY2hpbGQob2RkKSAgIHsgYmFja2dyb3VuZC1jb2xvcjp3aGl0ZTsgfSAqL1xyXG4ucGFydGljaXBhbnRzOm50aC1jaGlsZChldmVuKSAgICB7IGJhY2tncm91bmQtY29sb3I6d2hpdGU7IH1cclxuXHJcblxyXG4uc2Nyb2xsIHtcclxuICBcclxuICBvdmVyZmxvdy15OiBhdXRvO1xyXG59Il19 */"
+module.exports = "/* label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5em;\r\n  width: 20em;\r\n}*/\r\n\r\n#pad{\r\n  padding-top: 5%;\r\n}\r\n\r\n#bar{\r\n  position: absolute;\r\n  padding:0;\r\n  margin:0;\r\n\r\n  background: #007bff;\r\n  background: linear-gradient(to right, #0062E6, #33AEFF);\r\n  left:0;\r\n\r\n  width: 100%;\r\n  height: 100%;\r\n  font-size: 1.25em;\r\n \r\n}\r\n\r\nselect, textarea{\r\n  border: none;\r\n  background-color:rgb(181, 213, 255);\r\n\r\n}\r\n\r\n#center {\r\n  margin: auto;\r\n  width: 50%;\r\n  \r\n  padding: 10px;\r\n}\r\n\r\n#my-preview-div{\r\n  width: -webkit-max-content;\r\n  width: -moz-max-content;\r\n  width: max-content;\r\n  background-color: white;\r\n  \r\n}\r\n\r\n/* option:nth-child(odd)   { background-color:rgb(181, 213, 255); }\r\noption:nth-child(even)    { background-color:white; } */\r\n\r\n.scroll {\r\n  \r\n  overflow-y: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uZXctZXZlbnQvbmV3LWV2ZW50LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7OztFQU1FOztBQUVGO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsUUFBUTs7RUFFUixtQkFBbUI7RUFDbkIsdURBQXVEO0VBQ3ZELE1BQU07O0VBRU4sV0FBVztFQUNYLFlBQVk7RUFDWixpQkFBaUI7O0FBRW5COztBQUNBO0VBQ0UsWUFBWTtFQUNaLG1DQUFtQzs7QUFFckM7O0FBQ0E7RUFDRSxZQUFZO0VBQ1osVUFBVTs7RUFFVixhQUFhO0FBQ2Y7O0FBQ0E7RUFDRSwwQkFBa0I7RUFBbEIsdUJBQWtCO0VBQWxCLGtCQUFrQjtFQUNsQix1QkFBdUI7O0FBRXpCOztBQUNBO3VEQUN1RDs7QUFHdkQ7O0VBRUUsZ0JBQWdCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9uZXctZXZlbnQvbmV3LWV2ZW50LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBsYWJlbHtcclxuICB3aWR0aDogOWVtO1xyXG59XHJcbi8qdGV4dGFyZWF7XHJcbiAgaGVpZ2h0OiA1ZW07XHJcbiAgd2lkdGg6IDIwZW07XHJcbn0qL1xyXG5cclxuI3BhZHtcclxuICBwYWRkaW5nLXRvcDogNSU7XHJcbn1cclxuXHJcbiNiYXJ7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHBhZGRpbmc6MDtcclxuICBtYXJnaW46MDtcclxuXHJcbiAgYmFja2dyb3VuZDogIzAwN2JmZjtcclxuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsICMwMDYyRTYsICMzM0FFRkYpO1xyXG4gIGxlZnQ6MDtcclxuXHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIGZvbnQtc2l6ZTogMS4yNWVtO1xyXG4gXHJcbn1cclxuc2VsZWN0LCB0ZXh0YXJlYXtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTgxLCAyMTMsIDI1NSk7XHJcblxyXG59XHJcbiNjZW50ZXIge1xyXG4gIG1hcmdpbjogYXV0bztcclxuICB3aWR0aDogNTAlO1xyXG4gIFxyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbn1cclxuI215LXByZXZpZXctZGl2e1xyXG4gIHdpZHRoOiBtYXgtY29udGVudDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBcclxufVxyXG4vKiBvcHRpb246bnRoLWNoaWxkKG9kZCkgICB7IGJhY2tncm91bmQtY29sb3I6cmdiKDE4MSwgMjEzLCAyNTUpOyB9XHJcbm9wdGlvbjpudGgtY2hpbGQoZXZlbikgICAgeyBiYWNrZ3JvdW5kLWNvbG9yOndoaXRlOyB9ICovXHJcblxyXG5cclxuLnNjcm9sbCB7XHJcbiAgXHJcbiAgb3ZlcmZsb3cteTogYXV0bztcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -656,7 +660,7 @@ module.exports = "/* label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5e
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body id=\"bar\" class=\"bg-primary\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"d-flex justify-content-center\" id=pad>\r\n      <div class=\"card p-4 \" id=\"my-preview-div\">\r\n        <div class=\"d-flex justify-content-center card-body\" id=\"center\">\r\n          <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n            <button type=\"button\" class=\"btn btn-light\" (click)=\"redirect()\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n            <h1  class=\"d-flex justify-content-center mb-4\" >Customize your event</h1>\r\n            <div>\r\n              <label class=\"mb-4 pr-4\" for=\"type\">Event Type: </label>\r\n              <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n                <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n                <option style=\"background-color: white\" *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n              </select>\r\n            </div>\r\n            <div class=\"mb-4\">\r\n              <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n              <textarea name=\"event-description\" id=\"description\"  class=\"form-control\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around mt-4 \">\r\n              <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n              <label for=\"manualization\">Manually Assign Seeding: <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\"></label>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around\">\r\n              <select class=\"m-3 participants\" multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n                <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n              </select>\r\n              <select class=\"m-3\" multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n                <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n              </select>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around\">\r\n              <button type=\"button\" class=\"btn btn-success\" (click)=\"addParticipants()\">Add Participants</button>\r\n              <button type=\"button\"  class=\"btn btn-danger\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n            </div>\r\n            <div class=\"d-flex justify-content-center\">\r\n              <button type=\"submit\" class=\"btn btn-primary mt-5 w-50\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n              <!--<button type=\"button\" class=\"btn btn-primary mt-5 w-50\" (click)=\"getEvents()\">getSomeEvents</button>-->\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</body>\r\n"
+module.exports = "<body id=\"bar\" class=\"bg-primary\">\r\n    \r\n\r\n  <div class=\"d-flex justify-content-center\" id=pad>\r\n    <div class=\"card p-4 \" id=\"my-preview-div\">\r\n\r\n      <div class=\"d-flex justify-content-center card-body\" id=\"center\">\r\n        <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n          <button type=\"button\" class=\"btn btn-light\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n          <h1  class=\"d-flex justify-content-center mb-4\" >Customize your event</h1>\r\n\r\n    \r\n    <div>\r\n      <label class=\"mb-4 pr-4\" for=\"type\">Event Type: </label>\r\n      <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n        <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n        <option style=\"background-color: white\" *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"mb-4\">\r\n      <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n      <textarea name=\"event-description\" id=\"description\"  class=\"form-control\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n    </div>\r\n    <div class=\"d-flex justify-content-around mt-4 \">\r\n      <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n      <label for=\"manualization\">Manually Assign Seeding: <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\"></label>\r\n      \r\n    </div>\r\n   \r\n\r\n    \r\n    <div class=\"d-flex justify-content-around\">\r\n      \r\n      <select class=\"m-3 participants\" multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n      </select>\r\n    \r\n      <select class=\"m-3\" multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n        <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n      </select>\r\n  </div>\r\n\r\n      <div class=\"d-flex justify-content-around\">\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"addParticipants()\">Add Participants</button>\r\n        <button type=\"button\"  class=\"btn btn-danger\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n      </div>\r\n\r\n          <div class=\"d-flex justify-content-center\">\r\n            <button type=\"sumbit\" class=\"btn btn-primary nt-5 w50\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n          </div>\r\n        </form>\r\n    </div>\r\n\r\n  </div>\r\n  </div>\r\n\r\n</body>\r\n"
 
 /***/ }),
 
@@ -752,17 +756,19 @@ var NewEventComponent = /** @class */ (function () {
         }
         var newEvent = new _model_event__WEBPACK_IMPORTED_MODULE_4__["Event"]();
         //newEvent.organizer = JSON.parse(localStorage.getItem('authToken'));
-        newEvent.organizer_id = JSON.parse(localStorage.getItem('authToken')).managerId;
+        newEvent.organizers = JSON.parse(localStorage.getItem('authToken'));
         // newEvent.organizerId = JSON.parse(localStorage.getItem('authToken')).managerId;
-        console.log(newEvent.organizer_id);
+        console.log(newEvent.organizers);
         newEvent.participants = this.currentEntrants;
-        newEvent.type = this.usedFormat.title;
-        newEvent.inProgress = true;
+        newEvent.eventType = this.usedFormat.title;
+        newEvent.in_progress = true;
         newEvent.description = this.evt_desc;
-        newEvent.playerCount = this.currentEntrants.length;
-        this.eventService.postNewEvent(newEvent, function () {
+        newEvent.playerNum = this.currentEntrants.length;
+        localStorage.setItem('newEvent', JSON.stringify(newEvent));
+        this.eventService.postNewEvent(function () {
             _this.eventService.activatePlayers();
             _this.eventService.beginEvent();
+            console.log(JSON.parse(localStorage.getItem('newEvent')));
             _this.router.navigateByUrl('/main/event/active');
         }, function (err) {
             console.log(err);
@@ -1441,9 +1447,10 @@ var EventService = /** @class */ (function () {
         this.matchmakingService = matchmakingService;
         this.eventUrl = 'http://localhost:8080/event';
     }
-    EventService.prototype.postNewEvent = function (newEvent, success, fail) {
+    EventService.prototype.postNewEvent = function (success, fail) {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' });
         var options = { headers: headers };
+        var newEvent = JSON.parse(localStorage.getItem('newEvent'));
         return this.http.post(this.eventUrl + '/addevent', JSON.stringify(newEvent), options).toPromise()
             .then(function (resp) {
             localStorage.setItem('eventItem', JSON.stringify(resp));
@@ -1468,6 +1475,7 @@ var EventService = /** @class */ (function () {
     EventService.prototype.activatePlayers = function () {
         var event = JSON.parse(localStorage.getItem('newEvent'));
         var i;
+        event.activeParticipants = new Array();
         for (i = 0; i < event.participants.length; i++) {
             var activeParticipant = new _model_event_participant__WEBPACK_IMPORTED_MODULE_3__["EventParticipant"]();
             activeParticipant.participantId = event.participants[i].participantId;
@@ -1484,6 +1492,7 @@ var EventService = /** @class */ (function () {
     EventService.prototype.beginEvent = function () {
         var roundOne = new _model_round__WEBPACK_IMPORTED_MODULE_4__["Round"]();
         var event = JSON.parse(localStorage.getItem('newEvent'));
+        event.rounds = new Array();
         roundOne.roundId = 1;
         roundOne.participants = event.activeParticipants;
         roundOne.roundNum = 1;
@@ -1531,36 +1540,25 @@ var MatchmakingService = /** @class */ (function () {
     }
     MatchmakingService_1 = MatchmakingService;
     MatchmakingService.prototype.singleElim = function (people) {
-        var winners = new Array();
-        winners.push("Joe");
-        winners.push("Chris");
-        winners.push("Star");
-        //winners.push("James");
-        //winners.push("Test");
-        for (var i in winners) {
-            console.log(winners[i]);
-        }
-        while (winners.length > 1) {
-            if (winners.length % 2 != 0) {
-                winners.push("BYE");
-            }
-            for (var i = 0; i < winners.length; i++) {
-                if (winners[i + 1] != "BYE") {
-                    console.log(winners[i], " plays against ", winners[i + 1]);
-                    var a = Math.pow((Math.random() * 100), (Math.random() * 100));
-                    var b = Math.pow((Math.random() * 100), (Math.random() * 100));
-                    if (a > b) {
-                        console.log(winners[i], " won the match.");
-                        winners.splice(i + 1, 1);
-                    }
-                    else if (a < b) {
-                        console.log(winners[i + 1], " won the match.");
-                        winners.splice(i, 1);
-                    }
+        var winners = people;
+        var roundBye;
+        if (winners.length % 2 != 0) {
+            var set = false;
+            while (set == false) {
+                var rand = Math.floor(Math.random() * winners.length);
+                if (winners[rand].bye == false) {
+                    set = true;
+                    roundBye = winners[rand].name;
                 }
-                else {
-                    console.log(winners[i], "got the BYE");
+            }
+        }
+        for (var i = 0; i < winners.length; i++) {
+            if (winners[i].name != roundBye) {
+                if (winners[i].wins > winners[i + 1].wins) {
                     winners.splice(i + 1, 1);
+                }
+                else if (winners[i].wins < winners[i + 1].wins) {
+                    winners.splice(i, 1);
                 }
             }
         }
@@ -1615,8 +1613,8 @@ var MatchmakingService = /** @class */ (function () {
         return sorted;
     };
     MatchmakingService.prototype.Random = function (people) {
-        var rand;
-        var randomized;
+        var rand = new Array(people.length);
+        var randomized = new Array();
         var sorted;
         var _loop_1 = function (i) {
             rand[i] = this_1.random();
@@ -1881,7 +1879,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })
