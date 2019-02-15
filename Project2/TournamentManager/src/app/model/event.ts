@@ -5,16 +5,15 @@ import {Organizer} from "./organizer";
 
 export class Event {
   eventId: number;
-  organizer_id: number;
-  // organizer: Organizer;
+  organizers: Organizer;
   // organizerId: number;
   participants: Array<Participant>;
   activeParticipants: Array<EventParticipant>;
-  type: string;
+  eventType: string;
   rounds: Array<Round>;
   winner: Participant;
-  inProgress: boolean;
+  in_progress: boolean;
   description: string;
-  playerCount: number;
+  playerNum: number;
 
 }

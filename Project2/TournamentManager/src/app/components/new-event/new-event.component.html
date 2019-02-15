@@ -44,8 +44,13 @@
         <button type="button" class="btn btn-success" (click)="addParticipants()">Add Participants</button>
         <button type="button"  class="btn btn-danger" (click)="removeParticipants()">Remove Participants</button>
       </div>
+
+          <div class="d-flex justify-content-center">
+            <button type="sumbit" class="btn btn-primary nt-5 w50" [disabled]="!eventForm.valid">Submit</button>
+          </div>
+        </form>
     </div>
-  </div>
+
   </div>
   </div>
 

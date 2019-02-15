@@ -13,60 +13,32 @@ export class MatchmakingService {
   constructor() { }
 
   singleElim(people: Array<Participant>) {
-    //let winners: Array<string> = new Array<string>();
-
-    // winners.push("Joe");
-    // winners.push("Chris");
-    // winners.push("Star");
-    //winners.push("James");
-    //winners.push("Test");
 
     let winners: Array<Participant> = people;
 
-    // for (let i in winners) {
-    //   console.log(winners[i]);
-    // }
-
-    while (winners.length > 1) {
-      if (winners.length % 2 != 0) {
-        // let gotBye: Array<Participant> = new Array<Participant>();
-        // let isSet: boolean = false;
+    let roundBye: string;
+    if (winners.length % 2 != 0) {
+      let set: boolean = false;
+      while(set == false) {
         let rand: number = Math.floor(Math.random() * winners.length);
-        // while (isSet == false) {
-        //   let noDupe: boolean = true;
-        //   for (let j in gotBye) {
-        //     if (gotBye[j] == winners[rand]) {
-        //       noDupe = false;
-        //     }
-        //   }
-        //   if (noDupe) {
-        //     isSet = true;
-        //     winners.splice(rand + 1, 0, "BYE");
-        //     gotBye.push(winners[rand]);
-        //   }
-        //   rand = Math.floor(Math.random() * winners.length);
-          //winners.push("BYE");
+        if (winners[rand].bye == false){
+          set = true;
+          roundBye = winners[rand].name;
         }
-        /*for (let i = 0; i < winners.length; i++) {
-          if (winners[i + 1] != "BYE") {
-            console.log(winners[i], " plays against ", winners[i + 1]);
-            let a = Math.pow((Math.random() * 100), (Math.random() * 100));
-            let b = Math.pow((Math.random() * 100), (Math.random() * 100));
-
-            if (a > b) {
-              console.log(winners[i], " won the match.");
-              winners.splice(i + 1, 1);
-            } else if (a < b) {
-              console.log(winners[i + 1], " won the match.");
-              winners.splice(i, 1);
-            }
-          } else {
-            console.log(winners[i], "got the BYE");
-            winners.splice(i + 1, 1);
-          }
-        }*/
       }
     }
+
+    for (let i = 0; i < winners.length; i++){
+      if (winners[i].name != roundBye){
+        if (winners[i].wins > winners[i+1].wins){
+          winners.splice(i+1, 1);
+        }
+        else if (winners[i].wins < winners[i+1].wins){
+          winners.splice(i, 1);
+        }
+      }
+    }
+  }
 
   // doubleElim(people: Array<Participant>){
   //   // TO-DO
@@ -123,8 +95,8 @@ export class MatchmakingService {
   }
 
   Random(people: Array<EventParticipant>){
-    let rand: number[];
-    let randomized: Array<Match>;
+    let rand = new Array<number>(people.length);
+    let randomized = new Array<Match>();
     let sorted: Array<EventParticipant>;
     for (let i = 0; i < people.length; i+= 2){
       rand[i] = this.random();
