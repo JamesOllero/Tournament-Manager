@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Match} from "../../model/match";
 import {Round} from "../../model/round";
 import {MatchmakingService} from "../../services/matchmaking/matchmaking.service";
+import {Event} from "../../model/event";
 
 @Component({
   selector: 'app-tournament-item',
@@ -10,13 +11,19 @@ import {MatchmakingService} from "../../services/matchmaking/matchmaking.service
 })
 export class TournamentItemComponent implements OnInit {
 
+  currentEvent: Event;
   currentRound: Round;
+  roundNumber: number;
   roundMatches: Array<Match>;
   constructor(
     private matchmakingService: MatchmakingService
   ) { }
 
   ngOnInit() {
+    this.currentEvent = JSON.parse(localStorage.getItem('newEvent'));
+    let indexing = this.currentEvent.rounds.length;
+    this.currentRound = this.currentEvent.rounds[indexing-1];
+    this.roundMatches = this.currentRound.matches;
   }
 
   roundSubmit(){
@@ -27,9 +34,8 @@ export class TournamentItemComponent implements OnInit {
       }
     }
     console.log("It's the end of the round!");
-    if (localStorage.parse('newEvent').type == "Single Elimination"){
-      this.matchmakingService.singleElim(localStorage.parse('newEvent').participants);
-    }
+    this.matchmakingService.advanceRound(this.currentEvent, this.currentRound, this.roundMatches);
+    this.ngOnInit();
     //else if (localStorage.parse('newEvent').type == "Double Elimination"){
       // this.matchmakingService.doubleElim(localStorage.parse('newEvent').participants);
     //}

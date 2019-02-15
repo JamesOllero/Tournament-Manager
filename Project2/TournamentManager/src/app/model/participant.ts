@@ -7,5 +7,5 @@
   firstName: string;
   lastName: string;
   email: string;
-  bye: boolean;
+
  }
