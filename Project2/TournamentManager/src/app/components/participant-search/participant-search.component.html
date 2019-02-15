@@ -1,20 +1,21 @@
 <div class="mt-5">
   <h1 class="d-flex justify-content-center"> Participation Lookup</h1>
-    <button type="button"  (click)="goBack()" class="btn btn-light"> <i id="back" class="fas fa-angle-left"></i> </button>
-  <i id ="search"class="fas fa-search "></i>
-  <input class =" "[(ngModel)]="searchText" placeholder="Participant Name">
+  <button type="button" (click)="goBack()" class="btn btn-light"> <i id="back" class="fas fa-angle-left"></i> </button>
+  <i id="search" class="fas fa-search "></i>
+  <input class=" " [(ngModel)]="searchText" placeholder="Participant Name">
 </div>
 <div>
-<table class="table table-hover">
+  <table class="table table-hover">
     <thead class="thead-dark">
-  <tr>
-    <th scope="col">Id</th><th scope="col">Name</th>
-  </tr>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+      </tr>
     </thead>
-  <tr scope="row" *ngFor="let p of participants | searchUtil : 'name' : searchText; let i = index">
-    <td>{{p.player_Id}}</td>
-    <td>{{p.firstName}} {{p.lastName}}</td>
-  </tr>
-</table>
+    <tr scope="row" *ngFor="let p of participants | searchUtil : 'name' : searchText; let i = index">
+      <td>{{p.player_Id}}</td>
+      <td>{{p.firstName}} {{p.lastName}}</td>
+    </tr>
+  </table>
 
 </div>
