@@ -10,6 +10,7 @@ import { ParticipantSearchComponent } from "./components/participant-search/part
 import { AccountCreationComponent } from "./components/account-creation/account-creation.component";
 import { TournamentComponent } from "./components/tournament/tournament.component";
 import { SeedingComponent } from "./components/seeding/seeding.component";
+import { TournamentItemComponent } from './components/tournament-item/tournament-item.component';
 
 const routes: Routes = [
   {
@@ -50,7 +51,8 @@ const routes: Routes = [
             component: ParticipantSearchComponent
           }
         ]
-      },
+      }
+      ,
       {
         path: '',
         redirectTo: 'menu',
@@ -60,7 +62,11 @@ const routes: Routes = [
   },
   // {
   //   path: '',
-  //   component: NewEventComponent
+  //   component: TournamentComponent
+  // },
+  // {
+  //   path:"t",
+  //   component: TournamentItemComponent
   // },
   {
     path: 'registration',

@@ -1,0 +1,40 @@
+#pad{
+    padding-top: 5%;
+  }
+#center{
+    
+}
+
+#my-preview-div{
+  width: max-content;
+  background-color: white;
+  align-content: center;
+  
+}
+
+#bar{
+    position: absolute;
+    padding:0;
+    margin:0;
+  
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+    left:0;
+  
+    width: 100%;
+    height: 100%;
+    font-size: 1.25em;
+   
+  }
+  .card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    text-align:center;
+  }
