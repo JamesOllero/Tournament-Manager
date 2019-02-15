@@ -1,10 +1,18 @@
-import {Participant} from "./participant";
+import {Participant} from './participant';
+import {EventParticipant} from './event-participant';
+import {Round} from './round'
+import {Organizer} from "./organizer";
 
-export class Event{
-  organizer_id: number;
-  player_count: number;
-  evt_type: string;
-  evt_desc: string;
-  in_progress: boolean = true;
-  participants: Array<Participant>
+export class Event {
+  eventId: number;
+  organizer: Organizer;
+  participants: Array<Participant>;
+  activeParticipants: Array<EventParticipant>;
+  type: string;
+  rounds: Array<Round>;
+  winner: Participant;
+  inProgress: boolean;
+  description: string;
+  playerCount: number;
+
 }

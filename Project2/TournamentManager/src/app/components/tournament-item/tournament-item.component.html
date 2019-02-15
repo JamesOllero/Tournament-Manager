@@ -1,13 +1,13 @@
 <form>
-  <label>Event ID: {{currentRound.evtId}}</label><br>
-  <label>Round Number: {{currentRound.evtRoundNumber}}</label>
+  <label>Event ID: </label><br>
+  <label>Round Number: </label>
   <div>
     <table>
       <tr>
         <th>Player 1</th><th>VS.</th><th>Player 2</th><th>Player 1 Score:</th><th>Player 2 Score:</th><th>Lock result</th>
       </tr>
       <tr *ngFor="let match of roundMatches">
-        <td>{{match.playerOne.name}}</td><td>VS.</td><td>{{match.playerTwo.name}}</td><td><input name="P1Score" [(ngModel)]="match.pOneScore" type="number" value="0" style="width: 4em; float: right;"/></td><td><input name="P2Score" [(ngModel)]="match.pTwoScore" type="number" value="0" style="width: 4em; float: right;"/></td><td><input type="checkbox" style="margin-left: 30%;" required/></td>
+        <td>{{match.p1.name}}</td><td>VS.</td><td>{{match.p2.name}}</td><td><input name="P1Score" [(ngModel)]="match.p1Score" type="number" value="0" style="width: 4em; float: right;"/></td><td><input name="P2Score" [(ngModel)]="match.p2Score" type="number" value="0" style="width: 4em; float: right;"/></td><td><input type="checkbox" style="margin-left: 30%;" required/></td>
       </tr>
     </table>
   </div>

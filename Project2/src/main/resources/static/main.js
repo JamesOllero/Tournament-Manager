@@ -656,7 +656,7 @@ module.exports = "/* label{\r\n  width: 9em;\r\n}\r\n/*textarea{\r\n  height: 5e
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body id=\"bar\" class=\"bg-primary\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"d-flex justify-content-center\" id=pad>\r\n      <div class=\"card p-4 \" id=\"my-preview-div\">\r\n        <div class=\"d-flex justify-content-center card-body\" id=\"center\">\r\n          <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n            <button type=\"button\" class=\"btn btn-light\" (click)=\"redirect()\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n            <h1  class=\"d-flex justify-content-center mb-4\" >Customize your event</h1>\r\n            <div>\r\n              <label class=\"mb-4 pr-4\" for=\"type\">Event Type: </label>\r\n              <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n                <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n                <option style=\"background-color: white\" *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n              </select>\r\n            </div>\r\n            <div class=\"mb-4\">\r\n              <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n              <textarea name=\"event-description\" id=\"description\"  class=\"form-control\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around mt-4 \">\r\n              <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n              <label for=\"manualization\">Manually Assign Seeding: <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\"></label>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around\">\r\n              <select class=\"m-3 participants\" multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n                <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n              </select>\r\n              <select class=\"m-3\" multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n                <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n              </select>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around\">\r\n              <button type=\"button\" class=\"btn btn-success\" (click)=\"addParticipants()\">Add Participants</button>\r\n              <button type=\"button\"  class=\"btn btn-danger\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n            </div>\r\n            <div class=\"d-flex justify-content-center\">\r\n              <button type=\"submit\" class=\"btn btn-primary mt-5 w-50\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</body>\r\n"
+module.exports = "<body id=\"bar\" class=\"bg-primary\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"d-flex justify-content-center\" id=pad>\r\n      <div class=\"card p-4 \" id=\"my-preview-div\">\r\n        <div class=\"d-flex justify-content-center card-body\" id=\"center\">\r\n          <form #eventForm=\"ngForm\" novalidate (ngSubmit)=\"onSubmit()\">\r\n            <button type=\"button\" class=\"btn btn-light\" (click)=\"redirect()\"> <i class=\"fas fa-angle-left\"></i> </button>\r\n            <h1  class=\"d-flex justify-content-center mb-4\" >Customize your event</h1>\r\n            <div>\r\n              <label class=\"mb-4 pr-4\" for=\"type\">Event Type: </label>\r\n              <select name=\"type\" id=\"type\" [(ngModel)]=\"usedFormat\" required>\r\n                <option selected [ngValue]=\"null\" disabled>Choose an Event Type</option>\r\n                <option style=\"background-color: white\" *ngFor=\"let format of formats\" [ngValue]=\"format\">{{format.title}}</option>\r\n              </select>\r\n            </div>\r\n            <div class=\"mb-4\">\r\n              <label for=\"description\" style=\"vertical-align: top;\">Event Description: </label>\r\n              <textarea name=\"event-description\" id=\"description\"  class=\"form-control\" placeholder=\"Event Description\" [(ngModel)]=\"evt_desc\" required></textarea>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around mt-4 \">\r\n              <label id=\"player-count\">Player Count: {{playerCount}}</label>\r\n              <label for=\"manualization\">Manually Assign Seeding: <input name=\"manualization\" type=\"checkbox\" id=\"manualization\" [(ngModel)]=\"manual\"></label>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around\">\r\n              <select class=\"m-3 participants\" multiple name=\"entrantSelectable\" [(ngModel)]=\"entrants\" style=\"min-width: 500px\">\r\n                <option *ngFor=\"let participant of participants\" [ngValue]=\"participant\">{{participant.name}}</option>\r\n              </select>\r\n              <select class=\"m-3\" multiple name=\"entrantRemovable\" [(ngModel)]=\"removals\" style=\"min-width: 500px\">\r\n                <option *ngFor=\"let entrant of currentEntrants\" [ngValue]=\"entrant\">{{entrant.name}}</option>\r\n              </select>\r\n            </div>\r\n            <div class=\"d-flex justify-content-around\">\r\n              <button type=\"button\" class=\"btn btn-success\" (click)=\"addParticipants()\">Add Participants</button>\r\n              <button type=\"button\"  class=\"btn btn-danger\" (click)=\"removeParticipants()\">Remove Participants</button>\r\n            </div>\r\n            <div class=\"d-flex justify-content-center\">\r\n              <button type=\"submit\" class=\"btn btn-primary mt-5 w-50\" [disabled]=\"!eventForm.valid\">Submit</button>\r\n              <button type=\"button\" class=\"btn btn-primary mt-5 w-50\" (click)=\"getEvents()\">getSomeEvents</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</body>\r\n"
 
 /***/ }),
 
@@ -733,25 +733,23 @@ var NewEventComponent = /** @class */ (function () {
         this.removals = [];
         this.playerCount = this.currentEntrants.length;
     };
+    NewEventComponent.prototype.getEvents = function () {
+        this.eventService.getAllEvents(function () {
+            console.log('We did the thing');
+        }, function (err) {
+            console.log(err);
+        });
+    };
     NewEventComponent.prototype.onSubmit = function () {
         if (this.playerCount < 2) {
             alert("You don't have enough participants to begin a tournament.\nPlease ensure there are at least two entrants.");
             return;
         }
-        var newEvent = new _model_event__WEBPACK_IMPORTED_MODULE_4__["Event"]();
-        newEvent.player_count = this.playerCount;
-        newEvent.organizer_id = JSON.parse(localStorage.getItem('authToken')).managerId;
-        newEvent.evt_type = this.usedFormat.title;
-        newEvent.evt_desc = this.evt_desc;
-        newEvent.in_progress = true;
-        newEvent.participants = this.currentEntrants;
-        localStorage.setItem('newEvent', JSON.stringify(newEvent));
-        if (this.manual) {
-            this.router.navigateByUrl(this.manualSeedUrl);
-        }
-        else {
-            this.router.navigateByUrl(this.randomSeedUrl);
-        }
+        var newEvent;
+        this.eventService.postNewEvent(newEvent, function () {
+        }, function (err) {
+            console.log(err);
+        });
     };
     NewEventComponent.prototype.redirect = function () {
         this.router.navigate(['main']);
@@ -1114,25 +1112,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TournamentComponent", function() { return TournamentComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_event_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/event.service */ "./src/app/services/event.service.ts");
-
 
 
 var TournamentComponent = /** @class */ (function () {
-    function TournamentComponent(eventService) {
-        this.eventService = eventService;
+    function TournamentComponent() {
     }
     TournamentComponent.prototype.ngOnInit = function () {
-        this.getEvents();
-    };
-    TournamentComponent.prototype.getEvents = function () {
-        var _this = this;
-        this.eventService.getEvents(function () {
-            _this.events = JSON.parse(localStorage.getItem('eventList'));
-            // localStorage.removeItem('eventList');
-        }, function (err) {
-            console.log(err);
-        });
     };
     TournamentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1140,30 +1125,9 @@ var TournamentComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./tournament.component.html */ "./src/app/components/tournament/tournament.component.html"),
             styles: [__webpack_require__(/*! ./tournament.component.css */ "./src/app/components/tournament/tournament.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_event_service__WEBPACK_IMPORTED_MODULE_2__["EventService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], TournamentComponent);
     return TournamentComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/model/event.ts":
-/*!********************************!*\
-  !*** ./src/app/model/event.ts ***!
-  \********************************/
-/*! exports provided: Event */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Event", function() { return Event; });
-var Event = /** @class */ (function () {
-    function Event() {
-        this.in_progress = true;
-    }
-    return Event;
 }());
 
 
@@ -1361,10 +1325,22 @@ var EventService = /** @class */ (function () {
         this.http = http;
         this.eventUrl = 'http://localhost:8080/event';
     }
-    EventService.prototype.getEvents = function (success, fail) {
+    EventService.prototype.postNewEvent = function (newEvent, success, fail) {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' });
+        var options = { headers: headers };
+        return this.http.post(this.eventUrl + '/addevent', JSON.stringify(newEvent), options).toPromise()
+            .then(function (resp) {
+            localStorage.setItem('eventItem', JSON.stringify(resp));
+            newEvent.eventId = JSON.parse(localStorage.getItem('eventItem')).evt_id;
+            success();
+        }, function (err) {
+            fail(err);
+        });
+    };
+    EventService.prototype.getAllEvents = function (success, fail) {
         return this.http.get(this.eventUrl + '/events').toPromise()
             .then(function (resp) {
-            localStorage.setItem('eventList', JSON.stringify(resp));
+            localStorage.setItem('allEvents', JSON.stringify(resp));
             console.log('Got Events');
             success();
         }, function (err) {
@@ -1709,7 +1685,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Joe Milne\Desktop\Revature\Project_2\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Programming\project_2\Project2\TournamentManager\src\main.ts */"./src/main.ts");
 
 
 /***/ })
