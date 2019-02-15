@@ -1,45 +1,52 @@
 <body id="bar" class="bg-primary">
-  <div class="container-fluid">
-    <div class="d-flex justify-content-center" id=pad>
-      <div class="card p-4 " id="my-preview-div">
-        <div class="d-flex justify-content-center card-body" id="center">
-          <form #eventForm="ngForm" novalidate (ngSubmit)="onSubmit()">
-            <button type="button" class="btn btn-light" (click)="redirect()"> <i class="fas fa-angle-left"></i> </button>
-            <h1  class="d-flex justify-content-center mb-4" >Customize your event</h1>
-            <div>
-              <label class="mb-4 pr-4" for="type">Event Type: </label>
-              <select name="type" id="type" [(ngModel)]="usedFormat" required>
-                <option selected [ngValue]="null" disabled>Choose an Event Type</option>
-                <option style="background-color: white" *ngFor="let format of formats" [ngValue]="format">{{format.title}}</option>
-              </select>
-            </div>
-            <div class="mb-4">
-              <label for="description" style="vertical-align: top;">Event Description: </label>
-              <textarea name="event-description" id="description"  class="form-control" placeholder="Event Description" [(ngModel)]="evt_desc" required></textarea>
-            </div>
-            <div class="d-flex justify-content-around mt-4 ">
-              <label id="player-count">Player Count: {{playerCount}}</label>
-              <label for="manualization">Manually Assign Seeding: <input name="manualization" type="checkbox" id="manualization" [(ngModel)]="manual"></label>
-            </div>
-            <div class="d-flex justify-content-around">
-              <select class="m-3 participants" multiple name="entrantSelectable" [(ngModel)]="entrants" style="min-width: 500px">
-                <option *ngFor="let participant of participants" [ngValue]="participant">{{participant.name}}</option>
-              </select>
-              <select class="m-3" multiple name="entrantRemovable" [(ngModel)]="removals" style="min-width: 500px">
-                <option *ngFor="let entrant of currentEntrants" [ngValue]="entrant">{{entrant.name}}</option>
-              </select>
-            </div>
-            <div class="d-flex justify-content-around">
-              <button type="button" class="btn btn-success" (click)="addParticipants()">Add Participants</button>
-              <button type="button"  class="btn btn-danger" (click)="removeParticipants()">Remove Participants</button>
-            </div>
-            <div class="d-flex justify-content-center">
-              <button type="submit" class="btn btn-primary mt-5 w-50" [disabled]="!eventForm.valid">Submit</button>
-              <!--<button type="button" class="btn btn-primary mt-5 w-50" (click)="getEvents()">getSomeEvents</button>-->
-            </div>
-          </form>
-        </div>
+    
+
+  <div class="d-flex justify-content-center" id=pad>
+    <div class="card p-4 " id="my-preview-div">
+
+      <div class="d-flex justify-content-center card-body" id="center">
+        <form #eventForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+          <button type="button" class="btn btn-light"> <i class="fas fa-angle-left"></i> </button>
+          <h1  class="d-flex justify-content-center mb-4" >Customize your event</h1>
+
+    
+    <div>
+      <label class="mb-4 pr-4" for="type">Event Type: </label>
+      <select name="type" id="type" [(ngModel)]="usedFormat" required>
+        <option selected [ngValue]="null" disabled>Choose an Event Type</option>
+        <option style="background-color: white" *ngFor="let format of formats" [ngValue]="format">{{format.title}}</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label for="description" style="vertical-align: top;">Event Description: </label>
+      <textarea name="event-description" id="description"  class="form-control" placeholder="Event Description" [(ngModel)]="evt_desc" required></textarea>
+    </div>
+    <div class="d-flex justify-content-around mt-4 ">
+      <label id="player-count">Player Count: {{playerCount}}</label>
+      <label for="manualization">Manually Assign Seeding: <input name="manualization" type="checkbox" id="manualization" [(ngModel)]="manual"></label>
+      
+    </div>
+   
+
+    
+    <div class="d-flex justify-content-around">
+      
+      <select class="m-3 participants" multiple name="entrantSelectable" [(ngModel)]="entrants" style="min-width: 500px">
+        <option *ngFor="let participant of participants" [ngValue]="participant">{{participant.name}}</option>
+      </select>
+    
+      <select class="m-3" multiple name="entrantRemovable" [(ngModel)]="removals" style="min-width: 500px">
+        <option *ngFor="let entrant of currentEntrants" [ngValue]="entrant">{{entrant.name}}</option>
+      </select>
+  </div>
+
+      <div class="d-flex justify-content-around">
+        <button type="button" class="btn btn-success" (click)="addParticipants()">Add Participants</button>
+        <button type="button"  class="btn btn-danger" (click)="removeParticipants()">Remove Participants</button>
       </div>
     </div>
   </div>
+  </div>
+  </div>
+
 </body>

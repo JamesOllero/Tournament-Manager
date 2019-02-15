@@ -58,6 +58,10 @@ const routes: Routes = [
       }
     ]
   },
+  // {
+  //   path: '',
+  //   component: NewEventComponent
+  // },
   {
     path: 'registration',
     component: AccountCreationComponent
